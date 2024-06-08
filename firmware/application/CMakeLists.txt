@@ -1,0 +1,62 @@
+file(GLOB SOURCES
+	${CMAKE_CURRENT_LIST_DIR}/../drivers/*.cpp
+	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC/debug_print.c
+	${CMAKE_CURRENT_LIST_DIR}/*.cpp
+)
+
+add_executable(application ${SOURCES})
+
+set_target_properties(application PROPERTIES
+	OUTPUT_NAME "application"
+	SUFFIX ".elf"
+)
+
+target_include_directories(application PRIVATE
+	${CMAKE_CURRENT_BINARY_DIR}/../include
+	${CMAKE_CURRENT_LIST_DIR}/../include
+	${CMAKE_CURRENT_LIST_DIR}/../drivers/include
+	${CMAKE_CURRENT_LIST_DIR}/../lib/CMSIS_5/CMSIS/Core/Include
+	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC
+)
+
+target_compile_options(application PRIVATE
+	${MCU_OPT}
+	-fdata-sections
+	-ffunction-sections
+	-fno-common
+	-Wall
+	-Wextra
+	-Wpedantic
+	$<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions -fno-rtti>
+	$<$<CONFIG:Debug>:-O0 -g3>
+	$<$<CONFIG:Release>:-Og -g0>
+	$<$<BOOL:QEMU>:-DQEMU>
+)
+
+target_link_options(application PRIVATE
+	${MCU_OPT}
+	-Wl,--start-group
+	-lc
+	-lm
+	-lstdc++
+	-lnosys
+	-Wl,--end-group
+	-specs=nano.specs
+	-specs=nosys.specs
+	-T ${CMAKE_CURRENT_BINARY_DIR}/application.ld
+	-Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/application.map,--cref
+	-Wl,--gc-sections
+	-Wl,--no-warn-rwx-segments
+	-Wl,--print-memory-usage
+)
+
+target_link_libraries(application PRIVATE etl::etl)
+
+configure_file(${CMAKE_CURRENT_LIST_DIR}/application.ld.in ${CMAKE_CURRENT_BINARY_DIR}/application.ld)
+configure_file(${CMAKE_CURRENT_LIST_DIR}/postbuild.sh.in ${CMAKE_CURRENT_BINARY_DIR}/postbuild.sh @ONLY)
+
+add_custom_command(TARGET application POST_BUILD
+	COMMAND ${CMAKE_OBJDUMP} -D ${CMAKE_CURRENT_BINARY_DIR}/application.elf > ${CMAKE_CURRENT_BINARY_DIR}/application.lst
+	COMMAND ${CMAKE_OBJCOPY} -O ihex ${CMAKE_CURRENT_BINARY_DIR}/application.elf ${CMAKE_CURRENT_BINARY_DIR}/application.hex
+	COMMAND ${CMAKE_CURRENT_BINARY_DIR}/postbuild.sh
+)

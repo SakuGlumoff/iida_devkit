@@ -1,0 +1,35 @@
+#pragma once
+
+// clang-format off
+
+// Major version
+#define CONFIG_VERSION_MAJOR @iida_devkit_VERSION_MAJOR@
+
+// Minor version
+#define CONFIG_VERSION_MINOR @iida_devkit_VERSION_MINOR@
+
+// Fix version
+#define CONFIG_VERSION_FIX @iida_devkit_VERSION_FIX@
+
+// QEMU targeted
+#cmakedefine CONFIG_QEMU @QEMU@
+
+// HSE enabled
+#cmakedefine CONFIG_HSE @CONFIG_HSE@
+
+// LEDs enabled
+#cmakedefine CONFIG_LED @CONFIG_LED@
+
+// UART enabled
+#cmakedefine CONFIG_UART @CONFIG_UART@
+
+// I2C enabled
+#cmakedefine CONFIG_I2C @CONFIG_I2C@
+
+// SPI enabled
+#cmakedefine CONFIG_SPI @CONFIG_SPI@
+
+// MCP9808 enabled
+#cmakedefine CONFIG_MCP9808 @CONFIG_MCP9808@
+
+// clang-format on

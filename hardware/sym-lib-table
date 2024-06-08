@@ -1,0 +1,9 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "USB4085-GF-A")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/USB4105-GF-A/USB4085-GF-A.kicad_sym")(options "")(descr ""))
+  (lib (name "TPS63021DSJR")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/TPS63021DSJR/TPS63021DSJR.kicad_sym")(options "")(descr ""))
+  (lib (name "BG95M1LA64SGNS")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/BG95M1LA64SGNS/BG95M1LA64SGNS.kicad_sym")(options "")(descr ""))
+  (lib (name "BQ2407RGTR")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/BQ24074RGTR/BQ2407RGTR.kicad_sym")(options "")(descr ""))
+  (lib (name "MX25U4035FM1I")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/MX25U4035FM1I/MX25U4035FM1I.kicad_sym")(options "")(descr ""))
+  (lib (name "SF72S006VBDR2500")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/SF72S006VBDR2500/SF72S006VBDR2500.kicad_sym")(options "")(descr ""))
+)

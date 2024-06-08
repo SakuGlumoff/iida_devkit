@@ -1,0 +1,26 @@
+#pragma once
+
+// clang-format off
+
+/**
+ * @brief Application image header start.
+*/
+#define APP_HEADER_START (@APP_HEADER_START@UL)
+/**
+ * @brief Application code area start.
+*/
+#define APP_CODE_START (@APP_CODE_START@UL)
+/**
+ * @brief Application code max size.
+*/
+#define APP_CODE_SIZE (@APP_CODE_SIZE@UL)
+/**
+ * @brief Application RAM area start.
+*/
+#define APP_RAM_START (@APP_RAM_START@UL)
+/**
+ * @brief Application image header ID.
+*/
+#define APP_HEADER_ID (@APP_HEADER_ID@UL)
+
+// clang-format on
