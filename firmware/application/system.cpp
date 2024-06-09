@@ -3,10 +3,6 @@
 extern "C" {
 	void SystemInit(void) {}
 
-	void Reset_Handler(void) {
-		while (true) {}
-	}
-
 	void NMI_Handler(void) {
 		while (true) {}
 	}
