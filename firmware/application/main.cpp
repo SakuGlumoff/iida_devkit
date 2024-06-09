@@ -4,6 +4,9 @@
 extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
 #ifdef CONFIG_UART
 	// TODO: Print using UART.
+	(void)debugMessage;
+	(void)length;
+	return 0;
 #else
 	(void)debugMessage;
 	(void)length;

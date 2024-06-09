@@ -1,8 +1,7 @@
 #include "bootloader.hpp"
 
-// TODO: Include MCU header.
-
 #include "memorymap.hpp"
+#include "stm32l552xx.h"
 
 #include <cstdint>
 #include <etl/crc32.h>

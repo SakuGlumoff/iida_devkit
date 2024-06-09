@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cstdint>
+#include "stm32l552xx.h"
 
-// TODO: Include MCU header.
+#include <cstdint>
 
 enum GpioPort {
 	GPIO_PORT_A = 0,

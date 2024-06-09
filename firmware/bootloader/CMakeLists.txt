@@ -2,6 +2,7 @@ file(GLOB SOURCES
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/*.cpp
 	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC/debug_print.c
 	${CMAKE_CURRENT_LIST_DIR}/*.cpp
+	${CMAKE_CURRENT_LIST_DIR}/*.s
 )
 
 add_executable(bootloader ${SOURCES})
