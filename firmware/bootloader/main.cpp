@@ -1,5 +1,6 @@
 #include "bootloader.hpp"
 #include "debug_print.h"
+#include "gpio.hpp"
 #include "memorymap.hpp"
 #include "ymodem.hpp"
 
@@ -41,6 +42,8 @@ static void _Deinit() {
 
 extern "C" int main() {
 	_Init();
+
+	Gpio<GpioPort::A, 2> led;
 
 	while (true) {
 		bool imageGood = VerifyImage();

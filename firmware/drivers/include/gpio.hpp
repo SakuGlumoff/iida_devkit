@@ -4,52 +4,106 @@
 
 #include <cstdint>
 
-enum GpioPort {
-	GPIO_PORT_A = 0,
-	GPIO_PORT_B,
-	GPIO_PORT_C,
-	GPIO_PORT_D,
-	GPIO_PORT_E,
-	GPIO_PORT_F,
-	GPIO_PORT_G,
-	GPIO_PORT_H,
-	GPIO_PORT_MAX = GPIO_PORT_H
+enum class GpioPort : uint32_t {
+	A = 0,
+	B,
+	C,
+	D,
+	E,
+	F,
+	G,
+	H,
+	MAX = H
 };
 
-static constexpr uint32_t GPIO_PIN_MAX = 31UL;
+static constexpr uint32_t GPIO_PIN_MAX = 15UL;
 
 template<GpioPort port, unsigned pin>
 class Gpio {
 	public:
-	enum Mode : uint32_t {
+	enum class Mode : uint32_t {
 		MODE_TODO = 0UL,
 	};
 
-	enum Type : uint32_t {
+	enum class Type : uint32_t {
 		TYPE_TODO = 0UL,
 	};
 
-	enum Speed : uint32_t {
+	enum class Speed : uint32_t {
 		SPEED_TODO = 0UL,
 	};
 
-	enum PullUp : uint32_t {
+	enum class PullUp : uint32_t {
 		PULL_UP_TODO = 0UL,
 	};
 
-	enum AlternateFunction : uint32_t {
+	enum class AlternateFunction : uint32_t {
 		AF_TODO = 0UL,
 	};
 
+	void SetMode(Mode mode) {
+		(void)mode;
+	}
+
+	void SetType(Type type) {
+		(void)type;
+	}
+
+	void SetSpeed(Speed speed) {
+		(void)speed;
+	}
+
+	void SetPullUp(PullUp pullup) {
+		(void)pullup;
+	}
+
+	void SetAlternateFunction(AlternateFunction af) {
+		(void)af;
+	}
+
 	Gpio(
-	    Mode              mode   = MODE_TODO,
-	    Type              type   = TYPE_TODO,
-	    Speed             speed  = SPEED_TODO,
-	    PullUp            pullup = PULL_UP_TODO,
-	    AlternateFunction af     = AF_TODO
-	): _port(port), _pin(pin) {
-		static_assert(port <= GPIO_PORT_MAX);
+	    Mode              mode   = Mode::MODE_TODO,
+	    Type              type   = Type::TYPE_TODO,
+	    Speed             speed  = Speed::SPEED_TODO,
+	    PullUp            pullup = PullUp::PULL_UP_TODO,
+	    AlternateFunction af     = AlternateFunction::AF_TODO
+	) {
+		static_assert(port <= GpioPort::MAX);
 		static_assert(pin <= GPIO_PIN_MAX);
+		switch (port) {
+			case GpioPort::A:
+				_port = GPIOA_S;
+				break;
+			case GpioPort::B:
+				_port = GPIOB_S;
+				break;
+			case GpioPort::C:
+				_port = GPIOC_S;
+				break;
+			case GpioPort::D:
+				_port = GPIOD_S;
+				break;
+			case GpioPort::E:
+				_port = GPIOE_S;
+				break;
+			case GpioPort::F:
+				_port = GPIOF_S;
+				break;
+			case GpioPort::G:
+				_port = GPIOG_S;
+				break;
+			case GpioPort::H:
+				_port = GPIOH_S;
+				break;
+			default:
+				break;
+		}
+		_pin = pin;
+		SetMode(mode);
+		SetType(type);
+		SetSpeed(speed);
+		SetPullUp(pullup);
+		SetAlternateFunction(af);
 	}
 
 	~Gpio() {
@@ -57,6 +111,6 @@ class Gpio {
 	}
 
 	private:
-	GpioPort _port;
-	uint32_t _pin;
+	GPIO_TypeDef* _port = nullptr;
+	uint32_t      _pin  = GPIO_PIN_MAX + 1;
 };
