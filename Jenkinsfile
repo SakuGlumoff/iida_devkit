@@ -6,7 +6,7 @@ pipeline {
 		stage('Code style check') {
 			steps {
 				script {
-					final filesToCheck = sh(script: "find firmware -type f -not -path 'firmware/lib*' -not -path 'firmware/build*' \\( -name '*.h' -or -name '*.hpp' -or -name '*.c' -or -name '*.cpp' \\)", returnStdout: true).split()
+					final filesToCheck = sh(script: "find firmware -type f -not -path 'firmware/drivers/include/stm32l552xx.h' -not -path 'firmware/lib*' -not -path 'firmware/build*' \\(  -name '*.h' -or -name '*.hpp' -or -name '*.c' -or -name '*.cpp' \\)", returnStdout: true).split()
 					for (file in filesToCheck) {
 						echo "Checking ${file}..."
 						if (sh(script: "clang-format ${file} --dry-run --Werror", returnStatus: true)) {
