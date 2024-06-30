@@ -1,0 +1,43 @@
+name: FW Verification
+on:
+  push:
+    branches:
+      - trunk
+  pull_request:
+  workflow_dispatch:
+defaults:
+  run:
+    working-directory: ./firmware
+jobs:
+  Codecheck:
+    runs-on: [self-hosted, oracle-cloud]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.PAT_TOKEN }}
+      - name: Codecheck
+        run: ./scripts/codechecker.sh
+  Build:
+    runs-on: [self-hosted, oracle-cloud]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.PAT_TOKEN }}
+      - name: Generate build files
+        run: cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DQEMU=OFF
+      - name: Build bootloader
+        run: cmake --build build --target bootloader
+      - name: Build application
+        run: cmake --build build --target application
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Binaries
+          path: |
+            ./firmware/build/bootloader/bootloader.hex
+            ./firmware/build/application/application.hex
+          if-no-files-found: error
