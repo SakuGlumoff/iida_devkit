@@ -17,7 +17,7 @@ extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
 #endif
 }
 
-static bool VerifyImage() {
+static inline bool _VerifyImage() {
 	AppHeader volatile* const appHeader =
 	    (reinterpret_cast<AppHeader*>(APP_HEADER_START));
 
@@ -45,7 +45,7 @@ extern "C" int main() {
 	_Init();
 
 	while (true) {
-		bool imageGood = VerifyImage();
+		bool imageGood = _VerifyImage();
 		if (imageGood) {
 			// Firmware installed.
 
