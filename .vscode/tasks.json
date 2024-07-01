@@ -53,16 +53,16 @@
 			]
 		},
 		{
-			"label": "Build",
+			"label": "Build: All",
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
 			"problemMatcher": "$gcc",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Build: Bootloader",
-				"Build: Application"
+			"type": "shell",
+			"command": [
+				"cd firmware",
+				"&& cmake --build build"
 			]
 		}
 	]
