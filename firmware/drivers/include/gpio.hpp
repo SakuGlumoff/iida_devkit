@@ -95,6 +95,33 @@ class Gpio {
 		return _port->IDR & (0b1 << _pin);
 	}
 
+	Gpio& operator=(bool on) {
+		Write(on);
+		return *this;
+	}
+
+	Gpio& operator=(int on) {
+		Write(on == 1 ? true : false);
+		return *this;
+	}
+
+	Gpio& operator=(Gpio& other) {
+		// Prevent self-assigment
+		if (this == &other) {
+			return *this;
+		}
+		Write(other.Read());
+		return *this;
+	}
+
+	bool operator==(bool on) {
+		return Read() == on;
+	}
+
+	operator bool() {
+		return Read();
+	}
+
 	Gpio(
 	    GPIO_TypeDef* const port,
 	    uint32_t            pin,
