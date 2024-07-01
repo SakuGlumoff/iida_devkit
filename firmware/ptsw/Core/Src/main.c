@@ -264,23 +264,47 @@ int main(void)
         }
         break;
       case TEST_QSPI:
-#if 0
-        OSPI_RegularCmdTypeDef sCommand = {0};
-        // Fill sCommand so that it sens a read command to the QSPI flash
-        sCommand.Instruction = HAL_OSPI_OPTYPE_READ_CFG;
-        sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
-        sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
-        sCommand.Address = 0x1000UL;
-        sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
-        sCommand.DummyCycles = 8;
-        sCommand.NbData = 1;
-        sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
-        if (HAL_OSPI_Command(&hospi1, &sCommand, 500UL) == HAL_OK) {
-          test_results[_test] = true;
+        {
+          uint8_t write_data[4] = {0xAA, 0xBB, 0xCC, 0xDD};
+          uint8_t read_data[4] = {0};
+
+          OSPI_RegularCmdTypeDef sCommand;
+          sCommand.OperationType = HAL_OSPI_OPTYPE_COMMON_CFG;
+          sCommand.FlashId = HAL_OSPI_FLASH_ID_1;
+          sCommand.InstructionMode = HAL_OSPI_INSTRUCTION_1_LINE;
+          sCommand.InstructionSize = HAL_OSPI_INSTRUCTION_8_BITS;
+          sCommand.Instruction = 0x02; // Write command
+          sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
+          sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
+          sCommand.Address = 0x1000;
+          sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
+          sCommand.NbData = sizeof(write_data);
+          sCommand.DummyCycles = 0;
+          sCommand.DQSMode = HAL_OSPI_DQS_DISABLE;
+          sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
+
+          // Write
+          if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+          if (HAL_OSPI_Transmit(&hospi1, write_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+
+          // Read
+          sCommand.Instruction = 0x0B; // Read command
+          if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+          if (HAL_OSPI_Receive(&hospi1, read_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+
+          // Compare
+          if (memcmp(write_data, read_data, sizeof(write_data)) == 0) {
+            test_results[_test] = true;
+          }
         }
-#else
-        test_results[_test] = true;
-#endif
         break;
       default:
         printf("ERROR: Unknown test: %d\n", _test);
