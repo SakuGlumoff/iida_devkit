@@ -33,5 +33,6 @@ endif()
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/common.cmake)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/etl)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/ptsw)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/application)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/bootloader)

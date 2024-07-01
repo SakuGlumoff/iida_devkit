@@ -56,6 +56,21 @@
 			]
 		},
 		{
+			"label": "Build: PTSW",
+			"group": {
+				"kind": "build"
+			},
+			"dependsOn": [
+				"CMake: Generate"
+			],
+			"problemMatcher": "$gcc",
+			"type": "shell",
+			"command": [
+				"cd firmware",
+				"&& cmake --build build --target ptsw"
+			]
+		},
+		{
 			"label": "Build: All",
 			"group": {
 				"kind": "build",

@@ -29,6 +29,8 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
       - name: Generate build files
         run: cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DQEMU=OFF
+      - name: Build ptsw
+        run: cmake --build build --target ptsw
       - name: Build bootloader
         run: cmake --build build --target bootloader
       - name: Build application
@@ -38,6 +40,7 @@ jobs:
         with:
           name: Binaries
           path: |
+            ./firmware/build/ptsw/ptsw.hex
             ./firmware/build/bootloader/bootloader.hex
             ./firmware/build/application/application.hex
           if-no-files-found: error

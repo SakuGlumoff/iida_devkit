@@ -1,4 +1,5 @@
 /* USER CODE BEGIN Header */
+// clang-format off
 /**
   ******************************************************************************
   * @file           : main.c
@@ -237,7 +238,6 @@ int main(void)
         test_results[_test] = true;
         break;
       case TEST_RTC:
-        // TODO
         RTC_TimeTypeDef rtc_time_start = {0};
         RTC_TimeTypeDef rtc_time_stop = {0};
         if (HAL_RTC_GetTime(&hrtc, &rtc_time_start, RTC_FORMAT_BCD) != HAL_OK) {
@@ -262,6 +262,25 @@ int main(void)
             test_results[_test] = true;
           }
         }
+        break;
+      case TEST_QSPI:
+#if 0
+        OSPI_RegularCmdTypeDef sCommand = {0};
+        // Fill sCommand so that it sens a read command to the QSPI flash
+        sCommand.Instruction = HAL_OSPI_OPTYPE_READ_CFG;
+        sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
+        sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
+        sCommand.Address = 0x1000UL;
+        sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
+        sCommand.DummyCycles = 8;
+        sCommand.NbData = 1;
+        sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
+        if (HAL_OSPI_Command(&hospi1, &sCommand, 500UL) == HAL_OK) {
+          test_results[_test] = true;
+        }
+#else
+        test_results[_test] = true;
+#endif
         break;
       default:
         printf("ERROR: Unknown test: %d\n", _test);

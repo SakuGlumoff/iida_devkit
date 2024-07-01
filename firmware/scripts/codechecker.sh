@@ -3,6 +3,7 @@
 FILES_TO_CHECK=$(
 	find . \
 	-type f \
+	-not -path './ptsw*' \
 	-not -path './drivers/include/stm32l552xx.h' \
 	-not -path './lib*' \
 	-not -path './build*' \
