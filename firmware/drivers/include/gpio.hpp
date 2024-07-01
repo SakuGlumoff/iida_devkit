@@ -96,13 +96,13 @@ class Gpio {
 	}
 
 	Gpio(
-	    GPIO_TypeDef*     port,
-	    uint32_t          pin,
-	    Mode              mode   = Mode::ANALOG,
-	    Type              type   = Type::PUSH_PULL,
-	    Speed             speed  = Speed::LOW,
-	    PullUp            pullup = PullUp::NONE,
-	    AlternateFunction af     = AlternateFunction::AF0
+	    GPIO_TypeDef* const port,
+	    uint32_t            pin,
+	    Mode                mode   = Mode::ANALOG,
+	    Type                type   = Type::PUSH_PULL,
+	    PullUp              pullup = PullUp::NONE,
+	    Speed               speed  = Speed::LOW,
+	    AlternateFunction   af     = AlternateFunction::AF0
 	) {
 		switch (reinterpret_cast<uint32_t>(port)) {
 			case GPIOA_BASE:
@@ -142,16 +142,16 @@ class Gpio {
 		_pin  = pin;
 		SetMode(mode);
 		SetType(type);
-		SetSpeed(speed);
 		SetPullUp(pullup);
+		SetSpeed(speed);
 		SetAlternateFunction(af);
 	}
 
 	~Gpio() {
 		SetMode(Mode::ANALOG);
 		SetType(Type::PUSH_PULL);
-		SetSpeed(Speed::LOW);
 		SetPullUp(PullUp::NONE);
+		SetSpeed(Speed::LOW);
 		SetAlternateFunction(AlternateFunction::AF0);
 	}
 

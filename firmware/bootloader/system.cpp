@@ -1,71 +1,8 @@
+#include "system.hpp"
+
 #include "stm32l552xx.h"
 
-enum class PLLxPDiv : uint32_t {
-	DIV7  = 0UL,
-	DIV17 = 1UL,
-};
-
-enum class PLLxQDiv : uint32_t {
-	DIV2 = 0UL,
-	DIV4,
-	DIV6,
-	DIV8,
-};
-
-enum class PLLxRDiv : uint32_t {
-	DIV2 = 0UL,
-	DIV4,
-	DIV6,
-	DIV8,
-};
-
-enum class HPREDiv : uint32_t {
-	DIV1 = 0UL,
-	DIV2 = 0b1000UL,
-	DIV4,
-	DIV8,
-	DIV16,
-	DIV64,
-	DIV128,
-	DIV256,
-	DIV512,
-};
-
-enum class PPRExDiv : uint32_t {
-	DIV1 = 0UL,
-	DIV2 = 0b100UL,
-	DIV4,
-	DIV8,
-	DIV16,
-};
-
-static constexpr uint32_t LSE_HZ     = 32'768UL;
-static constexpr uint32_t LSI_HZ     = 32'000UL;
-static constexpr uint32_t HSE_HZ     = 16'000'000UL;
-static constexpr uint32_t HSI_HZ     = 16'000'000UL;
-static constexpr uint32_t MSI_HZ     = 16'000'000UL;
-static constexpr uint32_t PLL_CLK_HZ = 100'000'000UL;
-static constexpr uint32_t SYSCLK_HZ  = PLL_CLK_HZ;
-
-static constexpr uint32_t PLL_M = 2UL;
-static constexpr uint32_t PLL_N = 25UL;
-static constexpr PLLxPDiv PLL_P = PLLxPDiv::DIV7;
-static constexpr PLLxQDiv PLL_Q = PLLxQDiv::DIV2;
-static constexpr PLLxRDiv PLL_R = PLLxRDiv::DIV2;
-
-static constexpr uint32_t PLLSAI1_M = 4UL;
-static constexpr uint32_t PLLSAI1_N = 24UL;
-static constexpr PLLxPDiv PLLSAI1_P = PLLxPDiv::DIV7;
-static constexpr PLLxQDiv PLLSAI1_Q = PLLxQDiv::DIV2;
-static constexpr PLLxRDiv PLLSAI1_R = PLLxRDiv::DIV2;
-
-static constexpr uint32_t PLLSAI2_M = 1UL;
-static constexpr uint32_t PLLSAI2_N = 8UL;
-static constexpr PLLxPDiv PLLSAI2_P = PLLxPDiv::DIV7;
-
-static constexpr HPREDiv  HPRE  = HPREDiv::DIV1;
-static constexpr PPRExDiv PPRE1 = PPRExDiv::DIV1;
-static constexpr PPRExDiv PPRE2 = PPRExDiv::DIV1;
+static TickType volatile _systickCounter = 0;
 
 static void _initPwr() {
 	RCC->APB1ENR1 |= RCC_APB1ENR1_PWREN;
@@ -75,9 +12,15 @@ static void _initPwr() {
 }
 
 static void _initClocks() {
+#ifdef CONFIG_HSE
 	// Enable HSE.
 	RCC->CR |= RCC_CR_HSEON;
 	while (!(RCC->CR & RCC_CR_HSERDY)) {}
+#else
+	// Enable HSI.
+	RCC->CR |= RCC_CR_HSION;
+	while (!(RCC->CR & RCC_CR_HSIRDY)) {}
+#endif
 
 	// Configure AHB clock.
 	RCC->CFGR &= ~(RCC_CFGR_HPRE | RCC_CFGR_PPRE1 | RCC_CFGR_PPRE2);
@@ -147,8 +90,15 @@ static void _initClocks() {
 	RCC->PLLCFGR |= (static_cast<uint32_t>(PLL_P) << RCC_PLLCFGR_PLLP_Pos);
 	RCC->PLLCFGR |= (static_cast<uint32_t>(PLL_Q) << RCC_PLLCFGR_PLLQ_Pos);
 	RCC->PLLCFGR |= (static_cast<uint32_t>(PLL_R) << RCC_PLLCFGR_PLLR_Pos);
+
+#ifdef CONFIG_HSE
 	// HSE as source.
 	RCC->PLLCFGR |= (3UL << RCC_PLLCFGR_PLLSRC_Pos);
+#else
+	// HSI as source.
+	RCC->PLLCFGR |= (1UL << RCC_PLLCFGR_PLLSRC_Pos);
+#endif
+
 	RCC->PLLCFGR |=
 	    (RCC_PLLCFGR_PLLPEN | RCC_PLLCFGR_PLLQEN | RCC_PLLCFGR_PLLREN);
 
@@ -158,7 +108,7 @@ static void _initClocks() {
 	// Select PLL as system clock source.
 	RCC->CFGR |= (3UL << RCC_CFGR_SW_Pos);
 	while (!(RCC->CFGR & (3UL << RCC_CFGR_SWS_Pos))) {}
-	uint32_t tmp = RCC->CFGR;
+	uint32_t volatile tmp = RCC->CFGR;
 	tmp &= ~RCC_CFGR_HPRE;
 	tmp |= static_cast<uint32_t>(HPRE);
 	RCC->CFGR = tmp;
@@ -167,12 +117,14 @@ static void _initClocks() {
 	RCC->CSR |= RCC_CSR_LSION;
 	while (!(RCC->CSR & RCC_CSR_LSIRDY)) {}
 
+#ifdef CONFIG_LSE
 	RCC->BDCR &= ~(RCC_BDCR_LSEDRV | RCC_BDCR_LSESYSEN);
 	// Set high drive capability for LSE.
 	RCC->BDCR |= (3UL << RCC_BDCR_LSEDRV_Pos);
 	// Enable LSE.
 	RCC->BDCR |= RCC_BDCR_LSEON;
 	while (!(RCC->BDCR & RCC_BDCR_LSERDY)) {}
+#endif
 }
 
 static void _initFlash() {
@@ -180,8 +132,16 @@ static void _initFlash() {
 	FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
 }
 
+void Sleep(TickType ticks) {
+	TickType end = _systickCounter + ticks;
+	while (_systickCounter < end) {
+		__NOP();
+	}
+}
+
 extern "C" {
 	void SystemInit(void) {
+		_systickCounter = 0;
 		_initPwr();
 		_initClocks();
 		_initFlash();
@@ -189,6 +149,19 @@ extern "C" {
 		// Set CP10 and CP11 full access.
 		SCB->CPACR |= ((3UL << 20U) | (3UL << 22U));
 #endif
+	}
+
+	void SystemDeinit(void) {
+		RCC->CR          = 0x00000063UL;
+		RCC->CFGR        = 0x00000000UL;
+		RCC->PLLCFGR     = 0x00001000UL;
+		RCC->PLLSAI1CFGR = 0x00001000UL;
+		RCC->PLLSAI2CFGR = 0x00001000UL;
+		RCC->APB1ENR1    = 0x00000000UL;
+		RCC->BDCR        = 0x00000000UL;
+		PWR->CR1         = 0x00000400UL;
+		FLASH->ACR       = 0x00000000UL;
+		SCB->CPACR &= ~((3UL << 20U) | (3UL << 22U));
 	}
 
 	void NMI_Handler(void) {
@@ -228,6 +201,6 @@ extern "C" {
 	}
 
 	void SysTick_Handler(void) {
-		while (true) {}
+		_systickCounter++;
 	}
 }

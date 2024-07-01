@@ -1,6 +1,7 @@
 #include "bootloader.hpp"
 #include "debug_print.h"
 #include "memorymap.hpp"
+#include "system.hpp"
 #include "ymodem.hpp"
 
 #include <cstdint>
@@ -37,6 +38,7 @@ static void _Init() {
 
 static void _Deinit() {
 	// TODO: Initialize system and peripherals.
+	SystemDeinit();
 }
 
 extern "C" int main() {
