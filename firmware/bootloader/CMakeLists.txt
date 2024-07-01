@@ -3,6 +3,8 @@ file(GLOB SOURCES
 	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC/debug_print.c
 	${CMAKE_CURRENT_LIST_DIR}/*.cpp
 	${CMAKE_CURRENT_LIST_DIR}/*.s
+	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/*.c
+	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/*.S
 )
 
 add_executable(bootloader ${SOURCES})
@@ -20,6 +22,8 @@ target_include_directories(bootloader PRIVATE
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/include
 	${CMAKE_CURRENT_LIST_DIR}/../lib/CMSIS_5/CMSIS/Core/Include
 	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC
+	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT
+	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/Config
 )
 
 target_compile_options(bootloader PRIVATE

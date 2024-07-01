@@ -1,3 +1,4 @@
+#include "SEGGER_RTT.h"
 #include "bootloader.hpp"
 #include "debug_print.h"
 #include "memorymap.hpp"
@@ -11,8 +12,7 @@ extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
 #ifdef CONFIG_UART
 	// TODO: Print using UART.
 #else
-	(void)debugMessage;
-	(void)length;
+	SEGGER_RTT_Write(0, debugMessage, length);
 	return 0;
 #endif
 }

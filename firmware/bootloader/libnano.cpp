@@ -1,6 +1,8 @@
+#include "SEGGER_RTT.h"
 #include "stm32l552xx.h"
 
 #include <errno.h>
+#include <reent.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,6 +10,8 @@
 #include <sys/time.h>
 #include <sys/times.h>
 #include <time.h>
+
+struct _reent;
 
 extern "C" {
 	int _getpid(void) {
@@ -34,7 +38,15 @@ extern "C" {
 
 	__attribute__((weak)) int _write(int file, char* ptr, int len) {
 		(void)file;
-		(void)ptr;
+		SEGGER_RTT_Write(0, ptr, len);
+		return len;
+	}
+
+	__attribute__((weak)) ssize_t
+	_write_r(struct _reent* r, int file, void const* ptr, size_t len) {
+		(void)file;
+		(void)r;
+		SEGGER_RTT_Write(0, ptr, len);
 		return len;
 	}
 

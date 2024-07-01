@@ -45,6 +45,9 @@
 			"group": {
 				"kind": "build"
 			},
+			"dependsOn": [
+				"CMake: Generate"
+			],
 			"problemMatcher": "$gcc",
 			"type": "shell",
 			"command": [
@@ -58,6 +61,9 @@
 				"kind": "build",
 				"isDefault": true
 			},
+			"dependsOn": [
+				"CMake: Generate"
+			],
 			"problemMatcher": "$gcc",
 			"type": "shell",
 			"command": [

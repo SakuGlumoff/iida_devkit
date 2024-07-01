@@ -10,3 +10,6 @@
 [submodule "hardware/kicad_libraries"]
 	path = hardware/kicad_libraries
 	url = git@github.com:SakuGlumoff/kicad_libraries.git
+[submodule "firmware/lib/RTT"]
+	path = firmware/lib/RTT
+	url = https://github.com/SEGGERMicro/RTT.git
