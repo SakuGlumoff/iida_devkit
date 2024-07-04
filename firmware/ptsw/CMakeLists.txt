@@ -1,5 +1,20 @@
 file(GLOB SOURCES
-	${CMAKE_CURRENT_LIST_DIR}/Core/Src/*.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/crc.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/gpio.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/hash.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/i2c.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/icache.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/main.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/octospi.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/rng.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/rtc.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/stm32l5xx_hal_msp.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/stm32l5xx_it.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/syscalls.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/sysmem.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/system_stm32l5xx.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/usart.c
+	${CMAKE_CURRENT_LIST_DIR}/Core/Src/usb.c
 	${CMAKE_CURRENT_LIST_DIR}/Drivers/STM32L5xx_HAL_Driver/Src/*.c
 	${CMAKE_CURRENT_LIST_DIR}/Drivers/STM32L5xx_HAL_Driver/Src/*.c
 	${CMAKE_CURRENT_LIST_DIR}/*.s

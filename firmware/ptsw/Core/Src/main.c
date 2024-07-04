@@ -23,7 +23,6 @@
 #include "hash.h"
 #include "i2c.h"
 #include "icache.h"
-#include "iwdg.h"
 #include "usart.h"
 #include "octospi.h"
 #include "rng.h"
@@ -146,7 +145,6 @@ int main(void)
   MX_HASH_Init();
   MX_I2C2_Init();
   MX_ICACHE_Init();
-  MX_IWDG_Init();
   MX_LPUART1_UART_Init();
   MX_USART1_UART_Init();
   MX_OCTOSPI1_Init();
@@ -159,166 +157,177 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  printf("TEST: Start %s\n", _test_names[_test]);
-
-  switch (_test) {
-    case TEST_INIT:
-      for (unsigned i = 0; i < TEST_COUNT; i++) {
-        test_results[i] = false;
-      }
-      for (unsigned i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
-        _connected_i2c_slaves[i] = false;
-      }
-      HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
-      HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
-      test_results[_test] = true;
+  while (1) {
+    if (_test >= TEST_COUNT) {
       break;
-    case TEST_LED_A:
-      HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_RESET);
-      if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_RESET) {
-        break;
-      }
-      HAL_Delay(250UL);
-      HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
-      if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_SET) {
-        break;
-      }
-      test_results[_test] = true;
-      break;
-    case TEST_LED_B:
-      HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_RESET);
-      if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_RESET) {
-        break;
-      }
-      HAL_Delay(250UL);
-      HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
-      if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_SET) {
-        break;
-      }
-      test_results[_test] = true;
-      break;
-    case TEST_LED_C:
-      HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_RESET);
-      if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_RESET) {
-        break;
-      }
-      HAL_Delay(250UL);
-      HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
-      if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_SET) {
-        break;
-      }
-      test_results[_test] = true;
-      break;
-    case TEST_LED_D:
-      HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_RESET);
-      if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_RESET) {
-        break;
-      }
-      HAL_Delay(250UL);
-      HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
-      if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_SET) {
-        break;
-      }
-      test_results[_test] = true;
-      break;
-    case TEST_DBG_UART:
-      if (HAL_UART_Transmit(&hlpuart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
-        break;
-      }
-      test_results[_test] = true;
-      break;
-    case TEST_MODEM_UART:
-      if (HAL_UART_Transmit(&huart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
-        break;
-      }
-      test_results[_test] = true;
-      break;
-    case TEST_RTC:
-      RTC_TimeTypeDef rtc_time_start = {0};
-      RTC_TimeTypeDef rtc_time_stop = {0};
-      if (HAL_RTC_GetTime(&hrtc, &rtc_time_start, RTC_FORMAT_BCD) != HAL_OK) {
-        break;
-      }
-      HAL_Delay(1000UL);
-      if (HAL_RTC_GetTime(&hrtc, &rtc_time_stop, RTC_FORMAT_BCD) != HAL_OK) {
-        break;
-      }
-      if (rtc_time_start.Seconds < rtc_time_stop.Seconds) {
+    }
+    printf("TEST: Start %s\n", _test_names[_test]);
+    switch (_test) {
+      case TEST_INIT:
+        for (unsigned i = 0; i < TEST_COUNT; i++) {
+          test_results[i] = false;
+        }
+        for (unsigned i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
+          _connected_i2c_slaves[i] = false;
+        }
+        HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
         test_results[_test] = true;
-      }
-      break;
-    case TEST_I2C:
-      for (uint16_t i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
-        if (HAL_I2C_IsDeviceReady(&hi2c2, i, 3, 500UL) == HAL_OK) {
-          printf("TEST: I2C slave @ 0x%02X\n", i);
-          _connected_i2c_slaves[i] = true;
+        break;
+      case TEST_LED_A:
+        HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_RESET);
+        if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_RESET) {
+          break;
+        }
+        HAL_Delay(250UL);
+        HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
+        if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_SET) {
+          break;
+        }
+        test_results[_test] = true;
+        break;
+      case TEST_LED_B:
+        HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_RESET);
+        if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_RESET) {
+          break;
+        }
+        HAL_Delay(250UL);
+        HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
+        if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_SET) {
+          break;
+        }
+        test_results[_test] = true;
+        break;
+      case TEST_LED_C:
+        HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_RESET);
+        if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_RESET) {
+          break;
+        }
+        HAL_Delay(250UL);
+        HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
+        if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_SET) {
+          break;
+        }
+        test_results[_test] = true;
+        break;
+      case TEST_LED_D:
+        HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_RESET);
+        if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_RESET) {
+          break;
+        }
+        HAL_Delay(250UL);
+        HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
+        if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_SET) {
+          break;
+        }
+        test_results[_test] = true;
+        break;
+      case TEST_DBG_UART:
+        if (HAL_UART_Transmit(&hlpuart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
+          break;
+        }
+        test_results[_test] = true;
+        break;
+      case TEST_MODEM_UART:
+        if (HAL_UART_Transmit(&huart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
+          break;
+        }
+        test_results[_test] = true;
+        break;
+      case TEST_RTC:
+        RTC_TimeTypeDef rtc_time_start = {0};
+        RTC_TimeTypeDef rtc_time_stop = {0};
+        RTC_DateTypeDef rtc_date = {0};
+        if (HAL_RTC_GetTime(&hrtc, &rtc_time_start, RTC_FORMAT_BCD) != HAL_OK) {
+          break;
+        }
+        if (HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BCD) != HAL_OK) {
+          break;
+        }
+        HAL_Delay(5000UL);
+        if (HAL_RTC_GetTime(&hrtc, &rtc_time_stop, RTC_FORMAT_BCD) != HAL_OK) {
+          break;
+        }
+        if (HAL_RTC_GetDate(&hrtc, &rtc_date, RTC_FORMAT_BCD) != HAL_OK) {
+          break;
+        }
+        if (rtc_time_start.Seconds < rtc_time_stop.Seconds) {
           test_results[_test] = true;
         }
-      }
-      break;
-    case TEST_QSPI:
-      {
-#if 0
-        uint8_t write_data[4] = {0xAA, 0xBB, 0xCC, 0xDD};
-        uint8_t read_data[4] = {0};
-
-        OSPI_RegularCmdTypeDef sCommand;
-        sCommand.OperationType = HAL_OSPI_OPTYPE_COMMON_CFG;
-        sCommand.FlashId = HAL_OSPI_FLASH_ID_1;
-        sCommand.InstructionMode = HAL_OSPI_INSTRUCTION_1_LINE;
-        sCommand.InstructionSize = HAL_OSPI_INSTRUCTION_8_BITS;
-        sCommand.Instruction = 0x02; // Write command
-        sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
-        sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
-        sCommand.Address = 0x1000;
-        sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
-        sCommand.NbData = sizeof(write_data);
-        sCommand.DummyCycles = 0;
-        sCommand.DQSMode = HAL_OSPI_DQS_DISABLE;
-        sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
-
-        // Write
-        if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-          break;
+        break;
+      case TEST_I2C:
+        for (uint16_t i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
+          if (HAL_I2C_IsDeviceReady(&hi2c2, i, 3, 500UL) == HAL_OK) {
+            printf("TEST: I2C slave @ 0x%02X\n", i);
+            _connected_i2c_slaves[i] = true;
+            test_results[_test] = true;
+          }
         }
-        if (HAL_OSPI_Transmit(&hospi1, write_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-          break;
-        }
+        break;
+      case TEST_QSPI:
+        {
+  #if 0
+          uint8_t write_data[4] = {0xAA, 0xBB, 0xCC, 0xDD};
+          uint8_t read_data[4] = {0};
 
-        // Read
-        sCommand.Instruction = 0x0B; // Read command
-        if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-          break;
-        }
-        if (HAL_OSPI_Receive(&hospi1, read_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-          break;
-        }
+          OSPI_RegularCmdTypeDef sCommand;
+          sCommand.OperationType = HAL_OSPI_OPTYPE_COMMON_CFG;
+          sCommand.FlashId = HAL_OSPI_FLASH_ID_1;
+          sCommand.InstructionMode = HAL_OSPI_INSTRUCTION_1_LINE;
+          sCommand.InstructionSize = HAL_OSPI_INSTRUCTION_8_BITS;
+          sCommand.Instruction = 0x02; // Write command
+          sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
+          sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
+          sCommand.Address = 0x1000;
+          sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
+          sCommand.NbData = sizeof(write_data);
+          sCommand.DummyCycles = 0;
+          sCommand.DQSMode = HAL_OSPI_DQS_DISABLE;
+          sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
 
-        // Compare
-        if (memcmp(write_data, read_data, sizeof(write_data)) == 0) {
+          // Write
+          if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+          if (HAL_OSPI_Transmit(&hospi1, write_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+
+          // Read
+          sCommand.Instruction = 0x0B; // Read command
+          if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+          if (HAL_OSPI_Receive(&hospi1, read_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+            break;
+          }
+
+          // Compare
+          if (memcmp(write_data, read_data, sizeof(write_data)) == 0) {
+            test_results[_test] = true;
+          }
+  #else
           test_results[_test] = true;
+  #endif
         }
-#else
-        test_results[_test] = true;
-#endif
-      }
-      break;
-    default:
-      printf("ERROR: Unknown test: %d\n", _test);
-      break;
-  }
+        break;
+      default:
+        printf("ERROR: Unknown test: %d\n", _test);
+        break;
+    }
 
-  if (test_results[_test]) {
-    printf("TEST: %s PASS\n", _test_names[_test]);
-  } else {
-    printf("TEST: %s FAIL\n", _test_names[_test]);
+    if (test_results[_test]) {
+      printf("TEST: %s PASS\n", _test_names[_test]);
+    } else {
+      printf("TEST: %s FAIL\n", _test_names[_test]);
+    }
+    _test++;
   }
-  /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
-  /* USER CODE BEGIN 3 */
-  _test++;
+    /* USER CODE BEGIN 3 */
 
   unsigned failed = 0;
   for (unsigned i = 0; i < TEST_COUNT; i++) {
@@ -354,19 +363,19 @@ void SystemClock_Config(void)
   /** Configure LSE Drive Capability
   */
   HAL_PWR_EnableBkUpAccess();
-  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_HIGH);
+  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSE
                               |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
-  RCC_OscInitStruct.LSIDiv = RCC_LSI_DIV1;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 2;
   RCC_OscInitStruct.PLL.PLLN = 25;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
