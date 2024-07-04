@@ -19,7 +19,7 @@
 			"device": "stm32l552ce",
 			"runToEntryPoint": "main",
 			"servertype": "jlink",
-			"preLaunchTask": "Build",
+			"preLaunchTask": "Build: All",
 			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd"
 		},
 		{
@@ -37,7 +37,25 @@
 			"runToEntryPoint": "main",
 			"servertype": "external",
 			"gdbTarget": "localhost:1234",
-			"preLaunchTask": "Build"
-		}
+			"preLaunchTask": "Build: All"
+		},
+		{
+			"name": "Debug: PTSW",
+			"cwd": "${workspaceFolder}/firmware",
+			"executable": "${workspaceFolder}/firmware/build/ptsw/ptsw.elf",
+			"loadFiles": [
+				"${workspaceFolder}/firmware/build/ptsw/ptsw.elf"
+			],
+			"symbolFiles": [
+				"${workspaceFolder}/firmware/build/ptsw/ptsw.elf"
+			],
+			"request": "launch",
+			"type": "cortex-debug",
+			"device": "stm32l552ce",
+			"runToEntryPoint": "main",
+			"servertype": "jlink",
+			"preLaunchTask": "Build: All",
+			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd"
+		},
 	]
 }

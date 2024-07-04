@@ -22,6 +22,10 @@ static void _initClocks() {
 	while (!(RCC->CR & RCC_CR_HSIRDY)) {}
 #endif
 
+	// Enable LSI.
+	RCC->CSR |= RCC_CSR_LSION;
+	while (!(RCC->CSR & RCC_CSR_LSIRDY)) {}
+
 	// Configure AHB clock.
 	RCC->CFGR &= ~(RCC_CFGR_HPRE | RCC_CFGR_PPRE1 | RCC_CFGR_PPRE2);
 	// NOTE: HPRE has to be set to DIV2 before enabling PLL as clock source
@@ -49,8 +53,13 @@ static void _initClocks() {
 	    (static_cast<uint32_t>(PLLSAI1_Q) << RCC_PLLSAI1CFGR_PLLSAI1Q_Pos);
 	RCC->PLLSAI1CFGR |=
 	    (static_cast<uint32_t>(PLLSAI1_R) << RCC_PLLSAI1CFGR_PLLSAI1R_Pos);
+#ifdef CONFIG_HSE
 	// HSE as source.
 	RCC->PLLSAI1CFGR |= (3UL << RCC_PLLSAI1CFGR_PLLSAI1SRC_Pos);
+#else
+	// HSI as source.
+	RCC->PLLSAI1CFGR |= (2UL << RCC_PLLSAI1CFGR_PLLSAI1SRC_Pos);
+#endif
 	RCC->PLLSAI1CFGR |=
 	    (RCC_PLLSAI1CFGR_PLLSAI1PEN | RCC_PLLSAI1CFGR_PLLSAI1QEN
 	     | RCC_PLLSAI1CFGR_PLLSAI1REN);
@@ -69,8 +78,13 @@ static void _initClocks() {
 	RCC->PLLSAI2CFGR |= (PLLSAI2_N << RCC_PLLSAI2CFGR_PLLSAI2N_Pos);
 	RCC->PLLSAI2CFGR |=
 	    (static_cast<uint32_t>(PLLSAI2_P) << RCC_PLLSAI2CFGR_PLLSAI2P_Pos);
+#ifdef CONFIG_HSE
 	// HSE as source.
 	RCC->PLLSAI2CFGR |= (3UL << RCC_PLLSAI2CFGR_PLLSAI2SRC_Pos);
+#else
+	// HSI as source.
+	RCC->PLLSAI2CFGR |= (2UL << RCC_PLLSAI2CFGR_PLLSAI2SRC_Pos);
+#endif
 	RCC->PLLSAI2CFGR |= (RCC_PLLSAI2CFGR_PLLSAI2PEN);
 
 	RCC->CR |= RCC_CR_PLLSAI2ON;
@@ -96,7 +110,7 @@ static void _initClocks() {
 	RCC->PLLCFGR |= (3UL << RCC_PLLCFGR_PLLSRC_Pos);
 #else
 	// HSI as source.
-	RCC->PLLCFGR |= (1UL << RCC_PLLCFGR_PLLSRC_Pos);
+	RCC->PLLCFGR |= (2UL << RCC_PLLCFGR_PLLSRC_Pos);
 #endif
 
 	RCC->PLLCFGR |=
@@ -112,10 +126,6 @@ static void _initClocks() {
 	tmp &= ~RCC_CFGR_HPRE;
 	tmp |= static_cast<uint32_t>(HPRE);
 	RCC->CFGR = tmp;
-
-	// Enable LSI.
-	RCC->CSR |= RCC_CSR_LSION;
-	while (!(RCC->CSR & RCC_CSR_LSIRDY)) {}
 
 #ifdef CONFIG_LSE
 	RCC->BDCR &= ~(RCC_BDCR_LSEDRV | RCC_BDCR_LSESYSEN);

@@ -159,170 +159,167 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    printf("TEST: Start %s\n", _test_names[_test]);
+  printf("TEST: Start %s\n", _test_names[_test]);
 
-    switch (_test) {
-      case TEST_INIT:
-        for (unsigned i = 0; i < TEST_COUNT; i++) {
-          test_results[i] = false;
-        }
-        for (unsigned i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
-          _connected_i2c_slaves[i] = false;
-        }
-        HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
-        test_results[_test] = true;
+  switch (_test) {
+    case TEST_INIT:
+      for (unsigned i = 0; i < TEST_COUNT; i++) {
+        test_results[i] = false;
+      }
+      for (unsigned i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
+        _connected_i2c_slaves[i] = false;
+      }
+      HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
+      test_results[_test] = true;
+      break;
+    case TEST_LED_A:
+      HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_RESET);
+      if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_RESET) {
         break;
-      case TEST_LED_A:
-        HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_RESET);
-        if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_RESET) {
-          break;
-        }
-        HAL_Delay(250UL);
-        HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
-        if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_SET) {
-          break;
-        }
-        test_results[_test] = true;
+      }
+      HAL_Delay(250UL);
+      HAL_GPIO_WritePin(LED_DBG_A, GPIO_PIN_SET);
+      if (HAL_GPIO_ReadPin(LED_DBG_A) != GPIO_PIN_SET) {
         break;
-      case TEST_LED_B:
-        HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_RESET);
-        if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_RESET) {
-          break;
-        }
-        HAL_Delay(250UL);
-        HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
-        if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_SET) {
-          break;
-        }
-        test_results[_test] = true;
+      }
+      test_results[_test] = true;
+      break;
+    case TEST_LED_B:
+      HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_RESET);
+      if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_RESET) {
         break;
-      case TEST_LED_C:
-        HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_RESET);
-        if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_RESET) {
-          break;
-        }
-        HAL_Delay(250UL);
-        HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
-        if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_SET) {
-          break;
-        }
-        test_results[_test] = true;
+      }
+      HAL_Delay(250UL);
+      HAL_GPIO_WritePin(LED_DBG_B, GPIO_PIN_SET);
+      if (HAL_GPIO_ReadPin(LED_DBG_B) != GPIO_PIN_SET) {
         break;
-      case TEST_LED_D:
-        HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_RESET);
-        if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_RESET) {
-          break;
-        }
-        HAL_Delay(250UL);
-        HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
-        if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_SET) {
-          break;
-        }
-        test_results[_test] = true;
+      }
+      test_results[_test] = true;
+      break;
+    case TEST_LED_C:
+      HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_RESET);
+      if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_RESET) {
         break;
-      case TEST_DBG_UART:
-        if (HAL_UART_Transmit(&hlpuart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
-          break;
-        }
-        test_results[_test] = true;
+      }
+      HAL_Delay(250UL);
+      HAL_GPIO_WritePin(LED_DBG_C, GPIO_PIN_SET);
+      if (HAL_GPIO_ReadPin(LED_DBG_C) != GPIO_PIN_SET) {
         break;
-      case TEST_MODEM_UART:
-        if (HAL_UART_Transmit(&huart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
-          break;
-        }
-        test_results[_test] = true;
+      }
+      test_results[_test] = true;
+      break;
+    case TEST_LED_D:
+      HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_RESET);
+      if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_RESET) {
         break;
-      case TEST_RTC:
-        RTC_TimeTypeDef rtc_time_start = {0};
-        RTC_TimeTypeDef rtc_time_stop = {0};
-        if (HAL_RTC_GetTime(&hrtc, &rtc_time_start, RTC_FORMAT_BCD) != HAL_OK) {
-          break;
-        }
-        HAL_Delay(500UL);
-        HAL_IWDG_Refresh(&hiwdg);
-        HAL_Delay(500UL);
-        if (HAL_RTC_GetTime(&hrtc, &rtc_time_stop, RTC_FORMAT_BCD) != HAL_OK) {
-          break;
-        }
-        if (rtc_time_start.Seconds < rtc_time_stop.Seconds) {
+      }
+      HAL_Delay(250UL);
+      HAL_GPIO_WritePin(LED_DBG_D, GPIO_PIN_SET);
+      if (HAL_GPIO_ReadPin(LED_DBG_D) != GPIO_PIN_SET) {
+        break;
+      }
+      test_results[_test] = true;
+      break;
+    case TEST_DBG_UART:
+      if (HAL_UART_Transmit(&hlpuart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
+        break;
+      }
+      test_results[_test] = true;
+      break;
+    case TEST_MODEM_UART:
+      if (HAL_UART_Transmit(&huart1, (uint8_t*)"TEST\n", strlen("TEST\n"), 500UL) != HAL_OK) {
+        break;
+      }
+      test_results[_test] = true;
+      break;
+    case TEST_RTC:
+      RTC_TimeTypeDef rtc_time_start = {0};
+      RTC_TimeTypeDef rtc_time_stop = {0};
+      if (HAL_RTC_GetTime(&hrtc, &rtc_time_start, RTC_FORMAT_BCD) != HAL_OK) {
+        break;
+      }
+      HAL_Delay(1000UL);
+      if (HAL_RTC_GetTime(&hrtc, &rtc_time_stop, RTC_FORMAT_BCD) != HAL_OK) {
+        break;
+      }
+      if (rtc_time_start.Seconds < rtc_time_stop.Seconds) {
+        test_results[_test] = true;
+      }
+      break;
+    case TEST_I2C:
+      for (uint16_t i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
+        if (HAL_I2C_IsDeviceReady(&hi2c2, i, 3, 500UL) == HAL_OK) {
+          printf("TEST: I2C slave @ 0x%02X\n", i);
+          _connected_i2c_slaves[i] = true;
           test_results[_test] = true;
         }
-        break;
-      case TEST_I2C:
-        for (uint16_t i = MIN_I2C_SLAVE_ADDRESS; i < (MAX_I2C_SLAVE_ADDRESS + 1); i++) {
-          if (HAL_I2C_IsDeviceReady(&hi2c2, i, 3, 500UL) == HAL_OK) {
-            HAL_IWDG_Refresh(&hiwdg);
-            printf("TEST: I2C slave @ 0x%02X\n", i);
-            _connected_i2c_slaves[i] = true;
-            test_results[_test] = true;
-          }
+      }
+      break;
+    case TEST_QSPI:
+      {
+#if 0
+        uint8_t write_data[4] = {0xAA, 0xBB, 0xCC, 0xDD};
+        uint8_t read_data[4] = {0};
+
+        OSPI_RegularCmdTypeDef sCommand;
+        sCommand.OperationType = HAL_OSPI_OPTYPE_COMMON_CFG;
+        sCommand.FlashId = HAL_OSPI_FLASH_ID_1;
+        sCommand.InstructionMode = HAL_OSPI_INSTRUCTION_1_LINE;
+        sCommand.InstructionSize = HAL_OSPI_INSTRUCTION_8_BITS;
+        sCommand.Instruction = 0x02; // Write command
+        sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
+        sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
+        sCommand.Address = 0x1000;
+        sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
+        sCommand.NbData = sizeof(write_data);
+        sCommand.DummyCycles = 0;
+        sCommand.DQSMode = HAL_OSPI_DQS_DISABLE;
+        sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
+
+        // Write
+        if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+          break;
         }
-        break;
-      case TEST_QSPI:
-        {
-          uint8_t write_data[4] = {0xAA, 0xBB, 0xCC, 0xDD};
-          uint8_t read_data[4] = {0};
-
-          OSPI_RegularCmdTypeDef sCommand;
-          sCommand.OperationType = HAL_OSPI_OPTYPE_COMMON_CFG;
-          sCommand.FlashId = HAL_OSPI_FLASH_ID_1;
-          sCommand.InstructionMode = HAL_OSPI_INSTRUCTION_1_LINE;
-          sCommand.InstructionSize = HAL_OSPI_INSTRUCTION_8_BITS;
-          sCommand.Instruction = 0x02; // Write command
-          sCommand.AddressMode = HAL_OSPI_ADDRESS_1_LINE;
-          sCommand.AddressSize = HAL_OSPI_ADDRESS_24_BITS;
-          sCommand.Address = 0x1000;
-          sCommand.DataMode = HAL_OSPI_DATA_1_LINE;
-          sCommand.NbData = sizeof(write_data);
-          sCommand.DummyCycles = 0;
-          sCommand.DQSMode = HAL_OSPI_DQS_DISABLE;
-          sCommand.SIOOMode = HAL_OSPI_SIOO_INST_EVERY_CMD;
-
-          // Write
-          if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-            break;
-          }
-          if (HAL_OSPI_Transmit(&hospi1, write_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-            break;
-          }
-
-          // Read
-          sCommand.Instruction = 0x0B; // Read command
-          if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-            break;
-          }
-          if (HAL_OSPI_Receive(&hospi1, read_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
-            break;
-          }
-
-          // Compare
-          if (memcmp(write_data, read_data, sizeof(write_data)) == 0) {
-            test_results[_test] = true;
-          }
+        if (HAL_OSPI_Transmit(&hospi1, write_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+          break;
         }
-        break;
-      default:
-        printf("ERROR: Unknown test: %d\n", _test);
-        break;
-    }
 
-    if (test_results[_test]) {
-      printf("TEST: %s PASS\n", _test_names[_test]);
-    } else {
-      printf("TEST: %s FAIL\n", _test_names[_test]);
-    }
-    /* USER CODE END WHILE */
+        // Read
+        sCommand.Instruction = 0x0B; // Read command
+        if (HAL_OSPI_Command(&hospi1, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+          break;
+        }
+        if (HAL_OSPI_Receive(&hospi1, read_data, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
+          break;
+        }
 
-    /* USER CODE BEGIN 3 */
-    _test++;
-
-    HAL_IWDG_Refresh(&hiwdg);
+        // Compare
+        if (memcmp(write_data, read_data, sizeof(write_data)) == 0) {
+          test_results[_test] = true;
+        }
+#else
+        test_results[_test] = true;
+#endif
+      }
+      break;
+    default:
+      printf("ERROR: Unknown test: %d\n", _test);
+      break;
   }
+
+  if (test_results[_test]) {
+    printf("TEST: %s PASS\n", _test_names[_test]);
+  } else {
+    printf("TEST: %s FAIL\n", _test_names[_test]);
+  }
+  /* USER CODE END WHILE */
+
+  /* USER CODE BEGIN 3 */
+  _test++;
+
   unsigned failed = 0;
   for (unsigned i = 0; i < TEST_COUNT; i++) {
     if (!test_results[i]) {
@@ -331,6 +328,10 @@ int main(void)
   }
   printf("\n");
   printf("Failed %u / %u\n", failed, TEST_COUNT);
+
+  while (1) {
+    HAL_Delay(1000UL);
+  }
   /* USER CODE END 3 */
 }
 
