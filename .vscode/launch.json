@@ -20,7 +20,11 @@
 			"runToEntryPoint": "main",
 			"servertype": "jlink",
 			"preLaunchTask": "Build: All",
-			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd"
+			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd",
+			"preLaunchCommands": [
+				"monitor halt",
+				"monitor flash erase"
+			]
 		},
 		{
 			"name": "Debug: QEMU",
@@ -37,7 +41,11 @@
 			"runToEntryPoint": "main",
 			"servertype": "external",
 			"gdbTarget": "localhost:1234",
-			"preLaunchTask": "Build: All"
+			"preLaunchTask": "Build: All",
+			"preLaunchCommands": [
+				"monitor halt",
+				"monitor flash erase"
+			]
 		},
 		{
 			"name": "Debug: PTSW",
@@ -55,7 +63,11 @@
 			"runToEntryPoint": "main",
 			"servertype": "jlink",
 			"preLaunchTask": "Build: All",
-			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd"
+			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd",
+			"preLaunchCommands": [
+				"monitor halt",
+				"monitor flash erase"
+			]
 		},
 	]
 }

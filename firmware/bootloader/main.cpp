@@ -34,6 +34,7 @@ static inline bool _VerifyImage() {
 
 static void _Init() {
 	// TODO: Initialize system and peripherals.
+	SystemInit();
 }
 
 static void _Deinit() {

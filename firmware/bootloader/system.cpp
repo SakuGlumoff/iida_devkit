@@ -149,31 +149,31 @@ void Sleep(TickType ticks) {
 	}
 }
 
-extern "C" {
-	void SystemInit(void) {
-		_systickCounter = 0;
-		_initPwr();
-		_initClocks();
-		_initFlash();
+void SystemInit() {
 #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
-		// Set CP10 and CP11 full access.
-		SCB->CPACR |= ((3UL << 20U) | (3UL << 22U));
+	// Set CP10 and CP11 full access.
+	SCB->CPACR |= ((3UL << 20U) | (3UL << 22U));
 #endif
-	}
+	_systickCounter = 0;
+	_initFlash();
+	_initPwr();
+	_initClocks();
+}
 
-	void SystemDeinit(void) {
-		RCC->CR          = 0x00000063UL;
-		RCC->CFGR        = 0x00000000UL;
-		RCC->PLLCFGR     = 0x00001000UL;
-		RCC->PLLSAI1CFGR = 0x00001000UL;
-		RCC->PLLSAI2CFGR = 0x00001000UL;
-		RCC->APB1ENR1    = 0x00000000UL;
-		RCC->BDCR        = 0x00000000UL;
-		PWR->CR1         = 0x00000400UL;
-		FLASH->ACR       = 0x00000000UL;
-		SCB->CPACR &= ~((3UL << 20U) | (3UL << 22U));
-	}
+void SystemDeinit() {
+	RCC->CR          = 0x00000063UL;
+	RCC->CFGR        = 0x00000000UL;
+	RCC->PLLCFGR     = 0x00001000UL;
+	RCC->PLLSAI1CFGR = 0x00001000UL;
+	RCC->PLLSAI2CFGR = 0x00001000UL;
+	RCC->APB1ENR1    = 0x00000000UL;
+	RCC->BDCR        = 0x00000000UL;
+	PWR->CR1         = 0x00000400UL;
+	FLASH->ACR       = 0x00000000UL;
+	SCB->CPACR &= ~((3UL << 20U) | (3UL << 22U));
+}
 
+extern "C" {
 	void NMI_Handler(void) {
 		while (true) {}
 	}

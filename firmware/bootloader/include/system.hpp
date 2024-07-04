@@ -69,8 +69,8 @@ static constexpr HPREDiv  HPRE  = HPREDiv::DIV1;
 static constexpr PPRExDiv PPRE1 = PPRExDiv::DIV1;
 static constexpr PPRExDiv PPRE2 = PPRExDiv::DIV1;
 
-extern "C" void SystemInit();
-extern "C" void SystemDeinit();
+void SystemInit();
+void SystemDeinit();
 
 using TickType = uint64_t;
 
