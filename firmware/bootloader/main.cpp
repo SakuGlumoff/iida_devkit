@@ -2,7 +2,10 @@
 #include "bootloader.hpp"
 #include "debug_print.h"
 #include "memorymap.hpp"
+#include "pinmap.hpp"
+#include "stm32l552xx.h"
 #include "system.hpp"
+#include "uart.hpp"
 #include "ymodem.hpp"
 
 #include <cstdint>
@@ -44,6 +47,13 @@ static void _Deinit() {
 
 extern "C" int main() {
 	_Init();
+
+	Uart dbg_uart(LPUART1, DBG_UART_TX, DBG_UART_RX);
+
+	char const* const msg = "Bootloader started.";
+	for (size_t i = 0; i < strlen(msg); i++) {
+		dbg_uart.Putc(static_cast<uint8_t>(msg[i]));
+	}
 
 	while (true) {
 		bool imageGood = _VerifyImage();

@@ -14,6 +14,7 @@ set_target_properties(application PROPERTIES
 
 target_include_directories(application PRIVATE
 	${CMAKE_CURRENT_BINARY_DIR}/../include
+	${CMAKE_CURRENT_LIST_DIR}/include
 	${CMAKE_CURRENT_LIST_DIR}/../include
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/include
 	${CMAKE_CURRENT_LIST_DIR}/../lib/CMSIS_5/CMSIS/Core/Include

@@ -15,3 +15,11 @@
 #define LED_DBG_D_Port GPIOB
 #define LED_DBG_D_Pin  15
 #define LED_DBG_D      LED_DBG_D_Port, LED_DBG_D_Pin
+
+#define DBG_UART_TX_Port GPIOA
+#define DBG_UART_TX_Pin  2
+#define DBG_UART_TX      DBG_UART_TX_Port, DBG_UART_TX_Pin
+
+#define DBG_UART_RX_Port GPIOA
+#define DBG_UART_RX_Pin  3
+#define DBG_UART_RX      DBG_UART_RX_Port, DBG_UART_RX_Pin
