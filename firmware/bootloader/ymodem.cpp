@@ -65,11 +65,9 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 
 	switch (c) {
 		case CTRL_SOH:
-			DBG_PRINTF_DEBUG("Received SOH");
 			packetSize = PACKET_SIZE;
 			break;
 		case CTRL_EOT:
-			DBG_PRINTF_DEBUG("Received EOT");
 			return RECEIVE_RESULT_OK;
 		case CTRL_CANCEL:
 			ret = uart.Getc(c, timeout);
@@ -82,7 +80,6 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 			*len = 0UL;
 			return RECEIVE_RESULT_ERROR;
 		case CTRL_ABORT:
-			DBG_PRINTF_DEBUG("Received ABORT");
 			return RECEIVE_RESULT_ABORTED;
 		default:
 			return RECEIVE_RESULT_ERROR;
@@ -113,11 +110,6 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 	crc = _UpdateCrc16(crc, 0U);
 	crc &= 0xFFFFU;
 	if (static_cast<uint16_t>(crc) != crcValue) {
-		DBG_PRINTF_DEBUG(
-		    "CRC mismatch. Expected: %04X, received: %04X",
-		    crc,
-		    crcValue
-		);
 		return RECEIVE_RESULT_ERROR;
 	}
 
@@ -158,7 +150,6 @@ bool YModem::ReceiveNewAppImage() {
 			}
 			packetsReceived++;
 			if (len == 0UL) {
-				DBG_PRINTF_DEBUG("Acking EOT");
 				dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 				ret = true;
 				break;
@@ -172,20 +163,16 @@ bool YModem::ReceiveNewAppImage() {
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 			dbg_uart.Putc(CTRL_CRC, msToTicks(TIMEOUT));
 			// TODO: Process packetData
-			DBG_PRINTF_DEBUG("Packet %d", packetsReceived);
 			// ProcessPacket(packetData, len);
 		} else if (result == RECEIVE_RESULT_ABORTED) {
-			DBG_PRINTF_DEBUG("Acking abort");
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 		} else if (result == RECEIVE_RESULT_CANCELED) {
-			DBG_PRINTF_DEBUG("Confirming cancel");
 			dbg_uart.Putc(CTRL_CANCEL, msToTicks(TIMEOUT));
 			dbg_uart.Putc(CTRL_CANCEL, msToTicks(TIMEOUT));
 		} else {
 			errors++;
 			if (errors > 10UL) {
-				DBG_PRINTF_DEBUG("Too many errors");
 				dbg_uart.Putc(CTRL_CANCEL, msToTicks(TIMEOUT));
 				dbg_uart.Putc(CTRL_CANCEL, msToTicks(TIMEOUT));
 				errors = 0UL;
@@ -212,8 +199,6 @@ bool YModem::ReceiveNewAppImage() {
 			);
 		}
 	}
-
-	DBG_PRINTF_DEBUG("Returning %d", ret);
 
 	return ret;
 }
