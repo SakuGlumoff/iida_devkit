@@ -3,6 +3,7 @@
 #include "debug_print.h"
 #include "error.hpp"
 #include "memorymap.hpp"
+#include "stm32l552xx.h"
 #include "system.hpp"
 #include "ymodem.hpp"
 
@@ -48,11 +49,6 @@ static void _Deinit() {
 
 extern "C" int main() {
 	_Init();
-
-	while (true) {
-		DBG_PRINTF_DEBUG("Bootloader started.");
-		Sleep(1'000);
-	}
 
 	while (true) {
 		DBG_PRINTF_DEBUG("Testing image.");

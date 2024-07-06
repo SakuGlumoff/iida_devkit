@@ -55,11 +55,19 @@ class Uart {
 	USART_TypeDef* _uart;
 
 	void _DisableIrq() {
-		_uart->CR1 &= ~(USART_CR1_RXNEIE | USART_CR1_TXEIE);
+		if (_uart == USART1) {
+			__NVIC_DisableIRQ(USART1_IRQn);
+		} else if (_uart == LPUART1) {
+			__NVIC_DisableIRQ(LPUART1_IRQn);
+		}
 	}
 
 	void _EnableIrq() {
-		_uart->CR1 |= (USART_CR1_RXNEIE | USART_CR1_TXEIE);
+		if (_uart == USART1) {
+			__NVIC_EnableIRQ(USART1_IRQn);
+		} else if (_uart == LPUART1) {
+			__NVIC_EnableIRQ(LPUART1_IRQn);
+		}
 	}
 
 	public:

@@ -63,8 +63,7 @@ Uart::Uart(
 	}
 
 	_uart->CR1 = 0UL;
-	_uart->CR1 |=
-	    (USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE | USART_CR1_TXEIE);
+	_uart->CR1 |= (USART_CR1_TE | USART_CR1_RE | USART_CR1_FIFOEN);
 	_uart->CR2   = 0UL;
 	_uart->CR3   = 0UL;
 	_uart->PRESC = 0UL;
@@ -151,6 +150,7 @@ error_code_t Uart::Transmit(uint8_t* data, uint32_t size) {
 	_txRemaining = size - 1UL;
 	_txData      = data + 1UL;
 	_DisableIrq();
+	_uart->CR1 |= USART_CR1_TXEIE;
 	_txStarted = true;
 	_uart->TDR = *data;
 	_EnableIrq();
@@ -162,6 +162,7 @@ error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
 		return ERROR_BUSY;
 	}
 	_DisableIrq();
+	_uart->CR1 |= USART_CR1_RXNEIE;
 	_rxRemaining = size;
 	_rxData      = data;
 	_rxStarted   = true;
@@ -170,8 +171,8 @@ error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
 }
 
 void Uart::_IrqHandler(uint32_t isr) {
-	if (isr & USART_ISR_TXE) {
-		if (_txRemaining == 0UL && _txStarted) {
+	if ((isr & USART_ISR_TXE) && _txStarted) {
+		if (_txRemaining == 0UL) {
 			_txStarted = false;
 			if (_txCallback != nullptr) {
 				_txCallback(_txData, _txRemaining);
@@ -182,8 +183,8 @@ void Uart::_IrqHandler(uint32_t isr) {
 			_txRemaining--;
 		}
 	}
-	if (isr & USART_ISR_RXNE) {
-		if (_rxRemaining == 0UL && _rxStarted) {
+	if ((isr & USART_ISR_RXNE) && _rxStarted) {
+		if (_rxRemaining == 0UL) {
 			_rxStarted = false;
 			if (_rxCallback != nullptr) {
 				_rxCallback(_rxData, _rxRemaining);

@@ -2,10 +2,9 @@ file(GLOB SOURCES
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/*.cpp
 	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC/debug_print.c
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT/*.c
+	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT/*.S
 	${CMAKE_CURRENT_LIST_DIR}/*.cpp
 	${CMAKE_CURRENT_LIST_DIR}/*.s
-	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/*.c
-	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/*.S
 )
 
 add_executable(bootloader ${SOURCES})
@@ -30,6 +29,7 @@ target_include_directories(bootloader PRIVATE
 target_compile_definitions(bootloader PRIVATE
 	$<$<BOOL:QEMU>:-DQEMU>
 	SEGGER_RTT_SECTION=".segger_rtt"
+	SEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
 )
 
 target_compile_options(bootloader PRIVATE
