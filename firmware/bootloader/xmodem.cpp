@@ -48,6 +48,9 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 		case XModem::CTRL_SOH:
 			packetSize = XModem::PACKET_SIZE;
 			break;
+		case XModem::CTRL_STX:
+			packetSize = XModem::PACKET_1K_SIZE;
+			break;
 		case XModem::CTRL_EOT:
 			return RECEIVE_RESULT_OK;
 		case XModem::CTRL_CANCEL:

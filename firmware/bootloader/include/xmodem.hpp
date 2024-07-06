@@ -19,6 +19,7 @@ namespace XModem {
 
 	enum ControlCharacter : uint8_t {
 		CTRL_SOH    = 1,  // Start of Header
+		CTRL_STX    = 2,  // Start of Text (1K packet)
 		CTRL_EOT    = 4,  // End of Transmission
 		CTRL_ACK    = 6,  // Acknowledge
 		CTRL_NAK    = 21, // Negative Acknowledge

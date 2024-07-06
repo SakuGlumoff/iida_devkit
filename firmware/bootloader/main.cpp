@@ -50,12 +50,13 @@ static void _Deinit() {
 }
 
 static void _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
-	// TODO: Write the image to the flash memory.
 	DBG_PRINTF_DEBUG(
 	    "Writing %lu bytes of the new image to 0x%08X",
 	    size,
 	    _imageOffset
 	);
+
+	// TODO: Write the image to the flash memory.
 	(void)buffer;
 	(void)size;
 
