@@ -5,10 +5,12 @@
 #include "memorymap.hpp"
 #include "stm32l552xx.h"
 #include "system.hpp"
-#include "ymodem.hpp"
+#include "xmodem.hpp"
 
 #include <cstdint>
 #include <cstring>
+
+static uint32_t _imageOffset = 0;
 
 extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
 	return SEGGER_RTT_Write(0, debugMessage, length);
@@ -47,6 +49,19 @@ static void _Deinit() {
 	SystemDeinit();
 }
 
+static void _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
+	// TODO: Write the image to the flash memory.
+	DBG_PRINTF_DEBUG(
+	    "Writing %lu bytes of the new image to 0x%08X",
+	    size,
+	    _imageOffset
+	);
+	(void)buffer;
+	(void)size;
+
+	_imageOffset += size;
+}
+
 extern "C" int main() {
 	_Init();
 
@@ -62,8 +77,9 @@ extern "C" int main() {
 			DBG_PRINTF_DEBUG("Starting application.");
 			StartApplication();
 		}
-		DBG_PRINTF_DEBUG("Image is bad -> waiting for new image.");
-		YModem::ReceiveNewAppImage();
+		DBG_PRINTF_DEBUG("No valid image found.");
+		_imageOffset = 0UL;
+		XModem::DownloadImage(_HandleNewImagePacket);
 	}
 
 	PANIC("Bootloader failed to start application.");

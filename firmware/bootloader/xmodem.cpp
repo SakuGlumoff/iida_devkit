@@ -1,4 +1,4 @@
-#include "ymodem.hpp"
+#include "xmodem.hpp"
 
 #include "errno.hpp"
 #include "pinmap.hpp"
@@ -7,26 +7,7 @@
 #include <cstdint>
 #include <cstring>
 
-enum ControlCharacter : uint8_t {
-	CTRL_SOH    = 1,  // Start of Header
-	CTRL_EOT    = 4,  // End of Transmission
-	CTRL_ACK    = 6,  // Acknowledge
-	CTRL_NAK    = 21, // Negative Acknowledge
-	CTRL_CANCEL = 24, // Cancel
-	CTRL_ABORT  = 65, // Abort
-	CTRL_CRC    = 67, // Cyclic Redundancy Check
-};
-
-static constexpr uint32_t CONTROL_SIZE  = 1UL;
-static constexpr uint32_t BLOCK_ID_SIZE = 2UL;
-static constexpr uint32_t DATA_SIZE     = 128UL;
-static constexpr uint32_t DATA_1K_SIZE  = 1'024UL;
-static constexpr uint32_t CRC_SIZE      = 2UL;
-static constexpr uint32_t PACKET_SIZE =
-    CONTROL_SIZE + BLOCK_ID_SIZE + DATA_SIZE + CRC_SIZE;
-static constexpr uint32_t PACKET_1K_SIZE =
-    CONTROL_SIZE + BLOCK_ID_SIZE + DATA_1K_SIZE + CRC_SIZE;
-static constexpr TickType TIMEOUT = msToTicks(1'000UL * 10UL);
+static XModem::Callback _newPacketCb = nullptr;
 
 static constexpr uint16_t
 _UpdateCrc16(uint16_t const crcIn, uint8_t const byte) {
@@ -64,22 +45,22 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 	}
 
 	switch (c) {
-		case CTRL_SOH:
-			packetSize = PACKET_SIZE;
+		case XModem::CTRL_SOH:
+			packetSize = XModem::PACKET_SIZE;
 			break;
-		case CTRL_EOT:
+		case XModem::CTRL_EOT:
 			return RECEIVE_RESULT_OK;
-		case CTRL_CANCEL:
+		case XModem::CTRL_CANCEL:
 			ret = uart.Getc(c, timeout);
 			if (ret != ERROR_NONE) {
 				return RECEIVE_RESULT_ERROR;
 			}
-			if (c == CTRL_CANCEL) {
+			if (c == XModem::CTRL_CANCEL) {
 				return RECEIVE_RESULT_CANCELED;
 			}
 			*len = 0UL;
 			return RECEIVE_RESULT_ERROR;
-		case CTRL_ABORT:
+		case XModem::CTRL_ABORT:
 			return RECEIVE_RESULT_ABORTED;
 		default:
 			return RECEIVE_RESULT_ERROR;
@@ -102,8 +83,8 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 
 	uint16_t crcValue = (data[packetSize - 2] << 8) | data[packetSize - 1];
 	uint32_t crc      = 0U;
-	uint32_t i        = (CONTROL_SIZE + BLOCK_ID_SIZE);
-	for (; i < (packetSize - CRC_SIZE); i++) {
+	uint32_t i        = (XModem::DATA_INDEX);
+	for (; i < (packetSize - XModem::CRC_SIZE); i++) {
 		crc = _UpdateCrc16(crc, data[i]);
 	}
 	crc = _UpdateCrc16(crc, 0U);
@@ -116,13 +97,13 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 	return RECEIVE_RESULT_OK;
 }
 
-bool YModem::ReceiveNewAppImage() {
-	bool ret = false;
-
+bool XModem::DownloadImage(XModem::Callback newPacketCb) {
+	bool ret     = false;
+	_newPacketCb = newPacketCb;
 	Uart dbg_uart(LPUART1, DBG_UART_TX, DBG_UART_RX);
 
 	char const* const greetingMsg =
-	    "\r\nUpload image using YModem protocol.\r\n>";
+	    "\r\nUpload image using the XModem protocol.\r\n>";
 	for (size_t i = 0; i < strlen(greetingMsg); i++) {
 		dbg_uart.Putc(
 		    static_cast<uint8_t>(greetingMsg[i]),
@@ -162,8 +143,12 @@ bool YModem::ReceiveNewAppImage() {
 			}
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 			dbg_uart.Putc(CTRL_CRC, msToTicks(TIMEOUT));
-			// TODO: Process packetData
-			// ProcessPacket(packetData, len);
+			if (_newPacketCb != nullptr) {
+				_newPacketCb(
+				    &packetData[XModem::DATA_INDEX],
+				    len - DATA_INDEX - CRC_SIZE
+				);
+			}
 		} else if (result == RECEIVE_RESULT_ABORTED) {
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
