@@ -1,11 +1,9 @@
 #include "SEGGER_RTT.h"
 #include "bootloader.hpp"
 #include "debug_print.h"
+#include "error.hpp"
 #include "memorymap.hpp"
-#include "pinmap.hpp"
-#include "stm32l552xx.h"
 #include "system.hpp"
-#include "uart.hpp"
 #include "ymodem.hpp"
 
 #include <cstdint>
@@ -20,51 +18,59 @@ static inline bool _VerifyImage() {
 	    (reinterpret_cast<AppHeader*>(APP_HEADER_START));
 
 	if (appHeader->id != APP_HEADER_ID) {
+		DBG_PRINTF_DEBUG("Invalid application header ID.");
 		return false;
 	}
 
 	if (appHeader->crc != CalculateAppCrc32(appHeader->size)) {
+		DBG_PRINTF_DEBUG("Invalid application CRC.");
 		return false;
 	}
 
+	DBG_PRINTF_DEBUG("Application image verified.");
 	return true;
 }
 
+/**
+ * @brief Initialize system and peripherals.
+ */
 static void _Init() {
-	// TODO: Initialize system and peripherals.
 	SystemInit();
 	SEGGER_RTT_Init();
 }
 
+/**
+ * @brief Deinitialize system and peripherals.
+ */
 static void _Deinit() {
-	// TODO: Initialize system and peripherals.
 	SystemDeinit();
 }
 
 extern "C" int main() {
 	_Init();
 
-	DBG_PRINTF_DEBUG("Bootloader started.");
-
-	Uart dbg_uart(LPUART1, DBG_UART_TX, DBG_UART_RX);
-
-	char const* const msg = "Bootloader started.";
-	for (size_t i = 0; i < strlen(msg); i++) {
-		dbg_uart.Putc(static_cast<uint8_t>(msg[i]));
+	while (true) {
+		DBG_PRINTF_DEBUG("Bootloader started.");
+		Sleep(1'000);
 	}
 
 	while (true) {
+		DBG_PRINTF_DEBUG("Testing image.");
 		bool imageGood = _VerifyImage();
 		if (imageGood) {
-			// Firmware installed.
+			DBG_PRINTF_DEBUG("Image is good.");
 
-			// Disable peripherals before jumping to it.
+			DBG_PRINTF_DEBUG("Disabling peripherals.");
 			_Deinit();
 
+			DBG_PRINTF_DEBUG("Starting application.");
 			StartApplication();
 		}
+		DBG_PRINTF_DEBUG("Image is bad -> waiting for new image.");
 		YModem::ReceiveNewAppImage();
 	}
+
+	PANIC("Bootloader failed to start application.");
 
 	return 0;
 }

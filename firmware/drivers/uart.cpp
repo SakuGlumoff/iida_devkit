@@ -106,12 +106,17 @@ Uart::RegisterCallback(Uart::Callbacks type, Uart::Callback callback) {
 	return ERROR_NONE;
 }
 
-error_code_t Uart::Getc(uint8_t& c) {
+error_code_t Uart::Getc(uint8_t& c, TickType timeout) {
 	if (_rxRemaining != 0UL) {
 		return ERROR_BUSY;
 	}
 	_DisableIrq();
+	TickType timeoutEnd = GetTicks() + timeout;
 	while (!(_uart->ISR & USART_ISR_RXNE)) {
+		if (GetTicks() >= timeoutEnd) {
+			_EnableIrq();
+			return ERROR_TIMEOUT;
+		}
 		__NOP();
 	}
 	c = _uart->RDR;
@@ -119,14 +124,19 @@ error_code_t Uart::Getc(uint8_t& c) {
 	return ERROR_NONE;
 }
 
-error_code_t Uart::Putc(uint8_t c) {
+error_code_t Uart::Putc(uint8_t c, TickType timeout) {
 	if (_txRemaining != 0UL) {
 		return ERROR_BUSY;
 	}
 	_DisableIrq();
 	_uart->ICR |= USART_ICR_TCCF;
-	_uart->TDR = c;
+	_uart->TDR          = c;
+	TickType timeoutEnd = GetTicks() + timeout;
 	while (!(_uart->ISR & USART_ISR_TC)) {
+		if (GetTicks() >= timeoutEnd) {
+			_EnableIrq();
+			return ERROR_TIMEOUT;
+		}
 		__NOP();
 	}
 	_uart->ICR |= USART_ICR_TCCF;

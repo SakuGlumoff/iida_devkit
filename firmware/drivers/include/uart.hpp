@@ -3,6 +3,7 @@
 #include "errno.hpp"
 #include "gpio.hpp"
 #include "stm32l552xx.h"
+#include "system.hpp"
 
 #include <cstdint>
 
@@ -34,8 +35,8 @@ class Uart {
 
 	error_code_t RegisterCallback(Callbacks type, Callback callback);
 
-	error_code_t Getc(uint8_t& c);
-	error_code_t Putc(uint8_t c);
+	error_code_t Getc(uint8_t& c, TickType timeout = 0UL);
+	error_code_t Putc(uint8_t c, TickType timeout = 0UL);
 
 	error_code_t Transmit(uint8_t* data, uint32_t size);
 	error_code_t Receive(uint8_t* data, uint32_t size);

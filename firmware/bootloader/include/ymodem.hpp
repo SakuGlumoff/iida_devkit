@@ -4,4 +4,4 @@
 
 namespace YModem {
 	bool ReceiveNewAppImage();
-}
+} // namespace YModem

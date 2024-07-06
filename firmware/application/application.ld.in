@@ -1,6 +1,6 @@
 ENTRY(Reset_Handler)
 
-_STACK_SIZE = 0x400;
+_STACK_SIZE = 0x1000;
 
 MEMORY
 {

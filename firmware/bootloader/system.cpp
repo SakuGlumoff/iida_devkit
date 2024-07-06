@@ -11,6 +11,11 @@ static void _initPwr() {
 	PWR->CR1 |= PWR_CR1_DBP;
 }
 
+static void _deinitPwr() {
+	RCC->BDCR = 0x00000000UL;
+	PWR->CR1  = 0x00000400UL;
+}
+
 static void _initClocks() {
 #ifdef CONFIG_HSE
 	// Enable HSE.
@@ -137,9 +142,41 @@ static void _initClocks() {
 #endif
 }
 
+static void _deinitClocks() {
+	RCC->CR          = 0x00000063UL;
+	RCC->CFGR        = 0x00000000UL;
+	RCC->PLLCFGR     = 0x00001000UL;
+	RCC->PLLSAI1CFGR = 0x00001000UL;
+	RCC->PLLSAI2CFGR = 0x00001000UL;
+	RCC->APB1ENR1    = 0x00000000UL;
+}
+
 static void _initFlash() {
 	FLASH->ACR &= ~FLASH_ACR_LATENCY;
 	FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
+}
+
+static void _deinitFlash() {
+	FLASH->ACR = 0x00000000UL;
+}
+
+static void _initSysTick() {
+	SysTick->LOAD = (SYSCLK_HZ / 1'000UL) - 1UL;
+	SysTick->VAL  = 0UL;
+	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk
+	              | SysTick_CTRL_ENABLE_Msk;
+	__NVIC_EnableIRQ(SysTick_IRQn);
+}
+
+static void _deinitSysTick() {
+	SysTick->CTRL = 0UL;
+	SysTick->LOAD = 0UL;
+	SysTick->VAL  = 0UL;
+	__NVIC_DisableIRQ(SysTick_IRQn);
+}
+
+TickType GetTicks() {
+	return _systickCounter;
 }
 
 void Sleep(TickType ticks) {
@@ -158,18 +195,14 @@ void SystemInit() {
 	_initFlash();
 	_initPwr();
 	_initClocks();
+	_initSysTick();
 }
 
 void SystemDeinit() {
-	RCC->CR          = 0x00000063UL;
-	RCC->CFGR        = 0x00000000UL;
-	RCC->PLLCFGR     = 0x00001000UL;
-	RCC->PLLSAI1CFGR = 0x00001000UL;
-	RCC->PLLSAI2CFGR = 0x00001000UL;
-	RCC->APB1ENR1    = 0x00000000UL;
-	RCC->BDCR        = 0x00000000UL;
-	PWR->CR1         = 0x00000400UL;
-	FLASH->ACR       = 0x00000000UL;
+	_deinitClocks();
+	_deinitPwr();
+	_deinitFlash();
+	_deinitSysTick();
 	SCB->CPACR &= ~((3UL << 20U) | (3UL << 22U));
 }
 

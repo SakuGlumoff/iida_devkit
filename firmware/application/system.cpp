@@ -142,6 +142,10 @@ static void _initFlash() {
 	FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
 }
 
+TickType GetTicks() {
+	return _systickCounter;
+}
+
 void Sleep(TickType ticks) {
 	TickType end = _systickCounter + ticks;
 	while (_systickCounter < end) {
