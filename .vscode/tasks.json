@@ -22,7 +22,7 @@
 			"type": "shell",
 			"command": [
 				"cd firmware",
-				"&& cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DQEMU=${input:qemu}"
+				"&& cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DCONFIG_QEMU=${input:qemu}"
 			]
 		},
 		{

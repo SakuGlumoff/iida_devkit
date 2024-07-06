@@ -15,17 +15,14 @@ set(MCU_OPT
 	-mthumb
 )
 
-option(QEMU "Build for QEMU" OFF)
+option(CONFIG_QEMU "Build for QEMU" OFF)
 option(CONFIG_HSE "Use HSE" OFF)
-option(CONFIG_LED "Use LEDs" ON)
-option(CONFIG_UART "Use UART" ON)
-option(CONFIG_I2C "Use I2C" ON)
-option(CONFIG_SPI "Use SPI" ON)
-option(CONFIG_MCP9808 "Use MCP9808" ON)
+option(CONFIG_EXT_FLASH "Use external flash" OFF)
+option(CONFIG_MCP9808 "Use MCP9808" OFF)
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/include/config.hpp.in include/config.hpp)
 
-if (QEMU)
+if (CONFIG_QEMU)
 	include(${CMAKE_CURRENT_LIST_DIR}/cmake/qemu/memory.cmake)
 else()
 	include(${CMAKE_CURRENT_LIST_DIR}/cmake/stm32l552xx/memory.cmake)

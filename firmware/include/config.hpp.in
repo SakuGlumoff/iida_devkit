@@ -17,19 +17,8 @@
 // HSE enabled
 #cmakedefine CONFIG_HSE @CONFIG_HSE@
 
-// LEDs enabled
-#cmakedefine CONFIG_LED @CONFIG_LED@
-
-// UART enabled
-#cmakedefine CONFIG_UART @CONFIG_UART@
-
-// I2C enabled
-#cmakedefine CONFIG_I2C @CONFIG_I2C@
-
-// SPI enabled
-#cmakedefine CONFIG_SPI @CONFIG_SPI@
+// External flash enabled
+#cmakedefine CONFIG_EXT_FLASH @CONFIG_EXT_FLASH@
 
 // MCP9808 enabled
 #cmakedefine CONFIG_MCP9808 @CONFIG_MCP9808@
-
-// clang-format on

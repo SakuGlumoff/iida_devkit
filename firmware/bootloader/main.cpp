@@ -12,12 +12,7 @@
 #include <cstring>
 
 extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
-#ifdef CONFIG_UART
-	// TODO: Print using UART.
-#else
-	SEGGER_RTT_Write(0, debugMessage, length);
-	return 0;
-#endif
+	return SEGGER_RTT_Write(0, debugMessage, length);
 }
 
 static inline bool _VerifyImage() {
@@ -38,6 +33,7 @@ static inline bool _VerifyImage() {
 static void _Init() {
 	// TODO: Initialize system and peripherals.
 	SystemInit();
+	SEGGER_RTT_Init();
 }
 
 static void _Deinit() {
@@ -47,6 +43,8 @@ static void _Deinit() {
 
 extern "C" int main() {
 	_Init();
+
+	DBG_PRINTF_DEBUG("Bootloader started.");
 
 	Uart dbg_uart(LPUART1, DBG_UART_TX, DBG_UART_RX);
 

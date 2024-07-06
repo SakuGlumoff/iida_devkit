@@ -4,8 +4,9 @@ _STACK_SIZE = 0x400;
 
 MEMORY
 {
-	RAM   (rwx): ORIGIN = @APP_RAM_START@,  LENGTH = @APP_RAM_SIZE@
-	FLASH (rx):  ORIGIN = @APP_CODE_START@, LENGTH = @APP_CODE_SIZE@
+	SEGGER_RTT (rwx): ORIGIN = @SEGGER_RTT_START@, LENGTH = @SEGGER_RTT_SIZE@
+	RAM        (rwx): ORIGIN = @APP_RAM_START@,    LENGTH = @APP_RAM_SIZE@
+	FLASH      (rx):  ORIGIN = @APP_CODE_START@,   LENGTH = @APP_CODE_SIZE@
 }
 
 SECTIONS
@@ -130,4 +131,9 @@ SECTIONS
 	{
 		*(.ARM.attributes)
 	}
+
+	.segger_rtt (NOLOAD) :
+	{
+		KEEP(*(.segger_rtt))
+	} > SEGGER_RTT
 }

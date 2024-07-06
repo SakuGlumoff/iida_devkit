@@ -27,6 +27,11 @@ target_include_directories(bootloader PRIVATE
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/Config
 )
 
+target_compile_definitions(bootloader PRIVATE
+	$<$<BOOL:QEMU>:-DQEMU>
+	SEGGER_RTT_SECTION=".segger_rtt"
+)
+
 target_compile_options(bootloader PRIVATE
 	${MCU_OPT}
 	-fdata-sections
@@ -38,7 +43,6 @@ target_compile_options(bootloader PRIVATE
 	$<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions -fno-rtti>
 	$<$<CONFIG:Debug>:-O0 -g3>
 	$<$<CONFIG:Release>:-Og -g0>
-	$<$<BOOL:QEMU>:-DQEMU>
 )
 
 target_link_options(bootloader PRIVATE
