@@ -26,7 +26,7 @@ _UpdateCrc16(uint16_t const crcIn, uint8_t const byte) {
 	return crc & 0xFFFFU;
 }
 
-enum ReceiveResult : int {
+enum ReceiveResult : uint32_t {
 	RECEIVE_RESULT_OK = 0,
 	RECEIVE_RESULT_ERROR,
 	RECEIVE_RESULT_CANCELED,
