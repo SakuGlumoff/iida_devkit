@@ -13,6 +13,10 @@
 static uint32_t _imageOffset = 0;
 
 extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
+	unsigned avail = SEGGER_RTT_GetAvailWriteSpace(0);
+	if (avail < length) {
+		return DBG_PRINT_BUFFER_TOO_SMALL;
+	}
 	return SEGGER_RTT_Write(0, debugMessage, length);
 }
 
