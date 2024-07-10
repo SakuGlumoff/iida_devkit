@@ -13,7 +13,6 @@ class Uart {
 		ERROR_BUSY = 1,
 		ERROR_TIMEOUT,
 		ERROR_INVALID_ARGUMENT,
-		ERROR_COUNT
 	};
 
 	enum class Callbacks {
@@ -33,12 +32,59 @@ class Uart {
 	);
 	~Uart();
 
+	/**
+	 * @brief Register a callback for the UART.
+	 *
+	 * @param[in] type     Type of callback.
+	 * @param[in] callback Callback function.
+	 *
+	 * @return error_code_t ERROR_NONE if successful. Otherwise, an error
+	 *                      code of Uart::Error.
+	 */
 	error_code_t RegisterCallback(Callbacks type, Callback callback);
 
+	/**
+	 * @brief Get a character from the UART.
+	 *
+	 * @param[out] c       Character received.
+	 * @param[in]  timeout Timeout in ticks.
+	 *
+	 * @return error_code_t ERROR_NONE if succesful. Otherwise, an error
+	 *                      code of Uart::Error.
+	 */
 	error_code_t Getc(uint8_t& c, TickType timeout = 0UL);
+
+	/**
+	 * @brief Put a character to the UART.
+	 *
+	 * @param[in] c       Character to send.
+	 * @param[in] timeout Timeout in ticks.
+	 *
+	 * @return error_code_t ERROR_NONE if successful. Otherwise, an error
+	 *                      code of Uart::Error.
+	 */
 	error_code_t Putc(uint8_t c, TickType timeout = 0UL);
 
+	/**
+	 * @brief Transmit data over the UART.
+	 *
+	 * @param[in] data Data to transmit.
+	 * @param[in] size Size of the data to transmit.
+	 *
+	 * @return error_code_t ERROR_NONE if successful. Otherwise, an error
+	 *                      code of Uart::Error.
+	 */
 	error_code_t Transmit(uint8_t* data, uint32_t size);
+
+	/**
+	 * @brief Receive data over the UART.
+	 *
+	 * @param[in,out] data Data received.
+	 * @param[in]  size Size of the data to receive.
+	 *
+	 * @return error_code_t ERROR_NONE if successful. Otherwise, an error
+	 *                      code of Uart::Error.
+	 */
 	error_code_t Receive(uint8_t* data, uint32_t size);
 
 	private:
@@ -73,5 +119,12 @@ class Uart {
 	}
 
 	public:
+	/**
+	 * @brief IRQ handler for the UART instance.
+	 *
+	 * @note DO NOT CALL THIS YOURSELF! This is called by the IRQ handler
+	 *       and has to be a public method to be callable by the IRQ
+	 *       handler.
+	 */
 	void _IrqHandler(uint32_t isr);
 };

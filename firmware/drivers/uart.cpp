@@ -13,6 +13,10 @@ enum UartInstance {
 	UART_INSTANCE_COUNT
 };
 
+/**
+ * @brief Instance storage for UART interrupts.
+ *        This array is used to dispatch interrupts to the correct instance.
+ */
 static Uart* _uartInstances[UART_INSTANCE_COUNT] = {nullptr, nullptr};
 
 Uart::Uart(
@@ -91,6 +95,7 @@ Uart::~Uart() {
 	} else {
 		PANIC("Unsupported UART");
 	}
+	// NOTE: GPIO deinitialization is done in the Gpio destructor.
 }
 
 error_code_t
@@ -110,14 +115,14 @@ Uart::RegisterCallback(Uart::Callbacks type, Uart::Callback callback) {
 
 error_code_t Uart::Getc(uint8_t& c, TickType timeout) {
 	if (_rxRemaining != 0UL) {
-		return ERROR_BUSY;
+		return -ERROR_BUSY;
 	}
 	_DisableIrq();
 	TickType timeoutEnd = GetTicks() + timeout;
 	while (!(_uart->ISR & USART_ISR_RXNE)) {
 		if (GetTicks() >= timeoutEnd) {
 			_EnableIrq();
-			return ERROR_TIMEOUT;
+			return -ERROR_TIMEOUT;
 		}
 		__NOP();
 	}
@@ -128,7 +133,7 @@ error_code_t Uart::Getc(uint8_t& c, TickType timeout) {
 
 error_code_t Uart::Putc(uint8_t c, TickType timeout) {
 	if (_txRemaining != 0UL) {
-		return ERROR_BUSY;
+		return -ERROR_BUSY;
 	}
 	_DisableIrq();
 	_uart->ICR |= USART_ICR_TCCF;
@@ -137,7 +142,7 @@ error_code_t Uart::Putc(uint8_t c, TickType timeout) {
 	while (!(_uart->ISR & USART_ISR_TC)) {
 		if (GetTicks() >= timeoutEnd) {
 			_EnableIrq();
-			return ERROR_TIMEOUT;
+			return -ERROR_TIMEOUT;
 		}
 		__NOP();
 	}
@@ -147,8 +152,11 @@ error_code_t Uart::Putc(uint8_t c, TickType timeout) {
 }
 
 error_code_t Uart::Transmit(uint8_t* data, uint32_t size) {
+	if (data == nullptr) {
+		return -ERROR_INVALID_ARGUMENT;
+	}
 	if (_txRemaining != 0UL) {
-		return ERROR_BUSY;
+		return -ERROR_BUSY;
 	}
 	_txRemaining = size - 1UL;
 	_txData      = data + 1UL;
@@ -161,8 +169,11 @@ error_code_t Uart::Transmit(uint8_t* data, uint32_t size) {
 }
 
 error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
+	if (data == nullptr) {
+		return -ERROR_INVALID_ARGUMENT;
+	}
 	if (_rxRemaining != 0UL) {
-		return ERROR_BUSY;
+		return -ERROR_BUSY;
 	}
 	_DisableIrq();
 	_uart->CR1 |= USART_CR1_RXNEIE;
