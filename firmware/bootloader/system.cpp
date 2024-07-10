@@ -154,6 +154,15 @@ static void _deinitClocks() {
 static void _initFlash() {
 	FLASH->ACR &= ~FLASH_ACR_LATENCY;
 	FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
+	// Unlock the flash registers.
+	FLASH->NSKEYR  = 0x45670123UL;
+	FLASH->NSKEYR  = 0xCDEF89ABUL;
+	FLASH->OPTKEYR = 0x08192A3BUL;
+	FLASH->OPTKEYR = 0x4C5D6E7FUL;
+	// Set to single bank mode.
+	FLASH->OPTR &= ~FLASH_OPTR_DBANK;
+	// And lock them again.
+	FLASH->NSCR |= (FLASH_NSCR_OPTLOCK | FLASH_NSCR_NSLOCK);
 }
 
 static void _deinitFlash() {

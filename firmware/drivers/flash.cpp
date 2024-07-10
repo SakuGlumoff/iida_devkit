@@ -9,7 +9,7 @@
 namespace Flash {
 	constexpr uint32_t _FLASH_KEY1      = 0x45670123UL;
 	constexpr uint32_t _FLASH_KEY2      = 0xCDEF89ABUL;
-	constexpr uint32_t _FLASH_PAGE_SIZE = 1'024UL * 4UL;
+	constexpr uint32_t _FLASH_PAGE_SIZE = 0x1000UL;
 
 	inline void _Unlock() {
 		FLASH->NSKEYR = _FLASH_KEY1;
@@ -36,7 +36,7 @@ namespace Flash {
 	}
 
 	inline constexpr uint32_t _GetPage(uint32_t const address) {
-		return address / _FLASH_PAGE_SIZE;
+		return (address - DEVICE_FLASH_START) / _FLASH_PAGE_SIZE;
 	}
 
 	inline void _WriteDword(uint32_t const address, uint64_t const data) {
@@ -45,11 +45,15 @@ namespace Flash {
 		_WaitBusy();
 		_ClearFlags();
 		FLASH->NSCR |= FLASH_NSCR_NSPG;
+#if 0
+		uint32_t dword[2] = {0UL, 0UL};
+		memcpy(dword, &data, sizeof(uint64_t));
+		*reinterpret_cast<uint32_t*>(address)       = dword[0];
+		*reinterpret_cast<uint32_t*>(address + 4UL) = dword[1];
+#else
 		*reinterpret_cast<uint64_t*>(address) = data;
+#endif
 		_WaitBusy();
-		while (FLASH->NSSR & FLASH_NSSR_NSEOP) {
-			__NOP();
-		}
 		FLASH->NSCR &= ~FLASH_NSCR_NSPG;
 
 		_Lock();
@@ -73,6 +77,8 @@ namespace Flash {
 			_WaitBusy();
 			// Clear the PER bit to prevent accidents.
 			FLASH->NSCR &= ~FLASH_NSCR_NSPER;
+			// Clear the page number to prevent accidents.
+			FLASH->NSCR &= ~FLASH_NSCR_NSPNB;
 		}
 
 		_Lock();
@@ -100,8 +106,10 @@ namespace Flash {
 		uint32_t     startPage = _GetPage(address);
 		uint32_t     endPage   = _GetPage(address + size);
 		uint32_t     written   = 0UL;
-		for (uint32_t i = startPage; i < endPage; i++) {
-			uint32_t currentPageAddress = i * _FLASH_PAGE_SIZE;
+		uint32_t     page      = startPage;
+		do {
+			uint32_t currentPageAddress =
+			    DEVICE_FLASH_START + (page * _FLASH_PAGE_SIZE);
 
 			// Read the current page into a buffer.
 			uint8_t buffer[_FLASH_PAGE_SIZE];
@@ -118,8 +126,33 @@ namespace Flash {
 			}
 
 			// Modify that page
+			uint32_t offset = 0UL;
+			if (page == startPage) {
+				offset = (address - DEVICE_FLASH_START)
+				       - (startPage * _FLASH_PAGE_SIZE);
+			}
+			for (uint32_t i = offset; i < _FLASH_PAGE_SIZE; i++) {
+				if (written >= size) {
+					break;
+				}
+				buffer[i] = data[written];
+				written++;
+			}
 
 			// Write that page
-		}
+			for (uint32_t i = 0; i < _FLASH_PAGE_SIZE;
+			     i += sizeof(uint64_t)) {
+				uint64_t dword = 0ULL;
+				memcpy(&dword, buffer + i, sizeof(uint64_t));
+				if (dword == 0xFFFFFFFFFFFFFFFFULL) {
+					continue;
+				}
+				_WriteDword(currentPageAddress + i, dword);
+			}
+
+			page++;
+		} while (page <= endPage);
+
+		return ERROR_NONE;
 	}
 }; // namespace Flash
