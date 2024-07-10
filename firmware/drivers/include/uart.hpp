@@ -44,7 +44,9 @@ class Uart {
 	private:
 	Callback       _txCallback  = nullptr;
 	Callback       _rxCallback  = nullptr;
+	uint32_t       _txSent      = 0UL;
 	uint32_t       _txRemaining = 0UL;
+	uint32_t       _rxReceived  = 0UL;
 	uint32_t       _rxRemaining = 0UL;
 	uint8_t*       _txData      = nullptr;
 	uint8_t*       _rxData      = nullptr;

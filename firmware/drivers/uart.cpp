@@ -63,7 +63,9 @@ Uart::Uart(
 	}
 
 	_uart->CR1 = 0UL;
-	_uart->CR1 |= (USART_CR1_TE | USART_CR1_RE | USART_CR1_FIFOEN);
+	_uart->CR1 |=
+	    (USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE_RXFNEIE
+	     | USART_CR1_TCIE);
 	_uart->CR2   = 0UL;
 	_uart->CR3   = 0UL;
 	_uart->PRESC = 0UL;
@@ -74,6 +76,7 @@ Uart::Uart(
 }
 
 Uart::~Uart() {
+	_DisableIrq();
 	_uart->CR1 &= ~USART_CR1_UE;
 	_uart->BRR = 0UL;
 	_uart->CR3 = 0UL;
@@ -163,6 +166,7 @@ error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
 	}
 	_DisableIrq();
 	_uart->CR1 |= USART_CR1_RXNEIE;
+	_rxReceived  = 0UL;
 	_rxRemaining = size;
 	_rxData      = data;
 	_rxStarted   = true;
@@ -171,28 +175,46 @@ error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
 }
 
 void Uart::_IrqHandler(uint32_t isr) {
-	if ((isr & USART_ISR_TXE) && _txStarted) {
-		if (_txRemaining == 0UL) {
-			_txStarted = false;
-			if (_txCallback != nullptr) {
-				_txCallback(_txData, _txRemaining);
+	if (isr & USART_ISR_TC) {
+		if (_txStarted) {
+			if (_txRemaining == 0UL) {
+				if (_txCallback != nullptr) {
+					_txCallback(_txData - _txSent, _txSent);
+				}
+				_txStarted = false;
+				_txData    = nullptr;
+				_txSent    = 0UL;
+			} else {
+				_uart->TDR = *_txData;
+				_txData++;
+				_txRemaining--;
+				_txSent++;
 			}
-		} else {
-			_uart->TDR = *_txData;
-			_txData++;
-			_txRemaining--;
 		}
+		// Clear the interrupt
+		_uart->ICR |= USART_ICR_TCCF;
 	}
-	if ((isr & USART_ISR_RXNE) && _rxStarted) {
-		if (_rxRemaining == 0UL) {
-			_rxStarted = false;
-			if (_rxCallback != nullptr) {
-				_rxCallback(_rxData, _rxRemaining);
-			}
-		} else {
+	if (isr & USART_ISR_RXNE_RXFNE) {
+		if (_rxStarted) {
 			*_rxData = _uart->RDR;
 			_rxData++;
 			_rxRemaining--;
+			_rxReceived++;
+			if (_rxRemaining == 0UL) {
+				if (_rxCallback != nullptr) {
+					_rxCallback(
+					    _rxData - _rxReceived,
+					    _rxReceived
+					);
+				}
+				_rxStarted  = false;
+				_rxData     = nullptr;
+				_rxReceived = 0UL;
+			}
+		} else {
+			// Clear the interrupt
+			uint32_t volatile rdr = _uart->RDR;
+			(void)rdr;
 		}
 	}
 }
