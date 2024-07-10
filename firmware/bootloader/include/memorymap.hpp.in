@@ -23,4 +23,21 @@
 */
 #define APP_HEADER_ID (@APP_HEADER_ID@UL)
 
+/**
+ * @brief Flash area start.
+*/
+#define FLASH_START (@FLASH_BASE@UL)
+/**
+ * @brief Flash area size.
+*/
+#define FLASH_SIZE (@FLASH_SIZE@UL)
+/**
+ * @brief RAM area start.
+*/
+#define RAM_START (@RAM_BASE@UL)
+/**
+ * @brief RAM area size.
+*/
+#define RAM_SIZE (@RAM_SIZE@UL)
+
 // clang-format on

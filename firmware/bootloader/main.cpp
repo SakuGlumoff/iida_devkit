@@ -67,6 +67,15 @@ static void _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
 	_imageOffset += size;
 }
 
+static void _FlashTest() {
+	// TODO: Erase application area.
+	// TODO: Verify the erase operation.
+	// TODO: Write a test pattern to the application area.
+	// TODO: Verify the write operation.
+	// TODO: Erase the application area.
+	// TODO: Verify the erase operation.
+}
+
 extern "C" int main() {
 	_Init();
 

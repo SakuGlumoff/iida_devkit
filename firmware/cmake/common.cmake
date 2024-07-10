@@ -4,6 +4,7 @@ set(SEGGER_RTT_START ${RAM_BASE})
 set(SEGGER_RTT_SIZE 0x500)
 
 set(BL_FLASH_START ${FLASH_BASE})
+# Keep flash size in 4Kb (4096 / 0x1000) increments (page size) to ease flash usage.
 set(BL_FLASH_SIZE 0x4000)
 MATH(EXPR BL_RAM_START "${SEGGER_RTT_START} + ${SEGGER_RTT_SIZE}" OUTPUT_FORMAT HEXADECIMAL)
 set(BL_RAM_SIZE 0x2000)
