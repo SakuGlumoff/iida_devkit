@@ -19,6 +19,7 @@ option(CONFIG_QEMU "Build for QEMU" OFF)
 option(CONFIG_HSE "Use HSE" OFF)
 option(CONFIG_EXT_FLASH "Use external flash" OFF)
 option(CONFIG_MCP9808 "Use MCP9808" OFF)
+option(CONFIG_SELFTEST "Enable selftest" OFF)
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/include/config.hpp.in include/config.hpp)
 

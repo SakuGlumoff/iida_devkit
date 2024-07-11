@@ -13,13 +13,14 @@ struct __attribute__((aligned(4))) AppHeader {
 };
 
 /**
- * @brief Calculate the 32-bit CRC value of the application image.
+ * @brief Calculate the 16-bit CRC value of the application image.
  *
- * @param[in] appSize The size of the application image in bytes.
+ * @param[in] startAddress The start address of the application image.
+ * @param[in] size         The size of the application image.
  *
- * @return The calculated 32-bit CRC value.
+ * @return The calculated 16-bit CRC value.
  */
-uint32_t CalculateAppCrc32(uint32_t const appSize);
+uint16_t CalculateAppCrc16(uint32_t startAddress, uint32_t size);
 
 /**
  * @brief Start the application image.

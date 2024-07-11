@@ -1,5 +1,6 @@
 #include "xmodem.hpp"
 
+#include "crc16.hpp"
 #include "errno.hpp"
 #include "pinmap.hpp"
 #include "uart.hpp"
@@ -8,23 +9,6 @@
 #include <cstring>
 
 static XModem::Callback _newPacketCb = nullptr;
-
-static constexpr uint16_t
-_UpdateCrc16(uint16_t const crcIn, uint8_t const byte) {
-	uint32_t crc = crcIn;
-	uint32_t in  = byte | 0x100;
-	do {
-		crc <<= 1;
-		in <<= 1;
-		if (in & 0x100) {
-			++crc;
-		}
-		if (crc & 0x10000) {
-			crc ^= 0x1021;
-		}
-	} while (!(in & 0x10000));
-	return crc & 0xFFFFU;
-}
 
 enum ReceiveResult : uint32_t {
 	RECEIVE_RESULT_OK = 0,
@@ -88,10 +72,10 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 	uint32_t crc      = 0U;
 	uint32_t i        = (XModem::DATA_INDEX);
 	for (; i < (packetSize - XModem::CRC_SIZE); i++) {
-		crc = _UpdateCrc16(crc, data[i]);
+		crc = UpdateCrc16(crc, data[i]);
 	}
-	crc = _UpdateCrc16(crc, 0U);
-	crc = _UpdateCrc16(crc, 0U);
+	crc = UpdateCrc16(crc, 0U);
+	crc = UpdateCrc16(crc, 0U);
 	crc &= 0xFFFFU;
 	if (static_cast<uint16_t>(crc) != crcValue) {
 		return RECEIVE_RESULT_ERROR;
@@ -144,14 +128,24 @@ bool XModem::DownloadImage(XModem::Callback newPacketCb) {
 				dbg_uart.Putc(CTRL_NAK, msToTicks(TIMEOUT));
 				continue;
 			}
-			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
-			dbg_uart.Putc(CTRL_CRC, msToTicks(TIMEOUT));
 			if (_newPacketCb != nullptr) {
-				_newPacketCb(
+				int err = _newPacketCb(
 				    &packetData[XModem::DATA_INDEX],
 				    len - DATA_INDEX - CRC_SIZE
 				);
+				if (err) {
+					dbg_uart.Putc(
+					    CTRL_NAK,
+					    msToTicks(TIMEOUT)
+					);
+				} else {
+					dbg_uart.Putc(
+					    CTRL_ACK,
+					    msToTicks(TIMEOUT)
+					);
+				}
 			}
+			dbg_uart.Putc(CTRL_CRC, msToTicks(TIMEOUT));
 		} else if (result == RECEIVE_RESULT_ABORTED) {
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 			dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));

@@ -71,6 +71,6 @@ configure_file(${CMAKE_CURRENT_LIST_DIR}/postbuild.sh.in ${CMAKE_CURRENT_BINARY_
 add_custom_command(TARGET application POST_BUILD
 	COMMAND ${CMAKE_OBJDUMP} -D ${CMAKE_CURRENT_BINARY_DIR}/application.elf > ${CMAKE_CURRENT_BINARY_DIR}/application.lst
 	COMMAND ${CMAKE_OBJCOPY} -O ihex ${CMAKE_CURRENT_BINARY_DIR}/application.elf ${CMAKE_CURRENT_BINARY_DIR}/application.hex
+	COMMAND ${CMAKE_OBJCOPY} -I ihex -O binary ${CMAKE_CURRENT_BINARY_DIR}/application.hex ${CMAKE_CURRENT_BINARY_DIR}/application.bin
 	COMMAND ${CMAKE_CURRENT_BINARY_DIR}/postbuild.sh
-	COMMAND ${CMAKE_OBJCOPY} -I ihex -O binary ${CMAKE_CURRENT_BINARY_DIR}/application_with_header.hex ${CMAKE_CURRENT_BINARY_DIR}/application_with_header.bin
 )

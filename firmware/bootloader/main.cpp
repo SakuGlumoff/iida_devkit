@@ -32,7 +32,9 @@ static inline bool _VerifyImage() {
 		return false;
 	}
 
-	if (appHeader->crc != CalculateAppCrc32(appHeader->size)) {
+	uint16_t crc = CalculateAppCrc16(APP_CODE_START, appHeader->size);
+
+	if (appHeader->crc != crc) {
 		DBG_PRINTF_DEBUG("Invalid application CRC.");
 		return false;
 	}
@@ -56,27 +58,45 @@ static void _Deinit() {
 	SystemDeinit();
 }
 
-static void _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
+static error_code_t _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
 	DBG_PRINTF_DEBUG(
 	    "Writing %lu bytes of the new image to 0x%08X",
 	    size,
-	    _imageOffset
+	    APP_HEADER_START + _imageOffset
 	);
 
-	// TODO: Write the image to the flash memory.
-	(void)buffer;
-	(void)size;
+	if ((APP_HEADER_START + _imageOffset + size)
+	    > (APP_HEADER_START + APP_CODE_SIZE)) {
+		DBG_PRINTF_ERROR(
+		    "New image packet won't fit in the application area."
+		);
+		return -10;
+	}
+
+	error_code_t err =
+	    Flash::Write(APP_HEADER_START + _imageOffset, buffer, size);
+	if (err) {
+		DBG_PRINTF_ERROR(
+		    "Failed to write new image packet to flash: %d",
+		    err
+		);
+		return err;
+	}
 
 	_imageOffset += size;
+
+	return ERROR_NONE;
 }
 
 extern "C" int main() {
 	_Init();
 
+#ifdef CONFIG_SELF_TEST
 	bool selfTest = SelfTest::RunAll();
 	if (!selfTest) {
 		PANIC("Self tests failed.");
 	}
+#endif
 
 	while (true) {
 		DBG_PRINTF_DEBUG("Testing image.");

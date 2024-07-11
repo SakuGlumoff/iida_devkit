@@ -16,7 +16,7 @@ echo "Installing requirements" >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
 pip install -r ${PROJECT_DIR}/firmware/requirements.txt >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
 
 echo "Running post build python script" >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
-python3 ${PROJECT_DIR}/firmware/application/postbuild.py -s @APP_CODE_SIZE@ -i @CMAKE_CURRENT_BINARY_DIR@/application.hex -o @CMAKE_CURRENT_BINARY_DIR@/application_with_header.hex >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
+python3 ${PROJECT_DIR}/firmware/scripts/postbuild.py -s @APP_CODE_SIZE@ -i @CMAKE_CURRENT_BINARY_DIR@/application.bin -o @CMAKE_CURRENT_BINARY_DIR@/application_with_header.bin >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
 
 echo "Deactivating venv" >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
 deactivate >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log

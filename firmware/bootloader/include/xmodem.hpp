@@ -1,5 +1,6 @@
 #pragma once
 
+#include "errno.hpp"
 #include "system.hpp"
 
 #include <cstdint>
@@ -28,7 +29,7 @@ namespace XModem {
 		CTRL_CRC    = 67, // Cyclic Redundancy Check
 	};
 
-	using Callback = void (*)(uint8_t* data, uint32_t len);
+	using Callback = error_code_t (*)(uint8_t* data, uint32_t len);
 
 	bool DownloadImage(Callback newPacketCb);
 } // namespace XModem

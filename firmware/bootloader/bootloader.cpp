@@ -1,26 +1,23 @@
 #include "bootloader.hpp"
 
+#include "crc16.hpp"
 #include "memorymap.hpp"
 #include "stm32l552xx.h"
 
 #include <cstdint>
 #include <etl/crc32.h>
 
-uint32_t CalculateAppCrc32(uint32_t const appSize) {
-	if (appSize > APP_CODE_SIZE) {
-		return 0UL;
-	}
-
-	etl::crc32              ret;
+uint16_t CalculateAppCrc16(uint32_t startAddress, uint32_t size) {
+	uint16_t                ret;
 	uint8_t const volatile* appImage =
-	    reinterpret_cast<uint8_t*>(APP_CODE_START);
+	    reinterpret_cast<uint8_t*>(startAddress);
 
-	for (size_t i = 0; i < appSize; i++) {
+	for (size_t i = 0; i < size; i++) {
 		uint8_t const val = appImage[i];
-		ret.add(val);
+		ret               = UpdateCrc16(ret, val);
 	}
 
-	return ret.value();
+	return ret;
 }
 
 void StartApplication() {
