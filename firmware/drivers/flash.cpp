@@ -9,7 +9,7 @@
 namespace Flash {
 	constexpr uint32_t _FLASH_KEY1      = 0x45670123UL;
 	constexpr uint32_t _FLASH_KEY2      = 0xCDEF89ABUL;
-	constexpr uint32_t _FLASH_PAGE_SIZE = 0x1000UL;
+	constexpr uint32_t _FLASH_PAGE_SIZE = 0x1000UL / 2;
 
 	inline void _Unlock() {
 		FLASH->NSKEYR = _FLASH_KEY1;
@@ -41,6 +41,8 @@ namespace Flash {
 
 	inline void _WriteDword(uint32_t const address, uint64_t const data) {
 		_Unlock();
+		uint32_t primask = __get_PRIMASK();
+		__disable_irq();
 
 		_WaitBusy();
 		_ClearFlags();
@@ -56,11 +58,14 @@ namespace Flash {
 		_WaitBusy();
 		FLASH->NSCR &= ~FLASH_NSCR_NSPG;
 
+		__set_PRIMASK(primask);
 		_Lock();
 	}
 
 	error_code_t Erase(uint32_t const address, uint32_t size) {
 		_Unlock();
+		uint32_t primask = __get_PRIMASK();
+		__disable_irq();
 
 		uint32_t const startPage = _GetPage(address);
 		uint32_t const endPage   = _GetPage(address + size);
@@ -68,6 +73,7 @@ namespace Flash {
 			_WaitBusy();
 			_ClearFlags();
 			// Set to page erase mode.
+			FLASH->NSCR &= ~FLASH_NSCR_NSBKER;
 			FLASH->NSCR |= FLASH_NSCR_NSPER;
 			// Set the correct page number.
 			FLASH->NSCR &= ~FLASH_NSCR_NSPNB;
@@ -81,6 +87,7 @@ namespace Flash {
 			FLASH->NSCR &= ~FLASH_NSCR_NSPNB;
 		}
 
+		__set_PRIMASK(primask);
 		_Lock();
 
 		return ERROR_NONE;

@@ -160,7 +160,7 @@ static void _initFlash() {
 	FLASH->OPTKEYR = 0x08192A3BUL;
 	FLASH->OPTKEYR = 0x4C5D6E7FUL;
 	// Set to single bank mode.
-	FLASH->OPTR &= ~FLASH_OPTR_DBANK;
+	FLASH->OPTR &= ~(FLASH_OPTR_DBANK | FLASH_OPTR_DB256K);
 	// And lock them again.
 	FLASH->NSCR |= (FLASH_NSCR_OPTLOCK | FLASH_NSCR_NSLOCK);
 }

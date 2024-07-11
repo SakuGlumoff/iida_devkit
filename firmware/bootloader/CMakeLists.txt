@@ -1,5 +1,6 @@
 file(GLOB SOURCES
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/*.cpp
+	${CMAKE_CURRENT_LIST_DIR}/../test/selftest.cpp
 	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC/debug_print.c
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT/*.c
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT/*.S
@@ -20,6 +21,7 @@ target_include_directories(bootloader PRIVATE
 	${CMAKE_CURRENT_LIST_DIR}/include
 	${CMAKE_CURRENT_LIST_DIR}/../include
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/include
+	${CMAKE_CURRENT_LIST_DIR}/../test/include
 	${CMAKE_CURRENT_LIST_DIR}/../lib/CMSIS_5/CMSIS/Core/Include
 	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT
