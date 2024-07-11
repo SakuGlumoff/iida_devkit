@@ -9,10 +9,12 @@
 			"cwd": "${workspaceFolder}/firmware",
 			"executable": "${workspaceFolder}/firmware/build/bootloader/bootloader.elf",
 			"loadFiles": [
-				"${workspaceFolder}/firmware/build/bootloader/bootloader.elf"
+				"${workspaceFolder}/firmware/build/bootloader/bootloader.elf",
+				"${workspaceFolder}/firmware/build/application/application.elf",
 			],
 			"symbolFiles": [
-				"${workspaceFolder}/firmware/build/bootloader/bootloader.elf"
+				"${workspaceFolder}/firmware/build/bootloader/bootloader.elf",
+				"${workspaceFolder}/firmware/build/application/application.elf",
 			],
 			"request": "launch",
 			"type": "cortex-debug",
@@ -23,6 +25,7 @@
 			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd",
 			"preLaunchCommands": [
 				"monitor halt",
+				"monitor loadbin ${workspaceFolder}/firmware/test/bl_app_glue.bin 0x08004000",
 				//"monitor flash erase"
 			]
 		},
