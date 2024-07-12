@@ -69,15 +69,14 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 	*len = packetSize;
 
 	uint16_t crcValue = (data[packetSize - 2] << 8) | data[packetSize - 1];
-	uint32_t crc      = 0U;
-	uint32_t i        = (XModem::DATA_INDEX);
+	Crc16    crc;
+	uint32_t i = (XModem::DATA_INDEX);
 	for (; i < (packetSize - XModem::CRC_SIZE); i++) {
-		crc = UpdateCrc16(crc, data[i]);
+		crc.Update(data[i]);
 	}
-	crc = UpdateCrc16(crc, 0U);
-	crc = UpdateCrc16(crc, 0U);
-	crc &= 0xFFFFU;
-	if (static_cast<uint16_t>(crc) != crcValue) {
+	crc.Update(0U);
+	crc.Update(0U);
+	if (crc.Value() != crcValue) {
 		return RECEIVE_RESULT_ERROR;
 	}
 

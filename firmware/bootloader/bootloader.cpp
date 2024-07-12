@@ -8,16 +8,16 @@
 #include <etl/crc32.h>
 
 uint16_t CalculateAppCrc16(uint32_t startAddress, uint32_t size) {
-	uint16_t                ret;
+	Crc16                   ret;
 	uint8_t const volatile* appImage =
 	    reinterpret_cast<uint8_t*>(startAddress);
 
 	for (size_t i = 0; i < size; i++) {
 		uint8_t const val = appImage[i];
-		ret               = UpdateCrc16(ret, val);
+		ret.Update(val);
 	}
 
-	return ret;
+	return ret.Value();
 }
 
 void StartApplication() {
