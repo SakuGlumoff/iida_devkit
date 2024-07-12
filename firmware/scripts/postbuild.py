@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
+import subprocess
+import os
+
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('-s', '--size', type=str, help='Size of the application image in hexadecimals.')
-parser.add_argument('-i', '--input', type=str, help='Path to the application binary.')
-parser.add_argument('-o', '--output', type=str, help='Path to the postbuild output binary.')
+parser.add_argument('--input-binary', type=str, help='Path to the application binary.')
+parser.add_argument('--input-elf', type=str, help='Path to the application ELF.')
+parser.add_argument('--output', type=str, help='Path to the postbuild output ELF.')
 
 '''
 Header:
@@ -48,34 +51,33 @@ def UpdateCrc16(crcIn: int, byte: int):
 
 if __name__ == '__main__':
 	args = parser.parse_args()
+	args = vars(args)
 
-	crcValue = 0
-	size = int(args.size, 16)
-	with open(args.input, 'rb') as inputFile:
-		offset = 0
-		for byte in inputFile.read():
-			crcValue = UpdateCrc16(crcValue, byte)
-			print("CRC: {} @ {}: {}".format(hex(crcValue), hex(offset), byte))
-			offset += 1
-		print('Calculated CRC: {}'.format(hex(crcValue)))
+	with open(args['input_binary'], 'rb') as inputFile:
+		crc = 0
+		size = 0
+		# Skip header bytes
+		for byte in inputFile.read()[HEADER_SIZE:]:
+			crc = UpdateCrc16(crc, byte)
+			print("CRC: {} @ {}: {}".format(hex(crc), hex(size), byte))
+			size += 1
+		print('Calculated CRC: {}'.format(hex(crc)))
 
-		size = offset
+		with open('app_header.bin', '+wb') as headerFile:
+			for x in range(0, 4):
+				headerFile.write(int((HEADER_ID >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
+			for x in range(0, 4):
+				headerFile.write(int((size >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
+			for x in range(0, 4):
+				headerFile.write(int((crc >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
+			for x in range(0, 4):
+				headerFile.write(int((HEADER_RESERVED >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
 
-		with open(args.output, '+wb') as outputFile:
-			for x in range(0, 4):
-				print('Adding header ID @ {}: {}'.format(hex(HEADER_OFFSET_ID + x), hex(int((HEADER_ID >> (x * 8)) & 0xFF))))
-				outputFile.write(int((HEADER_ID >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			for x in range(0, 4):
-				print('Adding header size @ {}: {}'.format(hex(HEADER_OFFSET_SIZE + x), hex(int((size >> (x * 8)) & 0xFF))))
-				outputFile.write(int((size >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			for x in range(0, 4):
-				print('Adding header crc @ {}: {}'.format(hex(HEADER_OFFSET_CRC + x), hex(int((crcValue >> (x * 8)) & 0xFF))))
-				outputFile.write(int((crcValue >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			for x in range(0, 4):
-				print('Adding header reserved @ {}: {}'.format(hex(HEADER_OFFSET_RESERVED + x), hex(int((HEADER_RESERVED >> (x * 8)) & 0xFF))))
-				outputFile.write(int((HEADER_RESERVED >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			
-			inputFile.seek(0)
-			outputFile.write(inputFile.read())
+		print("Updating ELF with header...")
+		subprocess.run(["{}/bin/arm-none-eabi-objcopy".format(os.environ.get('GNU_ARM_PATH')), "--update-section", ".app_header=app_header.bin", args['input_elf'], args['output']])
+		print("Removing app_header.bin...")
+		os.remove("app_header.bin")
+
+		print("Postbuild script completed.")
 
 	exit(0)

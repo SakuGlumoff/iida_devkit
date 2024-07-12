@@ -1,5 +1,6 @@
 #include "SEGGER_RTT.h"
 #include "bootloader.hpp"
+#include "common.hpp"
 #include "debug_print.h"
 #include "errno.hpp"
 #include "error.hpp"

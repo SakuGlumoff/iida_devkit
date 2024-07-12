@@ -1,5 +1,20 @@
+#include "common.hpp"
 #include "config.hpp"
 #include "debug_print.h"
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
+__attribute__((section(".app_header"))) static AppHeader appHeader = {
+	// ID
+	0xAABBCCDDUL,
+	// Size
+	0UL,
+	// CRC
+	0UL,
+	// Reserved
+	0UL,
+};
+#pragma GCC diagnostic pop
 
 extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
 #ifdef CONFIG_UART

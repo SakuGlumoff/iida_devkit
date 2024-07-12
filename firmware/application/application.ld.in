@@ -7,10 +7,16 @@ MEMORY
 	SEGGER_RTT (rwx): ORIGIN = @SEGGER_RTT_START@, LENGTH = @SEGGER_RTT_SIZE@
 	RAM        (rwx): ORIGIN = @APP_RAM_START@,    LENGTH = @APP_RAM_SIZE@
 	FLASH      (rx):  ORIGIN = @APP_CODE_START@,   LENGTH = @APP_CODE_SIZE@
+	HEADER     (r):   ORIGIN = @APP_HEADER_START@, LENGTH = @APP_HEADER_SIZE@
 }
 
 SECTIONS
 {
+	.app_header :
+	{
+		KEEP(*(.app_header))
+	} > HEADER
+
 	.isr_vector :
 	{
 		. = ALIGN(8);
