@@ -22,3 +22,5 @@
 
 // MCP9808 enabled
 #cmakedefine CONFIG_MCP9808 @CONFIG_MCP9808@
+
+// clang-format on

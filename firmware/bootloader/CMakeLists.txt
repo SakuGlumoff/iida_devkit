@@ -67,7 +67,6 @@ target_link_options(bootloader PRIVATE
 target_link_libraries(bootloader PRIVATE etl::etl)
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/bootloader.ld.in ${CMAKE_CURRENT_BINARY_DIR}/bootloader.ld)
-configure_file(${CMAKE_CURRENT_LIST_DIR}/include/memorymap.hpp.in include/memorymap.hpp)
 
 add_custom_command(TARGET bootloader POST_BUILD
 	COMMAND ${CMAKE_OBJDUMP} -D ${CMAKE_CURRENT_BINARY_DIR}/bootloader.elf > ${CMAKE_CURRENT_BINARY_DIR}/bootloader.lst

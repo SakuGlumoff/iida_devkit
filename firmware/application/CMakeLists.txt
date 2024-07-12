@@ -18,7 +18,6 @@ set_target_properties(application PROPERTIES
 target_include_directories(application PRIVATE
 	${CMAKE_CURRENT_BINARY_DIR}/../include
 	${CMAKE_CURRENT_BINARY_DIR}/include
-	${CMAKE_CURRENT_LIST_DIR}/include
 	${CMAKE_CURRENT_LIST_DIR}/../include
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/include
 	${CMAKE_CURRENT_LIST_DIR}/../test/include
@@ -67,7 +66,6 @@ target_link_options(application PRIVATE
 target_link_libraries(application PRIVATE etl::etl)
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/application.ld.in ${CMAKE_CURRENT_BINARY_DIR}/application.ld)
-configure_file(${CMAKE_CURRENT_LIST_DIR}/include/memorymap.hpp.in include/memorymap.hpp)
 configure_file(${CMAKE_CURRENT_LIST_DIR}/postbuild.sh.in ${CMAKE_CURRENT_BINARY_DIR}/postbuild.sh @ONLY)
 
 add_custom_command(TARGET application POST_BUILD
@@ -75,4 +73,5 @@ add_custom_command(TARGET application POST_BUILD
 	COMMAND ${CMAKE_OBJCOPY} -O ihex ${CMAKE_CURRENT_BINARY_DIR}/application.elf ${CMAKE_CURRENT_BINARY_DIR}/application.hex
 	COMMAND ${CMAKE_OBJCOPY} -I ihex -O binary ${CMAKE_CURRENT_BINARY_DIR}/application.hex ${CMAKE_CURRENT_BINARY_DIR}/application.bin
 	COMMAND ${CMAKE_CURRENT_BINARY_DIR}/postbuild.sh
+	COMMAND ${CMAKE_OBJCOPY} -O binary ${CMAKE_CURRENT_BINARY_DIR}/application_with_header.elf ${CMAKE_CURRENT_BINARY_DIR}/application_with_header.bin
 )

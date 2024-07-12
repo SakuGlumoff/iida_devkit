@@ -21,9 +21,6 @@ option(CONFIG_EXT_FLASH "Use external flash" OFF)
 option(CONFIG_MCP9808 "Use MCP9808" OFF)
 option(CONFIG_SELFTEST "Enable selftest" OFF)
 
-configure_file(${CMAKE_CURRENT_LIST_DIR}/include/config.hpp.in include/config.hpp)
-configure_file(${CMAKE_CURRENT_LIST_DIR}/include/common.hpp.in include/common.hpp)
-
 if (CONFIG_QEMU)
 	include(${CMAKE_CURRENT_LIST_DIR}/cmake/qemu/memory.cmake)
 else()
@@ -31,6 +28,9 @@ else()
 endif()
 
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/common.cmake)
+
+configure_file(${CMAKE_CURRENT_LIST_DIR}/include/config.hpp.in include/config.hpp)
+configure_file(${CMAKE_CURRENT_LIST_DIR}/include/memorymap.hpp.in include/memorymap.hpp)
 configure_file(${CMAKE_CURRENT_LIST_DIR}/include/common.hpp.in include/common.hpp)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/etl)

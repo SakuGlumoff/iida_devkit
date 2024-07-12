@@ -67,11 +67,11 @@ static error_code_t _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
 	);
 
 	if ((APP_HEADER_START + _imageOffset + size)
-	    > (APP_HEADER_START + APP_CODE_SIZE)) {
+	    > (APP_HEADER_START + APP_HEADER_SIZE + APP_CODE_SIZE)) {
 		DBG_PRINTF_ERROR(
 		    "New image packet won't fit in the application area."
 		);
-		return -10;
+		return -1;
 	}
 
 	error_code_t err =

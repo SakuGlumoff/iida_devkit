@@ -1,10 +1,8 @@
 #pragma once
 
-#include <cstdint>
+#include "memorymap.hpp"
 
-// clang-format off
-#define APP_HEADER_SIZE @APP_HEADER_SIZE@
-// clang-format on
+#include <cstdint>
 
 /**
  * @brief Header for the application image.
