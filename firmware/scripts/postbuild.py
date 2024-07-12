@@ -16,9 +16,9 @@ Header:
   | 0      | U32  | Identification field (hardcoded 0xDEADBEEF) |
   | 4      | U32  | Size of the image in bytes                  |
   | 8      | U32  | 32-bit CRC value of the image               |
-  | 12     | U32  | Reserved                                    |
+  | 12     |      | Reserved                                    |
 '''
-HEADER_SIZE = 0x10
+HEADER_SIZE = 0x100
 
 HEADER_OFFSET_ID = 0
 HEADER_OFFSET_SIZE = 4
@@ -26,7 +26,6 @@ HEADER_OFFSET_CRC = 8
 HEADER_OFFSET_RESERVED = 12
 
 HEADER_ID = int(0xDEADBEEF)
-HEADER_RESERVED = int(0x0)
 
 def UpdateCrc16(crcIn: int, byte: int):
 	crc = crcIn
@@ -70,8 +69,9 @@ if __name__ == '__main__':
 				headerFile.write(int((size >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
 			for x in range(0, 4):
 				headerFile.write(int((crc >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			for x in range(0, 4):
-				headerFile.write(int((HEADER_RESERVED >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
+			# Fill the rest with junk
+			for _ in range(HEADER_OFFSET_RESERVED, HEADER_SIZE):
+				headerFile.write(int(0xFF).to_bytes(1, 'little'))
 
 		print("Updating ELF with header...")
 		subprocess.run(["{}/bin/arm-none-eabi-objcopy".format(os.environ.get('GNU_ARM_PATH')), "--update-section", ".app_header=app_header.bin", args['input_elf'], args['output']])

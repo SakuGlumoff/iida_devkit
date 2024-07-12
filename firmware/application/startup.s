@@ -43,6 +43,7 @@ LoopFillZerobss:
 	cmp r2, r3
 	bcc FillZerobss
 	bl __libc_init_array
+	cpsie i
 	b main
 LoopForever:
 	b LoopForever

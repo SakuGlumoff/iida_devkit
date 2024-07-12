@@ -21,15 +21,20 @@ uint16_t CalculateAppCrc16(uint32_t startAddress, uint32_t size) {
 }
 
 void StartApplication() {
-	using IsrFunc                 = void (*)(void);
-	IsrFunc const appResetHandler = *reinterpret_cast<IsrFunc*>(
-	    reinterpret_cast<uint32_t*>(APP_CODE_START + 4UL)
-	);
+	__disable_irq();
 
+	// Setup vector table
 	SCB->VTOR = APP_CODE_START;
 
-	uint32_t const appMsp = *reinterpret_cast<uint32_t*>(APP_CODE_START);
-	__set_MSP(appMsp);
+	typedef void (*FunctionPointer)(void);
+	FunctionPointer appResetHandler = reinterpret_cast<FunctionPointer>(
+	    *((uint32_t volatile*)(APP_CODE_START + 4))
+	);
 
+	// Set main stack pointer
+	uint32_t volatile msp = *((uint32_t volatile*)APP_CODE_START);
+	__set_MSP(msp);
+
+	// Jump to application's reset handler
 	appResetHandler();
 }

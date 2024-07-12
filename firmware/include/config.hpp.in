@@ -12,7 +12,7 @@
 #define CONFIG_VERSION_FIX @iida_devkit_VERSION_FIX@
 
 // QEMU targeted
-#cmakedefine CONFIG_QEMU @QEMU@
+#cmakedefine CONFIG_QEMU @CONFIG_QEMU@
 
 // HSE enabled
 #cmakedefine CONFIG_HSE @CONFIG_HSE@

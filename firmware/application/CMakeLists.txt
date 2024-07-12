@@ -30,6 +30,8 @@ target_include_directories(application PRIVATE
 
 target_compile_definitions(application PRIVATE
 	$<$<BOOL:QEMU>:-DQEMU>
+	SEGGER_RTT_SECTION=".segger_rtt"
+	SEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
 )
 
 target_compile_options(application PRIVATE

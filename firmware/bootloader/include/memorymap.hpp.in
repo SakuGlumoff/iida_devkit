@@ -19,6 +19,10 @@
 */
 #define APP_RAM_START (@APP_RAM_START@UL)
 /**
+ * @brief Application RAM area size.
+*/
+#define APP_RAM_SIZE (@APP_RAM_SIZE@UL)
+/**
  * @brief Application image header ID.
 */
 #define APP_HEADER_ID (@APP_HEADER_ID@UL)

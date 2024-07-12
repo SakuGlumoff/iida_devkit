@@ -1,6 +1,10 @@
+#include "SEGGER_RTT.h"
 #include "common.hpp"
 #include "config.hpp"
 #include "debug_print.h"
+#include "gpio.hpp"
+#include "pinmap.hpp"
+#include "system.hpp"
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-variable"
@@ -17,38 +21,43 @@ __attribute__((section(".app_header"))) static AppHeader appHeader = {
 #pragma GCC diagnostic pop
 
 extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
-#ifdef CONFIG_UART
-	// TODO: Print using UART.
-	(void)debugMessage;
-	(void)length;
-	return 0;
-#else
-	(void)debugMessage;
-	(void)length;
-	return 0;
-#endif
+	unsigned avail = SEGGER_RTT_GetAvailWriteSpace(0);
+	if (avail < length) {
+		return DBG_PRINT_BUFFER_TOO_SMALL;
+	}
+	return SEGGER_RTT_Write(0, debugMessage, length);
 }
 
+/**
+ * @brief Initialize system and peripherals.
+ */
 static void _Init() {
-	// TODO: Initialize system and peripherals.
+	SystemInit();
+	SEGGER_RTT_Init();
 }
 
 int main(void) {
 	_Init();
 
 	bool ledState = true;
+	Gpio led(
+	    LED_DBG_A,
+	    Gpio::Mode::OUTPUT,
+	    Gpio::Type::PUSH_PULL,
+	    Gpio::PullUp::PULL_UP,
+	    Gpio::Speed::LOW
+	);
+	led = 1;
 
 	while (true) {
-#ifdef CONFIG_LED
-		// TODO: Set LED according to ledState.
-#endif
 		if (ledState) {
 			DBG_PRINTF_TRACE("Setting LED on");
 		} else {
 			DBG_PRINTF_TRACE("Setting LED off");
 		}
+		led      = ledState;
 		ledState = !ledState;
-		// TODO: Add 500 ms delay.
+		Sleep(msToTicks(500));
 	}
 
 	return 0;
