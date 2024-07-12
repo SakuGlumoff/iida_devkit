@@ -5,7 +5,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Debug: JLink",
+			"name": "Debug: BL+App",
 			"cwd": "${workspaceFolder}/firmware",
 			"executable": "${workspaceFolder}/firmware/build/bootloader/bootloader.elf",
 			"loadFiles": [
@@ -16,6 +16,22 @@
 				"${workspaceFolder}/firmware/build/bootloader/bootloader.elf",
 				"${workspaceFolder}/firmware/build/application/application_with_header.elf",
 			],
+			"request": "launch",
+			"type": "cortex-debug",
+			"device": "stm32l552ce",
+			"runToEntryPoint": "main",
+			"servertype": "jlink",
+			"preLaunchTask": "Build: All",
+			"svdFile": "${workspaceFolder}/firmware/stm32l552.svd",
+			"preLaunchCommands": [
+				"monitor halt",
+				//"monitor flash erase"
+			]
+		},
+		{
+			"name": "Debug: App",
+			"cwd": "${workspaceFolder}/firmware",
+			"executable": "${workspaceFolder}/firmware/build/application/application_with_header.elf",
 			"request": "launch",
 			"type": "cortex-debug",
 			"device": "stm32l552ce",
