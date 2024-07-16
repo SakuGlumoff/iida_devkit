@@ -50,6 +50,9 @@ Uart::Uart(
 		);
 		brr = (brrValue & USART_BRR_BRR);
 		RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+		// Set to use SYSCLK as basis for the clock
+		RCC->CCIPR1 &= ~RCC_CCIPR1_USART1SEL;
+		RCC->CCIPR1 |= RCC_CCIPR1_USART1SEL_0;
 		_txPin.SetAlternateFunction(Gpio::AlternateFunction::AF7);
 		_rxPin.SetAlternateFunction(Gpio::AlternateFunction::AF7);
 		_uartInstances[UART_USART1] = this;
@@ -59,6 +62,9 @@ Uart::Uart(
 		);
 		brr = (brrValue & USART_BRR_LPUART);
 		RCC->APB1ENR2 |= RCC_APB1ENR2_LPUART1EN;
+		// Set to use SYSCLK as basis for the clock
+		RCC->CCIPR1 &= ~RCC_CCIPR1_LPUART1SEL;
+		RCC->CCIPR1 |= RCC_CCIPR1_LPUART1SEL_0;
 		_txPin.SetAlternateFunction(Gpio::AlternateFunction::AF8);
 		_rxPin.SetAlternateFunction(Gpio::AlternateFunction::AF8);
 		_uartInstances[UART_LPUART1] = this;
