@@ -1,17 +1,5 @@
 {
 	"version": "2.0.0",
-	"inputs": [
-		{
-			"id": "qemu",
-			"type": "pickString",
-			"description": "Build for QEMU.",
-			"default": "OFF",
-			"options": [
-				"OFF",
-				"ON"
-			]
-		}
-	],
 	"tasks": [
 		{
 			"label": "CMake: Generate",
@@ -22,7 +10,7 @@
 			"type": "shell",
 			"command": [
 				"cd firmware",
-				"&& cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DCONFIG_QEMU=${input:qemu}"
+				"&& cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug"
 			]
 		},
 		{

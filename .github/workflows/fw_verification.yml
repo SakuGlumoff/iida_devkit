@@ -28,7 +28,7 @@ jobs:
           submodules: true
           token: ${{ secrets.PAT_TOKEN }}
       - name: Generate build files
-        run: cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug -DCONFIG_QEMU=OFF
+        run: cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug
       - name: Build ptsw
         run: cmake --build build --target ptsw
       - name: Build bootloader
