@@ -8,6 +8,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--input-binary', type=str, help='Path to the application binary.')
 parser.add_argument('--input-elf', type=str, help='Path to the application ELF.')
 parser.add_argument('--output', type=str, help='Path to the postbuild output ELF.')
+parser.add_argument('--app-header-start', type=str, help='Application header start address')
+parser.add_argument('--app-code-start', type=str, help='Application code start address')
 
 '''
 Header:
@@ -56,9 +58,11 @@ if __name__ == '__main__':
 		crc = 0
 		size = 0
 		# Skip header bytes
-		for byte in inputFile.read()[HEADER_SIZE:]:
+		headerBytesCount = int(args['app_code_start'], 16) - int(args['app_header_start'], 16)
+		print('Header bytes count: {}'.format(hex(headerBytesCount)))
+		for byte in inputFile.read()[headerBytesCount:]:
 			crc = UpdateCrc16(crc, byte)
-			print("CRC: {} @ {}: {}".format(hex(crc), hex(size), byte))
+			print("CRC: {} @ {}: {}".format(hex(crc), hex(size + headerBytesCount), byte))
 			size += 1
 		print('Calculated CRC: {}'.format(hex(crc)))
 
@@ -70,7 +74,7 @@ if __name__ == '__main__':
 			for x in range(0, 4):
 				headerFile.write(int((crc >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
 			# Fill the rest with junk
-			for _ in range(HEADER_OFFSET_RESERVED, HEADER_SIZE):
+			for _ in range(HEADER_OFFSET_RESERVED, headerBytesCount):
 				headerFile.write(int(0xFF).to_bytes(1, 'little'))
 
 		print("Updating ELF with header...")
