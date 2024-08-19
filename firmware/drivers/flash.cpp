@@ -47,14 +47,9 @@ namespace Flash {
 		_WaitBusy();
 		_ClearFlags();
 		FLASH->NSCR |= FLASH_NSCR_NSPG;
-#if 0
-		uint32_t dword[2] = {0UL, 0UL};
-		memcpy(dword, &data, sizeof(uint64_t));
-		*reinterpret_cast<uint32_t*>(address)       = dword[0];
-		*reinterpret_cast<uint32_t*>(address + 4UL) = dword[1];
-#else
+
 		*reinterpret_cast<uint64_t*>(address) = data;
-#endif
+
 		_WaitBusy();
 		FLASH->NSCR &= ~FLASH_NSCR_NSPG;
 
