@@ -78,7 +78,7 @@ if __name__ == '__main__':
 				headerFile.write(int(0xFF).to_bytes(1, 'little'))
 
 		print("Updating ELF with header...")
-		subprocess.run(["{}/bin/arm-none-eabi-objcopy".format(os.environ.get('GNU_ARM_PATH')), "--update-section", ".app_header=app_header.bin", args['input_elf'], args['output']])
+		subprocess.run(["{}/bin/arm-none-eabi-objcopy".format(os.environ.get('ARM_GNU_PATH')), "--update-section", ".app_header=app_header.bin", args['input_elf'], args['output']])
 		print("Removing app_header.bin...")
 		os.remove("app_header.bin")
 
