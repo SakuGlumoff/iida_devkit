@@ -9,7 +9,7 @@
  */
 __attribute__((section(".app_header"))) static AppHeader appHeader = {
 	// ID
-	0xAABBCCDDUL,
+	0xAABB'CCDDUL,
 	// Size
 	0UL,
 	// CRC

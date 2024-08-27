@@ -8,7 +8,7 @@
 #include <cstdint>
 
 class I2c {
-	public:
+public:
 	enum Error {
 		ERROR_BUSY = 1,
 		ERROR_TIMEOUT,
@@ -55,11 +55,11 @@ class I2c {
 	 *                      code of I2c::Error.
 	 */
 	error_code_t Transmit(
-	    uint8_t  slaveAddress,
-	    uint8_t  registerAddress,
-	    uint8_t* data,
-	    uint32_t size,
-	    TickType timeout = 0UL
+		uint8_t  slaveAddress,
+		uint8_t  registerAddress,
+		uint8_t* data,
+		uint32_t size,
+		TickType timeout = 0UL
 	);
 
 	/**
@@ -75,14 +75,14 @@ class I2c {
 	 *                      code of I2c::Error.
 	 */
 	error_code_t Receive(
-	    uint8_t  slaveAddress,
-	    uint8_t  registerAddress,
-	    uint8_t* data,
-	    uint32_t size,
-	    TickType timeout = 0UL
+		uint8_t  slaveAddress,
+		uint8_t  registerAddress,
+		uint8_t* data,
+		uint32_t size,
+		TickType timeout = 0UL
 	);
 
-	private:
+private:
 	Callback     _txCallback = nullptr;
 	Callback     _rxCallback = nullptr;
 	Gpio         _txPin;
@@ -103,7 +103,7 @@ class I2c {
 		}
 	}
 
-	public:
+public:
 	/**
 	 * @brief IRQ handler for the I2C instance.
 	 *

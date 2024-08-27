@@ -27,29 +27,29 @@ enum I2cInstance {
 static I2c* _i2cInstances[I2C_INSTANCE_COUNT] = {nullptr};
 
 I2c::I2c(
-    I2C_TypeDef*  i2c,
-    GPIO_TypeDef* txPort,
-    uint32_t      txPin,
-    GPIO_TypeDef* rxPort,
-    uint32_t      rxPin
+	I2C_TypeDef*  i2c,
+	GPIO_TypeDef* txPort,
+	uint32_t      txPin,
+	GPIO_TypeDef* rxPort,
+	uint32_t      rxPin
 ):
-	_txPin(
-	    txPort,
-	    txPin,
-	    Gpio::Mode::ALTERNATE_FUNCTION,
-	    Gpio::Type::PUSH_PULL,
-	    Gpio::PullUp::PULL_UP,
-	    Gpio::Speed::MEDIUM
-	),
-	_rxPin(
-	    rxPort,
-	    rxPin,
-	    Gpio::Mode::ALTERNATE_FUNCTION,
-	    Gpio::Type::PUSH_PULL,
-	    Gpio::PullUp::PULL_UP,
-	    Gpio::Speed::MEDIUM
-	),
-	_i2c(i2c) {
+_txPin(
+	txPort,
+	txPin,
+	Gpio::Mode::ALTERNATE_FUNCTION,
+	Gpio::Type::PUSH_PULL,
+	Gpio::PullUp::PULL_UP,
+	Gpio::Speed::MEDIUM
+),
+_rxPin(
+	rxPort,
+	rxPin,
+	Gpio::Mode::ALTERNATE_FUNCTION,
+	Gpio::Type::PUSH_PULL,
+	Gpio::PullUp::PULL_UP,
+	Gpio::Speed::MEDIUM
+),
+_i2c(i2c) {
 	if (_i2c == I2C2) {
 		RCC->APB1ENR1 |= RCC_APB1ENR1_I2C2EN;
 		// Set to use HSI (16 MHz) as basis for the clock
@@ -105,11 +105,11 @@ I2c::RegisterCallback(I2c::Callbacks type, I2c::Callback callback) {
 }
 
 error_code_t I2c::Transmit(
-    uint8_t  slaveAddress,
-    uint8_t  registerAddress,
-    uint8_t* data,
-    uint32_t size,
-    TickType timeout
+	uint8_t  slaveAddress,
+	uint8_t  registerAddress,
+	uint8_t* data,
+	uint32_t size,
+	TickType timeout
 ) {
 	if (data == nullptr) {
 		return -ERROR_INVALID_ARGUMENT;
@@ -164,11 +164,11 @@ error_code_t I2c::Transmit(
 }
 
 error_code_t I2c::Receive(
-    uint8_t  slaveAddress,
-    uint8_t  registerAddress,
-    uint8_t* data,
-    uint32_t size,
-    TickType timeout
+	uint8_t  slaveAddress,
+	uint8_t  registerAddress,
+	uint8_t* data,
+	uint32_t size,
+	TickType timeout
 ) {
 	if (data == nullptr) {
 		return -ERROR_INVALID_ARGUMENT;

@@ -7,8 +7,8 @@
 #include <cstring>
 
 namespace Flash {
-	constexpr uint32_t _FLASH_KEY1      = 0x45670123UL;
-	constexpr uint32_t _FLASH_KEY2      = 0xCDEF89ABUL;
+	constexpr uint32_t _FLASH_KEY1      = 0x4567'0123UL;
+	constexpr uint32_t _FLASH_KEY2      = 0xCDEF'89ABUL;
 	constexpr uint32_t _FLASH_PAGE_SIZE = 0x1000UL / 2;
 
 	inline void _Unlock() {
@@ -29,9 +29,8 @@ namespace Flash {
 
 	inline void _ClearFlags() {
 		FLASH->NSSR |=
-		    (FLASH_NSSR_OPTWERR | FLASH_NSSR_NSPGSERR
-		     | FLASH_NSSR_NSSIZERR | FLASH_NSSR_NSPGAERR
-		     | FLASH_NSSR_NSWRPERR | FLASH_NSSR_NSPROGERR
+			(FLASH_NSSR_OPTWERR | FLASH_NSSR_NSPGSERR | FLASH_NSSR_NSSIZERR
+		     | FLASH_NSSR_NSPGAERR | FLASH_NSSR_NSWRPERR | FLASH_NSSR_NSPROGERR
 		     | FLASH_NSSR_NSOPERR | FLASH_NSSR_NSEOP);
 	}
 
@@ -88,8 +87,7 @@ namespace Flash {
 		return ERROR_NONE;
 	}
 
-	error_code_t
-	Read(uint32_t const address, uint8_t* data, uint32_t size) {
+	error_code_t Read(uint32_t const address, uint8_t* data, uint32_t size) {
 		if (data == nullptr) {
 			return -ERROR_BAD_PARAMETER;
 		}
@@ -111,12 +109,11 @@ namespace Flash {
 		uint32_t     page      = startPage;
 		do {
 			uint32_t currentPageAddress =
-			    DEVICE_FLASH_START + (page * _FLASH_PAGE_SIZE);
+				DEVICE_FLASH_START + (page * _FLASH_PAGE_SIZE);
 
 			// Read the current page into a buffer.
 			uint8_t buffer[_FLASH_PAGE_SIZE];
-			err =
-			    Read(currentPageAddress, buffer, _FLASH_PAGE_SIZE);
+			err = Read(currentPageAddress, buffer, _FLASH_PAGE_SIZE);
 			if (err != ERROR_NONE) {
 				return err;
 			}
@@ -142,11 +139,10 @@ namespace Flash {
 			}
 
 			// Write that page
-			for (uint32_t i = 0; i < _FLASH_PAGE_SIZE;
-			     i += sizeof(uint64_t)) {
+			for (uint32_t i = 0; i < _FLASH_PAGE_SIZE; i += sizeof(uint64_t)) {
 				uint64_t dword = 0ULL;
 				memcpy(&dword, buffer + i, sizeof(uint64_t));
-				if (dword == 0xFFFFFFFFFFFFFFFFULL) {
+				if (dword == 0xFFFF'FFFF'FFFF'FFFFULL) {
 					continue;
 				}
 				_WriteDword(currentPageAddress + i, dword);

@@ -1,19 +1,18 @@
 ﻿---
 AlignAfterOpenBracket: BlockIndent
-IndentWidth: 8
-TabWidth: 8
+IndentWidth: 4
+TabWidth: 4
 UseTab: AlignWithSpaces
-AccessModifierOffset: 0
-BracedInitializerIndentWidth: 8
+AccessModifierOffset: -4
 BreakConstructorInitializers: AfterColon
 ColumnLimit: 80
 CompactNamespaces: false
-ConstructorInitializerIndentWidth: 8
+ConstructorInitializerIndentWidth: 0
 Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 IncludeBlocks: Regroup
 IndentAccessModifiers: false
-AlignArrayOfStructures: None
+AlignArrayOfStructures: Left
 AlignConsecutiveAssignments:
   Enabled: true
   AcrossEmptyLines: false
@@ -51,7 +50,7 @@ AlignEscapedNewlines: Right
 AlignOperands: AlignAfterOperator
 AlignTrailingComments:
   Kind: Always
-AllowAllArgumentsOnNextLine: false
+AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowBreakBeforeNoexceptSpecifier: Never
 AllowShortBlocksOnASingleLine: Empty
@@ -108,20 +107,19 @@ IndentRequiresClause: false
 IndentWrappedFunctionNames: false
 InsertBraces: true
 InsertNewlineAtEOF: true
-InsertTrailingCommas: Wrapped
 IntegerLiteralSeparator:
   Binary: 4
   BinaryMinDigits: 5
   Decimal: 3
   DecimalMinDigits: 4
-  Hex: -1
+  Hex: 4
+  HexMinDigits: 5
 KeepEmptyLinesAtTheStartOfBlocks: false
 LambdaBodyIndentation: Signature
 Language: Cpp
 LineEnding: LF
 NamespaceIndentation: All
-PPIndentWidth: 8
-PackConstructorInitializers: BinPack
+PackConstructorInitializers: CurrentLine
 PointerAlignment: Left
 QualifierAlignment: Right
 ReflowComments: true
@@ -169,3 +167,6 @@ SpacesInParensOptions:
   Other: false
 SpacesInSquareBrackets: false
 Standard: c++17
+BreakArrays: true
+ExperimentalAutoDetectBinPacking: false
+ReferenceAlignment: Pointer

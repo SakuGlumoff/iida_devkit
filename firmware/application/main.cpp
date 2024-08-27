@@ -26,11 +26,11 @@ int main(void) {
 
 	bool ledState = true;
 	Gpio led(
-	    LED_DBG_A,
-	    Gpio::Mode::OUTPUT,
-	    Gpio::Type::PUSH_PULL,
-	    Gpio::PullUp::PULL_UP,
-	    Gpio::Speed::LOW
+		LED_DBG_A,
+		Gpio::Mode::OUTPUT,
+		Gpio::Type::PUSH_PULL,
+		Gpio::PullUp::PULL_UP,
+		Gpio::Speed::LOW
 	);
 	led = 1;
 

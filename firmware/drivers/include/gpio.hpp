@@ -7,7 +7,7 @@
 #include <type_traits>
 
 class Gpio {
-	public:
+public:
 	enum class Mode : uint32_t {
 		INPUT = 0UL,
 		OUTPUT,
@@ -123,13 +123,13 @@ class Gpio {
 	}
 
 	Gpio(
-	    GPIO_TypeDef* const port,
-	    uint32_t            pin,
-	    Mode                mode   = Mode::ANALOG,
-	    Type                type   = Type::PUSH_PULL,
-	    PullUp              pullup = PullUp::NONE,
-	    Speed               speed  = Speed::LOW,
-	    AlternateFunction   af     = AlternateFunction::AF0
+		GPIO_TypeDef* const port,
+		uint32_t            pin,
+		Mode                mode   = Mode::ANALOG,
+		Type                type   = Type::PUSH_PULL,
+		PullUp              pullup = PullUp::NONE,
+		Speed               speed  = Speed::LOW,
+		AlternateFunction   af     = AlternateFunction::AF0
 	) {
 		switch (reinterpret_cast<uint32_t>(port)) {
 			case GPIOA_BASE:
@@ -158,8 +158,7 @@ class Gpio {
 				break;
 			default:
 				PANIC(
-				    "Bad GPIO port: 0x%08X",
-				    reinterpret_cast<uint32_t>(port)
+					"Bad GPIO port: 0x%08X", reinterpret_cast<uint32_t>(port)
 				);
 		}
 		if (pin > _PIN_MAX) {
@@ -182,7 +181,7 @@ class Gpio {
 		SetAlternateFunction(AlternateFunction::AF0);
 	}
 
-	private:
+private:
 	static constexpr uint32_t _PIN_MAX = 15UL;
 	GPIO_TypeDef*             _port    = nullptr;
 	uint32_t                  _pin     = _PIN_MAX + 1;

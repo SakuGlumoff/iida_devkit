@@ -20,34 +20,33 @@ enum UartInstance {
 static Uart* _uartInstances[UART_INSTANCE_COUNT] = {nullptr, nullptr};
 
 Uart::Uart(
-    USART_TypeDef* uart,
-    GPIO_TypeDef*  txPort,
-    uint32_t       txPin,
-    GPIO_TypeDef*  rxPort,
-    uint32_t       rxPin
+	USART_TypeDef* uart,
+	GPIO_TypeDef*  txPort,
+	uint32_t       txPin,
+	GPIO_TypeDef*  rxPort,
+	uint32_t       rxPin
 ):
-	_txPin(
-	    txPort,
-	    txPin,
-	    Gpio::Mode::ALTERNATE_FUNCTION,
-	    Gpio::Type::PUSH_PULL,
-	    Gpio::PullUp::PULL_UP,
-	    Gpio::Speed::LOW
-	),
-	_rxPin(
-	    rxPort,
-	    rxPin,
-	    Gpio::Mode::ALTERNATE_FUNCTION,
-	    Gpio::Type::PUSH_PULL,
-	    Gpio::PullUp::PULL_UP,
-	    Gpio::Speed::LOW
-	),
-	_uart(uart) {
+_txPin(
+	txPort,
+	txPin,
+	Gpio::Mode::ALTERNATE_FUNCTION,
+	Gpio::Type::PUSH_PULL,
+	Gpio::PullUp::PULL_UP,
+	Gpio::Speed::LOW
+),
+_rxPin(
+	rxPort,
+	rxPin,
+	Gpio::Mode::ALTERNATE_FUNCTION,
+	Gpio::Type::PUSH_PULL,
+	Gpio::PullUp::PULL_UP,
+	Gpio::Speed::LOW
+),
+_uart(uart) {
 	uint32_t brr = 0UL;
 	if (_uart == USART1) {
-		constexpr uint32_t brrValue = static_cast<uint32_t>(
-		    static_cast<float>(SYSCLK_HZ) / 115'200UL
-		);
+		constexpr uint32_t brrValue =
+			static_cast<uint32_t>(static_cast<float>(SYSCLK_HZ) / 115'200UL);
 		brr = (brrValue & USART_BRR_BRR);
 		RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
 		// Set to use SYSCLK as basis for the clock
@@ -58,7 +57,7 @@ Uart::Uart(
 		_uartInstances[UART_USART1] = this;
 	} else if (_uart == LPUART1) {
 		constexpr uint32_t brrValue = static_cast<uint32_t>(
-		    static_cast<float>(SYSCLK_HZ) / 115'200UL * 256UL
+			static_cast<float>(SYSCLK_HZ) / 115'200UL * 256UL
 		);
 		brr = (brrValue & USART_BRR_LPUART);
 		RCC->APB1ENR2 |= RCC_APB1ENR2_LPUART1EN;
@@ -74,8 +73,8 @@ Uart::Uart(
 
 	_uart->CR1 = 0UL;
 	_uart->CR1 |=
-	    (USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE_RXFNEIE
-	     | USART_CR1_TCIE);
+		(USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE_RXFNEIE | USART_CR1_TCIE
+	    );
 	_uart->CR2   = 0UL;
 	_uart->CR3   = 0UL;
 	_uart->PRESC = 0UL;
@@ -219,10 +218,7 @@ void Uart::_IrqHandler(uint32_t isr) {
 			_rxReceived++;
 			if (_rxRemaining == 0UL) {
 				if (_rxCallback != nullptr) {
-					_rxCallback(
-					    _rxData - _rxReceived,
-					    _rxReceived
-					);
+					_rxCallback(_rxData - _rxReceived, _rxReceived);
 				}
 				_rxStarted  = false;
 				_rxData     = nullptr;

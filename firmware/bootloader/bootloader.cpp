@@ -9,8 +9,7 @@
 
 uint16_t CalculateAppCrc16(uint32_t startAddress, uint32_t size) {
 	Crc16                   ret;
-	uint8_t const volatile* appImage =
-	    reinterpret_cast<uint8_t*>(startAddress);
+	uint8_t const volatile* appImage = reinterpret_cast<uint8_t*>(startAddress);
 
 	for (size_t i = 0; i < size; i++) {
 		uint8_t const val = appImage[i];
@@ -28,7 +27,7 @@ void StartApplication() {
 
 	typedef void (*FunctionPointer)(void);
 	FunctionPointer appResetHandler = reinterpret_cast<FunctionPointer>(
-	    *((uint32_t volatile*)(APP_CODE_START + 4))
+		*((uint32_t volatile*)(APP_CODE_START + 4))
 	);
 
 	// Set main stack pointer

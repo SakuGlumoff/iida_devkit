@@ -13,9 +13,9 @@ namespace XModem {
 	constexpr uint32_t DATA_1K_SIZE  = 1'024UL;
 	constexpr uint32_t CRC_SIZE      = 2UL;
 	constexpr uint32_t PACKET_SIZE =
-	    CONTROL_SIZE + BLOCK_ID_SIZE + DATA_SIZE + CRC_SIZE;
+		CONTROL_SIZE + BLOCK_ID_SIZE + DATA_SIZE + CRC_SIZE;
 	constexpr uint32_t PACKET_1K_SIZE =
-	    CONTROL_SIZE + BLOCK_ID_SIZE + DATA_1K_SIZE + CRC_SIZE;
+		CONTROL_SIZE + BLOCK_ID_SIZE + DATA_1K_SIZE + CRC_SIZE;
 	constexpr TickType TIMEOUT = msToTicks(1'000UL * 10UL);
 
 	enum ControlCharacter : uint8_t {

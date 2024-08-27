@@ -11,5 +11,5 @@ extern "C" {
 #endif
 
 #define PANIC(fmt, ...)                                                        \
-	DBG_PRINTF_ERROR(fmt, ##__VA_ARGS__);                                  \
+	DBG_PRINTF_ERROR(fmt, ##__VA_ARGS__);                                      \
 	Panic()

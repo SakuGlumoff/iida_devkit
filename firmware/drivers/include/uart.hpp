@@ -8,7 +8,7 @@
 #include <cstdint>
 
 class Uart {
-	public:
+public:
 	enum Error {
 		ERROR_BUSY = 1,
 		ERROR_TIMEOUT,
@@ -24,11 +24,11 @@ class Uart {
 	using Callback   = void (*)(uint8_t*, uint32_t);
 
 	Uart(
-	    USART_TypeDef* uart,
-	    GPIO_TypeDef*  txPort,
-	    uint32_t       txPin,
-	    GPIO_TypeDef*  rxPort,
-	    uint32_t       rxPin
+		USART_TypeDef* uart,
+		GPIO_TypeDef*  txPort,
+		uint32_t       txPin,
+		GPIO_TypeDef*  rxPort,
+		uint32_t       rxPin
 	);
 	~Uart();
 
@@ -87,7 +87,7 @@ class Uart {
 	 */
 	error_code_t Receive(uint8_t* data, uint32_t size);
 
-	private:
+private:
 	Callback       _txCallback  = nullptr;
 	Callback       _rxCallback  = nullptr;
 	uint32_t       _txSent      = 0UL;
@@ -118,7 +118,7 @@ class Uart {
 		}
 	}
 
-	public:
+public:
 	/**
 	 * @brief IRQ handler for the UART instance.
 	 *

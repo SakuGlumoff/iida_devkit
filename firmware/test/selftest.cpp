@@ -14,9 +14,9 @@
 #include <cstring>
 
 bool SelfTest::FlashTest() {
-	constexpr uint32_t PATTERN_SIZE    = 0x10000UL;
+	constexpr uint32_t PATTERN_SIZE    = 0x1'0000UL;
 	constexpr uint8_t  PATTERN_BYTE    = 0xAAU;
-	constexpr uint32_t FLASH_TEST_ADDR = (DEVICE_FLASH_START + 0x10000UL);
+	constexpr uint32_t FLASH_TEST_ADDR = (DEVICE_FLASH_START + 0x1'0000UL);
 
 	static uint8_t pattern[PATTERN_SIZE] = {};
 	memset(pattern, PATTERN_BYTE, PATTERN_SIZE);
@@ -42,9 +42,9 @@ bool SelfTest::FlashTest() {
 		uint8_t byte = *reinterpret_cast<uint8_t*>(i + FLASH_TEST_ADDR);
 		if (byte != PATTERN_BYTE) {
 			DBG_PRINTF_ERROR(
-			    "Pattern (0x%02X) not written @ 0x%08X",
-			    PATTERN_BYTE,
-			    i + FLASH_TEST_ADDR
+				"Pattern (0x%02X) not written @ 0x%08X",
+				PATTERN_BYTE,
+				i + FLASH_TEST_ADDR
 			);
 			return false;
 		}
@@ -60,8 +60,7 @@ bool SelfTest::FlashTest() {
 		uint8_t byte = *reinterpret_cast<uint8_t*>(i + FLASH_TEST_ADDR);
 		if (byte != 0xFFU) {
 			DBG_PRINTF_ERROR(
-			    "Pattern not erased @ 0x%08X",
-			    i + FLASH_TEST_ADDR
+				"Pattern not erased @ 0x%08X", i + FLASH_TEST_ADDR
 			);
 			return false;
 		}

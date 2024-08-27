@@ -26,7 +26,7 @@ extern "C" int debug_print_callback(char* debugMessage, unsigned int length) {
 
 static inline bool _VerifyImage() {
 	AppHeader volatile* const appHeader =
-	    (reinterpret_cast<AppHeader*>(APP_HEADER_START));
+		(reinterpret_cast<AppHeader*>(APP_HEADER_START));
 
 	if (appHeader->id != APP_HEADER_ID) {
 		DBG_PRINTF_DEBUG("Invalid application header ID.");
@@ -61,26 +61,21 @@ static void _Deinit() {
 
 static error_code_t _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
 	DBG_PRINTF_DEBUG(
-	    "Writing %lu bytes of the new image to 0x%08X",
-	    size,
-	    APP_HEADER_START + _imageOffset
+		"Writing %lu bytes of the new image to 0x%08X",
+		size,
+		APP_HEADER_START + _imageOffset
 	);
 
 	if ((APP_HEADER_START + _imageOffset + size)
 	    > (APP_HEADER_START + APP_HEADER_SIZE + APP_CODE_SIZE)) {
-		DBG_PRINTF_ERROR(
-		    "New image packet won't fit in the application area."
-		);
+		DBG_PRINTF_ERROR("New image packet won't fit in the application area.");
 		return -1;
 	}
 
 	error_code_t err =
-	    Flash::Write(APP_HEADER_START + _imageOffset, buffer, size);
+		Flash::Write(APP_HEADER_START + _imageOffset, buffer, size);
 	if (err) {
-		DBG_PRINTF_ERROR(
-		    "Failed to write new image packet to flash: %d",
-		    err
-		);
+		DBG_PRINTF_ERROR("Failed to write new image packet to flash: %d", err);
 		return err;
 	}
 

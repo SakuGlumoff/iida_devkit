@@ -89,12 +89,9 @@ bool XModem::DownloadImage(XModem::Callback newPacketCb) {
 	Uart dbg_uart(LPUART1, DBG_UART_TX, DBG_UART_RX);
 
 	char const* const greetingMsg =
-	    "\r\nUpload image using the XModem protocol.\r\n>";
+		"\r\nUpload image using the XModem protocol.\r\n>";
 	for (size_t i = 0; i < strlen(greetingMsg); i++) {
-		dbg_uart.Putc(
-		    static_cast<uint8_t>(greetingMsg[i]),
-		    msToTicks(TIMEOUT)
-		);
+		dbg_uart.Putc(static_cast<uint8_t>(greetingMsg[i]), msToTicks(TIMEOUT));
 	}
 
 	uint8_t  packetData[PACKET_1K_SIZE] = {0};
@@ -105,10 +102,7 @@ bool XModem::DownloadImage(XModem::Callback newPacketCb) {
 	while (true) {
 		memset(packetData, 0, PACKET_1K_SIZE);
 		ReceiveResult result = _ReceivePacket(
-		    dbg_uart,
-		    (uint8_t*)&packetData[0],
-		    &len,
-		    msToTicks(TIMEOUT)
+			dbg_uart, (uint8_t*)&packetData[0], &len, msToTicks(TIMEOUT)
 		);
 		if (result == RECEIVE_RESULT_OK) {
 			errors = 0UL;
@@ -121,27 +115,19 @@ bool XModem::DownloadImage(XModem::Callback newPacketCb) {
 				ret = true;
 				break;
 			}
-			if ((packetData[1] & 0xFFU)
-			    != (packetsReceived & 0xFFU)) {
+			if ((packetData[1] & 0xFFU) != (packetsReceived & 0xFFU)) {
 				DBG_PRINTF_DEBUG("Packet number mismatch");
 				dbg_uart.Putc(CTRL_NAK, msToTicks(TIMEOUT));
 				continue;
 			}
 			if (_newPacketCb != nullptr) {
 				int err = _newPacketCb(
-				    &packetData[XModem::DATA_INDEX],
-				    len - DATA_INDEX - CRC_SIZE
+					&packetData[XModem::DATA_INDEX], len - DATA_INDEX - CRC_SIZE
 				);
 				if (err) {
-					dbg_uart.Putc(
-					    CTRL_NAK,
-					    msToTicks(TIMEOUT)
-					);
+					dbg_uart.Putc(CTRL_NAK, msToTicks(TIMEOUT));
 				} else {
-					dbg_uart.Putc(
-					    CTRL_ACK,
-					    msToTicks(TIMEOUT)
-					);
+					dbg_uart.Putc(CTRL_ACK, msToTicks(TIMEOUT));
 				}
 			}
 			dbg_uart.Putc(CTRL_CRC, msToTicks(TIMEOUT));
@@ -166,17 +152,14 @@ bool XModem::DownloadImage(XModem::Callback newPacketCb) {
 		char const* const goodbyeMsg = "\r\nImage uploaded.\r\n";
 		for (size_t i = 0; i < strlen(goodbyeMsg); i++) {
 			dbg_uart.Putc(
-			    static_cast<uint8_t>(goodbyeMsg[i]),
-			    msToTicks(TIMEOUT)
+				static_cast<uint8_t>(goodbyeMsg[i]), msToTicks(TIMEOUT)
 			);
 		}
 	} else {
-		char const* const goodbyeMsg =
-		    "\r\nCould not upload the image.\r\n";
+		char const* const goodbyeMsg = "\r\nCould not upload the image.\r\n";
 		for (size_t i = 0; i < strlen(goodbyeMsg); i++) {
 			dbg_uart.Putc(
-			    static_cast<uint8_t>(goodbyeMsg[i]),
-			    msToTicks(TIMEOUT)
+				static_cast<uint8_t>(goodbyeMsg[i]), msToTicks(TIMEOUT)
 			);
 		}
 	}

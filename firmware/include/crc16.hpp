@@ -3,7 +3,7 @@
 #include <cstdint>
 
 class Crc16 {
-	public:
+public:
 	void Update(uint8_t const byte) {
 		uint32_t crc = _value;
 		uint32_t in  = byte | 0x100;
@@ -13,10 +13,10 @@ class Crc16 {
 			if (in & 0x100) {
 				++crc;
 			}
-			if (crc & 0x10000) {
+			if (crc & 0x1'0000) {
 				crc ^= 0x1021;
 			}
-		} while (!(in & 0x10000));
+		} while (!(in & 0x1'0000));
 		_value = crc & 0xFFFFU;
 	}
 
@@ -24,6 +24,6 @@ class Crc16 {
 		return _value;
 	}
 
-	private:
+private:
 	uint16_t _value = 0;
 };
