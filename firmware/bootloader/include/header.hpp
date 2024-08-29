@@ -9,14 +9,10 @@ constexpr uint32_t COMMIT_ID_SIZE      = 8UL;
 constexpr uint32_t TOOLCHAIN_INFO_SIZE = 100UL;
 
 /**
- * @brief Header for the application image.
+ * @brief Header for the bootloader image.
  */
-struct __attribute__((aligned(4))) __attribute__((packed)) AppHeader {
-	uint32_t   id;
-	uint32_t   size;
-	uint32_t   crc;
+struct __attribute__((aligned(8))) __attribute__((packed)) BootloaderHeader {
 	char const timestamp[TIMESTAMP_SIZE];
 	char const commit[COMMIT_ID_SIZE];
 	char const toolchain[TOOLCHAIN_INFO_SIZE];
-	uint32_t   reserved[(APP_HEADER_SIZE / 4UL) - 3UL];
 };

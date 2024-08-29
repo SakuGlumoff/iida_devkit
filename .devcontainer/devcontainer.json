@@ -9,7 +9,8 @@
 		"--rm"
 	],
 	"mounts": [
-		"source=/dev/bus/usb/,target=/dev/bus/usb,type=bind,consistency=cached"
+		"source=/dev/bus/usb/,target=/dev/bus/usb,type=bind,consistency=cached",
+		"source=/home/${localEnv:USER}/.ssh,target=/home/user/.ssh,type=bind,readonly"
 	],
 	"customizations": {
 		"vscode": {

@@ -8,6 +8,28 @@ set(${CMAKE_PROJECT_NAME}_VERSION_FIX 0)
 
 enable_language(C CXX ASM)
 
+# Get the latest commit hash
+execute_process(
+	COMMAND git rev-parse --short HEAD
+	WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+	OUTPUT_VARIABLE GIT_HASH
+	OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Get the timestamp
+execute_process(
+	COMMAND "date" "-u" "+%Y-%m-%d %H:%M:%S %Z"
+	OUTPUT_VARIABLE TIMESTAMP
+	OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Get the toolchain version
+execute_process(
+	COMMAND "bash" "-c" "${CMAKE_C_COMPILER} --version | head -n 1"
+	OUTPUT_VARIABLE TOOLCHAIN_VER
+	OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
 set(MCU_OPT
 	-mcpu=cortex-m33
 	-mfpu=fpv4-sp-d16

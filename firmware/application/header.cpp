@@ -7,14 +7,5 @@
  *
  * @note The header is populated and modified in post-build steps.
  */
-__attribute__((section(".app_header"))) static AppHeader appHeader = {
-	// ID
-	0xAABB'CCDDUL,
-	// Size
-	0UL,
-	// CRC
-	0UL,
-	// Reserved
-	0UL,
-};
+__attribute__((section(".app_header"))) static AppHeader appHeader = {};
 #pragma GCC diagnostic pop

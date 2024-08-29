@@ -2,6 +2,7 @@
 
 import subprocess
 import os
+import datetime
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -18,14 +19,27 @@ Header:
   | 0      | U32  | Identification field (hardcoded 0xDEADBEEF) |
   | 4      | U32  | Size of the image in bytes                  |
   | 8      | U32  | 32-bit CRC value of the image               |
-  | 12     |      | Reserved                                    |
+  | 12     | STR  | Timestamp as YYYY-MM-DD HH:mm:ss UTC+X      |
+  | 37     | STR  | Commit ID (hash)                            |
+  | 45     | STR  | ARM GNU toolchain version                   |
+  | 70     |      | Reserved                                    |
 '''
 HEADER_SIZE = 0x100
 
-HEADER_OFFSET_ID = 0
-HEADER_OFFSET_SIZE = 4
-HEADER_OFFSET_CRC = 8
-HEADER_OFFSET_RESERVED = 12
+HEADER_ID_LEN = 4
+HEADER_SIZE_LEN = 4
+HEADER_CRC_LEN = 4
+HEADER_TIMESTAMP_LEN = 25
+HEADER_COMMIT_LEN = 8
+HEADER_TOOLCHAIN_LEN = 100
+HEADER_OFFSET_RESERVED = (
+	HEADER_ID_LEN
+	+ HEADER_SIZE_LEN
+	+ HEADER_CRC_LEN
+	+ HEADER_TIMESTAMP_LEN
+	+ HEADER_COMMIT_LEN
+	+ HEADER_TOOLCHAIN_LEN
+)
 
 HEADER_ID = int(0xDEADBEEF)
 
@@ -54,6 +68,12 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 	args = vars(args)
 
+	timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S %Z")
+	commitId = subprocess.run(["git",  "rev-parse", "--short", "HEAD"], capture_output=True, text=True).stdout.strip()
+	toolchain = subprocess.run(["{}/bin/arm-none-eabi-gcc".format(os.environ.get('ARM_GNU_PATH')), "--version"], capture_output=True, text=True).stdout.split('\n')[0].strip()
+	print('Toolchain length: {}'.format(len(toolchain)))
+	print('HEADER_TOOLCHAIN_LEN: {}'.format(HEADER_TOOLCHAIN_LEN))
+
 	with open(args['input_binary'], 'rb') as inputFile:
 		crc = 0
 		size = 0
@@ -67,18 +87,30 @@ if __name__ == '__main__':
 		print('Calculated CRC: {}'.format(hex(crc)))
 
 		with open('app_header.bin', '+wb') as headerFile:
-			for x in range(0, 4):
+			for x in range(0, HEADER_ID_LEN):
 				headerFile.write(int((HEADER_ID >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			for x in range(0, 4):
+			for x in range(0, HEADER_SIZE_LEN):
 				headerFile.write(int((size >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
-			for x in range(0, 4):
+			for x in range(0, HEADER_CRC_LEN):
 				headerFile.write(int((crc >> (x * 8)) & 0xFF).to_bytes(1, 'little'))
+			for x in range(0, len(timestamp)):
+				headerFile.write(ord(timestamp[x]).to_bytes(1, 'little'))
+			for x in range(0, HEADER_TIMESTAMP_LEN - len(timestamp)):
+				headerFile.write(int(0).to_bytes(1, 'little'))
+			for x in range(0, len(commitId)):
+				headerFile.write(ord(commitId[x]).to_bytes(1, 'little'))
+			for x in range(0, HEADER_COMMIT_LEN - len(commitId)):
+				headerFile.write(int(0).to_bytes(1, 'little'))
+			for x in range(0, len(toolchain)):
+				headerFile.write(ord(toolchain[x]).to_bytes(1, 'little'))
+			for x in range(0, HEADER_TOOLCHAIN_LEN - len(toolchain)):
+				headerFile.write(int(0).to_bytes(1, 'little'))
 			# Fill the rest with junk
 			for _ in range(HEADER_OFFSET_RESERVED, headerBytesCount):
 				headerFile.write(int(0xFF).to_bytes(1, 'little'))
 
 		print("Updating ELF with header...")
-		subprocess.run(["{}/bin/arm-none-eabi-objcopy".format(os.environ.get('ARM_GNU_PATH')), "--update-section", ".app_header=app_header.bin", args['input_elf'], args['output']])
+		subprocess.run(["{}/bin/arm-none-eabi-objcopy".format(os.environ.get('ARM_GNU_PATH')), "--update-section", ".header=app_header.bin", args['input_elf'], args['output']])
 		print("Removing app_header.bin...")
 		os.remove("app_header.bin")
 
