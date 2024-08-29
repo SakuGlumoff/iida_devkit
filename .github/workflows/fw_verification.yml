@@ -5,42 +5,34 @@ on:
       - trunk
   pull_request:
   workflow_dispatch:
-defaults:
-  run:
-    working-directory: ./firmware
 jobs:
   Codecheck:
-    runs-on: [self-hosted, oracle-cloud]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: true
           token: ${{ secrets.PAT_TOKEN }}
+      - name: Build docker image
+        # Build the docker image with current user's IDs so that permissions to the workspace are retained.
+        run: docker build -t iida-devkit .devcontainer --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
       - name: Codecheck
-        run: ./scripts/codechecker.sh
-  Build:
-    runs-on: [self-hosted, oracle-cloud]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-          token: ${{ secrets.PAT_TOKEN }}
-      - name: Generate build files
-        run: cmake -G Ninja -S . -B build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug
-      - name: Build ptsw
-        run: cmake --build build --target ptsw
-      - name: Build bootloader
-        run: cmake --build build --target bootloader
-      - name: Build application
-        run: cmake --build build --target application
+        run: |
+          docker run -v $PWD:/iida-devkit -w /iida-devkit iida-devkit \
+          ./firmware/scripts/codechecker.sh
+      - name: Build
+        run: |
+          docker run -v $PWD:/iida-devkit -w /iida-devkit iida-devkit \
+          /bin/bash -c "\
+            cmake -G Ninja -S ./firmware -B ./firmware/build -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug && \
+            cmake --build ./firmware/build \
+          "
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Binaries
           path: |
-            ./firmware/build/ptsw/ptsw.hex
             ./firmware/build/bootloader/bootloader.hex
             ./firmware/build/application/application.hex
           if-no-files-found: error
