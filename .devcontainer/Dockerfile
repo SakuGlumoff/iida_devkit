@@ -1,0 +1,59 @@
+FROM	debian:bookworm
+
+LABEL	org.opencontainers.image.authors="saku.glumoff@gmail.com"
+
+WORKDIR	/tmp
+
+# Install prerequisites
+RUN	apt-get update -y && \
+	apt-get install -y \
+	python3 \
+	curl wget \
+	unzip gzip xz-utils \
+	git git-lfs \
+	bash-completion \
+	cmake ninja-build \
+	libncurses5 libncursesw5
+
+# Install ARM GNU toolchain
+RUN	wget https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi.tar.xz && \
+	tar -xvf arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi.tar.xz && \
+	rm arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi.tar.xz && \
+	mv arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi /opt/arm-gnu-toolchain
+
+ENV	ARM_GNU_PATH=/opt/arm-gnu-toolchain
+
+# Install J-Link tools
+RUN	curl \
+	-d "accept_license_agreement=accepted&submit=Download+software" \
+	-X POST \
+	-O "https://www.segger.com/downloads/jlink/JLink_Linux_V798f_x86_64.tgz" && \
+	tar -xvf JLink_Linux_V798f_x86_64.tgz && \
+	rm JLink_Linux_V798f_x86_64.tgz && \
+	mv JLink_Linux_V798f_x86_64 /opt/jlink
+
+# Install LLVM tools
+RUN	wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc && \
+	echo "deb http://apt.llvm.org/bookworm/ llvm-toolchain-bookworm-19 main" > /etc/apt/sources.list.d/llvm.list && \
+	echo "deb-src http://apt.llvm.org/bookworm/ llvm-toolchain-bookworm-19 main" >> /etc/apt/sources.list.d/llvm.list && \
+	apt update -y && \
+	apt install -y clang-format-19 && \
+	ln -sf /usr/bin/clang-format-19 /usr/bin/clang-format
+
+WORKDIR	/
+
+# Create and set a default user
+ARG	USERNAME=user
+ARG	USER_UID=1000
+ARG	USER_GID=$USER_UID
+RUN	groupadd --gid $USER_GID $USERNAME \
+	&& useradd --uid $USER_UID --gid $USER_GID -s /bin/bash -m $USERNAME \
+	#
+	# Add sudo support.
+	&& apt-get update \
+	&& apt-get install -y sudo \
+	&& echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+	&& chmod 0440 /etc/sudoers.d/$USERNAME
+USER 	$USERNAME
+
+SHELL	["/bin/bash"]
