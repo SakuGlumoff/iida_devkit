@@ -1,0 +1,12 @@
+#include "common.hpp"
+
+/**
+ * @brief Metadata header.
+ */
+__attribute__((section(".header")))
+__attribute__((used))
+MetadataHeader metadata = {
+	"@TIMESTAMP@",
+	"@GIT_HASH@",
+	"@TOOLCHAIN_VER@"
+};

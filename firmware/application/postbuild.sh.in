@@ -7,7 +7,7 @@ echo "Running postbuild script..."
 echo "$0: $(date)" > @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
 
 echo "Running post build python script" >> @CMAKE_CURRENT_BINARY_DIR@/postbuild.log
-python3 ${PROJECT_DIR}/firmware/scripts/postbuild.py \
+python3 ${PROJECT_DIR}/firmware/application/postbuild.py \
 	--input-binary @CMAKE_CURRENT_BINARY_DIR@/application.bin \
 	--input-elf @CMAKE_CURRENT_BINARY_DIR@/application.elf \
 	--app-header-start '@APP_HEADER_START@' \

@@ -65,6 +65,9 @@ target_link_options(bootloader PRIVATE
 
 target_link_libraries(bootloader PRIVATE etl::etl)
 
+configure_file(${CMAKE_CURRENT_LIST_DIR}/header.cpp.in ${CMAKE_CURRENT_BINARY_DIR}/header.cpp)
+target_sources(bootloader PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/header.cpp)
+
 configure_file(${CMAKE_CURRENT_LIST_DIR}/bootloader.ld.in ${CMAKE_CURRENT_BINARY_DIR}/bootloader.ld)
 
 add_custom_command(TARGET bootloader POST_BUILD

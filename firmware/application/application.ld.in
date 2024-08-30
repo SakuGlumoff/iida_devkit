@@ -12,9 +12,9 @@ MEMORY
 
 SECTIONS
 {
-	.app_header :
+	.header :
 	{
-		KEEP(*(.app_header))
+		KEEP(*(.header))
 	} > HEADER
 
 	.isr_vector :
