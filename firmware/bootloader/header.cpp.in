@@ -1,18 +1,12 @@
-#include "header.hpp"
+#include "common.hpp"
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-variable"
 /**
- * @brief Bootloader header.
- *
- * @note The header is populated and modified in post-build steps.
+ * @brief Metadata header.
  */
-__attribute__((section(".header"))) static BootloaderHeader bootloaderHeader = {
-	// Timestamp
+__attribute__((section(".header")))
+__attribute__((used))
+MetadataHeader metadata = {
 	"@TIMESTAMP@",
-	// Commit ID
 	"@GIT_HASH@",
-	// ARM GNU toolchain version
 	"@TOOLCHAIN_VER@"
 };
-#pragma GCC diagnostic pop

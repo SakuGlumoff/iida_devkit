@@ -47,7 +47,6 @@ include(${CMAKE_CURRENT_LIST_DIR}/cmake/common.cmake)
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/include/config.hpp.in include/config.hpp)
 configure_file(${CMAKE_CURRENT_LIST_DIR}/include/memorymap.hpp.in include/memorymap.hpp)
-configure_file(${CMAKE_CURRENT_LIST_DIR}/include/common.hpp.in include/common.hpp)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/etl)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/ptsw)

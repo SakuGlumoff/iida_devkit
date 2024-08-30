@@ -64,6 +64,9 @@ target_link_options(application PRIVATE
 
 target_link_libraries(application PRIVATE etl::etl)
 
+configure_file(${CMAKE_CURRENT_LIST_DIR}/header.cpp.in ${CMAKE_CURRENT_BINARY_DIR}/header.cpp)
+target_sources(application PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/header.cpp)
+
 configure_file(${CMAKE_CURRENT_LIST_DIR}/application.ld.in ${CMAKE_CURRENT_BINARY_DIR}/application.ld)
 configure_file(${CMAKE_CURRENT_LIST_DIR}/postbuild.sh.in ${CMAKE_CURRENT_BINARY_DIR}/postbuild.sh @ONLY)
 
