@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${env:ARM_GNU_PATH}/arm-none-eabi/include",
+                "${env:ARM_GNU_PATH}/arm-none-eabi/include/c++/13.3.1",
+                "${workspaceFolder}/firmware/application/include",
+                "${workspaceFolder}/firmware/bootloader/include",
+                "${workspaceFolder}/firmware/drivers/include",
+                "${workspaceFolder}/firmware/build/include",
+                "${workspaceFolder}/firmware/include",
+                "${workspaceFolder}/firmware/lib/CMSIS_5/CMSIS/Core/Include",
+                "${workspaceFolder}/firmware/lib/DebugPrint-GCC",
+                "${workspaceFolder}/firmware/lib/etl/include",
+                "${workspaceFolder}/firmware/lib/RTT/Config",
+                "${workspaceFolder}/firmware/lib/RTT/RTT",
+                "${workspaceFolder}/firmware/test/include"
+            ],
+            "defines": [
+                "SEGGER_RTT_SECTION=\".segger_rtt\"",
+                "SEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-arm",
+            "compilerPath": "${env:ARM_GNU_PATH}/bin/arm-none-eabi-gcc"
+        }
+    ],
+    "version": 4
+}

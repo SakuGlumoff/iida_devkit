@@ -1,4 +1,5 @@
 #include "SEGGER_RTT.h"
+#include "common.hpp"
 #include "config.hpp"
 #include "debug_print.h"
 #include "gpio.hpp"
@@ -23,6 +24,14 @@ static void _Init() {
 
 int main(void) {
 	_Init();
+
+	extern uint32_t const __header_start;
+	AppHeader*            header =
+		reinterpret_cast<AppHeader*>(const_cast<uint32_t*>(&__header_start));
+	DBG_PRINTF_TRACE("Application start");
+	DBG_PRINTF_TRACE("Timestamp: %s", header->metadata.timestamp);
+	DBG_PRINTF_TRACE("Commit: %s", header->metadata.commit);
+	DBG_PRINTF_TRACE("Toolchain: %s", header->metadata.toolchain);
 
 	bool ledState = true;
 	Gpio led(

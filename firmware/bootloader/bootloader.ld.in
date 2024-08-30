@@ -21,6 +21,7 @@ SECTIONS
 	.header :
 	{
 		. = ALIGN(4);
+		PROVIDE (__header_start = .);
 		KEEP(*(.header))
 		. = ALIGN(4);
 	} > FLASH

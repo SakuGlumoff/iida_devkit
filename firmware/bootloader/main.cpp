@@ -87,6 +87,15 @@ static error_code_t _HandleNewImagePacket(uint8_t* buffer, uint32_t size) {
 extern "C" int main() {
 	_Init();
 
+	extern uint32_t const __header_start;
+	MetadataHeader*       metadata =
+		reinterpret_cast<MetadataHeader*>(const_cast<uint32_t*>(&__header_start)
+	    );
+	DBG_PRINTF_TRACE("Bootloader start");
+	DBG_PRINTF_TRACE("Timestamp: %s", metadata->timestamp);
+	DBG_PRINTF_TRACE("Commit: %s", metadata->commit);
+	DBG_PRINTF_TRACE("Toolchain: %s", metadata->toolchain);
+
 #ifdef CONFIG_SELF_TEST
 	bool selfTest = SelfTest::RunAll();
 	if (!selfTest) {
