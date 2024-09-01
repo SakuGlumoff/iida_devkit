@@ -30,13 +30,6 @@ execute_process(
 	OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 
-set(MCU_OPT
-	-mcpu=cortex-m33
-	-mfpu=fpv4-sp-d16
-	-mfloat-abi=hard
-	-mthumb
-)
-
 option(CONFIG_HSE "Use HSE" OFF)
 option(CONFIG_EXT_FLASH "Use external flash" OFF)
 option(CONFIG_MCP9808 "Use MCP9808" OFF)
@@ -49,6 +42,6 @@ configure_file(${CMAKE_CURRENT_LIST_DIR}/include/config.hpp.in include/config.hp
 configure_file(${CMAKE_CURRENT_LIST_DIR}/include/memorymap.hpp.in include/memorymap.hpp)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/etl)
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/ptsw)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/DebugPrint-GCC)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/application)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/bootloader)

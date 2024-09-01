@@ -1,7 +1,6 @@
 file(GLOB SOURCES
 	${CMAKE_CURRENT_LIST_DIR}/../drivers/*.cpp
 	${CMAKE_CURRENT_LIST_DIR}/../test/selftest.cpp
-	${CMAKE_CURRENT_LIST_DIR}/../lib/DebugPrint-GCC/debug_print.c
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT/*.c
 	${CMAKE_CURRENT_LIST_DIR}/../lib/RTT/RTT/*.S
 	${CMAKE_CURRENT_LIST_DIR}/*.cpp
@@ -33,37 +32,12 @@ target_compile_definitions(bootloader PRIVATE
 	SEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
 )
 
-target_compile_options(bootloader PRIVATE
-	${MCU_OPT}
-	-fdata-sections
-	-ffunction-sections
-	-fno-common
-	-Wall
-	-Wextra
-	-Wpedantic
-	$<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions -fno-rtti>
-	$<$<CONFIG:Debug>:-O0 -g3>
-	$<$<CONFIG:Release>:-Og -g0>
-)
-
 target_link_options(bootloader PRIVATE
-	${MCU_OPT}
-	-Wl,--start-group
-	-lc
-	-lm
-	-lstdc++
-	-lnosys
-	-Wl,--end-group
-	-specs=nano.specs
-	-specs=nosys.specs
 	-T ${CMAKE_CURRENT_BINARY_DIR}/bootloader.ld
 	-Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/bootloader.map,--cref
-	-Wl,--gc-sections
-	-Wl,--no-warn-rwx-segments
-	-Wl,--print-memory-usage
 )
 
-target_link_libraries(bootloader PRIVATE etl::etl)
+target_link_libraries(bootloader PRIVATE etl::etl DEBUGPRINT_GCC)
 
 configure_file(${CMAKE_CURRENT_LIST_DIR}/header.cpp.in ${CMAKE_CURRENT_BINARY_DIR}/header.cpp)
 target_sources(bootloader PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/header.cpp)
