@@ -6,6 +6,7 @@
                 "${env:ARM_GNU_PATH}/arm-none-eabi/include",
                 "${env:ARM_GNU_PATH}/arm-none-eabi/include/c++/13.3.1",
                 "${workspaceFolder}/firmware/application/include",
+                "${workspaceFolder}/firmware/application/FreeRTOSPort",
                 "${workspaceFolder}/firmware/bootloader/include",
                 "${workspaceFolder}/firmware/drivers/include",
                 "${workspaceFolder}/firmware/build/include",
@@ -13,6 +14,7 @@
                 "${workspaceFolder}/firmware/lib/CMSIS_5/CMSIS/Core/Include",
                 "${workspaceFolder}/firmware/lib/DebugPrint-GCC",
                 "${workspaceFolder}/firmware/lib/etl/include",
+                "${workspaceFolder}/firmware/lib/FreeRTOS-Kernel/include",
                 "${workspaceFolder}/firmware/lib/RTT/Config",
                 "${workspaceFolder}/firmware/lib/RTT/RTT",
                 "${workspaceFolder}/firmware/test/include"

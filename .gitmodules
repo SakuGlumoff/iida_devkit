@@ -13,3 +13,6 @@
 [submodule "firmware/lib/RTT"]
 	path = firmware/lib/RTT
 	url = https://github.com/SEGGERMicro/RTT.git
+[submodule "firmware/lib/FreeRTOS-Kernel"]
+	path = firmware/lib/FreeRTOS-Kernel
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git

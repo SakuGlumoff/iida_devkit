@@ -2,7 +2,9 @@
 
 #include "stm32l552xx.h"
 
-static TickType volatile _systickCounter = 0;
+extern "C" {
+	TickType volatile _systickCounter = 0;
+}
 
 static void _initPwr() {
 	RCC->APB1ENR1 |= RCC_APB1ENR1_PWREN;
@@ -240,19 +242,7 @@ extern "C" {
 		while (true) {}
 	}
 
-	void SVC_Handler(void) {
-		while (true) {}
-	}
-
 	void DebugMon_Handler(void) {
 		while (true) {}
-	}
-
-	void PendSV_Handler(void) {
-		while (true) {}
-	}
-
-	void SysTick_Handler(void) {
-		_systickCounter++;
 	}
 }
