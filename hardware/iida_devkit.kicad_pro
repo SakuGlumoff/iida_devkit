@@ -279,7 +279,9 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "lib_symbol_issues|1600200|850900|b040ecfd-f13e-406a-a66c-bca354d8f942|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -479,7 +481,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "ignore",
@@ -527,7 +529,7 @@
         "microvia_drill": 0.1,
         "name": "50 Ohm",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(39, 255, 0)",
         "track_width": 0.245,
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -544,7 +546,7 @@
         "microvia_drill": 0.1,
         "name": "90 Ohm",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(1, 0, 255)",
         "track_width": 0.23,
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -583,6 +585,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
+    "bom_export_filename": "",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -685,8 +688,12 @@
       "Root"
     ],
     [
-      "8cbb6421-5bd5-4129-8f78-e0611eb1a1db",
+      "8a51e004-740e-440f-9bfb-b035bcbeb0d2",
       "Power"
+    ],
+    [
+      "6dd8d741-3080-458c-a4f5-a05a3905bb8a",
+      "MCU"
     ],
     [
       "3723475b-e956-4027-ac40-e47346743900",

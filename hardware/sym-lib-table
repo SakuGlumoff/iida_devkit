@@ -6,4 +6,7 @@
   (lib (name "BQ2407RGTR")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/BQ24074RGTR/BQ2407RGTR.kicad_sym")(options "")(descr ""))
   (lib (name "MX25U4035FM1I")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/MX25U4035FM1I/MX25U4035FM1I.kicad_sym")(options "")(descr ""))
   (lib (name "SF72S006VBDR2500")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/SF72S006VBDR2500/SF72S006VBDR2500.kicad_sym")(options "")(descr ""))
+  (lib (name "TLV76733DGNR")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/TLV76733DGNR/TLV76733DGNR.kicad_sym")(options "")(descr ""))
+  (lib (name "MCP9808")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/MCP9808/MCP9808.kicad_sym")(options "")(descr ""))
+  (lib (name "SARA-R500S")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/SARA-R500S/SARA-R500S.kicad_sym")(options "")(descr ""))
 )
