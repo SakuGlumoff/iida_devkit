@@ -9,4 +9,6 @@
   (lib (name "TLV76733DGNR")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/TLV76733DGNR/TLV76733DGNR.kicad_sym")(options "")(descr ""))
   (lib (name "MCP9808")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/MCP9808/MCP9808.kicad_sym")(options "")(descr ""))
   (lib (name "SARA-R500S")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/SARA-R500S/SARA-R500S.kicad_sym")(options "")(descr ""))
+  (lib (name "STM32L552CEU6")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/STM32L552CEU6/STM32L552CEU6.kicad_sym")(options "")(descr ""))
+  (lib (name "DT1240-04LP")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/DT1240-04LP/DT1240-04LP.kicad_sym")(options "")(descr ""))
 )
