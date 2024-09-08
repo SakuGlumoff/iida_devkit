@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-06")
+		(date "2024-09-08")
 		(rev "v4.0.0")
 	)
 	(lib_symbols
@@ -289,26 +289,36 @@
 		)
 	)
 	(junction
-		(at 153.67 191.77)
+		(at 142.24 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "062403b7-13ce-4a49-b1b0-dd820d284646")
 	)
 	(junction
-		(at 143.51 191.77)
+		(at 132.08 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "939d13a2-cc0b-4354-bde8-a93e85d138b7")
 	)
 	(junction
-		(at 148.59 191.77)
+		(at 137.16 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f64cad8a-0185-476f-91dc-4b8cfcbc11f3")
 	)
 	(wire
 		(pts
-			(xy 143.51 191.77) (xy 148.59 191.77)
+			(xy 95.25 101.6) (xy 99.06 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11789dc7-75c0-40bf-9f05-59d7931a7513")
+	)
+	(wire
+		(pts
+			(xy 132.08 189.23) (xy 137.16 189.23)
 		)
 		(stroke
 			(width 0)
@@ -318,7 +328,27 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 191.77) (xy 143.51 191.77)
+			(xy 125.73 102.87) (xy 177.8 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c118627-09f0-4b18-997c-443007e9c616")
+	)
+	(wire
+		(pts
+			(xy 95.25 107.95) (xy 99.06 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90257038-183a-4e7e-a0cb-730b68f3f3b4")
+	)
+	(wire
+		(pts
+			(xy 127 189.23) (xy 132.08 189.23)
 		)
 		(stroke
 			(width 0)
@@ -328,7 +358,27 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 191.77) (xy 153.67 191.77)
+			(xy 125.73 107.95) (xy 177.8 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d4777f2-75b5-40ac-98e7-970a0b3623e9")
+	)
+	(wire
+		(pts
+			(xy 125.73 105.41) (xy 177.8 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a18fbc9d-f2c8-4197-9bd7-50397c0553df")
+	)
+	(wire
+		(pts
+			(xy 137.16 189.23) (xy 142.24 189.23)
 		)
 		(stroke
 			(width 0)
@@ -336,165 +386,91 @@
 		)
 		(uuid "a4e0ba10-6c1f-42ce-8447-de68f649553c")
 	)
-	(rectangle
-		(start 53.594 104.394)
-		(end 82.804 127.254)
+	(wire
+		(pts
+			(xy 95.25 110.49) (xy 99.06 110.49)
+		)
 		(stroke
 			(width 0)
-			(type solid)
-			(color 255 247 105 1)
+			(type default)
 		)
-		(fill
-			(type color)
-			(color 39 255 0 1)
-		)
-		(uuid 250bab81-1ec7-428b-9e56-b1eeb5e14b73)
+		(uuid "b8f1798f-c79d-40f0-a85c-4cd3877f6a63")
 	)
-	(rectangle
-		(start 160.274 73.914)
-		(end 186.944 126.238)
+	(wire
+		(pts
+			(xy 165.1 88.9) (xy 177.8 88.9)
+		)
 		(stroke
 			(width 0)
-			(type solid)
-			(color 255 247 105 1)
+			(type default)
 		)
-		(fill
-			(type color)
-			(color 39 255 0 1)
-		)
-		(uuid 379426a7-dafe-4ad8-90b0-5ff5eb9e0db5)
+		(uuid "dc8cd067-0c6c-49bc-9470-315aa83b12f9")
 	)
-	(rectangle
-		(start 198.882 103.378)
-		(end 250.952 126.238)
+	(wire
+		(pts
+			(xy 165.1 83.82) (xy 177.8 83.82)
+		)
 		(stroke
 			(width 0)
-			(type solid)
-			(color 255 247 105 1)
+			(type default)
 		)
-		(fill
-			(type color)
-			(color 39 255 0 1)
-		)
-		(uuid c6d7da0e-cce3-4bc4-81a8-3a97dafa4dbd)
+		(uuid "eb05ccaa-28d8-4f5b-bbf8-b75a36dd8cfd")
 	)
-	(rectangle
-		(start 85.09 73.66)
-		(end 114.3 127)
+	(wire
+		(pts
+			(xy 125.73 83.82) (xy 135.89 83.82)
+		)
 		(stroke
 			(width 0)
-			(type solid)
-			(color 255 247 105 1)
+			(type default)
 		)
-		(fill
-			(type color)
-			(color 39 255 0 1)
-		)
-		(uuid d970c82f-5242-42e6-930d-553275b6dfde)
+		(uuid "f2352f43-0ce7-47b3-8150-8fefd809a816")
 	)
-	(rectangle
-		(start 198.882 79.248)
-		(end 250.952 102.108)
+	(wire
+		(pts
+			(xy 95.25 113.03) (xy 99.06 113.03)
+		)
 		(stroke
 			(width 0)
-			(type solid)
-			(color 255 247 105 1)
+			(type default)
 		)
-		(fill
-			(type color)
-			(color 39 255 0 1)
-		)
-		(uuid df42122b-e234-4d94-b105-648f860657e3)
+		(uuid "f3051ff5-3f80-4f12-8f79-1969fdd51329")
 	)
-	(rectangle
-		(start 122.428 73.66)
-		(end 151.638 96.52)
+	(wire
+		(pts
+			(xy 165.1 86.36) (xy 177.8 86.36)
+		)
 		(stroke
 			(width 0)
-			(type solid)
-			(color 255 247 105 1)
+			(type default)
 		)
-		(fill
-			(type color)
-			(color 39 255 0 1)
-		)
-		(uuid fd4faaea-a395-4081-9c32-50731fc146bd)
+		(uuid "ff66211a-9ecf-4a04-8819-771bae12c93b")
 	)
-	(text "Ext flash"
+	(text "Place fiducial markers at each (-1) corner of the PCB."
 		(exclude_from_sim no)
-		(at 206.502 84.582 0)
+		(at 107.442 167.386 0)
 		(effects
 			(font
-				(size 5 5)
-				(bold yes)
+				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "4011f636-3fe4-4ec5-9a28-d90b33169295")
+		(uuid "c32d7fd3-00d8-48da-9a35-77073af5943a")
 	)
-	(text "POWER"
+	(text "Place mounting holes at the four corners of the PCB."
 		(exclude_from_sim no)
-		(at 123.19 78.74 0)
+		(at 108.712 179.07 0)
 		(effects
 			(font
-				(size 5 5)
-				(bold yes)
+				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "42567c64-1ade-4d2c-a49e-6d103a725fe7")
-	)
-	(text "MCU"
-		(exclude_from_sim no)
-		(at 165.1 78.74 0)
-		(effects
-			(font
-				(size 5 5)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "507272a6-9d01-4722-ba26-4c9d955c845d")
-	)
-	(text "Modem"
-		(exclude_from_sim no)
-		(at 86.106 78.232 0)
-		(effects
-			(font
-				(size 5 5)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "93d6bdbd-dc8a-46cb-b8d2-dba2bc8ccc9b")
-	)
-	(text "Temp sensor"
-		(exclude_from_sim no)
-		(at 200.406 108.204 0)
-		(effects
-			(font
-				(size 5 5)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "cf616690-6d1a-4e01-b49f-bd181f5ffb26")
-	)
-	(text "SIM"
-		(exclude_from_sim no)
-		(at 60.96 109.22 0)
-		(effects
-			(font
-				(size 5 5)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "ff37ee3d-18b8-4c17-ab07-5ba1a11e665c")
+		(uuid "d3b39367-531a-4266-b5c4-38e8e4730cd9")
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 138.43 189.23 0)
+		(at 127 186.69 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -502,7 +478,7 @@
 		(dnp no)
 		(uuid "160058f9-baa4-448c-b354-99225a2ceae8")
 		(property "Reference" "H1"
-			(at 137.16 184.785 0)
+			(at 125.73 182.245 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -511,7 +487,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 140.97 189.23 0)
+			(at 129.54 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -521,7 +497,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_4.3mm_M4_Pad_Via"
-			(at 138.43 189.23 0)
+			(at 127 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -530,7 +506,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 138.43 189.23 0)
+			(at 127 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -539,7 +515,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 138.43 189.23 0)
+			(at 127 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -548,7 +524,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 138.43 189.23 0)
+			(at 127 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -557,7 +533,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 138.43 189.23 0)
+			(at 127 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -566,16 +542,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 138.43 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 138.43 189.23 0)
+			(at 127 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -597,7 +564,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 165.1 187.96 0)
+		(at 134.62 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -605,7 +572,7 @@
 		(dnp no)
 		(uuid "26b8cd8e-22f8-4c67-ae7d-0b4f3e40ec43")
 		(property "Reference" "FID2"
-			(at 163.195 185.42 0)
+			(at 132.715 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -614,7 +581,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 168.275 189.23 0)
+			(at 137.795 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -624,7 +591,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 165.1 187.96 0)
+			(at 134.62 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -633,7 +600,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 165.1 187.96 0)
+			(at 134.62 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -642,7 +609,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 165.1 187.96 0)
+			(at 134.62 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -651,7 +618,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 165.1 187.96 0)
+			(at 134.62 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -660,7 +627,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 165.1 187.96 0)
+			(at 134.62 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -669,16 +636,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 165.1 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 165.1 187.96 0)
+			(at 134.62 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -697,7 +655,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 153.67 189.23 0)
+		(at 142.24 186.69 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -705,7 +663,7 @@
 		(dnp no)
 		(uuid "37b17bca-3d3c-4c85-92bf-245f7303c029")
 		(property "Reference" "H4"
-			(at 152.4 184.785 0)
+			(at 140.97 182.245 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -714,7 +672,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 156.21 189.23 0)
+			(at 144.78 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -724,7 +682,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_4.3mm_M4_Pad_Via"
-			(at 153.67 189.23 0)
+			(at 142.24 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -733,7 +691,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 153.67 189.23 0)
+			(at 142.24 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -742,7 +700,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 153.67 189.23 0)
+			(at 142.24 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -751,7 +709,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 153.67 189.23 0)
+			(at 142.24 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -760,7 +718,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 153.67 189.23 0)
+			(at 142.24 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -769,16 +727,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 153.67 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 153.67 189.23 0)
+			(at 142.24 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -800,7 +749,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 153.67 191.77 0)
+		(at 142.24 189.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -808,8 +757,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b88cd83-3afd-4da0-96db-2c7305c3c68f")
-		(property "Reference" "#PWR014"
-			(at 153.67 198.12 0)
+		(property "Reference" "#PWR01"
+			(at 142.24 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -818,7 +767,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 153.67 196.85 0)
+			(at 142.24 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -827,7 +776,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 191.77 0)
+			(at 142.24 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -836,7 +785,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 191.77 0)
+			(at 142.24 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -845,7 +794,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 153.67 191.77 0)
+			(at 142.24 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -859,7 +808,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
-					(reference "#PWR014")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -867,7 +816,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 170.18 187.96 0)
+		(at 139.7 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -875,7 +824,7 @@
 		(dnp no)
 		(uuid "545c7fb9-449e-45e3-8c9d-d90293b26264")
 		(property "Reference" "FID3"
-			(at 168.275 185.42 0)
+			(at 137.795 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -884,7 +833,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 173.355 189.23 0)
+			(at 142.875 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -894,7 +843,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 170.18 187.96 0)
+			(at 139.7 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -903,7 +852,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 170.18 187.96 0)
+			(at 139.7 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -912,7 +861,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 170.18 187.96 0)
+			(at 139.7 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -921,7 +870,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 170.18 187.96 0)
+			(at 139.7 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -930,7 +879,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 170.18 187.96 0)
+			(at 139.7 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -939,16 +888,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 170.18 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 170.18 187.96 0)
+			(at 139.7 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -967,7 +907,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 143.51 189.23 0)
+		(at 132.08 186.69 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -975,7 +915,7 @@
 		(dnp no)
 		(uuid "701cbfd0-af05-42fa-a2d4-17530a2367e3")
 		(property "Reference" "H2"
-			(at 142.24 184.785 0)
+			(at 130.81 182.245 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -984,7 +924,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 146.05 189.23 0)
+			(at 134.62 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -994,7 +934,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_4.3mm_M4_Pad_Via"
-			(at 143.51 189.23 0)
+			(at 132.08 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1003,7 +943,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 143.51 189.23 0)
+			(at 132.08 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1012,7 +952,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 143.51 189.23 0)
+			(at 132.08 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1021,7 +961,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 143.51 189.23 0)
+			(at 132.08 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1030,7 +970,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 143.51 189.23 0)
+			(at 132.08 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1039,16 +979,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 143.51 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 143.51 189.23 0)
+			(at 132.08 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1070,7 +1001,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 160.02 187.96 0)
+		(at 129.54 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1078,7 +1009,7 @@
 		(dnp no)
 		(uuid "b2e95186-9f4a-4240-acf3-6c29d8c4e696")
 		(property "Reference" "FID1"
-			(at 158.115 185.42 0)
+			(at 127.635 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1087,7 +1018,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 163.195 189.23 0)
+			(at 132.715 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1097,7 +1028,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 160.02 187.96 0)
+			(at 129.54 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1106,7 +1037,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 160.02 187.96 0)
+			(at 129.54 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1115,7 +1046,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 187.96 0)
+			(at 129.54 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1124,7 +1055,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 160.02 187.96 0)
+			(at 129.54 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1133,7 +1064,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 160.02 187.96 0)
+			(at 129.54 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1142,16 +1073,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 160.02 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 160.02 187.96 0)
+			(at 129.54 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1170,7 +1092,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 148.59 189.23 0)
+		(at 137.16 186.69 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1178,7 +1100,7 @@
 		(dnp no)
 		(uuid "e64f6084-e950-4b3e-b4b3-d057eb9b5b4e")
 		(property "Reference" "H3"
-			(at 147.32 184.785 0)
+			(at 135.89 182.245 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1187,7 +1109,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 151.13 189.23 0)
+			(at 139.7 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1197,7 +1119,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_4.3mm_M4_Pad_Via"
-			(at 148.59 189.23 0)
+			(at 137.16 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1206,7 +1128,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 148.59 189.23 0)
+			(at 137.16 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1215,7 +1137,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 148.59 189.23 0)
+			(at 137.16 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1224,7 +1146,7 @@
 			)
 		)
 		(property "Digi-Key Part Number" "-"
-			(at 148.59 189.23 0)
+			(at 137.16 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1233,7 +1155,7 @@
 			)
 		)
 		(property "Manufacturer" "-"
-			(at 148.59 189.23 0)
+			(at 137.16 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1242,16 +1164,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "-"
-			(at 148.59 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey Part Number" ""
-			(at 148.59 189.23 0)
+			(at 137.16 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1272,19 +1185,99 @@
 		)
 	)
 	(sheet
-		(at 299.085 214.63)
-		(size 296.545 210.82)
+		(at 77.47 99.06)
+		(size 17.78 16.51)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
+			(color 0 0 0 1)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 255 0 1.0000)
+		)
+		(uuid "33580d9f-a609-4568-baaf-9a29cf2dabcd")
+		(property "Sheetname" "SIM"
+			(at 77.47 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sim.kicad_sch"
+			(at 77.47 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SIM_RST" input
+			(at 95.25 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f32303f7-4bc3-47f1-8df1-84b86affbf7c")
+		)
+		(pin "VSIM" input
+			(at 95.25 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "fe6520ae-21d4-4e54-ab5c-a77d28208c6e")
+		)
+		(pin "SIM_CLK" input
+			(at 95.25 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "98ba439e-18f9-4613-8a18-c982dcaad86f")
+		)
+		(pin "SIM_IO" bidirectional
+			(at 95.25 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2489ff51-7f55-4b64-a251-1aa8855cf301")
+		)
+		(instances
+			(project "iida_devkit"
+				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 99.06 81.28)
+		(size 26.67 34.29)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(fill
+			(color 0 255 0 1.0000)
 		)
 		(uuid "3723475b-e956-4027-ac40-e47346743900")
 		(property "Sheetname" "Modem"
-			(at 299.085 213.9184 0)
+			(at 99.06 80.5684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1293,13 +1286,93 @@
 			)
 		)
 		(property "Sheetfile" "modem.kicad_sch"
-			(at 299.085 426.0346 0)
+			(at 99.06 116.1546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "+3.3V_MDM" input
+			(at 125.73 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b656903d-5d99-47bd-b3ba-734a9ec4ab46")
+		)
+		(pin "SIM_IO" bidirectional
+			(at 99.06 113.03 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "74388d3f-d654-4c91-9ab6-16ccf4ff06ba")
+		)
+		(pin "VSIM" input
+			(at 99.06 101.6 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0a154582-1c77-4364-9874-ad9886d242bc")
+		)
+		(pin "SIM_RST" input
+			(at 99.06 107.95 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "68eb1f09-9723-4835-9a32-989842fb9f33")
+		)
+		(pin "SIM_CLK" input
+			(at 99.06 110.49 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "679426f3-330a-44a8-b431-6c083eadeab8")
+		)
+		(pin "~{MODEM_RESET}" input
+			(at 125.73 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "89892a07-8843-47d4-b72a-b6cfab519eaf")
+		)
+		(pin "MODEM_RX" bidirectional
+			(at 125.73 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ae0d97c2-51b0-447e-8d13-5413164479c3")
+		)
+		(pin "MODEM_TX" bidirectional
+			(at 125.73 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6d1e3a79-44ba-4120-aac0-f77b22f98bdd")
 		)
 		(instances
 			(project "iida_devkit"
@@ -1310,19 +1383,20 @@
 		)
 	)
 	(sheet
-		(at 1.27 214.63)
-		(size 295.91 210.82)
+		(at 177.8 81.28)
+		(size 24.13 34.29)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
+			(color 0 0 0 1)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 255 0 1.0000)
 		)
 		(uuid "6dd8d741-3080-458c-a4f5-a05a3905bb8a")
 		(property "Sheetname" "MCU"
-			(at 1.27 213.9184 0)
+			(at 177.8 80.5684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1331,13 +1405,73 @@
 			)
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
-			(at 1.27 426.0346 0)
+			(at 177.8 116.1546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "MODEM_TX" bidirectional
+			(at 177.8 102.87 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "99ecb9fa-4ee6-48e7-ba96-ea8fca62c7df")
+		)
+		(pin "MODEM_RX" bidirectional
+			(at 177.8 105.41 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "188d5d6a-7712-4ca6-a733-020c99202f1f")
+		)
+		(pin "~{MODEM_PWR_EN}" output
+			(at 177.8 88.9 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4d6d96de-4dce-4549-9f6c-c972828bcf9a")
+		)
+		(pin "~{MODEM_RESET}" output
+			(at 177.8 107.95 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ef086c81-5b96-4c75-871f-f8a74954c38a")
+		)
+		(pin "+3.3V_MCU" input
+			(at 177.8 83.82 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b503db46-3d68-46a1-8ab6-f5c7dc158a52")
+		)
+		(pin "+3.3VA_MCU" input
+			(at 177.8 86.36 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6432fc6b-bce4-4a9f-b132-4c5c504b8166")
 		)
 		(instances
 			(project "iida_devkit"
@@ -1348,19 +1482,20 @@
 		)
 	)
 	(sheet
-		(at 298.45 0)
-		(size 295.91 209.55)
+		(at 135.89 81.28)
+		(size 29.21 17.78)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
+			(color 0 0 0 1)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 255 0 1.0000)
 		)
 		(uuid "8a51e004-740e-440f-9bfb-b035bcbeb0d2")
 		(property "Sheetname" "Power"
-			(at 298.45 -0.7116 0)
+			(at 135.89 80.5684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1369,13 +1504,53 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 298.45 210.1346 0)
+			(at 135.89 99.6446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "+3.3V_MDM" output
+			(at 135.89 83.82 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9df5a4a9-fd00-4a1d-aaa0-e9bd0e9464d4")
+		)
+		(pin "~{MODEM_PWR_EN}" input
+			(at 165.1 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e5624fcf-3d62-4c00-b878-b733db4ef694")
+		)
+		(pin "+3.3V_MCU" output
+			(at 165.1 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "67d2f528-f55a-4f8f-8d3e-398628639240")
+		)
+		(pin "+3.3VA_MCU" output
+			(at 165.1 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3610c69f-9330-40bb-8112-ce871473f881")
 		)
 		(instances
 			(project "iida_devkit"

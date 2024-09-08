@@ -563,7 +563,7 @@
       },
       {
         "netclass": "50 Ohm",
-        "pattern": "/Modem/ANT"
+        "pattern": "/Modem/ANT*"
       }
     ]
   },
@@ -645,12 +645,6 @@
           "label": "Digi-Key Part Number",
           "name": "Digi-Key Part Number",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "DigiKey Part Number",
-          "name": "DigiKey Part Number",
-          "show": false
         },
         {
           "group_by": false,
@@ -756,6 +750,10 @@
     [
       "3723475b-e956-4027-ac40-e47346743900",
       "Modem"
+    ],
+    [
+      "33580d9f-a609-4568-baaf-9a29cf2dabcd",
+      "SIM"
     ]
   ],
   "text_variables": {}
