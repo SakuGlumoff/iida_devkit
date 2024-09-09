@@ -4044,16 +4044,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 125.73) (xy 233.68 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1de9e886-a20c-44ea-abc3-5973a4ffe369")
-	)
-	(wire
-		(pts
 			(xy 53.34 77.47) (xy 50.8 77.47)
 		)
 		(stroke
@@ -4084,7 +4074,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 123.19) (xy 219.71 123.19)
+			(xy 227.33 123.19) (xy 233.68 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4241,16 +4231,6 @@
 			(type default)
 		)
 		(uuid "7242ce4e-05ab-42d8-8020-0277a34d445a")
-	)
-	(wire
-		(pts
-			(xy 227.33 123.19) (xy 233.68 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "770acff7-1180-474c-9611-b95533bc5195")
 	)
 	(wire
 		(pts
@@ -4444,7 +4424,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 125.73) (xy 219.71 125.73)
+			(xy 227.33 125.73) (xy 233.68 125.73)
 		)
 		(stroke
 			(width 0)
@@ -12273,6 +12253,17 @@
 		)
 		(uuid "d54cc828-4735-426e-a88f-33838e7c2942")
 	)
+	(label "ANT_DET_CONT"
+		(at 46.99 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2799e5e9-f8c2-4af2-953a-aac25d400303")
+	)
 	(label "V_INT"
 		(at 181.61 74.93 0)
 		(fields_autoplaced yes)
@@ -12285,7 +12276,7 @@
 		(uuid "3f743602-476f-4dd2-ba57-ab99d877e79a")
 	)
 	(label "MODEM_TX_1.8V"
-		(at 215.9 125.73 180)
+		(at 227.33 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12307,7 +12298,7 @@
 		(uuid "438d44d6-37cb-401e-8ad0-49cacfd089c1")
 	)
 	(label "MODEM_RX_1.8V"
-		(at 215.9 123.19 180)
+		(at 227.33 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12349,6 +12340,17 @@
 			(justify right bottom)
 		)
 		(uuid "dc3cc9b4-1c36-483e-8dab-b9e335acfa3a")
+	)
+	(label "ANT_RF"
+		(at 60.96 77.47 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e3b51dfc-a9c0-4c2e-b7f5-239e7bbd2875")
 	)
 	(label "MODEM_RX_1.8V"
 		(at 181.61 97.79 0)
@@ -13469,103 +13471,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 223.52 123.19 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "684f308b-b9b2-4986-a2ac-f4c2476e3e30")
-		(property "Reference" "R36"
-			(at 220.726 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0 Ω"
-			(at 226.314 122.174 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "perfect_footprints:0402_1005_perfect"
-			(at 223.52 121.412 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 223.52 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 223.52 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 223.52 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "RC0402JR-070RL"
-			(at 223.52 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key Part Number" "311-0.0JRCT-ND"
-			(at 223.52 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7b5023ec-2904-4459-ae06-97e65a52dbb8")
-		)
-		(pin "1"
-			(uuid "82d9d714-f9ed-4601-9316-eed9803e3e40")
-		)
-		(instances
-			(project "iida_devkit"
-				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "R36")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 80.01 177.8 0)
 		(unit 1)
@@ -14230,7 +14135,6 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp yes)
-		(fields_autoplaced yes)
 		(uuid "8ddae8d9-a492-4317-ae58-63b412119d4d")
 		(property "Reference" "L1"
 			(at 49.53 80.0099 0)
@@ -14768,103 +14672,6 @@
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 223.52 125.73 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "afdbe48c-adfb-478f-9a2f-caf96aa52bf2")
-		(property "Reference" "R37"
-			(at 220.726 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0 Ω"
-			(at 226.314 124.714 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "perfect_footprints:0402_1005_perfect"
-			(at 223.52 123.952 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 223.52 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 223.52 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 223.52 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "RC0402JR-070RL"
-			(at 223.52 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key Part Number" "311-0.0JRCT-ND"
-			(at 223.52 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c0b182aa-facf-4b6d-9e35-95ce5ac1377d")
-		)
-		(pin "1"
-			(uuid "21c87f48-a22e-459c-90c6-808a884ac016")
-		)
-		(instances
-			(project "iida_devkit"
-				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "R37")
 					(unit 1)
 				)
 			)
