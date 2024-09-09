@@ -559,7 +559,7 @@
     "netclass_patterns": [
       {
         "netclass": "90 Ohm",
-        "pattern": "/USB_*"
+        "pattern": "USB_*"
       },
       {
         "netclass": "50 Ohm",
