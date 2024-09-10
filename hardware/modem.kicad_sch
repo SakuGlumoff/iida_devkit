@@ -21069,7 +21069,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132134_Vertical"
+		(property "Footprint" "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical"
 			(at 67.31 163.83 0)
 			(effects
 				(font
@@ -21078,7 +21078,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/4832/EDC3-302540-10.tif.pdf"
 			(at 67.31 163.83 0)
 			(effects
 				(font
@@ -21096,7 +21096,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "ACX1230-ND"
+		(property "Digi-Key Part Number" "H11891CT-ND"
 			(at 67.31 166.37 0)
 			(effects
 				(font
@@ -21105,7 +21105,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Amphenol RF"
+		(property "Manufacturer" "Hirose Electric Co Ltd"
 			(at 67.31 166.37 0)
 			(effects
 				(font
@@ -21114,16 +21114,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "132134"
-			(at 67.31 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "471-SMACONNECTOR"
+		(property "Manufacturer Part Number" "U.FL-R-SMT-1(10)"
 			(at 67.31 166.37 0)
 			(effects
 				(font
