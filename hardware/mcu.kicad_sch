@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-08")
+		(date "2024-09-10")
 		(rev "v4.0.0")
 	)
 	(lib_symbols
@@ -4156,12 +4156,6 @@
 		(uuid "5a8696cc-38ee-41fc-bdc3-bb0cf6ed3b7e")
 	)
 	(junction
-		(at 180.34 143.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5c9bcf2d-19b9-4f94-8cb6-aa3ccdb34c72")
-	)
-	(junction
 		(at 31.75 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5477,7 +5471,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 143.51) (xy 187.96 143.51)
+			(xy 175.26 143.51) (xy 187.96 143.51)
 		)
 		(stroke
 			(width 0)
@@ -5704,16 +5698,6 @@
 			(type default)
 		)
 		(uuid "8341d82b-bd0a-4250-97f8-ec85f57785be")
-	)
-	(wire
-		(pts
-			(xy 175.26 143.51) (xy 180.34 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "83e127af-c33b-478e-b013-a7cb0be30990")
 	)
 	(wire
 		(pts
@@ -8114,7 +8098,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AT25SF081-SSHD-B"
+		(property "Value" "AT25SF081B-SSHD-B"
 			(at 69.85 126.9999 0)
 			(effects
 				(font

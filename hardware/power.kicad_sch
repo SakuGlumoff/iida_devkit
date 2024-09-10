@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-08")
+		(date "2024-09-10")
 		(rev "v4.0.0")
 	)
 	(lib_symbols
@@ -4010,6 +4010,28 @@
 			)
 		)
 		(uuid "eec65b68-b1d6-4e51-8497-e0a985454483")
+	)
+	(label "USB_DN_IN"
+		(at 88.9 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "16a40584-b7d1-4dbd-80ce-208f05633bac")
+	)
+	(label "USB_DP_IN"
+		(at 88.9 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bc2b3d06-cc88-4d5f-b933-14136d3f265f")
 	)
 	(global_label "USB_DP"
 		(shape bidirectional)

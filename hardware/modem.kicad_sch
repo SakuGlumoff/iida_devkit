@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-08")
+		(date "2024-09-10")
 		(rev "v4.0.0")
 	)
 	(lib_symbols
@@ -18685,7 +18685,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
 			(at 62.23 185.42 0)
 			(effects
 				(font
