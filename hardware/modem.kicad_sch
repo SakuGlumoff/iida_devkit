@@ -16789,6 +16789,17 @@
 		)
 		(uuid "52bc653a-3259-49e2-98a6-3067f6929b97")
 	)
+	(label "+3.3V_MDM_UNFILTERED"
+		(at 35.56 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6d545497-ddd9-4c8c-8506-a82b13e1257a")
+	)
 	(label "MODEM_RX_1.8V"
 		(at 233.68 128.27 180)
 		(fields_autoplaced yes)
