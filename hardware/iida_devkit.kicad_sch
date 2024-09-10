@@ -295,6 +295,12 @@
 		(uuid "062403b7-13ce-4a49-b1b0-dd820d284646")
 	)
 	(junction
+		(at 152.4 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78c7956f-76bc-4dd4-aeb2-e0cd48f6d5ec")
+	)
+	(junction
 		(at 132.08 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -315,6 +321,16 @@
 			(type default)
 		)
 		(uuid "11789dc7-75c0-40bf-9f05-59d7931a7513")
+	)
+	(wire
+		(pts
+			(xy 152.4 83.82) (xy 152.4 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c4abf66-a479-4519-b402-ca25e5269288")
 	)
 	(wire
 		(pts
@@ -378,6 +394,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 83.82) (xy 177.8 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2a21470-36d0-47bd-bcac-9b384ea6c75c")
+	)
+	(wire
+		(pts
 			(xy 137.16 189.23) (xy 142.24 189.23)
 		)
 		(stroke
@@ -385,6 +411,16 @@
 			(type default)
 		)
 		(uuid "a4e0ba10-6c1f-42ce-8447-de68f649553c")
+	)
+	(wire
+		(pts
+			(xy 125.73 83.82) (xy 152.4 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b30b80ab-74b4-4624-ac28-c7e258d59168")
 	)
 	(wire
 		(pts
@@ -398,33 +434,13 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 88.9) (xy 177.8 88.9)
+			(xy 125.73 110.49) (xy 177.8 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dc8cd067-0c6c-49bc-9470-315aa83b12f9")
-	)
-	(wire
-		(pts
-			(xy 165.1 83.82) (xy 177.8 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb05ccaa-28d8-4f5b-bbf8-b75a36dd8cfd")
-	)
-	(wire
-		(pts
-			(xy 125.73 83.82) (xy 135.89 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2352f43-0ce7-47b3-8150-8fefd809a816")
+		(uuid "b94e1048-e4a1-456f-a55d-5515960e0860")
 	)
 	(wire
 		(pts
@@ -435,16 +451,6 @@
 			(type default)
 		)
 		(uuid "f3051ff5-3f80-4f12-8f79-1969fdd51329")
-	)
-	(wire
-		(pts
-			(xy 165.1 86.36) (xy 177.8 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff66211a-9ecf-4a04-8819-771bae12c93b")
 	)
 	(text "Place fiducial markers at each (-1) corner of the PCB."
 		(exclude_from_sim no)
@@ -1294,16 +1300,6 @@
 				(justify left top)
 			)
 		)
-		(pin "+3.3V_MDM" input
-			(at 125.73 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "b656903d-5d99-47bd-b3ba-734a9ec4ab46")
-		)
 		(pin "SIM_IO" bidirectional
 			(at 99.06 113.03 180)
 			(effects
@@ -1374,6 +1370,26 @@
 			)
 			(uuid "6d1e3a79-44ba-4120-aac0-f77b22f98bdd")
 		)
+		(pin "+3.3V" input
+			(at 125.73 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3a00faf0-24b6-49a5-ac39-7e8b1b030d15")
+		)
+		(pin "~{MODEM_PWR_EN}" input
+			(at 125.73 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "840ad303-7056-4439-9228-150e526815c4")
+		)
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
@@ -1433,16 +1449,6 @@
 			)
 			(uuid "188d5d6a-7712-4ca6-a733-020c99202f1f")
 		)
-		(pin "~{MODEM_PWR_EN}" output
-			(at 177.8 88.9 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "4d6d96de-4dce-4549-9f6c-c972828bcf9a")
-		)
 		(pin "~{MODEM_RESET}" output
 			(at 177.8 107.95 180)
 			(effects
@@ -1453,7 +1459,7 @@
 			)
 			(uuid "ef086c81-5b96-4c75-871f-f8a74954c38a")
 		)
-		(pin "+3.3V_MCU" input
+		(pin "+3.3V" input
 			(at 177.8 83.82 180)
 			(effects
 				(font
@@ -1461,17 +1467,17 @@
 				)
 				(justify left)
 			)
-			(uuid "b503db46-3d68-46a1-8ab6-f5c7dc158a52")
+			(uuid "3aa16ee8-36ff-44a5-aa97-ef2a4e93086e")
 		)
-		(pin "+3.3VA_MCU" input
-			(at 177.8 86.36 180)
+		(pin "~{MODEM_PWR_EN}" output
+			(at 177.8 110.49 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6432fc6b-bce4-4a9f-b132-4c5c504b8166")
+			(uuid "f06ee567-2246-426d-b8d7-68cf7891e5fe")
 		)
 		(instances
 			(project "iida_devkit"
@@ -1482,9 +1488,8 @@
 		)
 	)
 	(sheet
-		(at 135.89 81.28)
-		(size 29.21 17.78)
-		(fields_autoplaced yes)
+		(at 143.51 87.63)
+		(size 17.145 10.16)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1495,7 +1500,7 @@
 		)
 		(uuid "8a51e004-740e-440f-9bfb-b035bcbeb0d2")
 		(property "Sheetname" "Power"
-			(at 135.89 80.5684 0)
+			(at 143.256 87.376 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1504,7 +1509,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 135.89 99.6446 0)
+			(at 143.764 98.298 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1512,45 +1517,15 @@
 				(justify left top)
 			)
 		)
-		(pin "+3.3V_MDM" output
-			(at 135.89 83.82 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "9df5a4a9-fd00-4a1d-aaa0-e9bd0e9464d4")
-		)
-		(pin "~{MODEM_PWR_EN}" input
-			(at 165.1 88.9 0)
+		(pin "+3.3V" output
+			(at 152.4 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "e5624fcf-3d62-4c00-b878-b733db4ef694")
-		)
-		(pin "+3.3V_MCU" output
-			(at 165.1 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "67d2f528-f55a-4f8f-8d3e-398628639240")
-		)
-		(pin "+3.3VA_MCU" output
-			(at 165.1 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "3610c69f-9330-40bb-8112-ce871473f881")
+			(uuid "468f3cfd-d0ed-4912-8d18-d4ccc784f3e4")
 		)
 		(instances
 			(project "iida_devkit"
