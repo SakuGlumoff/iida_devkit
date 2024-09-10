@@ -3884,12 +3884,6 @@
 		(uuid "4918c68b-8df0-4d38-b3b3-4e01d29689fb")
 	)
 	(junction
-		(at 195.58 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "54be21e2-43d1-4576-8ea6-ebe5885f3403")
-	)
-	(junction
 		(at 104.14 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3924,6 +3918,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8af37b46-99f7-458f-bd04-b38e7eeccc23")
+	)
+	(junction
+		(at 203.2 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f74f170-55bf-4ee7-9e6a-058dd5cbf9be")
 	)
 	(junction
 		(at 106.68 77.47)
@@ -4002,12 +4002,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c7d96134-0908-47e5-9da7-f1c934800d0b")
-	)
-	(junction
-		(at 203.2 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cf85b723-f346-435b-9dbe-c9c312c9a228")
 	)
 	(junction
 		(at 152.4 137.16)
@@ -5321,6 +5315,16 @@
 	)
 	(wire
 		(pts
+			(xy 190.5 130.81) (xy 203.2 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83e127af-c33b-478e-b013-a7cb0be30990")
+	)
+	(wire
+		(pts
 			(xy 46.99 58.42) (xy 46.99 60.96)
 		)
 		(stroke
@@ -5441,6 +5445,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 130.81) (xy 203.2 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91774c07-b7a5-40c5-bf18-6f877f46caf4")
+	)
+	(wire
+		(pts
 			(xy 118.11 85.09) (xy 133.35 85.09)
 		)
 		(stroke
@@ -5458,16 +5472,6 @@
 			(type default)
 		)
 		(uuid "9306e358-3bcb-4242-8bfa-6e4eb07fffbf")
-	)
-	(wire
-		(pts
-			(xy 203.2 130.81) (xy 195.58 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "937eccf5-2a4a-4561-a241-8eb1932f72ac")
 	)
 	(wire
 		(pts
@@ -5981,16 +5985,6 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 130.81) (xy 190.5 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f1915a14-e2e3-4c5e-964b-d7ee3fd2bb14")
-	)
-	(wire
-		(pts
 			(xy 59.69 80.01) (xy 64.77 80.01)
 		)
 		(stroke
@@ -6068,16 +6062,6 @@
 			(type default)
 		)
 		(uuid "fc3e89e9-4b7a-4550-9992-b7db9ca08204")
-	)
-	(wire
-		(pts
-			(xy 203.2 130.81) (xy 203.2 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe5873c5-d579-4104-8735-819c7d82d4b7")
 	)
 	(wire
 		(pts
@@ -6972,7 +6956,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "00d776b8-ccda-424a-b3d5-9a4a104b0571")
-		(property "Reference" "R20"
+		(property "Reference" "R12"
 			(at 197.104 125.73 0)
 			(effects
 				(font
@@ -7053,7 +7037,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R20")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -7170,7 +7154,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "080da98b-5f13-4041-8c27-a2a4920f946a")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR016"
 			(at 205.74 53.34 0)
 			(effects
 				(font
@@ -7221,7 +7205,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "#PWR017")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -7237,7 +7221,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1885a485-2c2a-4b45-b3ce-82a6bf7440e1")
-		(property "Reference" "J9"
+		(property "Reference" "J10"
 			(at 215.9 85.0899 0)
 			(effects
 				(font
@@ -7331,7 +7315,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "J9")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -7558,7 +7542,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1de98817-c479-4a08-b3a9-48359e29e608")
-		(property "Reference" "C21"
+		(property "Reference" "C22"
 			(at 88.9 151.13 0)
 			(effects
 				(font
@@ -7639,7 +7623,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "C21")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -8216,7 +8200,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4d844631-913c-47d5-b563-f6693fd0eca2")
-		(property "Reference" "J10"
+		(property "Reference" "J9"
 			(at 214.884 51.054 0)
 			(effects
 				(font
@@ -8310,7 +8294,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "J10")
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -8325,7 +8309,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4dc6301c-1707-4dde-ad68-cf6081f0ea74")
-		(property "Reference" "R23"
+		(property "Reference" "R15"
 			(at 200.914 106.934 90)
 			(effects
 				(font
@@ -8406,7 +8390,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R23")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -8843,7 +8827,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "724c7f35-e130-4b00-b1d4-1ee3092983c3")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR017"
 			(at 205.74 87.63 0)
 			(effects
 				(font
@@ -8894,7 +8878,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "#PWR016")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -9100,7 +9084,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7bde22a4-c2fa-4108-b130-b82330229df6")
-		(property "Reference" "R22"
+		(property "Reference" "R14"
 			(at 200.914 104.394 90)
 			(effects
 				(font
@@ -9181,7 +9165,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R22")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -9196,7 +9180,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7bf30633-e2c8-47de-90e8-7fb7343bb210")
-		(property "Reference" "R17"
+		(property "Reference" "R11"
 			(at 151.13 142.494 0)
 			(effects
 				(font
@@ -9277,7 +9261,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R17")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -9292,7 +9276,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "83d73a30-384f-40c7-8722-4e27a5ed039f")
-		(property "Reference" "R26"
+		(property "Reference" "R18"
 			(at 204.47 137.668 0)
 			(effects
 				(font
@@ -9373,7 +9357,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R26")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -9627,7 +9611,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "8fa00555-9cad-40c8-91b4-d4181d017e13")
-		(property "Reference" "R25"
+		(property "Reference" "R17"
 			(at 204.724 125.73 0)
 			(effects
 				(font
@@ -9708,7 +9692,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R25")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -9984,7 +9968,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aaf65ca6-36de-407a-84b2-95ef941c3e01")
-		(property "Reference" "C22"
+		(property "Reference" "C21"
 			(at 86.614 80.772 0)
 			(effects
 				(font
@@ -10065,7 +10049,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "C22")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -10176,7 +10160,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b8be1078-7fdb-4f6a-ac2d-a3ac0b780375")
-		(property "Reference" "R24"
+		(property "Reference" "R16"
 			(at 200.914 109.474 90)
 			(effects
 				(font
@@ -10257,7 +10241,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R24")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -10673,7 +10657,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7b429e0-3cf5-4ee4-81c9-0e7cd94e23f9")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR011"
 			(at 83.82 91.44 0)
 			(effects
 				(font
@@ -10724,7 +10708,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "#PWR012")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -10741,7 +10725,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7e6d2c1-4f26-40ce-9213-b23531c3a302")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR012"
 			(at 91.44 180.34 0)
 			(effects
 				(font
@@ -10792,7 +10776,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "#PWR011")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -10970,7 +10954,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2890a36-1ac8-4d50-b810-7ad27da79a02")
-		(property "Reference" "R21"
+		(property "Reference" "R13"
 			(at 196.85 137.668 0)
 			(effects
 				(font
@@ -11051,7 +11035,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6dd8d741-3080-458c-a4f5-a05a3905bb8a"
-					(reference "R21")
+					(reference "R13")
 					(unit 1)
 				)
 			)
