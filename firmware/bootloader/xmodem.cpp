@@ -86,13 +86,15 @@ _ReceivePacket(Uart& uart, uint8_t* data, uint32_t* len, TickType timeout) {
 bool XModem::DownloadImage(XModem::Callback newPacketCb) {
 	bool ret     = false;
 	_newPacketCb = newPacketCb;
-	Uart dbg_uart(LPUART1, DBG_UART_TX, DBG_UART_RX);
+	Uart dbg_uart(USART2, DBG_UART_TX, DBG_UART_RX);
 
 	char const* const greetingMsg =
-		"\r\nUpload image using the XModem protocol.\r\n>";
-	for (size_t i = 0; i < strlen(greetingMsg); i++) {
-		dbg_uart.Putc(static_cast<uint8_t>(greetingMsg[i]), msToTicks(TIMEOUT));
-	}
+		"\r\nUpload image using the XModem protocol."
+		"\r\n>";
+	dbg_uart.Puts(
+		reinterpret_cast<uint8_t*>(const_cast<char*>(greetingMsg)),
+		strlen(greetingMsg)
+	);
 
 	uint8_t  packetData[PACKET_1K_SIZE] = {0};
 	uint32_t packetsReceived            = 0UL;

@@ -2,6 +2,7 @@
 
 #include "error.hpp"
 #include "gpio.hpp"
+#include "interrupts.hpp"
 #include "stm32l552xx.h"
 #include "system.hpp"
 
@@ -21,10 +22,22 @@ enum I2cInstance {
 };
 
 /**
- * @brief Instance storage for I2C interrupts.
+ * @brief Instance storage for I2Cs.
  *        This array is used to dispatch interrupts to the correct instance.
  */
 static I2c* _i2cInstances[I2C_INSTANCE_COUNT] = {nullptr};
+
+static void _I2C2_EV_IRQHandler(void) {
+	if (_i2cInstances[I2C_I2C2] != nullptr) {
+		_i2cInstances[I2C_I2C2]->_IrqHandler(I2C2->ISR);
+	}
+}
+
+static void _I2C2_ER_IRQHandler(void) {
+	if (_i2cInstances[I2C_I2C2] != nullptr) {
+		_i2cInstances[I2C_I2C2]->_IrqHandler(I2C2->ISR);
+	}
+}
 
 I2c::I2c(
 	I2C_TypeDef*  i2c,
@@ -58,6 +71,8 @@ _i2c(i2c) {
 		_txPin.SetAlternateFunction(Gpio::AlternateFunction::AF4);
 		_rxPin.SetAlternateFunction(Gpio::AlternateFunction::AF4);
 		_i2cInstances[I2C_I2C2] = this;
+		RegisterIrqHandler(I2C2_EV_IRQn, _I2C2_EV_IRQHandler);
+		RegisterIrqHandler(I2C2_ER_IRQn, _I2C2_ER_IRQHandler);
 	} else {
 		PANIC("Unsupported I2C");
 	}
@@ -83,6 +98,8 @@ I2c::~I2c() {
 		RCC->APB1ENR1 &= ~RCC_APB1ENR1_I2C2EN;
 		RCC->CCIPR1 &= ~RCC_CCIPR1_I2C2SEL;
 		_i2cInstances[I2C_I2C2] = nullptr;
+		DeregisterIrqHandler(I2C2_EV_IRQn);
+		DeregisterIrqHandler(I2C2_ER_IRQn);
 	} else {
 		PANIC("Unsupported I2C");
 	}
@@ -255,18 +272,4 @@ error_code_t I2c::Receive(
 
 void I2c::_IrqHandler(uint32_t isr) {
 	(void)isr;
-}
-
-extern "C" {
-	void I2C2_EV_IRQHandler(void) {
-		if (_i2cInstances[I2C_I2C2] != nullptr) {
-			_i2cInstances[I2C_I2C2]->_IrqHandler(I2C2->ISR);
-		}
-	}
-
-	void I2C1_ER_IRQHandler(void) {
-		if (_i2cInstances[I2C_I2C2] != nullptr) {
-			_i2cInstances[I2C_I2C2]->_IrqHandler(I2C2->ISR);
-		}
-	}
 }

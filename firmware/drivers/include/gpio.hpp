@@ -175,7 +175,7 @@ public:
 
 	~Gpio() {
 		SetMode(Mode::ANALOG);
-		SetType(Type::PUSH_PULL);
+		SetType(Type::OPEN_DRAIN);
 		SetPullUp(PullUp::NONE);
 		SetSpeed(Speed::LOW);
 		SetAlternateFunction(AlternateFunction::AF0);

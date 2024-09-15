@@ -2,6 +2,7 @@
 
 #include "error.hpp"
 #include "gpio.hpp"
+#include "interrupts.hpp"
 #include "stm32l552xx.h"
 #include "system.hpp"
 
@@ -9,15 +10,27 @@
 
 enum UartInstance {
 	UART_USART1,
-	UART_LPUART1,
+	UART_USART2,
 	UART_INSTANCE_COUNT
 };
 
 /**
- * @brief Instance storage for UART interrupts.
+ * @brief Instance storage for UARTs.
  *        This array is used to dispatch interrupts to the correct instance.
  */
 static Uart* _uartInstances[UART_INSTANCE_COUNT] = {nullptr, nullptr};
+
+static void _USART1_IRQHandler(void) {
+	if (_uartInstances[UART_USART1] != nullptr) {
+		_uartInstances[UART_USART1]->_IrqHandler();
+	}
+}
+
+static void _USART2_IRQHandler(void) {
+	if (_uartInstances[UART_USART2] != nullptr) {
+		_uartInstances[UART_USART2]->_IrqHandler();
+	}
+}
 
 Uart::Uart(
 	USART_TypeDef* uart,
@@ -43,33 +56,30 @@ _rxPin(
 	Gpio::Speed::LOW
 ),
 _uart(uart) {
-	uint32_t brr = 0UL;
 	if (_uart == USART1) {
-		constexpr uint32_t brrValue =
-			static_cast<uint32_t>(static_cast<float>(SYSCLK_HZ) / 115'200UL);
-		brr = (brrValue & USART_BRR_BRR);
 		RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
 		// Set to use SYSCLK as basis for the clock
 		RCC->CCIPR1 &= ~RCC_CCIPR1_USART1SEL;
 		RCC->CCIPR1 |= RCC_CCIPR1_USART1SEL_0;
-		_txPin.SetAlternateFunction(Gpio::AlternateFunction::AF7);
-		_rxPin.SetAlternateFunction(Gpio::AlternateFunction::AF7);
 		_uartInstances[UART_USART1] = this;
-	} else if (_uart == LPUART1) {
-		constexpr uint32_t brrValue = static_cast<uint32_t>(
-			static_cast<float>(SYSCLK_HZ) / 115'200UL * 256UL
-		);
-		brr = (brrValue & USART_BRR_LPUART);
-		RCC->APB1ENR2 |= RCC_APB1ENR2_LPUART1EN;
+		RegisterIrqHandler(USART1_IRQn, _USART1_IRQHandler);
+	} else if (_uart == USART2) {
+		RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
 		// Set to use SYSCLK as basis for the clock
-		RCC->CCIPR1 &= ~RCC_CCIPR1_LPUART1SEL;
-		RCC->CCIPR1 |= RCC_CCIPR1_LPUART1SEL_0;
-		_txPin.SetAlternateFunction(Gpio::AlternateFunction::AF8);
-		_rxPin.SetAlternateFunction(Gpio::AlternateFunction::AF8);
-		_uartInstances[UART_LPUART1] = this;
+		RCC->CCIPR1 &= ~RCC_CCIPR1_USART2SEL;
+		RCC->CCIPR1 |= RCC_CCIPR1_USART2SEL_0;
+		_uartInstances[UART_USART2] = this;
+		RegisterIrqHandler(USART2_IRQn, _USART2_IRQHandler);
 	} else {
 		PANIC("Unsupported UART");
 	}
+
+	constexpr uint32_t brr =
+		static_cast<uint32_t>(static_cast<float>(SYSCLK_HZ) / 115'200UL)
+		& USART_BRR_BRR;
+
+	_txPin.SetAlternateFunction(Gpio::AlternateFunction::AF7);
+	_rxPin.SetAlternateFunction(Gpio::AlternateFunction::AF7);
 
 	_uart->CR1 = 0UL;
 	_uart->CR1 |=
@@ -94,28 +104,15 @@ Uart::~Uart() {
 	if (_uart == USART1) {
 		RCC->APB2ENR &= ~RCC_APB2ENR_USART1EN;
 		_uartInstances[UART_USART1] = nullptr;
-	} else if (_uart == LPUART1) {
-		RCC->APB1ENR2 &= ~RCC_APB1ENR2_LPUART1EN;
-		_uartInstances[UART_LPUART1] = nullptr;
+		DeregisterIrqHandler(USART1_IRQn);
+	} else if (_uart == USART2) {
+		RCC->APB1ENR2 &= ~RCC_APB1ENR1_USART2EN;
+		_uartInstances[UART_USART2] = nullptr;
+		DeregisterIrqHandler(USART2_IRQn);
 	} else {
 		PANIC("Unsupported UART");
 	}
 	// NOTE: GPIO deinitialization is done in the Gpio destructor.
-}
-
-error_code_t
-Uart::RegisterCallback(Uart::Callbacks type, Uart::Callback callback) {
-	switch (type) {
-		case Uart::Callbacks::TX:
-			_txCallback = callback;
-			break;
-		case Uart::Callbacks::RX:
-			_rxCallback = callback;
-			break;
-		default:
-			return -ERROR_INVALID_ARGUMENT;
-	}
-	return ERROR_NONE;
 }
 
 error_code_t Uart::Getc(uint8_t& c, TickType timeout) {
@@ -123,9 +120,10 @@ error_code_t Uart::Getc(uint8_t& c, TickType timeout) {
 		return -ERROR_BUSY;
 	}
 	_DisableIrq();
-	TickType timeoutEnd = GetTicks() + timeout;
+	TickType timeoutStart = GetTicks();
 	while (!(_uart->ISR & USART_ISR_RXNE)) {
-		if (GetTicks() >= timeoutEnd) {
+		if (timeout && (GetTicks() >= timeoutStart + timeout)) {
+			_rxRemaining = 0UL;
 			_EnableIrq();
 			return -ERROR_TIMEOUT;
 		}
@@ -141,11 +139,12 @@ error_code_t Uart::Putc(uint8_t c, TickType timeout) {
 		return -ERROR_BUSY;
 	}
 	_DisableIrq();
+	_uart->TDR            = c;
+	TickType timeoutStart = GetTicks();
 	_uart->ICR |= USART_ICR_TCCF;
-	_uart->TDR          = c;
-	TickType timeoutEnd = GetTicks() + timeout;
 	while (!(_uart->ISR & USART_ISR_TC)) {
-		if (GetTicks() >= timeoutEnd) {
+		if (timeout && (GetTicks() >= timeoutStart + timeout)) {
+			_txRemaining = 0UL;
 			_EnableIrq();
 			return -ERROR_TIMEOUT;
 		}
@@ -156,24 +155,33 @@ error_code_t Uart::Putc(uint8_t c, TickType timeout) {
 	return ERROR_NONE;
 }
 
-error_code_t Uart::Transmit(uint8_t* data, uint32_t size) {
+error_code_t Uart::Puts(uint8_t* data, uint32_t size, TickType timeout) {
 	if (data == nullptr) {
 		return -ERROR_INVALID_ARGUMENT;
 	}
 	if (_txRemaining != 0UL) {
 		return -ERROR_BUSY;
 	}
-	_txRemaining = size - 1UL;
-	_txData      = data + 1UL;
 	_DisableIrq();
+	TickType timeoutStart = GetTicks();
+	_txRemaining          = size - 1UL;
+	_txData               = data + 1UL;
+	_txStarted            = true;
+	_uart->TDR            = *data;
 	_uart->CR1 |= USART_CR1_TXEIE;
-	_txStarted = true;
-	_uart->TDR = *data;
 	_EnableIrq();
+	while (_txStarted) {
+		if (timeout && (GetTicks() >= timeoutStart + timeout)) {
+			_txStarted   = false;
+			_txRemaining = 0UL;
+			return -ERROR_TIMEOUT;
+		}
+		__NOP();
+	}
 	return ERROR_NONE;
 }
 
-error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
+error_code_t Uart::Gets(uint8_t* data, uint32_t size, TickType timeout) {
 	if (data == nullptr) {
 		return -ERROR_INVALID_ARGUMENT;
 	}
@@ -181,30 +189,37 @@ error_code_t Uart::Receive(uint8_t* data, uint32_t size) {
 		return -ERROR_BUSY;
 	}
 	_DisableIrq();
+	TickType timeoutStart = GetTicks();
+	_rxReceived           = 0UL;
+	_rxRemaining          = size;
+	_rxData               = data;
+	_rxStarted            = true;
 	_uart->CR1 |= USART_CR1_RXNEIE;
-	_rxReceived  = 0UL;
-	_rxRemaining = size;
-	_rxData      = data;
-	_rxStarted   = true;
 	_EnableIrq();
+	while (_rxStarted) {
+		if (timeout && (GetTicks() >= timeoutStart + timeout)) {
+			_rxStarted   = false;
+			_rxRemaining = 0UL;
+			return -ERROR_TIMEOUT;
+		}
+		__NOP();
+	}
 	return ERROR_NONE;
 }
 
-void Uart::_IrqHandler(uint32_t isr) {
+void Uart::_IrqHandler() {
+	uint32_t volatile isr = _uart->ISR;
 	if (isr & USART_ISR_TC) {
 		if (_txStarted) {
 			if (_txRemaining == 0UL) {
-				if (_txCallback != nullptr) {
-					_txCallback(_txData - _txSent, _txSent);
-				}
 				_txStarted = false;
 				_txData    = nullptr;
 				_txSent    = 0UL;
 			} else {
-				_uart->TDR = *_txData;
 				_txData++;
 				_txRemaining--;
 				_txSent++;
+				_uart->TDR = *_txData;
 			}
 		}
 		// Clear the interrupt
@@ -217,9 +232,6 @@ void Uart::_IrqHandler(uint32_t isr) {
 			_rxRemaining--;
 			_rxReceived++;
 			if (_rxRemaining == 0UL) {
-				if (_rxCallback != nullptr) {
-					_rxCallback(_rxData - _rxReceived, _rxReceived);
-				}
 				_rxStarted  = false;
 				_rxData     = nullptr;
 				_rxReceived = 0UL;
@@ -228,20 +240,6 @@ void Uart::_IrqHandler(uint32_t isr) {
 			// Clear the interrupt
 			uint32_t volatile rdr = _uart->RDR;
 			(void)rdr;
-		}
-	}
-}
-
-extern "C" {
-	void USART1_IRQHandler(void) {
-		if (_uartInstances[UART_USART1] != nullptr) {
-			_uartInstances[UART_USART1]->_IrqHandler(USART1->ISR);
-		}
-	}
-
-	void LPUART1_IRQHandler(void) {
-		if (_uartInstances[UART_LPUART1] != nullptr) {
-			_uartInstances[UART_LPUART1]->_IrqHandler(LPUART1->ISR);
 		}
 	}
 }
