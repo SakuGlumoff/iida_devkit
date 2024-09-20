@@ -2,7 +2,7 @@
 	(version 20231120)
 	(generator "eeschema")
 	(generator_version "8.0")
-	(uuid "a8a467ce-7f2c-4127-b1de-8e3815283d07")
+	(uuid "b20510c4-2579-4bfe-9708-e7fa6ff5c1a4")
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
@@ -11138,6 +11138,16 @@
 			(justify top)
 		)
 		(uuid "3488af71-d420-4467-8775-6f79c1f5162d")
+	)
+	(text "Antenna fence spacing: Λ/20 = 9.74765 mm."
+		(exclude_from_sim no)
+		(at 131.318 124.968 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "31d72656-fb3d-4c5c-9d01-745d5580d54d")
 	)
 	(text "Antenna detection is not used."
 		(exclude_from_sim no)
