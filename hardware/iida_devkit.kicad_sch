@@ -314,7 +314,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 101.6) (xy 99.06 101.6)
+			(xy 92.71 83.82) (xy 99.06 83.82)
 		)
 		(stroke
 			(width 0)
@@ -354,7 +354,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 107.95) (xy 99.06 107.95)
+			(xy 92.71 86.36) (xy 99.06 86.36)
 		)
 		(stroke
 			(width 0)
@@ -424,7 +424,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 110.49) (xy 99.06 110.49)
+			(xy 92.71 88.9) (xy 99.06 88.9)
 		)
 		(stroke
 			(width 0)
@@ -444,7 +444,17 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 113.03) (xy 99.06 113.03)
+			(xy 92.71 101.6) (xy 99.06 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5cc76a2-84fc-4998-b594-9546506e4f25")
+	)
+	(wire
+		(pts
+			(xy 92.71 91.44) (xy 99.06 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1191,8 +1201,8 @@
 		)
 	)
 	(sheet
-		(at 77.47 99.06)
-		(size 17.78 16.51)
+		(at 74.93 81.28)
+		(size 17.78 12.7)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1204,7 +1214,7 @@
 		)
 		(uuid "33580d9f-a609-4568-baaf-9a29cf2dabcd")
 		(property "Sheetname" "SIM"
-			(at 77.47 98.3484 0)
+			(at 74.93 80.5684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1213,7 +1223,7 @@
 			)
 		)
 		(property "Sheetfile" "sim.kicad_sch"
-			(at 77.47 116.1546 0)
+			(at 74.93 94.5646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1222,7 +1232,7 @@
 			)
 		)
 		(pin "SIM_RST" input
-			(at 95.25 107.95 0)
+			(at 92.71 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1232,7 +1242,7 @@
 			(uuid "f32303f7-4bc3-47f1-8df1-84b86affbf7c")
 		)
 		(pin "VSIM" input
-			(at 95.25 101.6 0)
+			(at 92.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1242,7 +1252,7 @@
 			(uuid "fe6520ae-21d4-4e54-ab5c-a77d28208c6e")
 		)
 		(pin "SIM_CLK" input
-			(at 95.25 110.49 0)
+			(at 92.71 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1252,7 +1262,7 @@
 			(uuid "98ba439e-18f9-4613-8a18-c982dcaad86f")
 		)
 		(pin "SIM_IO" bidirectional
-			(at 95.25 113.03 0)
+			(at 92.71 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1301,7 +1311,7 @@
 			)
 		)
 		(pin "SIM_IO" bidirectional
-			(at 99.06 113.03 180)
+			(at 99.06 91.44 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1311,7 +1321,7 @@
 			(uuid "74388d3f-d654-4c91-9ab6-16ccf4ff06ba")
 		)
 		(pin "VSIM" input
-			(at 99.06 101.6 180)
+			(at 99.06 83.82 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1321,7 +1331,7 @@
 			(uuid "0a154582-1c77-4364-9874-ad9886d242bc")
 		)
 		(pin "SIM_RST" input
-			(at 99.06 107.95 180)
+			(at 99.06 86.36 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1331,7 +1341,7 @@
 			(uuid "68eb1f09-9723-4835-9a32-989842fb9f33")
 		)
 		(pin "SIM_CLK" input
-			(at 99.06 110.49 180)
+			(at 99.06 88.9 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1389,6 +1399,16 @@
 				(justify right)
 			)
 			(uuid "840ad303-7056-4439-9228-150e526815c4")
+		)
+		(pin "ANT" input
+			(at 99.06 101.6 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b59f2ccc-7739-40d8-a6d0-06c28b5b2c0e")
 		)
 		(instances
 			(project "iida_devkit"
@@ -1483,6 +1503,55 @@
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
 					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 74.93 99.06)
+		(size 17.78 5.08)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(fill
+			(color 0 255 0 1.0000)
+		)
+		(uuid "6e456e95-dbda-43fc-b148-815c3be21ba0")
+		(property "Sheetname" "Antenna"
+			(at 74.93 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "antenna.kicad_sch"
+			(at 74.93 104.7246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "ANT" output
+			(at 92.71 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2da22668-c97e-4301-ae63-7159f7ba5595")
+		)
+		(instances
+			(project "iida_devkit"
+				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
+					(page "6")
 				)
 			)
 		)
