@@ -11613,7 +11613,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "PCB_antenna:800MHz_inverted_f_antenna"
+		(property "Footprint" "PCB_antenna:800MHz_antenna"
 			(at 147.32 106.68 0)
 			(effects
 				(font
