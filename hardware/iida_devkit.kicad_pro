@@ -519,15 +519,15 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.2,
+        "clearance": 0.153639,
+        "diff_pair_gap": 0.153639,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.245,
         "line_style": 0,
         "microvia_diameter": 0.25,
         "microvia_drill": 0.25,
         "name": "50 Ohm",
-        "pcb_color": "rgb(39, 255, 0)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(39, 255, 0)",
         "track_width": 0.245,
         "via_diameter": 0.6,
@@ -544,7 +544,7 @@
         "microvia_diameter": 0.25,
         "microvia_drill": 0.25,
         "name": "90 Ohm",
-        "pcb_color": "rgb(0, 0, 255)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(0, 0, 255)",
         "track_width": 0.23,
         "via_diameter": 0.6,
@@ -564,7 +564,7 @@
       },
       {
         "netclass": "50 Ohm",
-        "pattern": "/Modem/ANT*"
+        "pattern": "/Antenna/ANT*"
       },
       {
         "netclass": "90 Ohm",
