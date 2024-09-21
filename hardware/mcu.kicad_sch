@@ -10889,7 +10889,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "83d73a30-384f-40c7-8722-4e27a5ed039f")
 		(property "Reference" "R20"
 			(at 189.23 150.368 0)
@@ -12826,7 +12826,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "f2890a36-1ac8-4d50-b810-7ad27da79a02")
 		(property "Reference" "R15"
 			(at 181.61 150.368 0)
