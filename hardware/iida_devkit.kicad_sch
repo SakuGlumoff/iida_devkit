@@ -462,46 +462,6 @@
 		)
 		(uuid "f3051ff5-3f80-4f12-8f79-1969fdd51329")
 	)
-	(text "Place stitching vias with a spacing of Λ/10 = 19.4953."
-		(exclude_from_sim no)
-		(at 135.89 155.448 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "06d8e1de-23ef-497a-8557-63d73a77e85d")
-	)
-	(text "Place fencing vias along the edge of the PCB with a spacing of Λ/20 = 9.74765."
-		(exclude_from_sim no)
-		(at 135.89 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "23cf971c-5109-4b88-a531-72f4a1c32e20")
-	)
-	(text "Place fiducial markers at corners of the PCB."
-		(exclude_from_sim no)
-		(at 134.62 167.386 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "c32d7fd3-00d8-48da-9a35-77073af5943a")
-	)
-	(text "Place mounting holes at the four corners of the PCB."
-		(exclude_from_sim no)
-		(at 135.128 179.578 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "d3b39367-531a-4266-b5c4-38e8e4730cd9")
-	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 127 186.69 0)
