@@ -734,6 +734,121 @@
 				)
 			)
 		)
+		(symbol "perfect_footprints:0hm_choice"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0 6.096 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at -5.08 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "perfect_footprints:0hm_choice"
+				(at 0 -8.128 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at -5.08 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at -5.08 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "0hm_choice_1_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "Input"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -856,12 +971,6 @@
 		(uuid "50f6ab22-4534-4c5d-911e-04814e226e32")
 	)
 	(junction
-		(at 102.87 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "abcc738d-e80f-48d6-94d7-7e2f0d277110")
-	)
-	(junction
 		(at 134.62 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -885,6 +994,26 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 97.79) (xy 101.6 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eb2a3de-167c-434b-aa45-0529d407dbd1")
+	)
+	(wire
+		(pts
+			(xy 101.6 111.76) (xy 123.19 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ff38160-61ca-41e6-9c51-72cce6834c45")
+	)
+	(wire
+		(pts
 			(xy 129.54 88.9) (xy 127 88.9)
 		)
 		(stroke
@@ -895,16 +1024,6 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 100.33) (xy 92.71 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b45ea69-cc4b-42f5-9b57-d821b30d999d")
-	)
-	(wire
-		(pts
 			(xy 149.86 88.9) (xy 149.86 96.52)
 		)
 		(stroke
@@ -912,16 +1031,6 @@
 			(type default)
 		)
 		(uuid "5b8cc718-fa00-43d2-aed9-d707e3c6e676")
-	)
-	(wire
-		(pts
-			(xy 102.87 111.76) (xy 102.87 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5bb00ea6-fee5-483d-bcbc-3e0449e0d8ba")
 	)
 	(wire
 		(pts
@@ -955,6 +1064,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 88.9) (xy 127 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99349398-be18-4e0b-bda1-1aafca79dfc9")
+	)
+	(wire
+		(pts
 			(xy 147.32 88.9) (xy 137.16 88.9)
 		)
 		(stroke
@@ -965,13 +1084,13 @@
 	)
 	(wire
 		(pts
-			(xy 127 88.9) (xy 102.87 88.9)
+			(xy 101.6 111.76) (xy 101.6 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a13dc636-1550-43e9-9bb9-8610e0c107b1")
+		(uuid "a710760c-7ead-44c3-b80e-121d0a09bc5f")
 	)
 	(wire
 		(pts
@@ -982,16 +1101,6 @@
 			(type default)
 		)
 		(uuid "a9424be9-4568-4208-8818-5aae8a995df0")
-	)
-	(wire
-		(pts
-			(xy 123.19 111.76) (xy 102.87 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad5ade85-ad54-436a-b5dd-b6cc703f8ee8")
 	)
 	(wire
 		(pts
@@ -1012,16 +1121,6 @@
 			(type default)
 		)
 		(uuid "cb06aad1-d6a7-47bf-99e1-9548f3076d34")
-	)
-	(wire
-		(pts
-			(xy 102.87 92.71) (xy 102.87 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f58730dd-4cdf-4b2b-a738-4032dc580331")
 	)
 	(image
 		(at 237.49 118.11)
@@ -11149,6 +11248,16 @@
 		)
 		(uuid "4f0d64a3-dc46-45ca-8c67-58c8afaefd91")
 	)
+	(text "Populate manually"
+		(exclude_from_sim no)
+		(at 91.694 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "81a84c26-291b-4be3-9d27-d2f2a2829e79")
+	)
 	(text "Π-filter for tuning"
 		(exclude_from_sim no)
 		(at 130.048 107.442 0)
@@ -11205,7 +11314,7 @@
 	)
 	(hierarchical_label "ANT"
 		(shape output)
-		(at 92.71 100.33 180)
+		(at 81.28 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11312,102 +11421,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 102.87 96.52 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0bbdd194-f954-4a42-aee0-0aa9d52d5da6")
-		(property "Reference" "R31"
-			(at 104.394 95.758 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0 Ω"
-			(at 104.394 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "perfect_footprints:0402_1005_perfect"
-			(at 104.648 96.52 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 102.87 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 102.87 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 102.87 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "RC0402JR-070RL"
-			(at 102.87 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key Part Number" "311-0.0JRCT-ND"
-			(at 102.87 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "086febfb-9b9c-442a-92b1-7f08186fd5a5")
-		)
-		(pin "1"
-			(uuid "c0f0d82d-b628-4a50-85af-d87267b829e3")
-		)
-		(instances
-			(project "iida_devkit"
-				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R31")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 129.54 111.76 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11415,7 +11428,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2fe5d00a-992f-4c92-8bc9-fcf82f53d364")
-		(property "Reference" "R34"
+		(property "Reference" "R33"
 			(at 127.762 109.474 90)
 			(effects
 				(font
@@ -11496,7 +11509,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R34")
+					(reference "R33")
 					(unit 1)
 				)
 			)
@@ -11744,7 +11757,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "805ab2e9-1d0d-4dbe-8e1f-df3f62a442d4")
-		(property "Reference" "R33"
+		(property "Reference" "R32"
 			(at 121.666 114.808 0)
 			(effects
 				(font
@@ -11825,7 +11838,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R33")
+					(reference "R32")
 					(unit 1)
 				)
 			)
@@ -11840,7 +11853,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "83184d7d-5f61-4942-b0bb-b5b74f9c2564")
-		(property "Reference" "R35"
+		(property "Reference" "R34"
 			(at 136.144 114.808 0)
 			(effects
 				(font
@@ -11921,7 +11934,77 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R35")
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "perfect_footprints:0hm_choice")
+		(at 91.44 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "bf465312-744c-43e6-8671-0bdebc2e6f25")
+		(property "Reference" "R31"
+			(at 91.44 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 91.44 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "perfect_footprints:0hm_choice"
+			(at 91.44 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "24814684-e23d-41a1-a658-7568129119b4")
+		)
+		(pin "3"
+			(uuid "532169bd-38bd-4dfb-a77c-2039d833f0f6")
+		)
+		(pin "1"
+			(uuid "7d1b8ce5-64ec-401b-aefa-c76c2c7d565c")
+		)
+		(instances
+			(project ""
+				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -12086,102 +12169,6 @@
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
 					(reference "AE1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 102.87 104.14 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "f59e176a-d79d-4726-91e0-92605b200c2d")
-		(property "Reference" "R32"
-			(at 104.394 103.378 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0 Ω"
-			(at 104.394 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "perfect_footprints:0402_1005_perfect"
-			(at 104.648 104.14 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 102.87 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 102.87 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 102.87 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "RC0402JR-070RL"
-			(at 102.87 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key Part Number" "311-0.0JRCT-ND"
-			(at 102.87 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "cd368a72-feeb-4c54-899c-f4434da8618c")
-		)
-		(pin "1"
-			(uuid "ca08cfc1-1f1c-4197-ba25-718a2bff39a1")
-		)
-		(instances
-			(project "iida_devkit"
-				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R32")
 					(unit 1)
 				)
 			)
