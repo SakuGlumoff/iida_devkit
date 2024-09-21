@@ -14888,12 +14888,12 @@
 		(dnp no)
 		(uuid "834ac072-f246-4273-a51e-d8753607b067")
 		(property "Reference" "R22"
-			(at 26.67 98.044 0)
+			(at 29.21 98.044 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "1 kΩ"
