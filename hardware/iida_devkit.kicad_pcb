@@ -34838,10 +34838,10 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/6dd8d741-3080-458c-a4f5-a05a3905bb8a/83d73a30-384f-40c7-8722-4e27a5ed039f")
+		(path "/6dd8d741-3080-458c-a4f5-a05a3905bb8a/e3952445-92c1-4d53-b862-fd392efdfd35")
 		(sheetname "MCU")
 		(sheetfile "mcu.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start 0.1 0.4)
 			(end -0.1 0.4)
@@ -36580,10 +36580,10 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/6dd8d741-3080-458c-a4f5-a05a3905bb8a/f2890a36-1ac8-4d50-b810-7ad27da79a02")
+		(path "/6dd8d741-3080-458c-a4f5-a05a3905bb8a/17ced62d-092b-491f-a7ec-c2c300dfb41a")
 		(sheetname "MCU")
 		(sheetfile "mcu.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_bom dnp)
 		(fp_line
 			(start 0.1 0.4)
 			(end -0.1 0.4)
@@ -48178,45 +48178,6 @@
 		)
 	)
 	(zone
-		(net 127)
-		(net_name "/Antenna/ANT_PCB")
-		(layer "F.Cu")
-		(uuid "b32771da-972f-48b7-83dc-ccb31582be43")
-		(name "$teardrop_padvia$")
-		(hatch full 0.1)
-		(priority 30000)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(filled_areas_thickness no)
-		(fill yes
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 1)
-			(island_area_min 10)
-		)
-		(polygon
-			(pts
-				(xy 196.45 77.9275) (xy 196.45 78.1725) (xy 196.95 78.3) (xy 197.201 78.05) (xy 196.95 77.8)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 196.952422 77.802918) (xy 196.954707 77.804689) (xy 197.192676 78.04171) (xy 197.196119 78.049977)
-				(xy 197.192709 78.058257) (xy 197.192676 78.05829) (xy 196.954707 78.29531) (xy 196.946427 78.29872)
-				(xy 196.943559 78.298357) (xy 196.458809 78.174746) (xy 196.451639 78.169381) (xy 196.45 78.163409)
-				(xy 196.45 77.93659) (xy 196.453427 77.928317) (xy 196.458806 77.925254) (xy 196.94356 77.801642)
-			)
-		)
-	)
-	(zone
 		(net 1)
 		(net_name "GND")
 		(layer "F.Cu")
@@ -48379,6 +48340,45 @@
 				(xy 199.363542 121.988513) (xy 199.451987 122.076958) (xy 199.47 122.120445) (xy 199.47 123.908)
 				(xy 199.451987 123.951487) (xy 199.4085 123.9695) (xy 196.9315 123.9695) (xy 196.888013 123.951487)
 				(xy 196.87 123.908) (xy 196.87 122.032) (xy 196.888013 121.988513) (xy 196.9315 121.9705) (xy 199.320055 121.9705)
+			)
+		)
+	)
+	(zone
+		(net 127)
+		(net_name "/Antenna/ANT_PCB")
+		(layer "F.Cu")
+		(uuid "e96b67be-398d-43df-9d5c-22de80138215")
+		(name "$teardrop_padvia$")
+		(hatch full 0.1)
+		(priority 30000)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(filled_areas_thickness no)
+		(fill yes
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 1)
+			(island_area_min 10)
+		)
+		(polygon
+			(pts
+				(xy 196.45 77.9275) (xy 196.45 78.1725) (xy 196.95 78.3) (xy 197.201 78.05) (xy 196.95 77.8)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 196.952422 77.802918) (xy 196.954707 77.804689) (xy 197.192676 78.04171) (xy 197.196119 78.049977)
+				(xy 197.192709 78.058257) (xy 197.192676 78.05829) (xy 196.954707 78.29531) (xy 196.946427 78.29872)
+				(xy 196.943559 78.298357) (xy 196.458809 78.174746) (xy 196.451639 78.169381) (xy 196.45 78.163409)
+				(xy 196.45 77.93659) (xy 196.453427 77.928317) (xy 196.458806 77.925254) (xy 196.94356 77.801642)
 			)
 		)
 	)
