@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-10")
-		(rev "v4.0.0")
+		(date "2024-09-21")
+		(rev "v4.1.0")
 	)
 	(lib_symbols
 		(symbol "Device:Antenna_Dipole"
@@ -959,16 +959,16 @@
 		(uuid "40621433-fb4d-4d50-be0b-5758174bb110")
 	)
 	(junction
-		(at 149.86 119.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c939167-833b-4745-b64d-6d3147fa4681")
-	)
-	(junction
 		(at 134.62 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "50f6ab22-4534-4c5d-911e-04814e226e32")
+	)
+	(junction
+		(at 149.86 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a7155a32-ef86-41aa-8449-6bc0dbcba4a2")
 	)
 	(junction
 		(at 134.62 119.38)
@@ -991,6 +991,16 @@
 			(type default)
 		)
 		(uuid "0e4d9be9-26e1-4901-abcc-fbb0302a783b")
+	)
+	(wire
+		(pts
+			(xy 149.86 111.76) (xy 149.86 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10640f66-784b-44a0-91b3-f2fad2c6d922")
 	)
 	(wire
 		(pts
@@ -1111,16 +1121,6 @@
 			(type default)
 		)
 		(uuid "b45dde1d-fc58-4906-b0ea-88034554a0d7")
-	)
-	(wire
-		(pts
-			(xy 149.86 111.76) (xy 149.86 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb06aad1-d6a7-47bf-99e1-9548f3076d34")
 	)
 	(image
 		(at 237.49 118.11)
@@ -11621,7 +11621,7 @@
 		(dnp no)
 		(uuid "71de026c-1c3c-4c6a-9a71-1096e5edcca0")
 		(property "Reference" "AE2"
-			(at 153.67 107.9499 0)
+			(at 146.558 104.648 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11630,7 +11630,7 @@
 			)
 		)
 		(property "Value" "PCB antenna"
-			(at 153.67 110.4899 0)
+			(at 144.272 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)

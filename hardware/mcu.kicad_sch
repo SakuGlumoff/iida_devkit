@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-10")
-		(rev "v4.0.0")
+		(date "2024-09-21")
+		(rev "v4.1.0")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_ARM_SWD_TagConnect_TC2030-NL"
