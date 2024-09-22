@@ -13720,7 +13720,7 @@
 				)
 			)
 		)
-		(property "Value" "MMBT3904-TP"
+		(property "Value" "MMBT3904"
 			(at 0 2.4 90)
 			(layer "F.Fab")
 			(uuid "c30461f5-fdc3-483e-b068-c657538ed20c")
@@ -13770,7 +13770,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" "MMBT3904TPMSCT-ND"
+		(property "Digi-Key Part Number" "4878-MMBT3904CT-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13783,7 +13783,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Micro Commercial Co"
+		(property "Manufacturer" "Diotec Semiconductor"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13796,7 +13796,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Part Number" "MMBT3904-TP"
+		(property "Manufacturer Part Number" "MMBT3904"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -49292,45 +49292,6 @@
 		)
 	)
 	(zone
-		(net 125)
-		(net_name "/Antenna/ANT_PCB")
-		(layer "F.Cu")
-		(uuid "2da63c84-6443-4ea8-bf5b-a5483d3af9ca")
-		(name "$teardrop_padvia$")
-		(hatch full 0.1)
-		(priority 30000)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(filled_areas_thickness no)
-		(fill yes
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 1)
-			(island_area_min 10)
-		)
-		(polygon
-			(pts
-				(xy 196.45 77.9275) (xy 196.45 78.1725) (xy 196.95 78.3) (xy 197.201 78.05) (xy 196.95 77.8)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 196.952422 77.802918) (xy 196.954707 77.804689) (xy 197.192676 78.04171) (xy 197.196119 78.049977)
-				(xy 197.192709 78.058257) (xy 197.192676 78.05829) (xy 196.954707 78.29531) (xy 196.946427 78.29872)
-				(xy 196.943559 78.298357) (xy 196.458809 78.174746) (xy 196.451639 78.169381) (xy 196.45 78.163409)
-				(xy 196.45 77.93659) (xy 196.453427 77.928317) (xy 196.458806 77.925254) (xy 196.94356 77.801642)
-			)
-		)
-	)
-	(zone
 		(net 18)
 		(net_name "Net-(D2-A)")
 		(layer "F.Cu")
@@ -49478,6 +49439,45 @@
 		(polygon
 			(pts
 				(xy 186.85 104.5) (xy 186.85 105.8) (xy 182.55 105.8) (xy 182.55 104.5)
+			)
+		)
+	)
+	(zone
+		(net 125)
+		(net_name "/Antenna/ANT_PCB")
+		(layer "F.Cu")
+		(uuid "49f0c930-68ac-4fce-a2ea-235a5cfda846")
+		(name "$teardrop_padvia$")
+		(hatch full 0.1)
+		(priority 30000)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(filled_areas_thickness no)
+		(fill yes
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 1)
+			(island_area_min 10)
+		)
+		(polygon
+			(pts
+				(xy 196.45 77.9275) (xy 196.45 78.1725) (xy 196.95 78.3) (xy 197.201 78.05) (xy 196.95 77.8)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 196.952422 77.802918) (xy 196.954707 77.804689) (xy 197.192676 78.04171) (xy 197.196119 78.049977)
+				(xy 197.192709 78.058257) (xy 197.192676 78.05829) (xy 196.954707 78.29531) (xy 196.946427 78.29872)
+				(xy 196.943559 78.298357) (xy 196.458809 78.174746) (xy 196.451639 78.169381) (xy 196.45 78.163409)
+				(xy 196.45 77.93659) (xy 196.453427 77.928317) (xy 196.458806 77.925254) (xy 196.94356 77.801642)
 			)
 		)
 	)

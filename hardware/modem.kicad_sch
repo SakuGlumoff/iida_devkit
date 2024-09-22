@@ -16342,7 +16342,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MMBT3904-TP"
+		(property "Value" "MMBT3904"
 			(at 64.77 165.0999 0)
 			(effects
 				(font
@@ -16378,7 +16378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "MMBT3904TPMSCT-ND"
+		(property "Digi-Key Part Number" "4878-MMBT3904CT-ND"
 			(at 69.85 163.83 0)
 			(effects
 				(font
@@ -16387,7 +16387,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Micro Commercial Co"
+		(property "Manufacturer" "Diotec Semiconductor"
 			(at 69.85 163.83 0)
 			(effects
 				(font
@@ -16396,7 +16396,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "MMBT3904-TP"
+		(property "Manufacturer Part Number" "MMBT3904"
 			(at 69.85 163.83 0)
 			(effects
 				(font
