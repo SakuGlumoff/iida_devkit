@@ -7462,6 +7462,7 @@
 	)
 	(label "SWCLK"
 		(at 34.29 60.96 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7494,6 +7495,7 @@
 	)
 	(label "SWO"
 		(at 34.29 66.04 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7724,6 +7726,7 @@
 	)
 	(label "SWDIO"
 		(at 34.29 55.88 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)

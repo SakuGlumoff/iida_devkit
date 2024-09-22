@@ -3777,12 +3777,6 @@
 		(uuid "2301cbb4-291f-4b0b-8687-163fcfde45d9")
 	)
 	(junction
-		(at 30.48 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6eec8e22-2110-4a0b-abf1-0714c0db643a")
-	)
-	(junction
 		(at 170.18 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3811,6 +3805,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a51d847e-4c0b-4242-8653-649b4717e508")
+	)
+	(junction
+		(at 30.48 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ac876084-df58-4048-9c54-c18c45e05987")
 	)
 	(junction
 		(at 83.82 163.83)
@@ -4620,16 +4620,6 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 102.87) (xy 30.48 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9daaa6e-e241-469b-92b3-de8deac1ef7b")
-	)
-	(wire
-		(pts
 			(xy 55.88 87.63) (xy 67.31 87.63)
 		)
 		(stroke
@@ -4667,6 +4657,16 @@
 			(type default)
 		)
 		(uuid "dcb0f6a1-0f79-4fe7-897b-6619aaea724c")
+	)
+	(wire
+		(pts
+			(xy 30.48 102.87) (xy 34.29 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcc091b9-a568-47cf-b95e-09824845f4c4")
 	)
 	(wire
 		(pts
@@ -14879,102 +14879,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 30.48 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "834ac072-f246-4273-a51e-d8753607b067")
-		(property "Reference" "R22"
-			(at 29.21 98.044 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1 kΩ"
-			(at 24.638 99.822 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "perfect_footprints:0402_1005_perfect"
-			(at 28.702 99.06 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 30.48 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 30.48 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 30.48 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "RC0402FR-071KL"
-			(at 30.48 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key Part Number" "311-1.00KLRCT-ND"
-			(at 30.48 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "50b231ec-6c00-43cd-806d-7c681a71f2dc")
-		)
-		(pin "2"
-			(uuid "66f2ff02-fbac-4168-9950-7b5300b7e4b9")
-		)
-		(instances
-			(project "iida_devkit"
-				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "R22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 255.27 162.56 0)
 		(mirror y)
@@ -15037,6 +14941,103 @@
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 30.48 99.06 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "89eba59a-4066-451d-b36c-4e0e210abf72")
+		(property "Reference" "R22"
+			(at 31.75 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2.2 kΩ"
+			(at 31.75 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "perfect_footprints:0402_1005_perfect"
+			(at 32.258 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 30.48 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 30.48 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digi-Key Part Number" "311-2.20KLRCT-ND"
+			(at 30.48 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 30.48 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "RC0402FR-072K2L"
+			(at 30.48 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c9db03c9-0969-49bc-ba83-f7dd7875ed18")
+		)
+		(pin "1"
+			(uuid "abf8b46f-8c41-4c38-ba57-6a2e6f038657")
+		)
+		(instances
+			(project "iida_devkit"
+				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
+					(reference "R22")
 					(unit 1)
 				)
 			)
