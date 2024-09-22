@@ -5287,7 +5287,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "10b27720-1a1d-4647-a044-66f059f98559")
-		(property "Reference" "TVS3"
+		(property "Reference" "TVS13"
 			(at 160.655 137.16 90)
 			(effects
 				(font
@@ -5304,7 +5304,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric"
+		(property "Footprint" "perfect_footprints:0402_1005_perfect"
 			(at 165.1 137.16 0)
 			(effects
 				(font
@@ -5367,7 +5367,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/33580d9f-a609-4568-baaf-9a29cf2dabcd"
-					(reference "TVS3")
+					(reference "TVS13")
 					(unit 1)
 				)
 			)
@@ -5575,7 +5575,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "77724c52-c3cc-46cc-b0fa-79bfb7d3c150")
-		(property "Reference" "TVS5"
+		(property "Reference" "TVS15"
 			(at 178.435 137.16 90)
 			(effects
 				(font
@@ -5592,7 +5592,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric"
+		(property "Footprint" "perfect_footprints:0402_1005_perfect"
 			(at 182.88 137.16 0)
 			(effects
 				(font
@@ -5655,7 +5655,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/33580d9f-a609-4568-baaf-9a29cf2dabcd"
-					(reference "TVS5")
+					(reference "TVS15")
 					(unit 1)
 				)
 			)
@@ -5671,7 +5671,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91a0ad05-4655-4bd9-bc1f-bceb0a2e8c25")
-		(property "Reference" "TVS2"
+		(property "Reference" "TVS12"
 			(at 151.765 137.16 90)
 			(effects
 				(font
@@ -5688,7 +5688,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric"
+		(property "Footprint" "perfect_footprints:0402_1005_perfect"
 			(at 156.21 137.16 0)
 			(effects
 				(font
@@ -5751,7 +5751,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/33580d9f-a609-4568-baaf-9a29cf2dabcd"
-					(reference "TVS2")
+					(reference "TVS12")
 					(unit 1)
 				)
 			)
@@ -5969,7 +5969,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d0b310c7-fa6c-4edc-b26f-165aeaa124de")
-		(property "Reference" "TVS4"
+		(property "Reference" "TVS14"
 			(at 169.545 137.16 90)
 			(effects
 				(font
@@ -5986,7 +5986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric"
+		(property "Footprint" "perfect_footprints:0402_1005_perfect"
 			(at 173.99 137.16 0)
 			(effects
 				(font
@@ -6049,7 +6049,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/33580d9f-a609-4568-baaf-9a29cf2dabcd"
-					(reference "TVS4")
+					(reference "TVS14")
 					(unit 1)
 				)
 			)
@@ -6065,7 +6065,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3a5742a-0b20-4a53-a11b-f862f8211ebe")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR026"
 			(at 187.96 151.13 0)
 			(effects
 				(font
@@ -6116,7 +6116,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/33580d9f-a609-4568-baaf-9a29cf2dabcd"
-					(reference "#PWR024")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)

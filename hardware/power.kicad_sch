@@ -6010,7 +6010,7 @@
 				)
 			)
 		)
-		(property "Value" "USB4110-GF-A"
+		(property "Value" "USB4085-GF-A"
 			(at 54.102 90.424 0)
 			(effects
 				(font
@@ -6018,7 +6018,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4110"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
 			(at 76.2 88.9 0)
 			(effects
 				(font
@@ -6045,7 +6045,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "2073-USB4110-GF-A-1-ND"
+		(property "Digi-Key Part Number" "2073-USB4085-GF-ACT-ND"
 			(at 72.39 88.9 0)
 			(effects
 				(font
@@ -6065,7 +6065,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "USB4110-GF-A"
+		(property "Manufacturer Part Number" "USB4085-GF-A"
 			(at 72.39 88.9 0)
 			(effects
 				(font
@@ -6425,7 +6425,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric"
+		(property "Footprint" "perfect_footprints:0402_1005_perfect"
 			(at 184.15 92.71 0)
 			(effects
 				(font
