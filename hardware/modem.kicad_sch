@@ -13566,7 +13566,7 @@
 				)
 			)
 		)
-		(property "Value" "PMOS"
+		(property "Value" "FDN338P"
 			(at 30.48 84.836 90)
 			(effects
 				(font
@@ -13885,7 +13885,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 49.53 163.83 0)
 			(effects
 				(font
@@ -16341,7 +16341,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Q_NPN_BEC"
+		(property "Value" "MMBT3904-TP"
 			(at 64.77 165.0999 0)
 			(effects
 				(font

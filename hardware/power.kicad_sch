@@ -4191,7 +4191,7 @@
 	)
 	(text "Optional:\nExternal +5V supply"
 		(exclude_from_sim no)
-		(at 154.686 90.17 0)
+		(at 154.94 89.662 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5431,7 +5431,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 232.41 41.91 0)
 			(effects
 				(font
@@ -5528,7 +5528,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 240.03 55.88 0)
 			(effects
 				(font
@@ -6146,7 +6146,7 @@
 		(dnp no)
 		(uuid "c3ed62d0-6354-45b7-8c29-209fe5b6ec6e")
 		(property "Reference" "J3"
-			(at 177.8 86.36 0)
+			(at 177.546 86.614 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6154,7 +6154,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 173.99 91.44 0)
 			(effects
 				(font
@@ -6252,14 +6252,13 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Batteries"
-			(at 104.14 57.15 0)
+		(property "Value" "B2B-PH-K-S"
+			(at 102.616 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
@@ -6512,7 +6511,7 @@
 				)
 			)
 		)
-		(property "Value" "PMOS"
+		(property "Value" "FDN338P"
 			(at 157.48 46.482 90)
 			(effects
 				(font
@@ -6636,7 +6635,7 @@
 				)
 			)
 		)
-		(property "Value" "PMOS"
+		(property "Value" "FDN338P"
 			(at 125.73 46.482 90)
 			(effects
 				(font
@@ -6761,7 +6760,7 @@
 				)
 			)
 		)
-		(property "Value" "Schottky"
+		(property "Value" "CDBA140LL-HF"
 			(at 173.0375 45.72 0)
 			(effects
 				(font
@@ -7238,7 +7237,7 @@
 				)
 			)
 		)
-		(property "Value" "Schottky"
+		(property "Value" "CDBA140LL-HF"
 			(at 129.54 53.0225 0)
 			(effects
 				(font
@@ -7429,7 +7428,7 @@
 				)
 			)
 		)
-		(property "Value" "Schottky"
+		(property "Value" "CDBA140LL-HF"
 			(at 173.0375 69.85 0)
 			(effects
 				(font

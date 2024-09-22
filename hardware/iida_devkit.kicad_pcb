@@ -2228,6 +2228,45 @@
 				)
 			)
 		)
+		(property "Digi-Key Part Number" "311-0.0JRCT-ND"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1dd96c82-f596-48c9-b7c8-48fb35310222")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5540e03-cbff-4ae5-b4ab-983c2cdcf827")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "RC0402JR-070RL"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8088e6b2-5a73-47a8-90b4-d90bfcba9043")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/6e456e95-dbda-43fc-b148-815c3be21ba0/bf465312-744c-43e6-8671-0bdebc2e6f25")
 		(sheetname "Antenna")
 		(sheetfile "antenna.kicad_sch")
@@ -2359,7 +2398,7 @@
 				)
 			)
 		)
-		(property "Value" "PMOS"
+		(property "Value" "FDN338P"
 			(at 0 2.4 0)
 			(layer "F.Fab")
 			(uuid "e4a22897-a940-48cf-b3de-c774a273bb10")
@@ -4317,7 +4356,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x06"
+		(property "Value" "PRPC006SAAN-RC"
 			(at 0 15.03 -90)
 			(layer "F.Fab")
 			(uuid "f849b4ad-29ad-41c9-8d75-e2bf340ab7d7")
@@ -11599,7 +11638,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x04"
+		(property "Value" "PRPC004SAAN-RC"
 			(at 0 9.95 90)
 			(layer "F.Fab")
 			(uuid "e27965b1-8588-4b52-9347-617f3a48d2cd")
@@ -13653,7 +13692,7 @@
 				)
 			)
 		)
-		(property "Value" "Q_NPN_BEC"
+		(property "Value" "MMBT3904-TP"
 			(at 0 2.4 90)
 			(layer "F.Fab")
 			(uuid "c30461f5-fdc3-483e-b068-c657538ed20c")
@@ -13958,7 +13997,7 @@
 				)
 			)
 		)
-		(property "Value" "PMOS"
+		(property "Value" "FDN338P"
 			(at 0 2.4 0)
 			(layer "F.Fab")
 			(uuid "50f9ba1b-f10a-40aa-82d6-a38fc86ff37f")
@@ -15676,7 +15715,7 @@
 				)
 			)
 		)
-		(property "Value" "Schottky"
+		(property "Value" "CDBA140LL-HF"
 			(at 0 2.6 90)
 			(layer "F.Fab")
 			(uuid "df88a8b9-6531-4856-bd56-5afea3729f71")
@@ -16910,7 +16949,7 @@
 				)
 			)
 		)
-		(property "Value" "Batteries"
+		(property "Value" "B2B-PH-K-S"
 			(at 1 4 90)
 			(layer "F.Fab")
 			(uuid "d230a553-51e1-471a-8867-6cfeae7bdcf0")
@@ -19998,7 +20037,7 @@
 				)
 			)
 		)
-		(property "Value" "Schottky"
+		(property "Value" "CDBA140LL-HF"
 			(at 0 2.6 90)
 			(layer "F.Fab")
 			(uuid "bb4282c8-b99f-428a-a3c9-42eecceb3140")
@@ -20373,6 +20412,45 @@
 				)
 			)
 		)
+		(property "Digi-Key Part Number" "-"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d02ad538-5ab5-4e63-9b2e-a98dd52d5e51")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "-"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7bf58171-3dbc-48db-b397-9bfb3320a945")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "-"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "42440192-54a3-4547-9fb8-8a023187aa0a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/6e456e95-dbda-43fc-b148-815c3be21ba0/71de026c-1c3c-4c6a-9a71-1096e5edcca0")
 		(sheetname "Antenna")
 		(sheetfile "antenna.kicad_sch")
@@ -20620,7 +20698,7 @@
 				)
 			)
 		)
-		(property "Value" "Schottky"
+		(property "Value" "CDBA140LL-HF"
 			(at 0 2.6 90)
 			(layer "F.Fab")
 			(uuid "d4e39753-bcd1-4086-9353-088d5478da7e")
@@ -21164,7 +21242,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x06"
+		(property "Value" "PRPC006SAAN-RC"
 			(at 0 15.03 90)
 			(layer "F.Fab")
 			(uuid "75925e20-90c9-4a62-abc8-207eec602a5f")
@@ -23325,7 +23403,7 @@
 				)
 			)
 		)
-		(property "Value" "RESET"
+		(property "Value" "PTS645SK50SMTR92 LFS"
 			(at 0 4.15 0)
 			(layer "F.Fab")
 			(uuid "51426d0d-822f-419d-84b9-f86a1897458e")
@@ -24260,7 +24338,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 0 4.87 90)
 			(layer "F.Fab")
 			(uuid "bece06f8-f0d7-42ea-b26d-c7bad8165181")
@@ -24786,7 +24864,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x06"
+		(property "Value" "PRPC006SAAN-RC"
 			(at 0 15.03 360)
 			(layer "F.Fab")
 			(uuid "434ce3ef-b600-461c-8572-48bff05f6045")
@@ -27779,7 +27857,7 @@
 				)
 			)
 		)
-		(property "Value" "PMOS"
+		(property "Value" "FDN338P"
 			(at 0 2.4 90)
 			(layer "F.Fab")
 			(uuid "175d9839-2d23-4f59-9707-d6ebd8a95cab")
@@ -28124,7 +28202,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 0 4.87 0)
 			(layer "F.Fab")
 			(uuid "6a6ebaab-3ec0-4bd2-ab38-c6966dcffd49")
@@ -31976,7 +32054,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 0 4.87 90)
 			(layer "F.Fab")
 			(uuid "c2d1e55a-f42b-465e-b119-10a48efca979")
@@ -32757,7 +32835,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 0 4.87 90)
 			(layer "F.Fab")
 			(uuid "69937d12-2b74-47a3-9eed-974427ff4401")
@@ -34899,7 +34977,7 @@
 				)
 			)
 		)
-		(property "Value" "SIM_Card"
+		(property "Value" "SIM8070-6-0-11-00-A"
 			(at 0 1 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -35672,7 +35750,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 0 4.87 0)
 			(layer "F.Fab")
 			(uuid "2ec54f7a-112c-4e03-93fc-04bdd114a9d7")
@@ -48925,45 +49003,6 @@
 		)
 	)
 	(zone
-		(net 125)
-		(net_name "/Antenna/ANT_PCB")
-		(layer "F.Cu")
-		(uuid "17c954a2-71b3-4317-b4ca-351b67026d37")
-		(name "$teardrop_padvia$")
-		(hatch full 0.1)
-		(priority 30000)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(filled_areas_thickness no)
-		(fill yes
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 1)
-			(island_area_min 10)
-		)
-		(polygon
-			(pts
-				(xy 196.45 77.9275) (xy 196.45 78.1725) (xy 196.95 78.3) (xy 197.201 78.05) (xy 196.95 77.8)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 196.952422 77.802918) (xy 196.954707 77.804689) (xy 197.192676 78.04171) (xy 197.196119 78.049977)
-				(xy 197.192709 78.058257) (xy 197.192676 78.05829) (xy 196.954707 78.29531) (xy 196.946427 78.29872)
-				(xy 196.943559 78.298357) (xy 196.458809 78.174746) (xy 196.451639 78.169381) (xy 196.45 78.163409)
-				(xy 196.45 77.93659) (xy 196.453427 77.928317) (xy 196.458806 77.925254) (xy 196.94356 77.801642)
-			)
-		)
-	)
-	(zone
 		(net 1)
 		(net_name "GND")
 		(layer "F.Cu")
@@ -49062,6 +49101,45 @@
 				(xy 179.865787 109.767541) (xy 179.85 109.7264) (xy 179.85 109.577841) (xy 179.850297 109.571806)
 				(xy 179.8505 109.569747) (xy 179.8505 108.030249) (xy 179.850296 108.028177) (xy 179.85 108.022152)
 				(xy 179.85 108.0115) (xy 179.868013 107.968013) (xy 179.9115 107.95) (xy 182.722152 107.95)
+			)
+		)
+	)
+	(zone
+		(net 125)
+		(net_name "/Antenna/ANT_PCB")
+		(layer "F.Cu")
+		(uuid "2afa0c3e-89cb-422d-8cba-27d585727e55")
+		(name "$teardrop_padvia$")
+		(hatch full 0.1)
+		(priority 30000)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(filled_areas_thickness no)
+		(fill yes
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 1)
+			(island_area_min 10)
+		)
+		(polygon
+			(pts
+				(xy 196.45 77.9275) (xy 196.45 78.1725) (xy 196.95 78.3) (xy 197.201 78.05) (xy 196.95 77.8)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 196.952422 77.802918) (xy 196.954707 77.804689) (xy 197.192676 78.04171) (xy 197.196119 78.049977)
+				(xy 197.192709 78.058257) (xy 197.192676 78.05829) (xy 196.954707 78.29531) (xy 196.946427 78.29872)
+				(xy 196.943559 78.298357) (xy 196.458809 78.174746) (xy 196.451639 78.169381) (xy 196.45 78.163409)
+				(xy 196.45 77.93659) (xy 196.453427 77.928317) (xy 196.458806 77.925254) (xy 196.94356 77.801642)
 			)
 		)
 	)

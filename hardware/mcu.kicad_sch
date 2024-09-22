@@ -7957,19 +7957,20 @@
 		(dnp no)
 		(uuid "007b751f-3b5d-45c1-9433-23a1297a30f5")
 		(property "Reference" "SW_SPST1"
-			(at 55.88 97.536 90)
+			(at 55.118 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "RESET"
+		(property "Value" "PTS645SK50SMTR92 LFS"
 			(at 54.102 99.568 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_PTS645"
@@ -8154,7 +8155,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x04"
+		(property "Value" "PRPC004SAAN-RC"
 			(at 278.638 136.906 0)
 			(effects
 				(font
@@ -8868,7 +8869,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x06"
+		(property "Value" "PRPC006SAAN-RC"
 			(at 274.32 55.8799 0)
 			(effects
 				(font
@@ -10520,7 +10521,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x06"
+		(property "Value" "PRPC006SAAN-RC"
 			(at 273.304 107.442 0)
 			(effects
 				(font
@@ -12999,7 +13000,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "PRPC001DAAN-RC"
 			(at 274.32 85.09 0)
 			(effects
 				(font

@@ -11715,6 +11715,33 @@
 				(hide yes)
 			)
 		)
+		(property "Digi-Key Part Number" "-"
+			(at 147.32 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "-"
+			(at 147.32 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "-"
+			(at 147.32 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5adcdb55-2253-4c5e-8a10-57ffda50963c")
 		)
@@ -12035,6 +12062,33 @@
 		)
 		(property "Description" ""
 			(at 105.41 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digi-Key Part Number" "311-0.0JRCT-ND"
+			(at 101.6 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 101.6 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "RC0402JR-070RL"
+			(at 101.6 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)

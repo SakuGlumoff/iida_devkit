@@ -5186,7 +5186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x06"
+		(property "Value" "PRPC006SAAN-RC"
 			(at 83.566 108.712 0)
 			(effects
 				(font
@@ -5870,7 +5870,7 @@
 				)
 			)
 		)
-		(property "Value" "SIM_Card"
+		(property "Value" "SIM8070-6-0-11-00-A"
 			(at 204.47 116.84 0)
 			(effects
 				(font
