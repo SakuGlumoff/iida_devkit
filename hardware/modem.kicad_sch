@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-22")
-		(rev "v4.1.0")
+		(date "2024-09-25")
+		(rev "v4.2.0")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
@@ -13078,7 +13078,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01920319-ece1-4599-819e-03b21e21e465")
-		(property "Reference" "C24"
+		(property "Reference" "C23"
 			(at 64.516 90.17 0)
 			(effects
 				(font
@@ -13159,7 +13159,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C24")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -13175,7 +13175,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "02a7ce51-89d8-4912-93b1-cf61fed60144")
-		(property "Reference" "C22"
+		(property "Reference" "C21"
 			(at 40.64 90.17 0)
 			(effects
 				(font
@@ -13256,7 +13256,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C22")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -14163,7 +14163,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4c4af424-87ad-4cd1-8499-933970c81b5f")
-		(property "Reference" "C25"
+		(property "Reference" "C24"
 			(at 76.2 90.17 0)
 			(effects
 				(font
@@ -14244,7 +14244,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C25")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -14260,7 +14260,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "55ccd809-3aef-4143-837d-d2832bfd05a8")
-		(property "Reference" "#FLG05"
+		(property "Reference" "#FLG06"
 			(at 106.68 85.725 0)
 			(effects
 				(font
@@ -14310,7 +14310,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "#FLG05")
+					(reference "#FLG06")
 					(unit 1)
 				)
 			)
@@ -15052,7 +15052,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "989ced89-7c9a-48aa-aa12-65c81a59d3aa")
-		(property "Reference" "C28"
+		(property "Reference" "C27"
 			(at 191.77 78.74 0)
 			(effects
 				(font
@@ -15133,7 +15133,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C28")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -15149,7 +15149,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a2d6d26e-d55c-44be-bd7b-cead95b5a47c")
-		(property "Reference" "C27"
+		(property "Reference" "C26"
 			(at 146.05 78.74 0)
 			(effects
 				(font
@@ -15230,7 +15230,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C27")
+					(reference "C26")
 					(unit 1)
 				)
 			)
@@ -15909,7 +15909,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b5d51fb2-9100-4e09-8048-f6ff8b9b675e")
-		(property "Reference" "C26"
+		(property "Reference" "C25"
 			(at 87.63 89.916 0)
 			(effects
 				(font
@@ -15990,7 +15990,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C26")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -16006,7 +16006,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ba3c43bf-5fc6-4512-b400-4798beb94407")
-		(property "Reference" "C23"
+		(property "Reference" "C22"
 			(at 53.34 90.17 0)
 			(effects
 				(font
@@ -16087,7 +16087,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/3723475b-e956-4027-ac40-e47346743900"
-					(reference "C23")
+					(reference "C22")
 					(unit 1)
 				)
 			)

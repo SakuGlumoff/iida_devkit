@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Iida devkit")
-		(date "2024-09-22")
-		(rev "v4.1.0")
+		(date "2024-09-25")
+		(rev "v4.2.0")
 	)
 	(lib_symbols
 		(symbol "Mechanical:Fiducial"
@@ -364,6 +364,26 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 86.36) (xy 175.26 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72a1b539-75f4-4912-9107-6c520e09aa81")
+	)
+	(wire
+		(pts
+			(xy 175.26 69.85) (xy 116.84 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cb4edef-619c-480a-aaa9-5c558c7b7020")
+	)
+	(wire
+		(pts
 			(xy 92.71 86.36) (xy 99.06 86.36)
 		)
 		(stroke
@@ -404,7 +424,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 69.85) (xy 116.84 69.85)
+			(xy 172.72 72.39) (xy 116.84 72.39)
 		)
 		(stroke
 			(width 0)
@@ -464,7 +484,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 72.39) (xy 170.18 91.44)
+			(xy 170.18 74.93) (xy 170.18 91.44)
 		)
 		(stroke
 			(width 0)
@@ -494,7 +514,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 88.9) (xy 172.72 69.85)
+			(xy 172.72 88.9) (xy 172.72 72.39)
 		)
 		(stroke
 			(width 0)
@@ -504,7 +524,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 72.39) (xy 170.18 72.39)
+			(xy 116.84 74.93) (xy 170.18 74.93)
 		)
 		(stroke
 			(width 0)
@@ -521,6 +541,16 @@
 			(type default)
 		)
 		(uuid "ea13149b-911e-4fe2-8594-c05d808d849d")
+	)
+	(wire
+		(pts
+			(xy 175.26 86.36) (xy 175.26 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f19b17f9-8661-4cfd-9913-8d80bcf0a549")
 	)
 	(wire
 		(pts
@@ -1568,6 +1598,16 @@
 			)
 			(uuid "8abe9ec8-9267-412d-a685-9a985aecbeb1")
 		)
+		(pin "+BATT" input
+			(at 177.8 86.36 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "3e10965f-2fb0-4a98-87ee-e7da5b426436")
+		)
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
@@ -1627,8 +1667,8 @@
 		)
 	)
 	(sheet
-		(at 99.06 64.77)
-		(size 17.78 10.16)
+		(at 99.06 63.5)
+		(size 17.78 13.97)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1639,7 +1679,7 @@
 		)
 		(uuid "8a51e004-740e-440f-9bfb-b035bcbeb0d2")
 		(property "Sheetname" "Power"
-			(at 98.806 64.516 0)
+			(at 98.552 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1648,7 +1688,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 99.314 75.438 0)
+			(at 98.552 61.468 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1667,7 +1707,7 @@
 			(uuid "468f3cfd-d0ed-4912-8d18-d4ccc784f3e4")
 		)
 		(pin "USB_DP" bidirectional
-			(at 116.84 69.85 0)
+			(at 116.84 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1677,7 +1717,7 @@
 			(uuid "9da066d4-8298-4214-9f5f-f7e1cd6623d5")
 		)
 		(pin "USB_DN" bidirectional
-			(at 116.84 72.39 0)
+			(at 116.84 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1685,6 +1725,16 @@
 				(justify right)
 			)
 			(uuid "53365252-e9cf-4e71-80cc-cef839c4afc1")
+		)
+		(pin "+BATT" output
+			(at 116.84 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e4dbd581-b78d-4bbe-b99b-7995c1974e01")
 		)
 		(instances
 			(project "iida_devkit"
