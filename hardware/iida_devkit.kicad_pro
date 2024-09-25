@@ -543,7 +543,7 @@
         "microvia_diameter": 0.25,
         "microvia_drill": 0.25,
         "name": "50 Ohm",
-        "pcb_color": "rgb(39, 255, 0)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(39, 255, 0)",
         "track_width": 0.245,
         "via_diameter": 0.6,
@@ -560,7 +560,7 @@
         "microvia_diameter": 0.25,
         "microvia_drill": 0.25,
         "name": "90 Ohm",
-        "pcb_color": "rgb(0, 0, 255)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(0, 0, 255)",
         "track_width": 0.23,
         "via_diameter": 0.6,
@@ -576,15 +576,11 @@
     "netclass_patterns": [
       {
         "netclass": "90 Ohm",
-        "pattern": "USB_*"
+        "pattern": "/*/USB_*"
       },
       {
         "netclass": "50 Ohm",
         "pattern": "/Antenna/ANT*"
-      },
-      {
-        "netclass": "90 Ohm",
-        "pattern": "/Power/USB_*"
       }
     ]
   },

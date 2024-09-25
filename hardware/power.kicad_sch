@@ -4265,7 +4265,7 @@
 		)
 		(uuid "bc2b3d06-cc88-4d5f-b933-14136d3f265f")
 	)
-	(global_label "USB_DP"
+	(hierarchical_label "USB_DP"
 		(shape bidirectional)
 		(at 113.03 91.44 0)
 		(fields_autoplaced yes)
@@ -4275,39 +4275,7 @@
 			)
 			(justify left)
 		)
-		(uuid "e5274ea7-1f40-4834-a3cd-2d2924dfca1a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.6311 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "USB_DN"
-		(shape bidirectional)
-		(at 113.03 88.9 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ebf80b72-eb79-4743-927d-85cfa589c33f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.6916 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+		(uuid "ba122ae0-31af-4fcc-80f2-353538a2d6c5")
 	)
 	(hierarchical_label "+3.3V"
 		(shape output)
@@ -4320,6 +4288,18 @@
 			(justify left)
 		)
 		(uuid "c41d40d4-e2e9-4a5d-8452-4fc1b9b30254")
+	)
+	(hierarchical_label "USB_DN"
+		(shape bidirectional)
+		(at 113.03 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d407b593-5b6b-47b7-93e2-c94272505e42")
 	)
 	(symbol
 		(lib_id "Device:C")

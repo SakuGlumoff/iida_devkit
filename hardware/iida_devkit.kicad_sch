@@ -295,16 +295,16 @@
 		(uuid "062403b7-13ce-4a49-b1b0-dd820d284646")
 	)
 	(junction
-		(at 152.4 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "78c7956f-76bc-4dd4-aeb2-e0cd48f6d5ec")
-	)
-	(junction
 		(at 132.08 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "939d13a2-cc0b-4354-bde8-a93e85d138b7")
+	)
+	(junction
+		(at 129.54 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e563056a-39ae-4fa8-83b8-a4619ec12ef8")
 	)
 	(junction
 		(at 137.16 189.23)
@@ -324,13 +324,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 83.82) (xy 152.4 87.63)
+			(xy 129.54 67.31) (xy 129.54 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2c4abf66-a479-4519-b402-ca25e5269288")
+		(uuid "39016556-ae65-40f6-b16e-3ad057cfe59f")
 	)
 	(wire
 		(pts
@@ -351,6 +351,16 @@
 			(type default)
 		)
 		(uuid "5c118627-09f0-4b18-997c-443007e9c616")
+	)
+	(wire
+		(pts
+			(xy 170.18 91.44) (xy 177.8 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "609ff35e-b004-4353-953f-e1d010302f1d")
 	)
 	(wire
 		(pts
@@ -394,13 +404,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 83.82) (xy 177.8 83.82)
+			(xy 172.72 69.85) (xy 116.84 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a2a21470-36d0-47bd-bcac-9b384ea6c75c")
+		(uuid "a3ff378e-6f21-49f5-8911-c48f2472159e")
 	)
 	(wire
 		(pts
@@ -414,7 +424,17 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 83.82) (xy 152.4 83.82)
+			(xy 116.84 67.31) (xy 129.54 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abf2f393-e8df-4278-be7a-df7d83ac8842")
+	)
+	(wire
+		(pts
+			(xy 125.73 83.82) (xy 129.54 83.82)
 		)
 		(stroke
 			(width 0)
@@ -444,13 +464,63 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 101.6) (xy 99.06 101.6)
+			(xy 170.18 72.39) (xy 170.18 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdeba6af-6777-4f1d-a499-a4eef1210b18")
+	)
+	(wire
+		(pts
+			(xy 92.71 113.03) (xy 99.06 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c5cc76a2-84fc-4998-b594-9546506e4f25")
+	)
+	(wire
+		(pts
+			(xy 177.8 88.9) (xy 172.72 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e087352a-1b07-4461-94a5-634ae1965624")
+	)
+	(wire
+		(pts
+			(xy 172.72 88.9) (xy 172.72 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3936746-179f-4df7-8ebd-b75b7c0b2d41")
+	)
+	(wire
+		(pts
+			(xy 116.84 72.39) (xy 170.18 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6c44988-192f-4e2e-8cc1-b425cd8f9978")
+	)
+	(wire
+		(pts
+			(xy 129.54 83.82) (xy 177.8 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea13149b-911e-4fe2-8594-c05d808d849d")
 	)
 	(wire
 		(pts
@@ -1379,10 +1449,11 @@
 			(uuid "840ad303-7056-4439-9228-150e526815c4")
 		)
 		(pin "ANT" input
-			(at 99.06 101.6 180)
+			(at 99.06 113.03 180)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 0 0 0 1)
 				)
 				(justify left)
 			)
@@ -1477,6 +1548,26 @@
 			)
 			(uuid "f06ee567-2246-426d-b8d7-68cf7891e5fe")
 		)
+		(pin "USB_DP" bidirectional
+			(at 177.8 88.9 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c0d42e28-dc49-4020-81fd-6a9d8493d29b")
+		)
+		(pin "USB_DN" bidirectional
+			(at 177.8 91.44 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8abe9ec8-9267-412d-a685-9a985aecbeb1")
+		)
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
@@ -1486,7 +1577,7 @@
 		)
 	)
 	(sheet
-		(at 74.93 99.06)
+		(at 74.93 110.49)
 		(size 17.78 5.08)
 		(fields_autoplaced yes)
 		(stroke
@@ -1499,7 +1590,7 @@
 		)
 		(uuid "6e456e95-dbda-43fc-b148-815c3be21ba0")
 		(property "Sheetname" "Antenna"
-			(at 74.93 98.3484 0)
+			(at 74.93 109.7784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1508,7 +1599,7 @@
 			)
 		)
 		(property "Sheetfile" "antenna.kicad_sch"
-			(at 74.93 104.7246 0)
+			(at 74.93 116.1546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1517,10 +1608,11 @@
 			)
 		)
 		(pin "ANT" output
-			(at 92.71 101.6 0)
+			(at 92.71 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 0 0 0 1)
 				)
 				(justify right)
 			)
@@ -1535,8 +1627,8 @@
 		)
 	)
 	(sheet
-		(at 143.51 87.63)
-		(size 17.145 10.16)
+		(at 99.06 64.77)
+		(size 17.78 10.16)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1547,7 +1639,7 @@
 		)
 		(uuid "8a51e004-740e-440f-9bfb-b035bcbeb0d2")
 		(property "Sheetname" "Power"
-			(at 143.256 87.376 0)
+			(at 98.806 64.516 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1556,7 +1648,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 143.764 98.298 0)
+			(at 99.314 75.438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1565,7 +1657,7 @@
 			)
 		)
 		(pin "+3.3V" output
-			(at 152.4 87.63 90)
+			(at 116.84 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1573,6 +1665,26 @@
 				(justify right)
 			)
 			(uuid "468f3cfd-d0ed-4912-8d18-d4ccc784f3e4")
+		)
+		(pin "USB_DP" bidirectional
+			(at 116.84 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9da066d4-8298-4214-9f5f-f7e1cd6623d5")
+		)
+		(pin "USB_DN" bidirectional
+			(at 116.84 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "53365252-e9cf-4e71-80cc-cef839c4afc1")
 		)
 		(instances
 			(project "iida_devkit"
