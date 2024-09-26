@@ -191,6 +191,291 @@
 				)
 			)
 		)
+		(symbol "Tag-Connect:TC2050"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Tag-Connect 2050"
+				(at 0 -14.478 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical"
+				(at 0 -17.018 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2021/02/TC2050-ARM2010-2021.pdf"
+				(at 0 -17.018 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "ARM 20-pin to ARM 10-pin JTAG or ARM SWD adapter"
+				(at 0 -17.018 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector:Tag-Connect_TC2050*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TC2050_1_1"
+				(circle
+					(center -5.842 -11.176)
+					(radius 1.0473)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 15.24) (xy -2.54 15.24) (xy -7.62 10.16) (xy -7.62 -12.954) (xy 7.62 -12.954) (xy 7.62 10.16)
+						(xy 2.54 15.24)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 13.716)
+					(radius 1.0473)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 5.842 -11.176)
+					(radius 1.0473)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin input line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "RESET"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "SWDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "SWCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "SWO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -295,10 +580,22 @@
 		(uuid "062403b7-13ce-4a49-b1b0-dd820d284646")
 	)
 	(junction
+		(at 129.54 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0717f740-5267-4a5a-9870-ad43a670d426")
+	)
+	(junction
 		(at 132.08 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "939d13a2-cc0b-4354-bde8-a93e85d138b7")
+	)
+	(junction
+		(at 223.52 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b7c104dc-dc26-4428-a47a-9c92374be954")
 	)
 	(junction
 		(at 129.54 83.82)
@@ -314,6 +611,16 @@
 	)
 	(wire
 		(pts
+			(xy 247.65 105.41) (xy 247.65 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ce61792-2d2d-4d15-a08e-096a514b88c2")
+	)
+	(wire
+		(pts
 			(xy 92.71 83.82) (xy 99.06 83.82)
 		)
 		(stroke
@@ -324,6 +631,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 91.44) (xy 224.79 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1834690f-5557-470c-a56a-07a28f7c0b71")
+	)
+	(wire
+		(pts
 			(xy 129.54 67.31) (xy 129.54 83.82)
 		)
 		(stroke
@@ -331,6 +648,36 @@
 			(type default)
 		)
 		(uuid "39016556-ae65-40f6-b16e-3ad057cfe59f")
+	)
+	(wire
+		(pts
+			(xy 223.52 99.06) (xy 223.52 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4238117f-bb4e-4abe-b8bd-63fb23e3f1e2")
+	)
+	(wire
+		(pts
+			(xy 213.36 88.9) (xy 213.36 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "482be640-cc13-4d71-b482-34175d675de2")
+	)
+	(wire
+		(pts
+			(xy 224.79 88.9) (xy 215.9 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4942e262-1569-48b4-9857-a76d144b6e43")
 	)
 	(wire
 		(pts
@@ -364,6 +711,36 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 88.9) (xy 215.9 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60db2b55-71f1-4f3c-92bb-ce941e8f0edd")
+	)
+	(wire
+		(pts
+			(xy 224.79 86.36) (xy 223.52 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "613fe168-c469-439a-81ed-16376abcc4a0")
+	)
+	(wire
+		(pts
+			(xy 210.82 91.44) (xy 201.93 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67d8e309-08f6-4c75-a00b-7023693b0108")
+	)
+	(wire
+		(pts
 			(xy 177.8 86.36) (xy 175.26 86.36)
 		)
 		(stroke
@@ -384,6 +761,36 @@
 	)
 	(wire
 		(pts
+			(xy 210.82 102.87) (xy 210.82 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ff05ac5-4b47-49a0-8f2b-ec4ca7b3054e")
+	)
+	(wire
+		(pts
+			(xy 245.11 102.87) (xy 210.82 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86391b7d-84cf-4592-9dc0-986b699df62e")
+	)
+	(wire
+		(pts
+			(xy 201.93 88.9) (xy 213.36 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87fb30b5-3e2f-4d6d-a745-8005c05591ee")
+	)
+	(wire
+		(pts
 			(xy 92.71 86.36) (xy 99.06 86.36)
 		)
 		(stroke
@@ -391,6 +798,16 @@
 			(type default)
 		)
 		(uuid "90257038-183a-4e7e-a0cb-730b68f3f3b4")
+	)
+	(wire
+		(pts
+			(xy 245.11 91.44) (xy 245.11 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "946be1a0-c091-4684-94a6-ce3032107a1a")
 	)
 	(wire
 		(pts
@@ -454,6 +871,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 67.31) (xy 129.54 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1ed9dc5-9dc6-4362-bcfa-d81bf458c21f")
+	)
+	(wire
+		(pts
 			(xy 125.73 83.82) (xy 129.54 83.82)
 		)
 		(stroke
@@ -504,6 +931,46 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 67.31) (xy 224.79 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d13a8ce1-ee7c-4495-a855-c4ce5adcc3b2")
+	)
+	(wire
+		(pts
+			(xy 223.52 86.36) (xy 223.52 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2b3c0c1-e52a-41c8-80dd-853c6091c6be")
+	)
+	(wire
+		(pts
+			(xy 201.93 83.82) (xy 224.79 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3daa64f-950f-47f3-b722-04216122bc39")
+	)
+	(wire
+		(pts
+			(xy 247.65 81.28) (xy 245.11 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9be866f-0662-4496-826c-3ba11db9159a")
+	)
+	(wire
+		(pts
 			(xy 177.8 88.9) (xy 172.72 88.9)
 		)
 		(stroke
@@ -521,6 +988,16 @@
 			(type default)
 		)
 		(uuid "e3936746-179f-4df7-8ebd-b75b7c0b2d41")
+	)
+	(wire
+		(pts
+			(xy 215.9 86.36) (xy 201.93 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e484cf72-8dd5-4c11-a3b4-43f7a5be1bfe")
 	)
 	(wire
 		(pts
@@ -544,6 +1021,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 105.41) (xy 247.65 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efbae704-7213-48ae-97df-0a3c853c8c45")
+	)
+	(wire
+		(pts
 			(xy 175.26 86.36) (xy 175.26 69.85)
 		)
 		(stroke
@@ -561,6 +1048,17 @@
 			(type default)
 		)
 		(uuid "f3051ff5-3f80-4f12-8f79-1969fdd51329")
+	)
+	(text "Programming header"
+		(exclude_from_sim no)
+		(at 225.044 67.818 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8636598f-e371-44a6-9d18-7ce3ed950c35")
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
@@ -1185,6 +1683,165 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 223.52 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd0c05f8-fcda-498d-abfa-a681998f70c2")
+		(property "Reference" "#PWR02"
+			(at 223.52 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 223.52 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 223.52 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 223.52 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 223.52 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a6f04da0-2361-48ce-85c2-9482ff2c0ea9")
+		)
+		(instances
+			(project "iida_devkit"
+				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Tag-Connect:TC2050")
+		(at 234.95 86.36 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e553d034-587e-46bd-8c93-63fd7d2fd1a7")
+		(property "Reference" "J1"
+			(at 234.95 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Tag-Connect 2050"
+			(at 234.95 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical"
+			(at 234.95 103.378 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2021/02/TC2050-ARM2010-2021.pdf"
+			(at 234.95 103.378 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ARM 20-pin to ARM 10-pin JTAG or ARM SWD adapter"
+			(at 234.95 103.378 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "10"
+			(uuid "8b2fc6de-fc76-4bcb-866c-d4a9eab27d54")
+		)
+		(pin "6"
+			(uuid "79740507-e5e4-4578-a0c2-d73bcc96e757")
+		)
+		(pin "7"
+			(uuid "b064fe43-6cdd-45d0-ae67-3186686aa52d")
+		)
+		(pin "4"
+			(uuid "458c849d-42d8-417d-a27a-8df1504e57cb")
+		)
+		(pin "2"
+			(uuid "f4199f1d-8c9d-45cf-ae90-f58de006a426")
+		)
+		(pin "8"
+			(uuid "9db41f75-c574-4ea8-b7f6-fea185d503db")
+		)
+		(pin "3"
+			(uuid "b8ee96db-11ba-4f04-8326-0be43b7d9252")
+		)
+		(pin "9"
+			(uuid "286b8631-4d4a-4fc5-95ef-f5d18fddcbd5")
+		)
+		(pin "5"
+			(uuid "1c384903-f7d8-4b9c-b7cf-9de56024a142")
+		)
+		(pin "1"
+			(uuid "a6ca8f57-8ff4-4c53-8261-6cad1f36a567")
+		)
+		(instances
+			(project "iida_devkit"
+				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 137.16 186.69 0)
 		(unit 1)
@@ -1607,6 +2264,46 @@
 				(justify left)
 			)
 			(uuid "3e10965f-2fb0-4a98-87ee-e7da5b426436")
+		)
+		(pin "SWO" output
+			(at 201.93 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "99453bf5-84ca-4ac3-9d4d-b796e2542484")
+		)
+		(pin "SWCLK" input
+			(at 201.93 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0b300322-29e6-4761-8732-a5747cfe80c3")
+		)
+		(pin "SWDIO" input
+			(at 201.93 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6b7f36b4-a7e1-4820-ac0e-6c6c19417e66")
+		)
+		(pin "NRST" input
+			(at 201.93 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ea4442ee-20d7-4337-8663-70ab226eaed1")
 		)
 		(instances
 			(project "iida_devkit"

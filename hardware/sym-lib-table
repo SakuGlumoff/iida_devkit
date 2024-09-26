@@ -14,4 +14,5 @@
   (lib (name "SN74AVC2T245")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/SN74AVC2T245/SN74AVC2T245.kicad_sym")(options "")(descr ""))
   (lib (name "SN74AVC4T245PW")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/SN74AVC4T245PW/SN74AVC4T245PW.kicad_sym")(options "")(descr ""))
   (lib (name "perfect_footprints")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/perfect_footprints/perfect_footprints.kicad_sym")(options "")(descr ""))
+  (lib (name "Tag-Connect")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/Tag-Connect/Tag-Connect.kicad_sym")(options "")(descr ""))
 )

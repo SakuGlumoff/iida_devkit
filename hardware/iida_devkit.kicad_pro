@@ -682,6 +682,30 @@
           "label": "Description",
           "name": "Description",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Tolerance",
+          "name": "Tolerance",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Voltage rating",
+          "name": "Voltage rating",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Working voltage",
+          "name": "Working voltage",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Power rating",
+          "name": "Power rating",
+          "show": false
         }
       ],
       "filter_string": "",
