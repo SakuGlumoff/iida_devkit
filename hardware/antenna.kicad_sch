@@ -11427,7 +11427,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-5936-1-ND"
+		(property "Digi-Key Part Number" "732-7472-1-ND"
 			(at 133.35 88.9 0)
 			(effects
 				(font
@@ -11436,7 +11436,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 133.35 88.9 0)
 			(effects
 				(font
@@ -11445,7 +11445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GRM1555C1H330JA01D"
+		(property "Manufacturer Part Number" "885012005058"
 			(at 133.35 88.9 0)
 			(effects
 				(font

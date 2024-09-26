@@ -7729,7 +7729,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 177.8 54.61 0)
 			(effects
 				(font
@@ -7738,7 +7738,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GCM155R71C104KA55J"
+		(property "Manufacturer Part Number" "885012205018"
 			(at 177.8 54.61 0)
 			(effects
 				(font
@@ -7747,7 +7747,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-7998-1-ND"
+		(property "Digi-Key Part Number" "732-7513-1-ND"
 			(at 177.8 54.61 0)
 			(effects
 				(font
@@ -9704,7 +9704,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 114.3 54.61 0)
 			(effects
 				(font
@@ -9713,7 +9713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GCM155R71C104KA55J"
+		(property "Manufacturer Part Number" "885012205018"
 			(at 114.3 54.61 0)
 			(effects
 				(font
@@ -9722,7 +9722,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-7998-1-ND"
+		(property "Digi-Key Part Number" "732-7513-1-ND"
 			(at 114.3 54.61 0)
 			(effects
 				(font
@@ -10563,7 +10563,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 139.7 54.61 0)
 			(effects
 				(font
@@ -10572,7 +10572,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GCM155R71C104KA55J"
+		(property "Manufacturer Part Number" "885012205018"
 			(at 139.7 54.61 0)
 			(effects
 				(font
@@ -10581,7 +10581,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-7998-1-ND"
+		(property "Digi-Key Part Number" "732-7513-1-ND"
 			(at 139.7 54.61 0)
 			(effects
 				(font
@@ -10622,7 +10622,7 @@
 				)
 			)
 		)
-		(property "Value" "LS T67K-K1L2-1-0-2-R18-Z"
+		(property "Value" "150141YS73100"
 			(at 198.12 124.46 0)
 			(effects
 				(font
@@ -10658,7 +10658,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "ams-OSRAM USA INC."
+		(property "Manufacturer" "Würth Elektronik"
 			(at 198.12 120.65 90)
 			(effects
 				(font
@@ -10667,7 +10667,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "LS T67K-K1L2-1-0-2-R18-Z"
+		(property "Manufacturer Part Number" "150141YS73100"
 			(at 198.12 120.65 90)
 			(effects
 				(font
@@ -10676,7 +10676,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "475-LST67K-K1L2-1-ZCT-ND"
+		(property "Digi-Key Part Number" "732-5004-1-ND"
 			(at 198.12 120.65 90)
 			(effects
 				(font
@@ -10850,7 +10850,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 261.62 41.91 0)
 			(effects
 				(font
@@ -10859,7 +10859,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GCM155R71C104KA55J"
+		(property "Manufacturer Part Number" "885012205018"
 			(at 261.62 41.91 0)
 			(effects
 				(font
@@ -10868,7 +10868,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-7998-1-ND"
+		(property "Digi-Key Part Number" "732-7513-1-ND"
 			(at 261.62 41.91 0)
 			(effects
 				(font
@@ -10977,7 +10977,7 @@
 				)
 			)
 		)
-		(property "Value" "LS T67K-K1L2-1-0-2-R18-Z"
+		(property "Value" "150141YS73100"
 			(at 194.31 114.3 0)
 			(effects
 				(font
@@ -11013,7 +11013,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "ams-OSRAM USA INC."
+		(property "Manufacturer" "Würth Elektronik"
 			(at 194.31 118.11 90)
 			(effects
 				(font
@@ -11022,7 +11022,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "LS T67K-K1L2-1-0-2-R18-Z"
+		(property "Manufacturer Part Number" "150141YS73100"
 			(at 194.31 118.11 90)
 			(effects
 				(font
@@ -11031,7 +11031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "475-LST67K-K1L2-1-ZCT-ND"
+		(property "Digi-Key Part Number" "732-5004-1-ND"
 			(at 194.31 118.11 90)
 			(effects
 				(font
@@ -11109,7 +11109,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 203.2 54.61 0)
 			(effects
 				(font
@@ -11118,7 +11118,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GCM155R71C104KA55J"
+		(property "Manufacturer Part Number" "885012205018"
 			(at 203.2 54.61 0)
 			(effects
 				(font
@@ -11127,7 +11127,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-7998-1-ND"
+		(property "Digi-Key Part Number" "732-7513-1-ND"
 			(at 203.2 54.61 0)
 			(effects
 				(font
@@ -11924,7 +11924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 127 54.61 0)
 			(effects
 				(font
@@ -11933,7 +11933,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GCM155R71C104KA55J"
+		(property "Manufacturer Part Number" "885012205018"
 			(at 127 54.61 0)
 			(effects
 				(font
@@ -11942,7 +11942,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "490-7998-1-ND"
+		(property "Digi-Key Part Number" "732-7513-1-ND"
 			(at 127 54.61 0)
 			(effects
 				(font
@@ -13106,7 +13106,7 @@
 				)
 			)
 		)
-		(property "Value" "LS T67K-K1L2-1-0-2-R18-Z"
+		(property "Value" "150141YS73100"
 			(at 201.93 127 0)
 			(effects
 				(font
@@ -13142,7 +13142,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "ams-OSRAM USA INC."
+		(property "Manufacturer" "Würth Elektronik"
 			(at 201.93 123.19 90)
 			(effects
 				(font
@@ -13151,7 +13151,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "LS T67K-K1L2-1-0-2-R18-Z"
+		(property "Manufacturer Part Number" "150141YS73100"
 			(at 201.93 123.19 90)
 			(effects
 				(font
@@ -13160,7 +13160,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "475-LST67K-K1L2-1-ZCT-ND"
+		(property "Digi-Key Part Number" "732-5004-1-ND"
 			(at 201.93 123.19 90)
 			(effects
 				(font

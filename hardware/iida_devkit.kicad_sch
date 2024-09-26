@@ -193,7 +193,7 @@
 		)
 		(symbol "Tag-Connect:TC2050"
 			(exclude_from_sim no)
-			(in_bom yes)
+			(in_bom no)
 			(on_board yes)
 			(property "Reference" "J"
 				(at 0 16.51 0)
