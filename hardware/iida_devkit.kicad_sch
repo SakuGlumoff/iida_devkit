@@ -196,7 +196,7 @@
 			(in_bom no)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 16.51 0)
+				(at -0.254 8.382 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -204,7 +204,7 @@
 				)
 			)
 			(property "Value" "Tag-Connect 2050"
-				(at 0 -14.478 0)
+				(at 0 -8.128 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -212,7 +212,7 @@
 				)
 			)
 			(property "Footprint" "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical"
-				(at 0 -17.018 0)
+				(at 0 -10.668 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -221,7 +221,7 @@
 				)
 			)
 			(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2021/02/TC2050-ARM2010-2021.pdf"
-				(at 0 -17.018 0)
+				(at 0 -10.668 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -230,7 +230,7 @@
 				)
 			)
 			(property "Description" "ARM 20-pin to ARM 10-pin JTAG or ARM SWD adapter"
-				(at 0 -17.018 0)
+				(at 0 -10.668 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -249,7 +249,7 @@
 			)
 			(symbol "TC2050_1_1"
 				(circle
-					(center -5.842 -11.176)
+					(center -2.286 -5.334)
 					(radius 1.0473)
 					(stroke
 						(width 0)
@@ -261,8 +261,8 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 15.24) (xy -2.54 15.24) (xy -7.62 10.16) (xy -7.62 -12.954) (xy 7.62 -12.954) (xy 7.62 10.16)
-						(xy 2.54 15.24)
+						(xy 1.27 6.604) (xy -1.524 6.604) (xy -3.81 3.81) (xy -3.81 -6.858) (xy 3.81 -6.858) (xy 3.81 3.81)
+						(xy 1.27 6.604)
 					)
 					(stroke
 						(width 0)
@@ -273,7 +273,7 @@
 					)
 				)
 				(circle
-					(center 0 13.716)
+					(center 0 5.08)
 					(radius 1.0473)
 					(stroke
 						(width 0)
@@ -284,7 +284,7 @@
 					)
 				)
 				(circle
-					(center 5.842 -11.176)
+					(center 2.286 -5.334)
 					(radius 1.0473)
 					(stroke
 						(width 0)
@@ -295,181 +295,181 @@
 					)
 				)
 				(pin input line
-					(at 10.16 5.08 180)
-					(length 2.54)
+					(at 5.08 2.54 180)
+					(length 1.27)
 					(name "VCC"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin input line
-					(at -10.16 -5.08 0)
-					(length 2.54)
+					(at -5.08 2.54 0)
+					(length 1.27)
 					(name "RESET"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "10"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin input line
-					(at 10.16 2.54 180)
-					(length 2.54)
+					(at 5.08 1.27 180)
+					(length 1.27)
 					(name "SWDIO"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin input line
-					(at 10.16 0 180)
-					(length 2.54)
+					(at 5.08 0 180)
+					(length 1.27)
 					(name "GND"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin input line
-					(at 10.16 -2.54 180)
-					(length 2.54)
+					(at 5.08 -1.27 180)
+					(length 1.27)
 					(name "SWCLK"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "4"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin input line
-					(at 10.16 -5.08 180)
-					(length 2.54)
+					(at 5.08 -2.54 180)
+					(length 1.27)
 					(name "GND"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "5"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin input line
-					(at -10.16 5.08 0)
-					(length 2.54)
+					(at -5.08 -2.54 0)
+					(length 1.27)
 					(name "SWO"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "6"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin no_connect line
-					(at -10.16 2.54 0)
-					(length 2.54)
+					(at -5.08 -1.27 0)
+					(length 1.27)
 					(name "NC"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "7"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin no_connect line
-					(at -10.16 0 0)
-					(length 2.54)
+					(at -5.08 0 0)
+					(length 1.27)
 					(name "NC"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "8"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 				)
 				(pin no_connect line
-					(at -10.16 -2.54 0)
-					(length 2.54)
+					(at -5.08 1.27 0)
+					(length 1.27)
 					(name "NC"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
 					(number "9"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 0.635 0.635)
 							)
 						)
 					)
@@ -583,7 +583,7 @@
 		(at 129.54 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0717f740-5267-4a5a-9870-ad43a670d426")
+		(uuid "2b5eab61-cf9b-426f-a56b-fe2d70eb3999")
 	)
 	(junction
 		(at 132.08 189.23)
@@ -592,10 +592,10 @@
 		(uuid "939d13a2-cc0b-4354-bde8-a93e85d138b7")
 	)
 	(junction
-		(at 223.52 91.44)
+		(at 215.9 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b7c104dc-dc26-4428-a47a-9c92374be954")
+		(uuid "ac681771-54a8-4e8c-9222-2d2d199e6b92")
 	)
 	(junction
 		(at 129.54 83.82)
@@ -611,13 +611,13 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 105.41) (xy 247.65 81.28)
+			(xy 201.93 83.82) (xy 204.47 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0ce61792-2d2d-4d15-a08e-096a514b88c2")
+		(uuid "0d2eea66-7f87-4726-b26a-9d487c900201")
 	)
 	(wire
 		(pts
@@ -631,16 +631,6 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 91.44) (xy 224.79 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1834690f-5557-470c-a56a-07a28f7c0b71")
-	)
-	(wire
-		(pts
 			(xy 129.54 67.31) (xy 129.54 83.82)
 		)
 		(stroke
@@ -651,33 +641,43 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 99.06) (xy 223.52 91.44)
+			(xy 215.9 77.47) (xy 218.44 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4238117f-bb4e-4abe-b8bd-63fb23e3f1e2")
+		(uuid "3e32e344-2b23-42f9-83c2-178c05a0b8b9")
 	)
 	(wire
 		(pts
-			(xy 213.36 88.9) (xy 213.36 105.41)
+			(xy 231.14 91.44) (xy 231.14 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "482be640-cc13-4d71-b482-34175d675de2")
+		(uuid "44103721-0dea-4341-8c33-8f04479c985b")
 	)
 	(wire
 		(pts
-			(xy 224.79 88.9) (xy 215.9 88.9)
+			(xy 231.14 72.39) (xy 228.6 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4942e262-1569-48b4-9857-a76d144b6e43")
+		(uuid "54484635-6dfb-4df8-984f-f0317c723d83")
+	)
+	(wire
+		(pts
+			(xy 201.93 88.9) (xy 228.6 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54571879-c41b-470a-be90-8bdca9637945")
 	)
 	(wire
 		(pts
@@ -711,33 +711,13 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 88.9) (xy 215.9 86.36)
+			(xy 218.44 74.93) (xy 215.9 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "60db2b55-71f1-4f3c-92bb-ce941e8f0edd")
-	)
-	(wire
-		(pts
-			(xy 224.79 86.36) (xy 223.52 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "613fe168-c469-439a-81ed-16376abcc4a0")
-	)
-	(wire
-		(pts
-			(xy 210.82 91.44) (xy 201.93 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67d8e309-08f6-4c75-a00b-7023693b0108")
+		(uuid "71dc28df-301c-4640-8dd7-0db3d51ac93f")
 	)
 	(wire
 		(pts
@@ -761,33 +741,23 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 102.87) (xy 210.82 91.44)
+			(xy 201.93 91.44) (xy 231.14 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7ff05ac5-4b47-49a0-8f2b-ec4ca7b3054e")
+		(uuid "7f1f942c-f0bf-463f-b5d0-e68079cc7b63")
 	)
 	(wire
 		(pts
-			(xy 245.11 102.87) (xy 210.82 102.87)
+			(xy 204.47 73.66) (xy 218.44 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "86391b7d-84cf-4592-9dc0-986b699df62e")
-	)
-	(wire
-		(pts
-			(xy 201.93 88.9) (xy 213.36 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87fb30b5-3e2f-4d6d-a745-8005c05591ee")
+		(uuid "8bcf71c9-0077-4d66-a390-2a45d11f8cc0")
 	)
 	(wire
 		(pts
@@ -801,13 +771,13 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 91.44) (xy 245.11 102.87)
+			(xy 215.9 72.39) (xy 218.44 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "946be1a0-c091-4684-94a6-ce3032107a1a")
+		(uuid "98fc8098-4489-4550-adae-564c9ff93f44")
 	)
 	(wire
 		(pts
@@ -871,16 +841,6 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 67.31) (xy 129.54 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1ed9dc5-9dc6-4362-bcfa-d81bf458c21f")
-	)
-	(wire
-		(pts
 			(xy 125.73 83.82) (xy 129.54 83.82)
 		)
 		(stroke
@@ -891,6 +851,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 76.2) (xy 218.44 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3d42037-363d-442b-926a-0b496f52ab0a")
+	)
+	(wire
+		(pts
 			(xy 92.71 88.9) (xy 99.06 88.9)
 		)
 		(stroke
@@ -898,6 +868,16 @@
 			(type default)
 		)
 		(uuid "b8f1798f-c79d-40f0-a85c-4cd3877f6a63")
+	)
+	(wire
+		(pts
+			(xy 215.9 74.93) (xy 215.9 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9059f9c-e88f-4d92-b6ef-0e3b1411c8c4")
 	)
 	(wire
 		(pts
@@ -921,6 +901,26 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 83.82) (xy 204.47 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c053bbda-1126-4d26-81d1-4ab37a1706d6")
+	)
+	(wire
+		(pts
+			(xy 215.9 67.31) (xy 215.9 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0f582ae-1b25-49a1-8e97-e7f770c2ba4b")
+	)
+	(wire
+		(pts
 			(xy 92.71 113.03) (xy 99.06 113.03)
 		)
 		(stroke
@@ -928,46 +928,6 @@
 			(type default)
 		)
 		(uuid "c5cc76a2-84fc-4998-b594-9546506e4f25")
-	)
-	(wire
-		(pts
-			(xy 224.79 67.31) (xy 224.79 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d13a8ce1-ee7c-4495-a855-c4ce5adcc3b2")
-	)
-	(wire
-		(pts
-			(xy 223.52 86.36) (xy 223.52 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d2b3c0c1-e52a-41c8-80dd-853c6091c6be")
-	)
-	(wire
-		(pts
-			(xy 201.93 83.82) (xy 224.79 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3daa64f-950f-47f3-b722-04216122bc39")
-	)
-	(wire
-		(pts
-			(xy 247.65 81.28) (xy 245.11 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9be866f-0662-4496-826c-3ba11db9159a")
 	)
 	(wire
 		(pts
@@ -991,16 +951,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 86.36) (xy 201.93 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e484cf72-8dd5-4c11-a3b4-43f7a5be1bfe")
-	)
-	(wire
-		(pts
 			(xy 116.84 74.93) (xy 170.18 74.93)
 		)
 		(stroke
@@ -1008,6 +958,26 @@
 			(type default)
 		)
 		(uuid "e6c44988-192f-4e2e-8cc1-b425cd8f9978")
+	)
+	(wire
+		(pts
+			(xy 201.93 86.36) (xy 207.01 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8a16750-0d04-4c08-adce-6aac6ee2678d")
+	)
+	(wire
+		(pts
+			(xy 129.54 67.31) (xy 215.9 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e95210f9-8818-4ac2-b05c-10244173c1b3")
 	)
 	(wire
 		(pts
@@ -1021,13 +991,13 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 105.41) (xy 247.65 105.41)
+			(xy 207.01 86.36) (xy 207.01 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "efbae704-7213-48ae-97df-0a3c853c8c45")
+		(uuid "ea63f506-584a-4ebb-95fe-ce6ccfe3c403")
 	)
 	(wire
 		(pts
@@ -1049,9 +1019,19 @@
 		)
 		(uuid "f3051ff5-3f80-4f12-8f79-1969fdd51329")
 	)
+	(wire
+		(pts
+			(xy 228.6 88.9) (xy 228.6 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f41c1a71-f1f7-43fd-9286-7be98ae06bb0")
+	)
 	(text "Programming header"
 		(exclude_from_sim no)
-		(at 225.044 67.818 0)
+		(at 214.376 65.278 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1684,7 +1664,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 223.52 99.06 0)
+		(at 215.9 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1693,7 +1673,7 @@
 		(fields_autoplaced yes)
 		(uuid "cd0c05f8-fcda-498d-abfa-a681998f70c2")
 		(property "Reference" "#PWR02"
-			(at 223.52 105.41 0)
+			(at 215.9 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1702,7 +1682,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 223.52 104.14 0)
+			(at 215.9 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1711,7 +1691,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 223.52 99.06 0)
+			(at 215.9 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1720,7 +1700,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 223.52 99.06 0)
+			(at 215.9 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1729,7 +1709,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 223.52 99.06 0)
+			(at 215.9 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1751,7 +1731,7 @@
 	)
 	(symbol
 		(lib_id "Tag-Connect:TC2050")
-		(at 234.95 86.36 0)
+		(at 223.52 74.93 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1760,7 +1740,7 @@
 		(dnp no)
 		(uuid "e553d034-587e-46bd-8c93-63fd7d2fd1a7")
 		(property "Reference" "J1"
-			(at 234.95 69.85 0)
+			(at 223.52 67.056 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1768,7 +1748,7 @@
 			)
 		)
 		(property "Value" "Tag-Connect 2050"
-			(at 234.95 100.33 0)
+			(at 223.52 83.058 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1776,7 +1756,7 @@
 			)
 		)
 		(property "Footprint" "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical"
-			(at 234.95 103.378 0)
+			(at 223.52 91.948 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1785,7 +1765,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2021/02/TC2050-ARM2010-2021.pdf"
-			(at 234.95 103.378 0)
+			(at 223.52 91.948 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1794,7 +1774,34 @@
 			)
 		)
 		(property "Description" "ARM 20-pin to ARM 10-pin JTAG or ARM SWD adapter"
-			(at 234.95 103.378 0)
+			(at 223.52 91.948 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digi-Key Part Number" "-"
+			(at 223.52 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "-"
+			(at 223.52 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "-"
+			(at 223.52 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2255,7 +2262,7 @@
 			)
 			(uuid "8abe9ec8-9267-412d-a685-9a985aecbeb1")
 		)
-		(pin "+BATT" input
+		(pin "VBAT" input
 			(at 177.8 86.36 180)
 			(effects
 				(font
@@ -2423,7 +2430,7 @@
 			)
 			(uuid "53365252-e9cf-4e71-80cc-cef839c4afc1")
 		)
-		(pin "+BATT" output
+		(pin "VBAT" output
 			(at 116.84 69.85 0)
 			(effects
 				(font
