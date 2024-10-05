@@ -8937,7 +8937,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "RC0603FR-075K1L"
+		(property "Manufacturer Part Number" "RC0402FR-075K1L"
 			(at 71.12 116.84 0)
 			(effects
 				(font
@@ -8946,7 +8946,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "311-5.10KHRCT-ND"
+		(property "Digi-Key Part Number" "311-5.10KLRCT-ND"
 			(at 71.12 116.84 0)
 			(effects
 				(font
@@ -9031,7 +9031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "RC0603FR-075K1L"
+		(property "Manufacturer Part Number" "RC0402FR-075K1L"
 			(at 68.58 116.84 0)
 			(effects
 				(font
@@ -9040,7 +9040,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "311-5.10KHRCT-ND"
+		(property "Digi-Key Part Number" "311-5.10KLRCT-ND"
 			(at 68.58 116.84 0)
 			(effects
 				(font
