@@ -16,4 +16,5 @@
   (lib (name "perfect_footprints")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/perfect_footprints/perfect_footprints.kicad_sym")(options "")(descr ""))
   (lib (name "Tag-Connect")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/Tag-Connect/Tag-Connect.kicad_sym")(options "")(descr ""))
   (lib (name "74AVC1T45DW-7")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/74AVC1T45DW-7/74AVC1T45DW-7.kicad_sym")(options "")(descr ""))
+  (lib (name "TPS61023DRL")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/TPS61023DRL/TPS61023DRL.kicad_sym")(options "")(descr ""))
 )
