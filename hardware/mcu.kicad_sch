@@ -7343,7 +7343,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 203.962 146.05 90)
 			(effects
 				(font
@@ -7379,7 +7379,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 205.74 146.05 0)
 			(effects
 				(font
@@ -7388,7 +7388,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 205.74 146.05 0)
 			(effects
 				(font
@@ -7532,7 +7532,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 172.72 34.29 0)
 			(effects
 				(font
@@ -7541,7 +7541,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 174.2948 36.83 0)
 			(effects
 				(font
@@ -7577,7 +7577,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 175.26 33.02 0)
 			(effects
 				(font
@@ -7586,7 +7586,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 175.26 33.02 0)
 			(effects
 				(font
@@ -7732,7 +7732,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 162.56 33.02 0)
 			(effects
 				(font
@@ -7741,7 +7741,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10A475KP8NNNC"
+		(property "Manufacturer Part Number" "885012106005"
 			(at 162.56 33.02 0)
 			(effects
 				(font
@@ -7750,7 +7750,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "1276-1044-1-ND"
+		(property "Digi-Key Part Number" "732-7902-1-ND"
 			(at 162.56 33.02 0)
 			(effects
 				(font
@@ -7792,7 +7792,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 262.89 107.95 90)
 			(effects
 				(font
@@ -7801,7 +7801,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 273.05 106.68 0)
 			(effects
 				(font
@@ -7828,7 +7828,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 273.05 106.68 0)
 			(effects
 				(font
@@ -7837,7 +7837,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 273.05 106.68 0)
 			(effects
 				(font
@@ -7846,7 +7846,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 273.05 106.68 0)
 			(effects
 				(font
@@ -7887,7 +7887,7 @@
 				)
 			)
 		)
-		(property "Value" "22 Ω"
+		(property "Value" "20 Ω"
 			(at 114.554 104.394 90)
 			(effects
 				(font
@@ -7895,7 +7895,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 109.22 107.188 90)
 			(effects
 				(font
@@ -7922,7 +7922,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110046CT-ND"
+		(property "Digi-Key Part Number" "732-560112116125CT-ND"
 			(at 109.22 105.41 90)
 			(effects
 				(font
@@ -7940,7 +7940,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110046"
+		(property "Manufacturer Part Number" "560112116125"
 			(at 109.22 105.41 90)
 			(effects
 				(font
@@ -7991,7 +7991,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 203.962 156.21 90)
 			(effects
 				(font
@@ -8027,7 +8027,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 205.74 156.21 0)
 			(effects
 				(font
@@ -8036,7 +8036,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 205.74 156.21 0)
 			(effects
 				(font
@@ -8546,7 +8546,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 76.962 115.57 90)
 			(effects
 				(font
@@ -8573,7 +8573,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110087CT-ND"
+		(property "Digi-Key Part Number" "732-560112116098CT-ND"
 			(at 78.74 115.57 0)
 			(effects
 				(font
@@ -8591,7 +8591,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110087"
+		(property "Manufacturer Part Number" "560112116098"
 			(at 78.74 115.57 0)
 			(effects
 				(font
@@ -8670,7 +8670,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 25.4 125.73 0)
 			(effects
 				(font
@@ -8679,7 +8679,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10A475KP8NNNC"
+		(property "Manufacturer Part Number" "885012106005"
 			(at 25.4 125.73 0)
 			(effects
 				(font
@@ -8688,7 +8688,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "1276-1044-1-ND"
+		(property "Digi-Key Part Number" "732-7902-1-ND"
 			(at 25.4 125.73 0)
 			(effects
 				(font
@@ -8908,7 +8908,7 @@
 				)
 			)
 		)
-		(property "Value" "22 Ω"
+		(property "Value" "20 Ω"
 			(at 175.006 66.294 90)
 			(effects
 				(font
@@ -8916,7 +8916,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 180.34 69.088 90)
 			(effects
 				(font
@@ -8943,7 +8943,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110046CT-ND"
+		(property "Digi-Key Part Number" "732-560112116125CT-ND"
 			(at 180.34 67.31 90)
 			(effects
 				(font
@@ -8961,7 +8961,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110046"
+		(property "Manufacturer Part Number" "560112116125"
 			(at 180.34 67.31 90)
 			(effects
 				(font
@@ -9105,7 +9105,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 99.06 33.02 0)
 			(effects
 				(font
@@ -9114,7 +9114,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10A475KP8NNNC"
+		(property "Manufacturer Part Number" "885012106005"
 			(at 99.06 33.02 0)
 			(effects
 				(font
@@ -9123,7 +9123,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "1276-1044-1-ND"
+		(property "Digi-Key Part Number" "732-7902-1-ND"
 			(at 99.06 33.02 0)
 			(effects
 				(font
@@ -9241,7 +9241,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 109.22 109.728 90)
 			(effects
 				(font
@@ -9277,7 +9277,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 109.22 107.95 0)
 			(effects
 				(font
@@ -9286,7 +9286,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 109.22 107.95 0)
 			(effects
 				(font
@@ -9328,7 +9328,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 245.11 107.95 90)
 			(effects
 				(font
@@ -9337,7 +9337,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 255.27 106.68 0)
 			(effects
 				(font
@@ -9364,7 +9364,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 255.27 106.68 0)
 			(effects
 				(font
@@ -9373,7 +9373,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 255.27 106.68 0)
 			(effects
 				(font
@@ -9382,7 +9382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 255.27 106.68 0)
 			(effects
 				(font
@@ -9490,7 +9490,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 262.89 80.01 90)
 			(effects
 				(font
@@ -9499,7 +9499,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 273.05 78.74 0)
 			(effects
 				(font
@@ -9526,7 +9526,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 273.05 78.74 0)
 			(effects
 				(font
@@ -9535,7 +9535,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 273.05 78.74 0)
 			(effects
 				(font
@@ -9544,7 +9544,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 273.05 78.74 0)
 			(effects
 				(font
@@ -9586,7 +9586,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 254 107.95 90)
 			(effects
 				(font
@@ -9595,7 +9595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 264.16 106.68 0)
 			(effects
 				(font
@@ -9622,7 +9622,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 264.16 106.68 0)
 			(effects
 				(font
@@ -9631,7 +9631,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 264.16 106.68 0)
 			(effects
 				(font
@@ -9640,7 +9640,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 264.16 106.68 0)
 			(effects
 				(font
@@ -9813,7 +9813,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 109.22 34.29 0)
 			(effects
 				(font
@@ -9822,7 +9822,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 110.7948 36.83 0)
 			(effects
 				(font
@@ -9858,7 +9858,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 111.76 33.02 0)
 			(effects
 				(font
@@ -9867,7 +9867,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 111.76 33.02 0)
 			(effects
 				(font
@@ -9909,7 +9909,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 254 63.5 90)
 			(effects
 				(font
@@ -9918,7 +9918,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 264.16 62.23 0)
 			(effects
 				(font
@@ -9945,7 +9945,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 264.16 62.23 0)
 			(effects
 				(font
@@ -9954,7 +9954,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 264.16 62.23 0)
 			(effects
 				(font
@@ -9963,7 +9963,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 264.16 62.23 0)
 			(effects
 				(font
@@ -10042,7 +10042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 25.4 167.64 0)
 			(effects
 				(font
@@ -10051,7 +10051,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10A475KP8NNNC"
+		(property "Manufacturer Part Number" "885012106005"
 			(at 25.4 167.64 0)
 			(effects
 				(font
@@ -10060,7 +10060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "1276-1044-1-ND"
+		(property "Digi-Key Part Number" "732-7902-1-ND"
 			(at 25.4 167.64 0)
 			(effects
 				(font
@@ -10220,7 +10220,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 257.81 159.258 90)
 			(effects
 				(font
@@ -10247,7 +10247,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110087CT-ND"
+		(property "Digi-Key Part Number" "732-560112116098CT-ND"
 			(at 257.81 157.48 0)
 			(effects
 				(font
@@ -10265,7 +10265,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110087"
+		(property "Manufacturer Part Number" "560112116098"
 			(at 257.81 157.48 0)
 			(effects
 				(font
@@ -10371,7 +10371,7 @@
 				)
 			)
 		)
-		(property "Value" "22 Ω"
+		(property "Value" "20 Ω"
 			(at 114.554 101.854 90)
 			(effects
 				(font
@@ -10379,7 +10379,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 109.22 104.648 90)
 			(effects
 				(font
@@ -10406,7 +10406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110046CT-ND"
+		(property "Digi-Key Part Number" "732-560112116125CT-ND"
 			(at 109.22 102.87 90)
 			(effects
 				(font
@@ -10424,7 +10424,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110046"
+		(property "Manufacturer Part Number" "560112116125"
 			(at 109.22 102.87 90)
 			(effects
 				(font
@@ -10743,7 +10743,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 109.22 112.268 90)
 			(effects
 				(font
@@ -10779,7 +10779,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 109.22 110.49 0)
 			(effects
 				(font
@@ -10788,7 +10788,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 109.22 110.49 0)
 			(effects
 				(font
@@ -10831,7 +10831,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 134.62 34.29 0)
 			(effects
 				(font
@@ -10840,7 +10840,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 136.1948 36.83 0)
 			(effects
 				(font
@@ -10876,7 +10876,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 137.16 33.02 0)
 			(effects
 				(font
@@ -10885,7 +10885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 137.16 33.02 0)
 			(effects
 				(font
@@ -11119,7 +11119,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 262.89 35.306 0)
 			(effects
 				(font
@@ -11128,7 +11128,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 266.3952 30.48 0)
 			(effects
 				(font
@@ -11164,7 +11164,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 265.43 34.29 0)
 			(effects
 				(font
@@ -11173,7 +11173,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 265.43 34.29 0)
 			(effects
 				(font
@@ -11443,7 +11443,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 203.2 34.29 0)
 			(effects
 				(font
@@ -11452,7 +11452,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 201.6252 36.83 0)
 			(effects
 				(font
@@ -11488,7 +11488,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 200.66 33.02 0)
 			(effects
 				(font
@@ -11497,7 +11497,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 200.66 33.02 0)
 			(effects
 				(font
@@ -11539,7 +11539,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 262.89 63.5 90)
 			(effects
 				(font
@@ -11548,7 +11548,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 273.05 62.23 0)
 			(effects
 				(font
@@ -11575,7 +11575,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 273.05 62.23 0)
 			(effects
 				(font
@@ -11584,7 +11584,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 273.05 62.23 0)
 			(effects
 				(font
@@ -11593,7 +11593,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 273.05 62.23 0)
 			(effects
 				(font
@@ -11644,7 +11644,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 257.81 155.448 90)
 			(effects
 				(font
@@ -11671,7 +11671,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110087CT-ND"
+		(property "Digi-Key Part Number" "732-560112116098CT-ND"
 			(at 257.81 153.67 0)
 			(effects
 				(font
@@ -11689,7 +11689,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110087"
+		(property "Manufacturer Part Number" "560112116098"
 			(at 257.81 153.67 0)
 			(effects
 				(font
@@ -11741,7 +11741,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 83.058 115.57 90)
 			(effects
 				(font
@@ -11768,7 +11768,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110087CT-ND"
+		(property "Digi-Key Part Number" "732-560112116098CT-ND"
 			(at 81.28 115.57 0)
 			(effects
 				(font
@@ -11786,7 +11786,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110087"
+		(property "Manufacturer Part Number" "560112116098"
 			(at 81.28 115.57 0)
 			(effects
 				(font
@@ -11958,7 +11958,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 245.11 133.35 90)
 			(effects
 				(font
@@ -11967,7 +11967,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 255.27 132.08 0)
 			(effects
 				(font
@@ -11994,7 +11994,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 255.27 132.08 0)
 			(effects
 				(font
@@ -12003,7 +12003,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 255.27 132.08 0)
 			(effects
 				(font
@@ -12012,7 +12012,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 255.27 132.08 0)
 			(effects
 				(font
@@ -12055,7 +12055,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 121.92 34.29 0)
 			(effects
 				(font
@@ -12064,7 +12064,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 123.4948 36.83 0)
 			(effects
 				(font
@@ -12100,7 +12100,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 124.46 33.02 0)
 			(effects
 				(font
@@ -12109,7 +12109,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 124.46 33.02 0)
 			(effects
 				(font
@@ -12151,7 +12151,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 245.11 63.5 90)
 			(effects
 				(font
@@ -12160,7 +12160,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 255.27 62.23 0)
 			(effects
 				(font
@@ -12187,7 +12187,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 255.27 62.23 0)
 			(effects
 				(font
@@ -12196,7 +12196,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 255.27 62.23 0)
 			(effects
 				(font
@@ -12205,7 +12205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 255.27 62.23 0)
 			(effects
 				(font
@@ -12256,7 +12256,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 211.582 146.05 90)
 			(effects
 				(font
@@ -12292,7 +12292,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 213.36 146.05 0)
 			(effects
 				(font
@@ -12301,7 +12301,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 213.36 146.05 0)
 			(effects
 				(font
@@ -12603,7 +12603,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 77.7748 81.28 0)
 			(effects
 				(font
@@ -12630,7 +12630,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 78.74 77.47 0)
 			(effects
 				(font
@@ -12639,7 +12639,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CC0402BRNPO9BN8R0"
+		(property "Manufacturer Part Number" "885012006093"
 			(at 78.74 77.47 0)
 			(effects
 				(font
@@ -12648,7 +12648,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "311-3708-1-ND"
+		(property "Digi-Key Part Number" "732-12050-1-ND"
 			(at 78.74 77.47 0)
 			(effects
 				(font
@@ -12861,7 +12861,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 30.1752 81.28 0)
 			(effects
 				(font
@@ -12888,7 +12888,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 29.21 77.47 0)
 			(effects
 				(font
@@ -12897,7 +12897,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CC0402BRNPO9BN8R0"
+		(property "Manufacturer Part Number" "885012006093"
 			(at 29.21 77.47 0)
 			(effects
 				(font
@@ -12906,7 +12906,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "311-3708-1-ND"
+		(property "Digi-Key Part Number" "732-12050-1-ND"
 			(at 29.21 77.47 0)
 			(effects
 				(font
@@ -12948,7 +12948,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 254 133.35 90)
 			(effects
 				(font
@@ -12957,7 +12957,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 264.16 132.08 0)
 			(effects
 				(font
@@ -12984,7 +12984,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 264.16 132.08 0)
 			(effects
 				(font
@@ -12993,7 +12993,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 264.16 132.08 0)
 			(effects
 				(font
@@ -13002,7 +13002,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 264.16 132.08 0)
 			(effects
 				(font
@@ -13053,7 +13053,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 270.002 25.4 90)
 			(effects
 				(font
@@ -13089,7 +13089,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110020"
+		(property "Manufacturer Part Number" "560112116005"
 			(at 271.78 25.4 0)
 			(effects
 				(font
@@ -13098,7 +13098,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110020CT-ND"
+		(property "Digi-Key Part Number" "732-560112116005CT-ND"
 			(at 271.78 25.4 0)
 			(effects
 				(font
@@ -13149,7 +13149,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 257.81 163.068 90)
 			(effects
 				(font
@@ -13176,7 +13176,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110087CT-ND"
+		(property "Digi-Key Part Number" "732-560112116098CT-ND"
 			(at 257.81 161.29 0)
 			(effects
 				(font
@@ -13194,7 +13194,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110087"
+		(property "Manufacturer Part Number" "560112116098"
 			(at 257.81 161.29 0)
 			(effects
 				(font
@@ -13375,7 +13375,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 64.4652 81.28 0)
 			(effects
 				(font
@@ -13402,7 +13402,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 63.5 77.47 0)
 			(effects
 				(font
@@ -13411,7 +13411,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CC0402BRNPO9BN8R0"
+		(property "Manufacturer Part Number" "885012006093"
 			(at 63.5 77.47 0)
 			(effects
 				(font
@@ -13420,7 +13420,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "311-3708-1-ND"
+		(property "Digi-Key Part Number" "732-12050-1-ND"
 			(at 63.5 77.47 0)
 			(effects
 				(font
@@ -13621,7 +13621,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "SMAJ6.0CA-13-F"
 			(at 262.89 133.35 90)
 			(effects
 				(font
@@ -13630,7 +13630,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
 			(at 273.05 132.08 0)
 			(effects
 				(font
@@ -13657,7 +13657,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
 			(at 273.05 132.08 0)
 			(effects
 				(font
@@ -13666,7 +13666,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 273.05 132.08 0)
 			(effects
 				(font
@@ -13675,7 +13675,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
 			(at 273.05 132.08 0)
 			(effects
 				(font
@@ -14188,7 +14188,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 211.582 156.21 90)
 			(effects
 				(font
@@ -14224,7 +14224,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 213.36 156.21 0)
 			(effects
 				(font
@@ -14233,7 +14233,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 213.36 156.21 0)
 			(effects
 				(font
@@ -14486,7 +14486,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 53.0352 81.28 0)
 			(effects
 				(font
@@ -14513,7 +14513,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 52.07 77.47 0)
 			(effects
 				(font
@@ -14522,7 +14522,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CC0402BRNPO9BN8R0"
+		(property "Manufacturer Part Number" "885012006093"
 			(at 52.07 77.47 0)
 			(effects
 				(font
@@ -14531,7 +14531,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "311-3708-1-ND"
+		(property "Digi-Key Part Number" "732-12050-1-ND"
 			(at 52.07 77.47 0)
 			(effects
 				(font
@@ -14708,7 +14708,7 @@
 				)
 			)
 		)
-		(property "Value" "22 Ω"
+		(property "Value" "20 Ω"
 			(at 175.006 68.834 90)
 			(effects
 				(font
@@ -14716,7 +14716,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 180.34 71.628 90)
 			(effects
 				(font
@@ -14743,7 +14743,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110046CT-ND"
+		(property "Digi-Key Part Number" "732-560112116125CT-ND"
 			(at 180.34 69.85 90)
 			(effects
 				(font
@@ -14761,7 +14761,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110046"
+		(property "Manufacturer Part Number" "560112116125"
 			(at 180.34 69.85 90)
 			(effects
 				(font

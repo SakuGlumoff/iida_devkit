@@ -11480,7 +11480,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 129.54 87.9348 0)
 			(effects
 				(font
@@ -11507,7 +11507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7472-1-ND"
+		(property "Digi-Key Part Number" "732-7749-1-ND"
 			(at 133.35 88.9 0)
 			(effects
 				(font
@@ -11525,7 +11525,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012005058"
+		(property "Manufacturer Part Number" "885012006005"
 			(at 133.35 88.9 0)
 			(effects
 				(font
@@ -11576,7 +11576,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 129.54 109.982 90)
 			(effects
 				(font
@@ -11612,7 +11612,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 129.54 111.76 0)
 			(effects
 				(font
@@ -11621,7 +11621,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 129.54 111.76 0)
 			(effects
 				(font
@@ -11932,7 +11932,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 121.412 115.57 90)
 			(effects
 				(font
@@ -11968,7 +11968,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 123.19 115.57 0)
 			(effects
 				(font
@@ -11977,7 +11977,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 123.19 115.57 0)
 			(effects
 				(font
@@ -12028,7 +12028,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 136.398 115.57 90)
 			(effects
 				(font
@@ -12064,7 +12064,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "560112110001"
+		(property "Manufacturer Part Number" "560112120002"
 			(at 134.62 115.57 0)
 			(effects
 				(font
@@ -12073,7 +12073,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-560112110001CT-ND"
+		(property "Digi-Key Part Number" "732-560112120002CT-ND"
 			(at 134.62 115.57 0)
 			(effects
 				(font

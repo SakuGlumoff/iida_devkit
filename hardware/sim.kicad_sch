@@ -14,23 +14,25 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J13"
-				(at 2.54 12.192 0)
+			(property "Reference" "J"
+				(at -2.54 12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Value" "G85D1160022HHR"
-				(at 2.54 10.16 0)
+			(property "Value" "SIM_Card"
+				(at -1.27 10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Footprint" "G85D1160022HHR:AMPHENOL_G85D1160022HHR"
+			(property "Footprint" ""
 				(at 0 8.89 0)
 				(effects
 					(font
@@ -49,33 +51,6 @@
 				)
 			)
 			(property "Description" "SIM Card"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Digi-Key Part Number" "664-G85D1160022HHRCT-ND"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Amphenol ICC (Commercial Products)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Part Number" "G85D1160022HHR"
 				(at 0 0 0)
 				(effects
 					(font
@@ -138,7 +113,7 @@
 				)
 				(polyline
 					(pts
-						(xy -10.16 8.89) (xy 15.24 8.89) (xy 15.24 -3.81) (xy 8.89 -11.684) (xy -10.16 -11.684) (xy -10.16 8.89)
+						(xy -10.16 8.89) (xy 15.24 8.89) (xy 15.24 -3.81) (xy 12.7 -6.35) (xy -10.16 -6.35) (xy -10.16 8.89)
 					)
 					(stroke
 						(width 0.254)
@@ -193,7 +168,7 @@
 							)
 						)
 					)
-					(number "C1"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -211,7 +186,7 @@
 							)
 						)
 					)
-					(number "C2"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -229,7 +204,7 @@
 							)
 						)
 					)
-					(number "C3"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -247,7 +222,7 @@
 							)
 						)
 					)
-					(number "C5"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -265,7 +240,7 @@
 							)
 						)
 					)
-					(number "C6"
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -283,79 +258,7 @@
 							)
 						)
 					)
-					(number "C7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -10.16 0)
-					(length 2.54)
-					(name "SH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "S1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -10.16 0)
-					(length 2.54) hide
-					(name "SH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "S2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -10.16 0)
-					(length 2.54) hide
-					(name "SH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "S3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -7.62 0)
-					(length 2.54)
-					(name "SW"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "SW"
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1119,12 +1022,6 @@
 		(uuid "dab0161a-4514-40e6-add6-8c26eaef7f16")
 	)
 	(junction
-		(at 189.23 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dae554e8-9546-4b90-86e5-358c323bf8ae")
-	)
-	(junction
 		(at 110.49 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1151,10 +1048,6 @@
 	(no_connect
 		(at 189.23 129.54)
 		(uuid "03722171-5cfe-4bad-a4ab-3276c27b88c1")
-	)
-	(no_connect
-		(at 189.23 134.62)
-		(uuid "efa41292-02ba-4198-ad5d-ca9de845b1a5")
 	)
 	(wire
 		(pts
@@ -1618,16 +1511,6 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 144.78) (xy 187.96 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c94c81c6-dbdc-4187-ad43-18d4b9fb65ef")
-	)
-	(wire
-		(pts
 			(xy 133.35 140.97) (xy 133.35 144.78)
 		)
 		(stroke
@@ -1675,16 +1558,6 @@
 			(type default)
 		)
 		(uuid "d635dbb3-3363-40b5-b303-3da93e0ed976")
-	)
-	(wire
-		(pts
-			(xy 189.23 137.16) (xy 189.23 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dbf76037-d577-4990-a0f0-7552520deb25")
 	)
 	(wire
 		(pts
@@ -5216,7 +5089,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100 nF"
+		(property "Value" "0.1 µF"
 			(at 143.51 138.43 0)
 			(effects
 				(font
@@ -5225,7 +5098,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 145.0848 140.97 0)
 			(effects
 				(font
@@ -5261,7 +5134,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012205018"
+		(property "Manufacturer Part Number" "885012206071"
 			(at 146.05 137.16 0)
 			(effects
 				(font
@@ -5270,7 +5143,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7513-1-ND"
+		(property "Digi-Key Part Number" "732-7989-1-ND"
 			(at 146.05 137.16 0)
 			(effects
 				(font
@@ -5422,7 +5295,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "CPDUC5V0USP-HF"
 			(at 154.94 138.43 90)
 			(effects
 				(font
@@ -5431,7 +5304,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 165.1 137.16 0)
 			(effects
 				(font
@@ -5458,7 +5331,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "641-1765-1-ND"
 			(at 165.1 137.16 0)
 			(effects
 				(font
@@ -5467,7 +5340,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Comchip Technology"
 			(at 165.1 137.16 0)
 			(effects
 				(font
@@ -5476,7 +5349,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "CPDUC5V0USP-HF"
 			(at 165.1 137.16 0)
 			(effects
 				(font
@@ -5527,7 +5400,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 111.4552 140.97 0)
 			(effects
 				(font
@@ -5554,7 +5427,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7472-1-ND"
+		(property "Digi-Key Part Number" "732-7749-1-ND"
 			(at 110.49 137.16 0)
 			(effects
 				(font
@@ -5572,7 +5445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012005058"
+		(property "Manufacturer Part Number" "885012006005"
 			(at 110.49 137.16 0)
 			(effects
 				(font
@@ -5623,7 +5496,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 100.0252 140.97 0)
 			(effects
 				(font
@@ -5650,7 +5523,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7472-1-ND"
+		(property "Digi-Key Part Number" "732-7749-1-ND"
 			(at 99.06 137.16 0)
 			(effects
 				(font
@@ -5668,7 +5541,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012005058"
+		(property "Manufacturer Part Number" "885012006005"
 			(at 99.06 137.16 0)
 			(effects
 				(font
@@ -5710,7 +5583,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "CPDUC5V0USP-HF"
 			(at 172.72 138.43 90)
 			(effects
 				(font
@@ -5719,7 +5592,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 182.88 137.16 0)
 			(effects
 				(font
@@ -5746,7 +5619,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "641-1765-1-ND"
 			(at 182.88 137.16 0)
 			(effects
 				(font
@@ -5755,7 +5628,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Comchip Technology"
 			(at 182.88 137.16 0)
 			(effects
 				(font
@@ -5764,7 +5637,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "CPDUC5V0USP-HF"
 			(at 182.88 137.16 0)
 			(effects
 				(font
@@ -5806,7 +5679,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "CPDUC5V0USP-HF"
 			(at 146.05 138.43 90)
 			(effects
 				(font
@@ -5815,7 +5688,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 156.21 137.16 0)
 			(effects
 				(font
@@ -5842,7 +5715,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "641-1765-1-ND"
 			(at 156.21 137.16 0)
 			(effects
 				(font
@@ -5851,7 +5724,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Comchip Technology"
 			(at 156.21 137.16 0)
 			(effects
 				(font
@@ -5860,7 +5733,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "CPDUC5V0USP-HF"
 			(at 156.21 137.16 0)
 			(effects
 				(font
@@ -5911,7 +5784,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 122.8852 140.97 0)
 			(effects
 				(font
@@ -5938,7 +5811,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7472-1-ND"
+		(property "Digi-Key Part Number" "732-7749-1-ND"
 			(at 121.92 137.16 0)
 			(effects
 				(font
@@ -5956,7 +5829,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012005058"
+		(property "Manufacturer Part Number" "885012006005"
 			(at 121.92 137.16 0)
 			(effects
 				(font
@@ -6059,34 +5932,22 @@
 				(hide yes)
 			)
 		)
-		(pin "C1"
+		(pin "5"
 			(uuid "64df4436-dfc1-4dc7-908a-caac95060e21")
 		)
-		(pin "C2"
+		(pin "7"
 			(uuid "4eb1d89f-bba6-49af-84ed-be1cc22ef962")
 		)
-		(pin "C3"
+		(pin "3"
 			(uuid "46940d7c-291a-422c-b2ff-1d78a3e2d24a")
 		)
-		(pin "C7"
+		(pin "2"
 			(uuid "3e5ab293-e50e-4c6c-84ee-49a9d3e47749")
 		)
-		(pin "S1"
-			(uuid "988d94df-cd4e-4ab8-9b47-3934e05a92a3")
-		)
-		(pin "C5"
-			(uuid "3304dd6b-bf9e-4381-8f59-12362bb811e4")
-		)
-		(pin "C6"
+		(pin "1"
 			(uuid "06ed8b49-67e2-424f-a418-8a6a23ac1494")
 		)
-		(pin "S3"
-			(uuid "4df3ac11-5f89-4681-98ba-feed9eff9306")
-		)
-		(pin "SW"
-			(uuid "d9ff027a-1722-4205-a252-f83eda53d721")
-		)
-		(pin "S2"
+		(pin "6"
 			(uuid "3e7e3841-522e-4d9e-b068-4b4001c97a18")
 		)
 		(instances
@@ -6116,7 +5977,7 @@
 				)
 			)
 		)
-		(property "Value" "PE1605M1Q_R1_00001"
+		(property "Value" "CPDUC5V0USP-HF"
 			(at 163.83 138.43 90)
 			(effects
 				(font
@@ -6125,7 +5986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 173.99 137.16 0)
 			(effects
 				(font
@@ -6152,7 +6013,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "3757-PE1605M1Q_R1_00001CT-ND"
+		(property "Digi-Key Part Number" "641-1765-1-ND"
 			(at 173.99 137.16 0)
 			(effects
 				(font
@@ -6161,7 +6022,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panjit International Inc."
+		(property "Manufacturer" "Comchip Technology"
 			(at 173.99 137.16 0)
 			(effects
 				(font
@@ -6170,7 +6031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PE1605M1Q_R1_00001"
+		(property "Manufacturer Part Number" "CPDUC5V0USP-HF"
 			(at 173.99 137.16 0)
 			(effects
 				(font
@@ -6196,7 +6057,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 189.23 144.78 0)
+		(at 187.96 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6205,7 +6066,7 @@
 		(fields_autoplaced yes)
 		(uuid "d3a5742a-0b20-4a53-a11b-f862f8211ebe")
 		(property "Reference" "#PWR058"
-			(at 189.23 151.13 0)
+			(at 187.96 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6214,7 +6075,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 189.23 149.86 0)
+			(at 187.96 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6223,7 +6084,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 144.78 0)
+			(at 187.96 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6232,7 +6093,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 144.78 0)
+			(at 187.96 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6241,7 +6102,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 189.23 144.78 0)
+			(at 187.96 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6288,7 +6149,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 134.3152 140.97 0)
 			(effects
 				(font
@@ -6315,7 +6176,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7472-1-ND"
+		(property "Digi-Key Part Number" "732-7749-1-ND"
 			(at 133.35 137.16 0)
 			(effects
 				(font
@@ -6333,7 +6194,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012005058"
+		(property "Manufacturer Part Number" "885012006005"
 			(at 133.35 137.16 0)
 			(effects
 				(font
