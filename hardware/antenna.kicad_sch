@@ -11751,7 +11751,7 @@
 		(dnp no)
 		(uuid "71de026c-1c3c-4c6a-9a71-1096e5edcca0")
 		(property "Reference" "AE2"
-			(at 146.558 104.648 0)
+			(at 152.908 107.696 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11760,7 +11760,7 @@
 			)
 		)
 		(property "Value" "PCB antenna"
-			(at 144.272 106.68 0)
+			(at 152.908 109.474 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11847,7 +11847,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e9b0871-215b-4d43-a8ef-27fa5c3765cb")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR054"
 			(at 149.86 125.73 0)
 			(effects
 				(font
@@ -11898,7 +11898,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "#PWR060")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -12207,7 +12207,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "efaeba2b-a12f-45a2-bbda-8594829b2b5f")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR053"
 			(at 149.86 102.87 0)
 			(effects
 				(font
@@ -12258,7 +12258,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "#PWR059")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -12274,7 +12274,7 @@
 		(dnp no)
 		(uuid "f4c1c0dc-7f7e-4ac9-9e2c-bef2e8765320")
 		(property "Reference" "AE1"
-			(at 148.59 83.82 0)
+			(at 150.368 83.058 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12283,13 +12283,12 @@
 			)
 		)
 		(property "Value" "U.FL-R-SMT-1(10)"
-			(at 150.495 85.725 0)
+			(at 150.114 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical"

@@ -6065,7 +6065,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3a5742a-0b20-4a53-a11b-f862f8211ebe")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR052"
 			(at 187.96 151.13 0)
 			(effects
 				(font
@@ -6116,7 +6116,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/33580d9f-a609-4568-baaf-9a29cf2dabcd"
-					(reference "#PWR058")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
