@@ -4920,6 +4920,17 @@
 		)
 		(uuid "5d0a2d80-fe21-4aa0-a475-3cc100bb4269")
 	)
+	(text "TPS61023 datasheet:\n8.2.2.1 Setting the output voltage:\n\nR1 = ((V_{OUT} / V_{REF}) - 1) * R2\nR2 = (R1 * V_{REF}) / (3.3 V - V_{REF})\n\nWhere V_{REF} ~= 0.6 V\nR2 = (1M Ω * 0.6 V) / (3.3 V - 0.6 V) = 222222 Ω\n"
+		(exclude_from_sim no)
+		(at 172.212 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6458e6ac-1d15-42d0-ab5e-fad7e6bea33a")
+	)
 	(text "Place a jumper\nto show power line status."
 		(exclude_from_sim no)
 		(at 247.65 66.294 0)
