@@ -7647,7 +7647,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012106005"
+		(property "Manufacturer Part Number" "885012107013"
 			(at 162.56 33.02 0)
 			(effects
 				(font
@@ -7656,7 +7656,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7902-1-ND"
+		(property "Digi-Key Part Number" "732-7623-1-ND"
 			(at 162.56 33.02 0)
 			(effects
 				(font
@@ -8489,7 +8489,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012106005"
+		(property "Manufacturer Part Number" "885012107013"
 			(at 114.3 166.37 0)
 			(effects
 				(font
@@ -8498,7 +8498,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7902-1-ND"
+		(property "Digi-Key Part Number" "732-7623-1-ND"
 			(at 114.3 166.37 0)
 			(effects
 				(font
@@ -8924,7 +8924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012106005"
+		(property "Manufacturer Part Number" "885012107013"
 			(at 99.06 33.02 0)
 			(effects
 				(font
@@ -8933,7 +8933,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7902-1-ND"
+		(property "Digi-Key Part Number" "732-7623-1-ND"
 			(at 99.06 33.02 0)
 			(effects
 				(font
@@ -9731,7 +9731,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "885012106005"
+		(property "Manufacturer Part Number" "885012107013"
 			(at 60.96 168.91 0)
 			(effects
 				(font
@@ -9740,7 +9740,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "732-7902-1-ND"
+		(property "Digi-Key Part Number" "732-7623-1-ND"
 			(at 60.96 168.91 0)
 			(effects
 				(font

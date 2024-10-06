@@ -18,4 +18,5 @@
   (lib (name "74AVC1T45DW-7")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/74AVC1T45DW-7/74AVC1T45DW-7.kicad_sym")(options "")(descr ""))
   (lib (name "TPS61023DRL")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/TPS61023DRL/TPS61023DRL.kicad_sym")(options "")(descr ""))
   (lib (name "S-8240A")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/S-8240A/S-8240A.kicad_sym")(options "")(descr ""))
+  (lib (name "TPS62A0")(type "KiCad")(uri "${KIPRJMOD}/kicad_libraries/TPS62A0/TPS62A0.kicad_sym")(options "")(descr ""))
 )
