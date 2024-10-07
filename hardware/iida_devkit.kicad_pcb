@@ -1181,6 +1181,7 @@
 		(property "Reference" "R36"
 			(at 0 -1.65 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8b91a749-33ba-43b0-ad49-4435b28ff573")
 			(effects
 				(font
@@ -2750,7 +2751,7 @@
 		(descr "Through hole straight pin header, 1x06, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x06 2.54mm single row")
 		(property "Reference" "J14"
-			(at 0 -2.33 90)
+			(at -0.0875 -3.17 180)
 			(layer "F.SilkS")
 			(uuid "b0c8df16-506e-48eb-b7ec-e15fb69ffe97")
 			(effects
@@ -3102,6 +3103,7 @@
 		(property "Reference" "LED5"
 			(at 0.2 2.2875 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8a52cb98-e0c1-4236-a658-832fd1ddacb6")
 			(effects
 				(font
@@ -5433,6 +5435,7 @@
 		(property "Reference" "R35"
 			(at -4.2 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "916efbd3-194e-4bc6-be7c-1e7338de7575")
 			(effects
 				(font
@@ -5685,6 +5688,7 @@
 		(property "Reference" "C38"
 			(at 0 -1.43 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "eee3b2fc-a4ef-4641-85aa-ecea5758bf3c")
 			(effects
 				(font
@@ -7020,6 +7024,7 @@
 		(property "Reference" "R34"
 			(at -4.2 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5b98d40b-9364-4f16-9949-8e5c9c016162")
 			(effects
 				(font
@@ -7778,6 +7783,7 @@
 		(property "Reference" "AE1"
 			(at 0 -3.4 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "87b7837d-4a0c-44b8-9462-6706f24fb862")
 			(effects
 				(font
@@ -8350,6 +8356,7 @@
 		(property "Reference" "C32"
 			(at 0 2.2 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "66c29ba6-82e9-4add-bcd1-c6698935091d")
 			(effects
 				(font
@@ -10222,7 +10229,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "FB3"
-			(at 0.1125 -1.5375 90)
+			(at -0.0875 -2.25 180)
 			(layer "F.SilkS")
 			(uuid "5ebb5105-c7f3-480f-ab55-dec945c44b95")
 			(effects
@@ -12043,6 +12050,7 @@
 		(property "Reference" "L2"
 			(at -2.6 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "08afb8b1-9d6b-48a1-8baa-f0285d0f9d33")
 			(effects
 				(font
@@ -12648,6 +12656,7 @@
 		(property "Reference" "C30"
 			(at 0 -2.2 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5aa82e32-fbb2-4c24-b469-181263f3f0e1")
 			(effects
 				(font
@@ -14186,6 +14195,7 @@
 		(property "Reference" "C35"
 			(at 5.6 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6abfbfc4-eb99-4c90-a4e9-14a7f60b0f01")
 			(effects
 				(font
@@ -14436,7 +14446,7 @@
 		(descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open")
 		(tags "solder jumper open")
 		(property "Reference" "JP1"
-			(at 0 -2 90)
+			(at 3.7 0 180)
 			(layer "F.SilkS")
 			(uuid "fdde2c30-1849-4c0a-a0c9-9a0f1db54dcc")
 			(effects
@@ -16510,6 +16520,7 @@
 		(property "Reference" "C37"
 			(at 4.1375 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "20530f06-2f86-4a23-a512-6024d6739f0c")
 			(effects
 				(font
@@ -16760,7 +16771,7 @@
 		(descr "surface-mounted straight pin header, 2x05, 2.54mm pitch, double rows")
 		(tags "Surface mounted pin header SMD 2x05 2.54mm double row")
 		(property "Reference" "J8"
-			(at 0 -7.41 90)
+			(at -5.275 -7.32 180)
 			(layer "F.SilkS")
 			(uuid "07709656-f4d2-4a80-b7c5-a1ed3b38e0f7")
 			(effects
@@ -18311,6 +18322,7 @@
 		(property "Reference" "R39"
 			(at -4.3 0.05 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "caf2e872-ee01-40fe-b434-cd9bfd9934ca")
 			(effects
 				(font
@@ -20478,6 +20490,7 @@
 		(property "Reference" "R27"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "5c4913d6-80d4-4942-b64a-e051bc077bf8")
 			(effects
 				(font
@@ -20730,6 +20743,7 @@
 		(property "Reference" "R28"
 			(at 0 1.4 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e46a2088-54f9-45e9-aaf1-4c6773c827d2")
 			(effects
 				(font
@@ -20982,6 +20996,7 @@
 		(property "Reference" "R33"
 			(at -3 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4ada27fb-6363-4e35-9bcd-28d89dc16c90")
 			(effects
 				(font
@@ -22015,6 +22030,7 @@
 		(property "Reference" "C34"
 			(at 4.725 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "77a593a3-b944-49b4-96e0-bfcaa4a26fa1")
 			(effects
 				(font
@@ -22519,6 +22535,7 @@
 		(property "Reference" "R32"
 			(at 3 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0fa1088e-736b-4313-9a36-7857ad8e1c10")
 			(effects
 				(font
@@ -22771,6 +22788,7 @@
 		(property "Reference" "R30"
 			(at 3.2 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7c3c7b34-e2e4-4469-81e2-dc9dcf1371a3")
 			(effects
 				(font
@@ -23017,11 +23035,11 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "96bcabb2-2559-4743-9579-1bc04ec069ec")
-		(at 65.925 61.75 90)
+		(at 59 50 90)
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "J6"
-			(at 0 -2.33 90)
+			(at 2.4 1.2 180)
 			(layer "F.SilkS")
 			(uuid "eb889e14-f432-4cd2-ba55-bdeb56d1938c")
 			(effects
@@ -25273,6 +25291,7 @@
 			(at 5.9 -1.05 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "56cde6eb-b431-4dd1-a25f-37c94e6ca862")
 			(effects
 				(font
@@ -25640,6 +25659,7 @@
 		(property "Reference" "C27"
 			(at 0 2.2 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "61e202e1-4939-4656-ae83-cc966167e4fb")
 			(effects
 				(font
@@ -31665,6 +31685,7 @@
 		(property "Reference" "C24"
 			(at 0 -2.2 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "3a42903c-653b-49fd-a24d-0b3fc61c4d4a")
 			(effects
 				(font
@@ -35491,11 +35512,11 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "c8f0191a-2861-4062-907d-267c32ffd1e2")
-		(at 59.875 61.75 -90)
+		(at 67.94 50 -90)
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "J5"
-			(at 0 -2.33 90)
+			(at -2.4 1.275 180)
 			(layer "F.SilkS")
 			(uuid "d9ea5759-9e01-4504-aac3-7734d84df513")
 			(effects
@@ -35803,6 +35824,7 @@
 		(property "Reference" "TVS15"
 			(at 4.925 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "e8ed0795-95fd-4010-a18e-faa2a467afa0")
 			(effects
 				(font
@@ -36636,6 +36658,7 @@
 		(property "Reference" "C36"
 			(at 4.1375 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "b03e0fac-8fb8-43b5-a588-410c2f2c9c38")
 			(effects
 				(font
@@ -36888,6 +36911,7 @@
 		(property "Reference" "C33"
 			(at 4 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c5d76d2b-73df-4976-bd2f-f9798ed4ee72")
 			(effects
 				(font
@@ -37140,6 +37164,7 @@
 		(property "Reference" "TVS14"
 			(at 7 0.2 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c2f4b1b8-63c1-468f-b144-8cf8de89fc61")
 			(effects
 				(font
@@ -37665,7 +37690,7 @@
 		(descr "SC-59, hand-soldering varaint, https://lib.chipdip.ru/images/import_diod/original/SOT-23_SC-59.jpg")
 		(tags "SC-59 hand-soldering")
 		(property "Reference" "Q6"
-			(at 3.8 0 -90)
+			(at 3.625 0 0)
 			(layer "F.SilkS")
 			(uuid "48f68b12-3787-4034-b986-d71d612a40bc")
 			(effects
@@ -38497,6 +38522,7 @@
 		(property "Reference" "R37"
 			(at 3.4 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "34f48214-beb6-4235-ac31-c0b10ed8e2d8")
 			(effects
 				(font
@@ -41109,6 +41135,7 @@
 		(property "Reference" "R38"
 			(at 3.3 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4f4253e1-f22c-44ab-8239-b6a01a46b38c")
 			(effects
 				(font
@@ -41361,6 +41388,7 @@
 		(property "Reference" "TVS13"
 			(at 5.725 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9ba466db-ab7d-4635-8a60-eb0182d6abb6")
 			(effects
 				(font
@@ -43210,6 +43238,7 @@
 		(property "Reference" "R31"
 			(at 3.2 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "0d83d2f3-2312-4668-b46a-3a178e4d7501")
 			(effects
 				(font
@@ -43968,6 +43997,7 @@
 		(property "Reference" "TVS12"
 			(at 4.925 0 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "cabd05fa-04b6-4ff0-9485-574829da444c")
 			(effects
 				(font
@@ -44517,6 +44547,7 @@
 		(property "Reference" "R29"
 			(at -3.2 0 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "42f49b0f-7f4a-4554-9acd-4438a20b5b53")
 			(effects
 				(font
@@ -45548,7 +45579,7 @@
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "J4"
-			(at 0 5.2 0)
+			(at -2.6 2.875 0)
 			(layer "F.SilkS")
 			(uuid "afda69f1-00a1-40b6-8fba-b39477809000")
 			(effects
@@ -46911,8 +46942,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "<GND"
-		(at 58.4 59.95 90)
+	(gr_text "GND>"
+		(at 64 51.85 90)
 		(layer "F.SilkS" knockout)
 		(uuid "261dd05e-7584-4bfa-b0da-ce01780d6668")
 		(effects
@@ -46920,7 +46951,7 @@
 				(size 2 2)
 				(thickness 0.15)
 			)
-			(justify left bottom)
+			(justify right top)
 		)
 	)
 	(gr_text "<GND"
@@ -46959,8 +46990,8 @@
 			(justify right bottom)
 		)
 	)
-	(gr_text "<GND"
-		(at 69.8 59.95 90)
+	(gr_text "GND>"
+		(at 60.475 51.85 90)
 		(layer "F.SilkS" knockout)
 		(uuid "422dc437-0e3f-4b78-85d9-852a302e8005")
 		(effects
@@ -46968,7 +46999,7 @@
 				(size 2 2)
 				(thickness 0.15)
 			)
-			(justify left bottom)
+			(justify right top)
 		)
 	)
 	(gr_text "EXT+5V>"
@@ -47007,8 +47038,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "<+3.3V"
-		(at 61.2 59.95 90)
+	(gr_text "+3.3V>"
+		(at 66.8 51.8 90)
 		(layer "F.SilkS" knockout)
 		(uuid "5ce7a3d3-32c1-4e0b-9731-902eaf1f9eaa")
 		(effects
@@ -47016,7 +47047,7 @@
 				(size 2 2)
 				(thickness 0.15)
 			)
-			(justify left bottom)
+			(justify right top)
 		)
 	)
 	(gr_text "C"
@@ -47102,7 +47133,7 @@
 		)
 	)
 	(gr_text "IDD"
-		(at 64.4 46.75 90)
+		(at 61.6 44.8 0)
 		(layer "F.SilkS" knockout)
 		(uuid "cc93a810-f88f-414c-a9b4-cdd2eb450881")
 		(effects
@@ -47160,8 +47191,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "<V_{BAT}"
-		(at 66.8 59.95 90)
+	(gr_text "V_{BAT}>"
+		(at 57.475 51.85 90)
 		(layer "F.SilkS" knockout)
 		(uuid "f0ce2249-ecbe-4f16-9356-de8952dfd772")
 		(effects
@@ -47169,7 +47200,7 @@
 				(size 2 2)
 				(thickness 0.15)
 			)
-			(justify left bottom)
+			(justify right top)
 		)
 	)
 	(gr_text "<+3.3V"
@@ -55394,7 +55425,7 @@
 		(polygon
 			(pts
 				(xy 57.3375 40.2) (xy 58.8 41.4) (xy 58.8 43.4) (xy 61.2 43.4) (xy 61.2 41.4) (xy 62 40.2) (xy 62 38.4)
-				(xy 64 38.4) (xy 64 34.4) (xy 62.5375 34.4) (xy 62.5375 35.8) (xy 60.2 35.8) (xy 60.2 38.4) (xy 57.3375 38.4)
+				(xy 64 38.4) (xy 64 34.4) (xy 62.5375 34.4) (xy 62.5375 37.2) (xy 60.8 37.2) (xy 60.8 38.4) (xy 57.3375 38.4)
 			)
 		)
 		(filled_polygon
@@ -55407,8 +55438,8 @@
 				(xy 61.127511 43.388794) (xy 61.076 43.4) (xy 58.924 43.4) (xy 58.856961 43.380315) (xy 58.811206 43.327511)
 				(xy 58.8 43.276) (xy 58.8 41.400001) (xy 58.799999 41.399999) (xy 57.382845 40.237206) (xy 57.343505 40.179464)
 				(xy 57.3375 40.141345) (xy 57.3375 38.524) (xy 57.357185 38.456961) (xy 57.409989 38.411206) (xy 57.4615 38.4)
-				(xy 60.2 38.4) (xy 60.2 35.924) (xy 60.219685 35.856961) (xy 60.272489 35.811206) (xy 60.324 35.8)
-				(xy 62.5375 35.8) (xy 62.5375 34.524) (xy 62.557185 34.456961) (xy 62.609989 34.411206) (xy 62.6615 34.4)
+				(xy 60.8 38.4) (xy 60.8 37.324) (xy 60.819685 37.256961) (xy 60.872489 37.211206) (xy 60.924 37.2)
+				(xy 62.5375 37.2) (xy 62.5375 34.524) (xy 62.557185 34.456961) (xy 62.609989 34.411206) (xy 62.6615 34.4)
 				(xy 63.8705 34.4)
 			)
 		)
@@ -56339,13 +56370,10 @@
 			(layer "F.Cu")
 			(pts
 				(xy 59.884924 34.819685) (xy 59.925271 34.861998) (xy 59.977011 34.951613) (xy 59.977013 34.951615)
-				(xy 60.101181 35.075783) (xy 60.134666 35.137106) (xy 60.1375 35.163464) (xy 60.1375 35.59963) (xy 60.117815 35.666669)
-				(xy 60.094707 35.693339) (xy 60.08513 35.701637) (xy 60.085106 35.70166) (xy 60.067159 35.719243)
-				(xy 60.067154 35.719249) (xy 60.022511 35.799059) (xy 60.022509 35.799064) (xy 60.002826 35.866096)
-				(xy 59.9945 35.924003) (xy 59.9945 37.876) (xy 59.974815 37.943039) (xy 59.922011 37.988794) (xy 59.8705 38)
-				(xy 57.465435 38) (xy 57.398396 37.980315) (xy 57.352641 37.927511) (xy 57.341496 37.872127) (xy 57.398665 36.042692)
-				(xy 57.420433 35.976303) (xy 57.427336 35.967196) (xy 58.362819 34.844616) (xy 58.420858 34.805718)
-				(xy 58.458078 34.8) (xy 59.817885 34.8)
+				(xy 60.101181 35.075783) (xy 60.134666 35.137106) (xy 60.1375 35.163464) (xy 60.1375 37.876) (xy 60.117815 37.943039)
+				(xy 60.065011 37.988794) (xy 60.0135 38) (xy 57.465435 38) (xy 57.398396 37.980315) (xy 57.352641 37.927511)
+				(xy 57.341496 37.872127) (xy 57.398665 36.042692) (xy 57.420433 35.976303) (xy 57.427336 35.967196)
+				(xy 58.362819 34.844616) (xy 58.420858 34.805718) (xy 58.458078 34.8) (xy 59.817885 34.8)
 			)
 		)
 	)
