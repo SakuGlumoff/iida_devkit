@@ -512,42 +512,42 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.245,
-        "line_style": 0,
-        "microvia_diameter": 0.25,
-        "microvia_drill": 0.25,
-        "name": "50 Ohm",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgb(39, 255, 0)",
-        "track_width": 0.245,
-        "via_diameter": 0.6,
+        "track_width": 0.3,
+        "via_diameter": 0.45,
         "via_drill": 0.25,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.165,
-        "diff_pair_gap": 0.165,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.155,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.23,
+        "diff_pair_width": 0.3,
         "line_style": 0,
         "microvia_diameter": 0.25,
         "microvia_drill": 0.25,
         "name": "90 Ohm",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(0, 0, 255)",
-        "track_width": 0.23,
-        "via_diameter": 0.6,
+        "track_width": 0.3,
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.25,
+        "microvia_drill": 0.25,
+        "name": "ANT",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(39, 255, 0)",
+        "track_width": 0.266,
+        "via_diameter": 0.45,
         "via_drill": 0.25,
         "wire_width": 6
       }
@@ -563,7 +563,7 @@
         "pattern": "/*/USB_*"
       },
       {
-        "netclass": "50 Ohm",
+        "netclass": "ANT",
         "pattern": "/Antenna/ANT*"
       }
     ]
