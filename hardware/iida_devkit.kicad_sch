@@ -706,6 +706,28 @@
 		)
 		(uuid "f3051ff5-3f80-4f12-8f79-1969fdd51329")
 	)
+	(text "There's no real chassis or a case to mount the PCB,\nso just place the mounting holes at the corners of the PCB."
+		(exclude_from_sim no)
+		(at 108.458 179.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5571a628-e5ce-4932-aa05-15b27a6c8f99")
+	)
+	(text "Place a fiducial marker at the top-right,\nbottom-right and bottom-left corners."
+		(exclude_from_sim no)
+		(at 114.046 167.132 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c739fed-eca0-4310-a36c-037290cff31d")
+	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 127 186.69 0)
@@ -810,7 +832,7 @@
 		(dnp no)
 		(uuid "26b8cd8e-22f8-4c67-ae7d-0b4f3e40ec43")
 		(property "Reference" "FID2"
-			(at 132.715 170.18 0)
+			(at 132.334 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1742,7 +1764,7 @@
 			)
 			(uuid "840ad303-7056-4439-9228-150e526815c4")
 		)
-		(pin "ANT" input
+		(pin "ANT" bidirectional
 			(at 120.65 114.3 180)
 			(effects
 				(font
@@ -1891,7 +1913,7 @@
 				(justify left top)
 			)
 		)
-		(pin "ANT" output
+		(pin "ANT" bidirectional
 			(at 114.3 114.3 0)
 			(effects
 				(font

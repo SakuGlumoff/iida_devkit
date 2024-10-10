@@ -11443,7 +11443,7 @@
 		(uuid "9459646f-7d97-4bf1-bc07-c8ab39b63080")
 	)
 	(hierarchical_label "ANT"
-		(shape output)
+		(shape bidirectional)
 		(at 95.25 100.33 180)
 		(fields_autoplaced yes)
 		(effects

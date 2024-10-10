@@ -6488,17 +6488,6 @@
 		)
 		(uuid "9c1a5d95-8254-4026-9877-b3665accc6f6")
 	)
-	(label "EXT_FLASH_NCS"
-		(at 132.08 115.57 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "0079bd30-20d1-4c33-91df-c2cb675ddf4f")
-	)
 	(label "EXT_FLASH_IO0"
 		(at 82.55 175.26 0)
 		(fields_autoplaced yes)
@@ -6521,6 +6510,17 @@
 		)
 		(uuid "0b4271bc-cae4-4532-b7e7-dc73c9b5a977")
 	)
+	(label "EXT_FLASH_~{CS}"
+		(at 132.08 115.57 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0f263877-06e0-4010-822a-857eccf1a1a2")
+	)
 	(label "I2C_SCL"
 		(at 252.73 123.19 180)
 		(fields_autoplaced yes)
@@ -6532,7 +6532,7 @@
 		)
 		(uuid "12dbcdfc-7052-48f4-bbb6-fddbfc205a5d")
 	)
-	(label "EXT_FLASH_CLK"
+	(label "EXT_FLASH_SCK"
 		(at 132.08 113.03 180)
 		(fields_autoplaced yes)
 		(effects
@@ -6708,7 +6708,7 @@
 		)
 		(uuid "6e7b9733-3132-4cec-8ef1-bf73fbc63a83")
 	)
-	(label "EXT_FLASH_NCS"
+	(label "EXT_FLASH_~{CS}"
 		(at 82.55 170.18 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6763,7 +6763,7 @@
 		)
 		(uuid "7ec07a71-84ab-477d-81d0-64c99ad34192")
 	)
-	(label "EXT_FLASH_CLK"
+	(label "EXT_FLASH_SCK"
 		(at 82.55 172.72 0)
 		(fields_autoplaced yes)
 		(effects

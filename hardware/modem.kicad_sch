@@ -13023,7 +13023,7 @@
 		(uuid "9f833991-a68c-4bbb-9919-09ba37496c65")
 	)
 	(hierarchical_label "ANT"
-		(shape input)
+		(shape bidirectional)
 		(at 238.76 106.68 180)
 		(fields_autoplaced yes)
 		(effects
