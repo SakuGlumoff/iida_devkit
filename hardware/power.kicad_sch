@@ -6252,7 +6252,7 @@
 		(dnp no)
 		(uuid "1a27106a-a9db-4b45-bb2d-6a046adc2752")
 		(property "Reference" "Q3"
-			(at 99.568 71.882 90)
+			(at 99.06 71.882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6260,7 +6260,7 @@
 			)
 		)
 		(property "Value" "BSS806NH6327XTSA1"
-			(at 104.902 73.66 90)
+			(at 108.204 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8261,7 +8261,7 @@
 		(dnp no)
 		(uuid "89dab1ff-e52f-40d6-924f-ec66c5586f41")
 		(property "Reference" "Q2"
-			(at 88.138 71.882 90)
+			(at 88.9 72.136 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8269,7 +8269,7 @@
 			)
 		)
 		(property "Value" "BSS806NH6327XTSA1"
-			(at 82.804 73.914 90)
+			(at 80.01 73.914 90)
 			(effects
 				(font
 					(size 1.27 1.27)

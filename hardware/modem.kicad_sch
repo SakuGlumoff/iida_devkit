@@ -4000,6 +4000,16 @@
 	)
 	(wire
 		(pts
+			(xy 46.99 85.09) (xy 54.61 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c3a255d-947b-4417-9e44-0ce0f52807ee")
+	)
+	(wire
+		(pts
 			(xy 142.24 177.8) (xy 142.24 176.53)
 		)
 		(stroke
@@ -4227,16 +4237,6 @@
 			(type default)
 		)
 		(uuid "7146c423-acf5-423b-aeea-2349cfe2bd67")
-	)
-	(wire
-		(pts
-			(xy 46.99 85.09) (xy 54.61 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "758f7c2a-90c1-4429-8614-e63b664d3e7d")
 	)
 	(wire
 		(pts
@@ -12752,7 +12752,7 @@
 		(uuid "61128535-183e-420a-b5a1-4e137e685e67")
 	)
 	(label "+3.3V_MDM_UNFILTERED"
-		(at 46.99 85.09 0)
+		(at 54.61 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16872,7 +16872,7 @@
 		(dnp no)
 		(uuid "cb17cf8e-fe07-4df6-9d39-d36fb4b63a3d")
 		(property "Reference" "Q6"
-			(at 172.72 80.0099 0)
+			(at 172.466 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
