@@ -7140,7 +7140,7 @@
 				)
 			)
 		)
-		(property "Value" "PTS645SK50SMTR92 LFS"
+		(property "Value" "430182050816"
 			(at 187.198 157.988 90)
 			(effects
 				(font
@@ -7176,7 +7176,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "C&K"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 191.77 156.21 90)
 			(effects
 				(font
@@ -7185,7 +7185,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "PTS645SK50SMTR92 LFS"
+		(property "Manufacturer Part Number" "430182050816"
 			(at 191.77 156.21 90)
 			(effects
 				(font
@@ -7194,7 +7194,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "CKN9087CT-ND"
+		(property "Digi-Key Part Number" "732-7005-1-ND"
 			(at 191.77 156.21 90)
 			(effects
 				(font

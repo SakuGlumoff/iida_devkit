@@ -13733,7 +13733,7 @@
 				)
 			)
 		)
-		(property "Value" "74AVC1T45DW-7"
+		(property "Value" "SN74AVC1T45DBVR"
 			(at 116.84 173.228 0)
 			(effects
 				(font
@@ -13741,7 +13741,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 116.84 172.72 0)
 			(effects
 				(font
@@ -13768,7 +13768,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "31-74AVC1T45DW-7CT-ND"
+		(property "Digi-Key Part Number" "296-19094-1-ND"
 			(at 116.84 167.64 0)
 			(effects
 				(font
@@ -13777,7 +13777,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Diodes Incorporated"
+		(property "Manufacturer" "Texas Instruments"
 			(at 116.84 170.18 0)
 			(effects
 				(font
@@ -13786,7 +13786,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "74AVC1T45DW-7"
+		(property "Manufacturer Part Number" "SN74AVC1T45DBVR"
 			(at 116.84 172.72 0)
 			(effects
 				(font
@@ -15295,7 +15295,7 @@
 				)
 			)
 		)
-		(property "Value" "74AVC1T45DW-7"
+		(property "Value" "SN74AVC1T45DBVR"
 			(at 48.26 173.228 0)
 			(effects
 				(font
@@ -15303,7 +15303,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 48.26 172.72 0)
 			(effects
 				(font
@@ -15330,7 +15330,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "31-74AVC1T45DW-7CT-ND"
+		(property "Digi-Key Part Number" "296-19094-1-ND"
 			(at 48.26 167.64 0)
 			(effects
 				(font
@@ -15339,7 +15339,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Diodes Incorporated"
+		(property "Manufacturer" "Texas Instruments"
 			(at 48.26 170.18 0)
 			(effects
 				(font
@@ -15348,7 +15348,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "74AVC1T45DW-7"
+		(property "Manufacturer Part Number" "SN74AVC1T45DBVR"
 			(at 48.26 172.72 0)
 			(effects
 				(font
@@ -16880,7 +16880,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MMBT3904"
+		(property "Value" "TBC847B,LM"
 			(at 172.72 82.5499 0)
 			(effects
 				(font
@@ -16916,7 +16916,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "4878-MMBT3904CT-ND"
+		(property "Digi-Key Part Number" "TBC847BLMCT-ND"
 			(at 167.64 81.28 0)
 			(effects
 				(font
@@ -16925,7 +16925,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Diotec Semiconductor"
+		(property "Manufacturer" "Toshiba Semiconductor and Storage"
 			(at 167.64 81.28 0)
 			(effects
 				(font
@@ -16934,7 +16934,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "MMBT3904"
+		(property "Manufacturer Part Number" "TBC847B,LM"
 			(at 167.64 81.28 0)
 			(effects
 				(font
