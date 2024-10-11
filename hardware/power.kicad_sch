@@ -9618,7 +9618,7 @@
 				)
 			)
 		)
-		(property "Value" "USB4110-GF-A"
+		(property "Value" "DX07S016JA1R1500"
 			(at 44.45 95.25 0)
 			(effects
 				(font
@@ -9626,7 +9626,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4110"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_JAE_DX07S016JA1R1500"
 			(at 48.26 114.3 0)
 			(effects
 				(font
@@ -9653,7 +9653,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "2073-USB4110-GF-A-1-ND"
+		(property "Digi-Key Part Number" "670-DX07S016JA1R1500CT-ND"
 			(at 44.45 114.3 0)
 			(effects
 				(font
@@ -9663,7 +9663,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "GCT"
+		(property "Manufacturer" "JAE Electronics"
 			(at 44.45 114.3 0)
 			(effects
 				(font
@@ -9673,7 +9673,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "USB4110-GF-A"
+		(property "Manufacturer Part Number" "DX07S016JA1R1500"
 			(at 44.45 114.3 0)
 			(effects
 				(font
