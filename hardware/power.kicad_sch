@@ -6244,7 +6244,7 @@
 		)
 		(uuid "84021710-a1c3-4989-a1f3-db7a091317b0")
 	)
-	(text "Battery protection\n\nOvercharge detection: 4.28 V\nOverdischarge detection: 2.8 V\nDischarge overcurrent detection: 0.05 V\nCharge overcurrent detection: -0.05 V\nShort-circuit detection: 0.3 V\n\nMaximum desired discharge current is 1 A.\nTotal resistance across FETs should be\n0.1 V / 1 A = 0.1 Ω.\n\nMaximum desired charge current is 500 mA.\n0.1 Ω * 0.5 A = 0.05 V."
+	(text "Battery protection\n\nOvercharge detection: 4.28 V\nOverdischarge detection: 2.8 V\nDischarge overcurrent detection: 0.05 V\nCharge overcurrent detection: -0.05 V\nShort-circuit detection: 0.3 V\n\nMaximum desired discharge current is 1 A.\nTotal resistance across FETs should be\n0.1 V / 1 A = 0.1 Ω.\n\nMaximum desired charge current is 500 mA.\n0.1 Ω * 0.5 A = 0.05 V trigger level."
 		(exclude_from_sim no)
 		(at 86.614 36.068 0)
 		(effects
