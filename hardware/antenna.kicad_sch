@@ -11558,7 +11558,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2fe5d00a-992f-4c92-8bc9-fcf82f53d364")
-		(property "Reference" "R39"
+		(property "Reference" "R43"
 			(at 127.762 109.474 90)
 			(effects
 				(font
@@ -11639,7 +11639,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R39")
+					(reference "R43")
 					(unit 1)
 				)
 			)
@@ -11914,7 +11914,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "805ab2e9-1d0d-4dbe-8e1f-df3f62a442d4")
-		(property "Reference" "R38"
+		(property "Reference" "R42"
 			(at 121.666 114.808 0)
 			(effects
 				(font
@@ -11995,7 +11995,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R38")
+					(reference "R42")
 					(unit 1)
 				)
 			)
@@ -12010,7 +12010,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "83184d7d-5f61-4942-b0bb-b5b74f9c2564")
-		(property "Reference" "R40"
+		(property "Reference" "R44"
 			(at 136.144 114.808 0)
 			(effects
 				(font
@@ -12091,7 +12091,7 @@
 		(instances
 			(project "iida_devkit"
 				(path "/b12a6e25-97fb-4aba-bc96-af8db389bb9a/6e456e95-dbda-43fc-b148-815c3be21ba0"
-					(reference "R40")
+					(reference "R44")
 					(unit 1)
 				)
 			)
