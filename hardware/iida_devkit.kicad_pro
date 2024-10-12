@@ -64,8 +64,7 @@
         }
       ],
       "drc_exclusions": [
-        "copper_edge_clearance|154260000|127547500|59ba60bc-127e-4a8a-be13-8f3a34e6f8c8|e4771348-1e49-4332-aa3b-c30058055bad",
-        "lib_footprint_mismatch|225932500|82990000|58fdbf13-d584-4f44-beb1-d889001ce329|00000000-0000-0000-0000-000000000000"
+        "copper_edge_clearance|154260000|127547500|59ba60bc-127e-4a8a-be13-8f3a34e6f8c8|e4771348-1e49-4332-aa3b-c30058055bad"
       ],
       "meta": {
         "version": 2
