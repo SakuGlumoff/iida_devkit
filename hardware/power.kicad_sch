@@ -6408,7 +6408,7 @@
 		)
 		(uuid "c2d89405-9ce5-4789-88d6-55812ecfa79c")
 	)
-	(text "Battery charging\nEnabled only when USB connection is ON.\n\nV_{IN} = 5 V\nV_{OUT} = 2.7 V worst case\nI_{CHG} = 0.5 A\n\nBQ21040 datasheet:\n\nThermal resistance R_{θJA} is 130.8 °C/W.\nThermal shutdown T_{SD} is 155 °C.\nP = (V_{IN} - V_{OUT}) * I_{CHG} = 1.15 W\nMax temperature T_{CHG_MAX} = R_{θJA} * P = 150.42 °C\nT_{SD} > T_{CHG_MAX}\n\n9.2.2.1.1 Program the ISET:\nK_{ISET} = 540 AΩ\nR_{ISET} = 540 AΩ / I_{CHG} = 1080 Ω"
+	(text "Battery charging\nEnabled only when USB connection is ON.\n\nV_{IN} = 5 V\nV_{OUT} = 3 V worst case\nI_{CHG} = 0.5 A\n\nBQ21040 datasheet:\n\nThermal resistance R_{θJA} is 130.8 °C/W.\nThermal shutdown T_{SD} is 155 °C.\nP = (V_{IN} - V_{OUT}) * I_{CHG} = 1 W\nMax temperature T_{CHG_MAX} = R_{θJA} * P = 130.8 °C\nT_{SD} > T_{CHG_MAX}\n\n9.2.2.1.1 Program the ISET:\nK_{ISET} = 540 AΩ\nR_{ISET} = 540 AΩ / I_{CHG} = 1080 Ω"
 		(exclude_from_sim no)
 		(at 134.366 37.084 0)
 		(effects
