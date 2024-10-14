@@ -11278,7 +11278,7 @@
 				)
 			)
 		)
-		(property "Value" "SMAJ6.0CA-13-F"
+		(property "Value" "SMAJ6.0CA"
 			(at 120.65 156.21 90)
 			(effects
 				(font
@@ -11314,7 +11314,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digi-Key Part Number" "SMAJ6.0CA-13-FDICT-ND"
+		(property "Digi-Key Part Number" "732-SMAJ6.0CACT-ND"
 			(at 130.81 154.94 0)
 			(effects
 				(font
@@ -11323,7 +11323,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Diodes Incorporated"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 130.81 154.94 0)
 			(effects
 				(font
@@ -11332,7 +11332,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "SMAJ6.0CA-13-F"
+		(property "Manufacturer Part Number" "SMAJ6.0CA"
 			(at 130.81 154.94 0)
 			(effects
 				(font
