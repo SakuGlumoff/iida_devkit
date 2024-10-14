@@ -10883,7 +10883,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_JAE_DX07S016JA1R1500"
+		(property "Footprint" "DX07S016JA1R1500:DX07S016JA1R1500"
 			(at 58.42 128.27 0)
 			(effects
 				(font
