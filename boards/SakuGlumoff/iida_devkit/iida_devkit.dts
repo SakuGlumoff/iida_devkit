@@ -252,7 +252,7 @@
 		pagesize = <64>;
 		address-width = <16>;
 		timeout = <5>;
-		wp-gpios = <&gpiob 7 GPIO_ACTIVE_LOW>;
+		wp-gpios = <&gpiob 7 GPIO_ACTIVE_HIGH>;
 	};
 
 	fuel_gauge0: i2c@36 {
