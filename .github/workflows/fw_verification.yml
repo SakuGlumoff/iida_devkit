@@ -21,7 +21,9 @@ jobs:
           rm -rf /__w/iida-devkit/iida-devkit/.west /__w/iida-devkit/iida-devkit/*
           export PATH=$PATH:/github/home/.local/bin
           pip install west
-          west init -m ${{ github.server_url }}/${{ github.repository }}.git --mr ${{ github.ref_name }}
+          west init \
+            -m "${{ github.event.pull_request.head.repo.clone_url || format('{0}/{1}.git', github.server_url, github.repository) }}" \
+            --mr "${{ github.head_ref || github.ref_name }}"
           west update
           pip install -r zephyr/scripts/requirements.txt
           west zephyr-export
@@ -33,3 +35,4 @@ jobs:
           path: |
             build/zephyr/zephyr.hex
           if-no-files-found: error
+

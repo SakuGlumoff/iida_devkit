@@ -1,0 +1,24 @@
+name: AI code review
+
+on:
+  pull_request:
+
+permissions:
+  pull-reqests: write
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          submodules: true
+      - name: Code review
+        uses: mattzcarey/shippie@v0
+        with:
+          MODEL: openai/gpt-5.6-sol
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
