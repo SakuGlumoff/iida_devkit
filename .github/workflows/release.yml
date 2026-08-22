@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+  packages: read
+
 jobs:
   build_fw:
     runs-on: [self-hosted, docker]
@@ -72,7 +76,7 @@ jobs:
           if-no-files-found: error
           archive: false
   release:
-    needs: [build_Fw, build_hw]
+    needs: [build_fw, build_hw]
     runs-on: ubuntu-latest
     environment: release
     permissions:
