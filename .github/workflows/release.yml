@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 permissions:
-  contents: read
+  contents: write
   packages: read
 
 jobs:
@@ -76,7 +76,7 @@ jobs:
           if-no-files-found: error
           archive: false
   release:
-    needs: [build_Fw, build_hw]
+    needs: [build_fw, build_hw]
     runs-on: ubuntu-latest
     environment: release
     permissions:
