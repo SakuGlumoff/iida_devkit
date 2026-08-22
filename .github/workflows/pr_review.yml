@@ -16,7 +16,7 @@ jobs:
         with:
           submodules: true
       - name: Code review
-        uses: mattzcarey/shippie@v0
+        uses: mattzcarey/shippie@v0.21.2
         with:
           MODEL: openai/gpt-5.6-sol
         env:
