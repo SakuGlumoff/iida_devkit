@@ -28,6 +28,10 @@ int main(void)
 	}
 
 	while (1) {
+		err = gpio_pin_toggle_dt(&ledA);
+		if (err) {
+			LOG_ERR("Error toggling LED A: %d", err);
+		}
 		k_msleep(1000);
 	}
 }
